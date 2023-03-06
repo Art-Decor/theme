@@ -4,10 +4,14 @@ on:
   push:
     branches:
       - test
+  pull_request:
+    branches:
+      - test
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: test
 
     steps:
       - name: Checkout code
