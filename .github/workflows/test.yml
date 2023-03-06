@@ -1,12 +1,5 @@
 name: Development workflow
 
-env:
-  REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
-  REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-  REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
-  REMOTE_USER: ${{ secrets.REMOTE_USER }}
-  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-
 on:
   push:
     branches:
