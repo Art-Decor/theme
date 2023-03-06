@@ -1,0 +1,46 @@
+name: Development workflow
+
+env:
+  REMOTE_PATH: ${{ env.secrets.REMOTE_PATH }}
+  REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+  REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
+  REMOTE_USER: ${{ secrets.REMOTE_USER }}
+  SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+on:
+  push:
+    branches:
+      - test
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - name: Install dependency
+        run: npm install
+
+      - name: Generate website
+        run: npm run deploy --if-present
+
+      - name: Remove node
+        run: sudo rm -rf node_modules
+
+      - name: Deploy to Server
+        uses: burnett01/rsync-deployments@5.2
+        with:
+          switches: -azrv --relative --cvs-exclude --exclude='node_modules' --exclude='cache' --exclude='assets/img/modules' --exclude='*.code-workspace' --exclude='.*' --exclude='*.sh'  --delete
+          remote_path: "${{ secrets.REMOTE_PATH }}"
+          remote_host: "${{ secrets.REMOTE_HOST }}"
+          remote_port: "${{ secrets.REMOTE_PORT }}"
+          remote_user: "${{ secrets.REMOTE_USER }}"
+          remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
+          path: "./"
