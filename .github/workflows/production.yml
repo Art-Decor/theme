@@ -42,3 +42,16 @@ jobs:
           remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
           remote_key_pass: "${{ secrets.SSH_PRIVATE_KEY_PASSPHRASE }}"
           path: "./"
+
+      - name: Run externall drupal task
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          port: ${{ secrets.REMOTE_PORT }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PRIVATE_KEY_PASS }}
+          script: |
+            /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush cache:rebuild --root=${{ secrets.REMOTE_ROOT_PATH }}
+            /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush core:cron --root=${{ secrets.REMOTE_ROOT_PATH }}
+            /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush cache:rebuild-external -y --root=${{ secrets.REMOTE_ROOT_PATH }}
