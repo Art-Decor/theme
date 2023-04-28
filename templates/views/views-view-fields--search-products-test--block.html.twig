@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Default view template to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% for field in fields -%}
+    {%
+    set wrapper_classes = [
+        field.handler.field == 'field_zdjecie' ? 'absolute inset-0 z-0',
+        field.handler.field == 'product_id' ? 'absolute inset-0 opacity-0 z-20',
+        field.handler.field == 'title_1' or field.handler.field == 'price' ? 'z-10',
+    ]
+    %}
+    {%
+    set field_classes = [
+        field.handler.field == 'field_zdjecie' ? 'img-fit-contain w-full h-full after:absolute after:bg-gradient-to-t after:content-[""] after:from-black/50 after:inset-x-0 after:bottom-0 after:top-1/3 md:after:top-1/2 xl:after:top-2/3 after:to-transparent after:pointer-events-none',
+        field.handler.field == 'product_id' ? 'block w-full h-full',
+        field.handler.field == 'title_1' ? 'inline-block mb-1 text-white text-lg font-semibold z-10',
+        field.handler.field == 'price' ? 'inline-block text-white text-lg z-10',
+    ]
+    %}
+  {%- if field.wrapper_element -%}
+    <{{ field.wrapper_element }}{{ field.wrapper_attributes.addClass(wrapper_classes) }}>
+  {%- endif %}
+  {%- if field.element_type -%}
+    <{{ field.element_type }}{{ field.element_attributes.addClass(field_classes) }}>{{ field.content }}</{{ field.element_type }}>
+  {%- else -%}
+    {{ field.content }}
+  {%- endif %}
+  {%- if field.wrapper_element -%}
+    </{{ field.wrapper_element }}>
+  {%- endif %}
+{%- endfor %}
