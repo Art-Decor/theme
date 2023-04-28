@@ -1,22 +1,44 @@
 name: wallsociety
 type: theme
-'base theme': stable9
+"base theme": belgrade
 starterkit: true
 version: VERSION
-libraries:
-  - wallsociety/base
-  - wallsociety/messages
-  - core/normalize
-libraries-extend:
-  user/drupal.user:
-    - wallsociety/user
-  core/drupal.dropbutton:
-    - wallsociety/dropbutton
-  core/drupal.dialog:
-    - wallsociety/dialog
-  file/drupal.file:
-    - wallsociety/file
-  core/drupal.progress:
-    - wallsociety/progress
+# libraries:
+#   - wallsociety/base
+#   - wallsociety/messages
+#   - core/normalize
+# libraries-extend:
+#   user/drupal.user:
+#     - wallsociety/user
+#   core/drupal.dropbutton:
+#     - wallsociety/dropbutton
+#   core/drupal.dialog:
+#     - wallsociety/dialog
+#   file/drupal.file:
+#     - wallsociety/file
+#   core/drupal.progress:
+#     - wallsociety/progress
 core_version_requirement: ^9
-generator: 'starterkit_theme:9.4.9'
+generator: "starterkit_theme:9.4.9"
+
+regions:
+  navigation: "Navigation"
+  top_navigation: "Navigation (Top bar)"
+  header: "Header"
+  highlighted: "Highlighted"
+  help: "Help"
+  content: "Content"
+  sidebar_first: "Primary"
+  sidebar_second: "Secondary"
+  footer: "Footer"
+  page_top: "Page top"
+  page_bottom: "Page bottom"
+
+libraries-override:
+  # Replace an entire library.
+  bootstrap/framework: belgrade/bootstrap-scripts
+
+libraries:
+  - "belgrade/fonts"
+  - "belgrade/theme"
+  - "belgrade/color"
