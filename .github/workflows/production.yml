@@ -41,3 +41,4 @@ jobs:
           remote_user: "${{ secrets.REMOTE_USER }}"
           remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
           remote_key_pass: "${{ secrets.SSH_PRIVATE_KEY_PASSPHRASE }}"
+          path: "./"
