@@ -1,0 +1,282 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display the basic html structure of a single
+ * Drupal page.
+ *
+ * Variables:
+ * - $css: An array of CSS files for the current page.
+ * - $language: (object) The language the site is being displayed in.
+ *   $language->language contains its textual representation.
+ *   $language->dir contains the language direction. It will either be 'ltr' or
+ *   'rtl'.
+ * - $rdf_namespaces: All the RDF namespace prefixes used in the HTML document.
+ * - $grddl_profile: A GRDDL profile allowing agents to extract the RDF data.
+ * - $head_title: A modified version of the page title, for use in the TITLE
+ *   tag.
+ * - $head_title_array: (array) An associative array containing the string parts
+ *   that were used to generate the $head_title variable, already prepared to be
+ *   output as TITLE tag. The key/value pairs may contain one or more of the
+ *   following, depending on conditions:
+ *   - title: The title of the current page, if any.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site, if any, and if there is no title.
+ * - $head: Markup for the HEAD section (including meta tags, keyword tags, and
+ *   so on).
+ * - $styles: Style tags necessary to import all CSS files for the page.
+ * - $scripts: Script tags necessary to load the JavaScript files and settings
+ *   for the page.
+ * - $page_top: Initial markup from any modules that have altered the
+ *   page. This variable should always be output first, before all other dynamic
+ *   content.
+ * - $page: The rendered page content.
+ * - $page_bottom: Final closing markup from any modules that have altered the
+ *   page. This variable should always be output last, after all other dynamic
+ *   content.
+ * - $classes String of classes that can be used to style contextually through
+ *   CSS.
+ *
+ * @ingroup templates
+ *
+ * @see bootstrap_preprocess_html()
+ * @see template_preprocess()
+ * @see template_preprocess_html()
+ * @see template_process()
+ */
+#}
+{%
+  set body_classes = [
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'page-node-type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+    theme.settings.navbar_position ? 'navbar-is-' ~ theme.settings.navbar_position,
+    theme.has_glyphicons ? 'has-glyphicons',
+  ]
+%}
+<!DOCTYPE html>
+<html {{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      @layer base {
+        html{
+          font-size: 16px;
+        }
+
+        .collapse{
+          @apply !visible;
+        }
+
+        .gutenberg-text ul{
+          @apply list-disc ml-5;
+        }
+        .gutenberg-text ul{
+          @apply list-disc ml-5;
+        }
+
+        .commerce-product h2.block-title{
+          @apply mb-6 md:mb-8 text-xl md:text-2xl font-semibold;
+        }
+
+        .layout-content--list section .field--label-inline{
+          @apply flex w-full py-3.5;
+        }
+        .layout-content--list .layout-content-region section {
+          @apply border-0 border-b first:border-b-0 last:border-b-0 last:mb-[60px] md:last:mb-20 border-gray-300;
+        }
+        .layout-content--list section .field--label{
+          @apply md:basis-44 md:mr-8 shrink-0 grow-0 !normal-case;
+        }
+        .layout-content--list .field.field--name-sku.field--type-string.field--label-inline{
+          @apply !m-0;
+        }
+
+        .commerce-product--default .layout:not(:first-of-type) section{
+          @apply mb-[60px] md:mb-20;
+        }
+
+        .commerce-product--default .layout__region--second .field--name-price .field--item{
+          @apply mb-5 !font-semibold !text-3xl md:!text-4xl;
+        }
+        .commerce-product--default .layout__region--second .field--name-price .field--label{
+          @apply !hidden;
+        }
+        
+        .view-slider-produktow .views-field-view-commerce-product .field-content a{
+          @apply w-full h-full block;
+        }
+
+        .path-frontpage h2{
+          @apply text-xl md:text-2xl font-semibold;
+        }
+        .path-frontpage hr{
+          @apply !w-full border-gray-300 mb-6 md:mb-[50px];
+        }
+        .path-frontpage .page > .content > .field--name-body > h2 ~ p.has-text-align-center{
+          @apply max-w-xl mx-auto mb-6 md:mb-[50px];
+        }
+        .path-frontpage .page > .content > .field--name-body > h2{
+          @apply max-w-md mx-auto mb-4 md:mb-[30px];
+        }
+        
+        .path-frontpage .text-default h1,
+        .path-frontpage .text-default h2,
+        .path-frontpage .text-default h3,
+        .path-frontpage .text-default h4{
+            @apply mb-4 md:mb-7;
+        }
+        .path-frontpage .text-default h1{
+            @apply text-2xl md:text-3xl font-semibold;
+        }
+        .path-frontpage .text-default h2{
+            @apply text-xl md:text-2xl font-semibold;
+        }
+        .path-frontpage .text-default h3{
+            @apply text-lg md:text-xl font-semibold;
+        }
+        .path-frontpage .text-default h4{
+            @apply text-sm md:text-base font-semibold;
+        }
+        .path-frontpage .text-default p{
+            @apply text-sm mb-6 md:mb-[50px];
+        }
+
+        .view-baner .swiper-container{
+          @apply my-0;
+        }
+        .view-footer a{
+          @apply px-4 py-2 border border-gray-500 text-gray-500 hover:bg-[#333] hover:text-white transition duration-200;
+        }
+
+        .pictures-grid .wp-block-columns,
+        .pictures-grid .wp-block-column,
+        .pictures-grid .wp-block-image
+        {
+          @apply m-0;
+        }
+
+        .cta-upload {
+          @apply bg-gray-100 py-2 px-14 md:px-24 mb-10 md:mb-20;
+        }
+        .cta-upload h2{
+          @apply mb-4 md:mb-[30px] text-[#333];
+        }
+        .cta-upload p{
+          @apply mb-6 md:mb-[50px] text-[#333];
+        }
+        .cta-upload .wp-block-button__link{
+          @apply rounded-none mb-6 md:mb-[50px] bg-[#333] border border-[#333] hover:bg-transparent text-white hover:text-[#333] transition duration-200;
+        }
+        .cta-upload > img.wp-block-cover__image-background{
+          @apply !left-auto !w-auto !h-full;
+        }
+
+        .pictures-grid {
+          @apply mb-6 md:mb-[50px] min-[600px]:gap-4;
+        }
+        
+        ul.quicktabs-tabs{
+          @apply text-center space-x-4 mb-6 md:mb-[50px];
+        }
+        ul.quicktabs-tabs li{
+          @apply relative font-semibold text-gray-500;
+        }
+        ul.quicktabs-tabs li.active{
+          @apply after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:w-full after:h-0.5 after:bg-gray-500;
+        }
+
+        .img-fit{
+          @apply w-full h-full overflow-hidden;
+        }
+        .img-fit img{
+          @apply w-full h-full object-cover;
+        }
+        .img-fit-contain img{
+          @apply w-full h-full object-contain;
+        }
+
+        .category-header{
+          @apply relative flex flex-col justify-end p-5 md:p-10 lg:px-20 lg:py-[60px] text-white md:min-h-[300px] mb-3;
+        }
+
+        .layout-content-region--filters{
+          @apply flex flex-wrap;
+        }
+
+        .layout-content-region--sort .form-item-sort-bef-combine label{
+          @apply hidden;
+        }
+        .layout-content-region--sort .form-item-sort-bef-combine .select-wrapper {
+          @apply !w-auto ;
+        }
+        .layout-content-region--sort .form-item-sort-bef-combine select {
+          @apply border-0 bg-[#F9F8F9] rounded-full px-3 h-8 font-normal text-black ;
+        }
+
+        {# Static page #}
+
+        .page-node-type-page:not(.path-frontpage) .page{
+          @apply md:w-3/4 lg:w-2/3;
+        }
+        
+        .page-node-type-page:not(.path-frontpage) .page h1,
+        .page-node-type-page:not(.path-frontpage) .page h2,
+        .page-node-type-page:not(.path-frontpage) .page h3,
+        .page-node-type-page:not(.path-frontpage) .page h4,
+        .page-node-type-page:not(.path-frontpage) .page h5,
+        .page-node-type-page:not(.path-frontpage) .page h6{
+          @apply text-[#333] font-semibold mb-5;
+        }
+        .page-node-type-page:not(.path-frontpage) .page h1{
+          @apply text-3xl md:text-4xl;
+        }
+        .page-node-type-page:not(.path-frontpage) .page h2{
+          @apply text-2xl md:text-3xl;
+        }
+        .page-node-type-page:not(.path-frontpage) .page h3{
+          @apply text-xl md:text-2xl;
+        }
+        .page-node-type-page:not(.path-frontpage) .page h4{
+          @apply text-lg md:text-xl;
+        }
+        .page-node-type-page:not(.path-frontpage) .page h5{
+          @apply text-base md:text-lg;
+        }
+        .page-node-type-page:not(.path-frontpage) .page h6{
+          @apply text-sm md:text-base;
+        }
+
+        .page-node-type-page:not(.path-frontpage) .page p{
+          @apply text-base text-[#333] font-normal mb-5;
+        }
+
+        .page-node-type-page:not(.path-frontpage) .page ul{
+          @apply list-disc ml-4 mb-5;
+        }
+        .page-node-type-page:not(.path-frontpage) .page ol{
+          @apply list-decimal ml-4 mb-5;
+        }
+
+
+      }
+    </style>
+  </head>
+  <body{{ attributes.addClass(body_classes) }}>
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      {{ 'Skip to main content'|t }}
+    </a>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+  </body>
+</html>

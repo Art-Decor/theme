@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Theme for readmore_extrafield readmore links.
+ *
+ * Available variables:
+ * - title: The link text.
+ * - url: The link URL. If omitted, the 'title' is shown as a plain text
+ *     item in the links list. If 'href' is supplied, the entire link is passed
+ *     to l() as its $options parameter.
+ * - attributes: (optional) HTML attributes for the anchor, or for the <span>
+ */
+#}
+{% set title %}
+    {{ title }}
+    <svg class=" ml-2 group-hover:translate-x-2 transition duration-300" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.25 7.5H14.2708M14.2708 7.5L8.02083 1.25M14.2708 7.5L8.02083 13.75" stroke="#6C7689" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+{% endset %}
+
+<div class="font-semibold text-[#6C7689]">{{ link(title, url, attributes.addClass('flex items-center w-max group')) }}
+</div>

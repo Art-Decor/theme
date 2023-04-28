@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Theme override to display a custom layout.
+ *
+ * Available variables:
+ * - layout_content: The layout content entity.
+ * - attributes: The array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ * - content: The content of this custom layout.
+#}
+<div{{ attributes.addClass('mb-3 pb-3 md:pb-6 border-b border-gray-200') }}>
+    <div class="flex justify-between">
+        {% if content.layout_regions.filters %}
+            <div class="grow">
+                {{ content.layout_regions.filters }}
+            </div>
+            <script>
+                window.addEventListener("DOMContentLoaded", () => {
+
+                    if (window.jQuery) {
+                        
+                        var $filtersGroup = jQuery('.layout-content-region--filters');
+                        
+                        $filtersGroup.on('show.bs.collapse','.collapse', function() {
+                            $filtersGroup.find('.collapse.in').collapse('hide');
+                        });
+
+                        jQuery(document).on('click',function(){
+                            $filtersGroup.find('.collapse.in').collapse('hide');
+                        });
+                    }
+
+                });
+            </script>
+        {% endif %}
+
+        {% if content.layout_regions.sort %}
+            <div class="shrink-0">
+                {{ content.layout_regions.sort }}
+            </div>
+        {% endif %}
+    </div>
+</div>
