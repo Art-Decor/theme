@@ -34,7 +34,7 @@ jobs:
       - name: Deploy to Server
         uses: burnett01/rsync-deployments@5.2
         with:
-          switches: --dry-run -azrv --relative --cvs-exclude --exclude='node_modules' --exclude='cache' --exclude='*.code-workspace' --exclude='.*' --exclude='*.sh'  --delete
+          switches: -azrv --relative --cvs-exclude --exclude='node_modules' --exclude='cache' --exclude='*.code-workspace' --exclude='.*' --exclude='*.sh'  --delete
           remote_path: "${{ secrets.REMOTE_PATH }}"
           remote_host: "${{ secrets.REMOTE_HOST }}"
           remote_port: "${{ secrets.REMOTE_PORT }}"
