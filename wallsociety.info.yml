@@ -3,10 +3,10 @@ type: theme
 "base theme": belgrade
 starterkit: true
 version: VERSION
-# libraries:
-#   - wallsociety/base
-#   - wallsociety/messages
-#   - core/normalize
+libraries:
+  - wallsociety/base
+  # - wallsociety/messages
+  # - core/normalize
 # libraries-extend:
 #   user/drupal.user:
 #     - wallsociety/user
@@ -22,17 +22,26 @@ core_version_requirement: ^9
 generator: "starterkit_theme:9.4.9"
 
 regions:
+  top_bar_left: "Top bar (Left)"
+  top_bar: "Top bar"
+  top_bar_right: "Top bar (Right)"
+  header_left: "Header (Left)"
+  header: "Header"
+  header_right: "Header (Right)"
   navigation: "Navigation"
   top_navigation: "Navigation (Top bar)"
-  header: "Header"
+  page_top: "Page top"
   highlighted: "Highlighted"
   help: "Help"
   content: "Content"
   sidebar_first: "Primary"
   sidebar_second: "Secondary"
-  footer: "Footer"
-  page_top: "Page top"
   page_bottom: "Page bottom"
+  footer: "Footer"
+  bottom_bar_left: "Bottom bar (Left)"
+  bottom_bar: "Bottom bar"
+  bottom_bar_right: "Bottom bar (Right)"
+  bottom: "Bottom"
 
 libraries-override:
   # Replace an entire library.

@@ -1,6 +1,9 @@
 base:
   version: VERSION
   css:
+    theme:
+      components/styles.css:
+        weight: 10
     component:
       css/components/action-links.css:
         weight: -10
@@ -70,12 +73,12 @@ image-widget:
   version: VERSION
   css:
     component:
-      css/components/image-widget.css: {  }
+      css/components/image-widget.css: {}
 indented:
   version: VERSION
   css:
     component:
-      css/components/indented.css: {  }
+      css/components/indented.css: {}
 messages:
   version: VERSION
   css:
@@ -98,7 +101,7 @@ search-results:
   version: VERSION
   css:
     component:
-      css/components/search-results.css: {  }
+      css/components/search-results.css: {}
 user:
   version: VERSION
   css:
