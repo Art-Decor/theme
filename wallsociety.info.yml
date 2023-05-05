@@ -5,6 +5,9 @@ starterkit: true
 version: VERSION
 libraries:
   - wallsociety/base
+  - "belgrade/fonts"
+  - "belgrade/theme"
+  - "belgrade/color"
   # - wallsociety/messages
   # - core/normalize
 # libraries-extend:
@@ -46,8 +49,3 @@ regions:
 libraries-override:
   # Replace an entire library.
   bootstrap/framework: belgrade/bootstrap-scripts
-
-libraries:
-  - "belgrade/fonts"
-  - "belgrade/theme"
-  - "belgrade/color"
