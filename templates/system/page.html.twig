@@ -63,17 +63,17 @@
 #}
 <div class="w-full bg-neutral-90">
   <div class="flex flex-row flex-wrap">
-    <div class="justify-start">
+    <div class="justify-start flex-auto">
       {% if page.top_bar_left %}
         {{ page.top_bar_left }}
       {% endif %}
     </div>
-    <div class="justify-center">
+    <div class="justify-center flex-auto">
       {% if page.top_bar %}
         {{ page.top_bar }}
       {% endif %}
     </div>
-    <div class="justify-end">
+    <div class="justify-end flex-auto">
       {% if page.top_bar_right %}
         {{ page.top_bar_right }}
       {% endif %}
@@ -81,17 +81,17 @@
   </div>
 </div>
 <div class="flex flex-row flex-wrap">
-  <div class="justify-start">
+  <div class="justify-start flex-auto">
     {% if page.header_left %}
       {{ page.header_left }}
     {% endif %}
   </div>
-  <div class="justify-center">
+  <div class="justify-center flex-auto">
     {% if page.header %}
       {{ page.header }}
     {% endif %}
   </div>
-  <div class="justify-end">
+  <div class="justify-end flex-auto">
     {% if page.header_right %}
       {{ page.header_right }}
     {% endif %}
