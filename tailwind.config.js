@@ -7,7 +7,13 @@ module.exports = {
     "./wallsociety.theme",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        neutral: {
+          90: "#F5F4F5",
+        },
+      },
+    },
   },
   plugins: [],
 };
