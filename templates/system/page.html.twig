@@ -62,7 +62,7 @@
  */
 #}
 <div class="w-full bg-neutral-90">
-  <div class="flex flex-row flex-wrap">
+  <div class="container flex flex-row flex-wrap">
     <div class="justify-start flex-auto">
       {% if page.top_bar_left %}
         {{ page.top_bar_left }}
@@ -80,7 +80,7 @@
     </div>
   </div>
 </div>
-<div class="flex flex-row flex-wrap">
+<div class="container flex flex-row flex-wrap">
   <div class="justify-start flex-auto">
     {% if page.header_left %}
       {{ page.header_left }}
@@ -97,7 +97,7 @@
     {% endif %}
   </div>
 </div>
-<div>
+<div class="container">
   {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
   {# Navbar #}
   {% if page.navigation or page.top_navigation %}
