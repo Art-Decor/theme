@@ -20,5 +20,13 @@
 {% extends 'menu.html.twig' %}
 {% set menu_name = 'acoount-head' %}
 
-{% set classes = ['menu', 'menu--' ~ (menu_name|clean_class), 'nav', 'navbar-nav', 'navbar-right'] %}
+{% set classes = [
+	'menu',
+	'menu--' ~ (menu_name|clean_class),
+	'nav',
+	'navbar-nav',
+	'navbar-right',
+	'flex',
+	'flex-row-reverse'
+] %}
 {% set dropdown_classes = ['dropdown-menu', 'dropdown-menu-right'] %}
