@@ -1,15 +1,15 @@
 name: wallsociety
 type: theme
-"base theme": belgrade
+'base theme': belgrade
 starterkit: true
 version: VERSION
 libraries:
-  - wallsociety/base
-  - "belgrade/fonts"
-  - "belgrade/theme"
-  - "belgrade/color"
-  # - wallsociety/messages
-  # - core/normalize
+   - wallsociety/base
+   - 'belgrade/fonts'
+   - 'belgrade/theme'
+   - 'belgrade/color'
+   # - wallsociety/messages
+   # - core/normalize
 # libraries-extend:
 #   user/drupal.user:
 #     - wallsociety/user
@@ -22,30 +22,31 @@ libraries:
 #   core/drupal.progress:
 #     - wallsociety/progress
 core_version_requirement: ^9
-generator: "starterkit_theme:9.4.9"
+generator: 'starterkit_theme:9.4.9'
 
 regions:
-  top_bar_left: "Top bar (Left)"
-  top_bar: "Top bar"
-  top_bar_right: "Top bar (Right)"
-  header_left: "Header (Left)"
-  header: "Header"
-  header_right: "Header (Right)"
-  navigation: "Navigation"
-  top_navigation: "Navigation (Top bar)"
-  page_top: "Page top"
-  highlighted: "Highlighted"
-  help: "Help"
-  content: "Content"
-  sidebar_first: "Primary"
-  sidebar_second: "Secondary"
-  page_bottom: "Page bottom"
-  footer: "Footer"
-  bottom_bar_left: "Bottom bar (Left)"
-  bottom_bar: "Bottom bar"
-  bottom_bar_right: "Bottom bar (Right)"
-  bottom: "Bottom"
+   top_bar_left: 'Top bar (Left)'
+   top_bar: 'Top bar'
+   top_bar_right: 'Top bar (Right)'
+   header_left: 'Header (Left)'
+   header_center: 'Header (Center)'
+   header_right: 'Header (Right)'
+   navigation: 'Navigation'
+   top_navigation: 'Navigation (Top bar)'
+   page_top: 'Page top'
+   highlighted: 'Highlighted'
+   help: 'Help'
+   header: 'Header'
+   content: 'Content'
+   sidebar_first: 'Primary'
+   sidebar_second: 'Secondary'
+   page_bottom: 'Page bottom'
+   footer: 'Footer'
+   bottom_bar_left: 'Bottom bar (Left)'
+   bottom_bar: 'Bottom bar'
+   bottom_bar_right: 'Bottom bar (Right)'
+   bottom: 'Bottom'
 
 libraries-override:
-  # Replace an entire library.
-  bootstrap/framework: belgrade/bootstrap-scripts
+   # Replace an entire library.
+   bootstrap/framework: belgrade/bootstrap-scripts
