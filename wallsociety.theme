@@ -19,3 +19,17 @@ function wallsociety_preprocess_image_widget(array &$variables) {
     unset($data['preview']);
   }
 }
+
+use Drupal\block\Entity\Block;
+
+function wallsociety_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  if (isset($variables['elements']['#id']) && !empty($variables['elements']['#id'])) {
+    $block = Block::load($variables['elements']['#id']);
+    $suggestions[] = 'block__' . $block->getRegion() . '__' . $variables['elements']['#id'];
+  }
+  /* Use this 'else if' only if you are using page_manager module and want to know which region is the block */
+  else if (isset($variables['elements']['#configuration']['region'])) {
+    $suggestions[] = 'block__page_' . $variables['elements']['#configuration']['region'] . '__' . end(explode(':', $variables['elements']['#plugin_id']));
+  }
+  return $suggestions;
+}
