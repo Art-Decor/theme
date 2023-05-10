@@ -6927,7 +6927,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
     height:42px;
     margin:70px auto;
     padding:0;
-    background:url("../../contrib/belgrade/assets/../../contrib/belgrade/assets/logo.svg") no-repeat center;
+    background:url("../../contrib/belgrade/assets/logo.svg") no-repeat center;
     filter:invert(1)
 }
 @media screen and (min-width: 768px){
