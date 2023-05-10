@@ -14,17 +14,19 @@
  * @see template_preprocess_region()
  */
 #}
-{%
-  set classes = [
-    'region',
-    'region-' ~ region|clean_class,
-    'clearfix',
-  ]
-%}
+{% set classes = [
+	'region',
+	'region-' ~ (region|clean_class),
+	'flex',
+	'flex-row',
+	'justify-center',
+	'items-center',
+	'clearfix'
+] %}
 {% if content %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block region_content %}
-      {{ content }}
-    {% endblock %}
-  </div>
+	<div {{ attributes.addClass(classes) }}>
+		{% block region_content %}
+			{{ content }}
+		{% endblock %}
+	</div>
 {% endif %}
