@@ -50,8 +50,7 @@ regions:
 libraries-override:
    # Replace an entire library.
    bootstrap/framework: belgrade/bootstrap-scripts
-   belgrade/base:
+   belgrade/theme:
       css:
          theme:
-            assets/css/style.css: components/belgade.css
-         css/components/menu.css: css/my-menu.css
+            assets/css/style.css: components/belgrade.css
