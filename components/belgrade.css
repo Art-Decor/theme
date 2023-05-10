@@ -201,8 +201,8 @@ td,th{
 }
 @font-face{
     font-family:'Glyphicons Halflings';
-    src:url("../bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.eot");
-    src:url("../bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"),url("../bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"),url("../bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"),url("../bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"),url("../bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg")
+    src:url("../../contrib/belgrade/assets/bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.eot");
+    src:url("../../contrib/belgrade/assets/bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"),url("../../contrib/belgrade/assets/bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"),url("../../contrib/belgrade/assets/bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"),url("../../contrib/belgrade/assets/bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"),url("../../contrib/belgrade/assets/bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg")
 }
 .glyphicon{
     position:relative;
@@ -5731,7 +5731,7 @@ body{
 }
 @font-face{
     font-family:"icons";
-    src:url("../fonts/icons.eot?398eb41d720aef452d67f760df314d73?#iefix") format("embedded-opentype"),url("../fonts/icons.woff2?398eb41d720aef452d67f760df314d73") format("woff2"),url("../fonts/icons.woff?398eb41d720aef452d67f760df314d73") format("woff"),url("../fonts/icons.ttf?398eb41d720aef452d67f760df314d73") format("truetype"),url("../fonts/icons.svg?398eb41d720aef452d67f760df314d73#icons") format("svg")
+    src:url("../../contrib/belgrade/assets/fonts/icons.eot?398eb41d720aef452d67f760df314d73?#iefix") format("embedded-opentype"),url("../../contrib/belgrade/assets/fonts/icons.woff2?398eb41d720aef452d67f760df314d73") format("woff2"),url("../../contrib/belgrade/assets/fonts/icons.woff?398eb41d720aef452d67f760df314d73") format("woff"),url("../../contrib/belgrade/assets/fonts/icons.ttf?398eb41d720aef452d67f760df314d73") format("truetype"),url("../../contrib/belgrade/assets/fonts/icons.svg?398eb41d720aef452d67f760df314d73#icons") format("svg")
 }
 .glyph,.close-btn,.block-facets .block-title:before{
     line-height:1
@@ -6154,7 +6154,7 @@ table .checkbox.form-no-label,table .radio.form-no-label{
     opacity:0
 }
 .form-required:after{
-    background-image:url(../images/required.svg);
+    background-image:url(../../contrib/belgrade/assets/images/required.svg);
     background-repeat:no-repeat;
     background-size:contain;
     background-position:center;
@@ -6927,7 +6927,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
     height:42px;
     margin:70px auto;
     padding:0;
-    background:url("../../logo.svg") no-repeat center;
+    background:url("../../contrib/belgrade/assets/../../contrib/belgrade/assets/logo.svg") no-repeat center;
     filter:invert(1)
 }
 @media screen and (min-width: 768px){
@@ -7234,7 +7234,7 @@ body.navbar-is-fixed-top.toolbar-tray-open .cart-offcanvas{
     padding-top:20px;
     padding-right:0;
     width:40px;
-    background-image:url("../images/note.svg");
+    background-image:url("../../contrib/belgrade/assets/images/note.svg");
     background-position:top center;
     background-size:42px 42px;
     background-repeat:no-repeat;
@@ -7242,10 +7242,10 @@ body.navbar-is-fixed-top.toolbar-tray-open .cart-offcanvas{
     opacity:.4
 }
 .checkout-progress--step:first-child{
-    background-image:url("../images/info.svg")
+    background-image:url("../../contrib/belgrade/assets/images/info.svg")
 }
 .checkout-progress--step:last-child{
-    background-image:url("../images/gift.svg")
+    background-image:url("../../contrib/belgrade/assets/images/gift.svg")
 }
 .checkout-progress--step:before{
     display:none;
@@ -7587,7 +7587,7 @@ body.navbar-is-fixed-top.toolbar-tray-open .cart-offcanvas{
 }
 .testimonial{
     margin-bottom:0;
-    background-image:url("../images/testimonial.png");
+    background-image:url("../../contrib/belgrade/assets/images/testimonial.png");
     background-size:cover;
     background-position:center;
     padding:85px 0
