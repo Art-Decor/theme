@@ -261,21 +261,21 @@
 
 <div class="container">
   <div class="flex flex-row flex-wrap border-t border-solid border-[#F5F4F5] pt-[10px]">
-    <div class="w-full md:w-1/3 justify-start flex-auto">
+    <div class="w-full md:w-1/3 flex items-center justify-start flex-auto">
       {% if page.bottom_bar_left %}
         {% block bottom_bar_left %}
             {{ page.bottom_bar_left }}
         {% endblock %}
       {% endif %}
     </div>
-    <div class="w-full md:w-1/3 justify-center flex-auto">
+    <div class="w-full md:w-1/3 flex items-center justify-center flex-auto">
       {% if page.bottom_bar %}
         {% block bottom_bar %}
             {{ page.bottom_bar }}
         {% endblock %}
       {% endif %}
     </div>
-    <div class="w-full md:w-1/3 justify-end flex-auto">
+    <div class="w-full md:w-1/3 flex items-center justify-end flex-auto">
       {% if page.bottom_bar_right %}
         {% block bottom_bar_right %}
             {{ page.bottom_bar_right }}
