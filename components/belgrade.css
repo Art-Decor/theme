@@ -7010,7 +7010,6 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
 }
 .footer .menu>li>a{
     font-size:18px;
-    color:#fff
 }
 @media screen and (max-width: 767px){
     .footer .menu{
