@@ -44,9 +44,9 @@
   {%- endif -%}
 
   {%- if attributes.hasClass('inline') -%}
-  <select{{ attributes.addClass('list-inline') }}>
+  <select{{ attributes.addClass('list-inline') }} onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
   {%- else -%}
-  <select{{ attributes }}>
+  <select{{ attributes }} onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
   {%- endif -%}
     {%- for key, item in links -%}
 
