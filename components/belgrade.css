@@ -7004,7 +7004,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
     .footer--contents>nav{
         margin-left:13%
     }
-    .footer--contents>nav:last-child{
+    .footer--contents>nav:first-child{
         margin-left:auto
     }
 }
