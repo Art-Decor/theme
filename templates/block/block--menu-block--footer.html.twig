@@ -36,7 +36,7 @@
 #}
 {% set title_attributes = title_attributes.addClass('text-[21px]') %}
 {% set heading_id = attributes.id ~ ('-menu'|clean_id) %}
-{% set attributes = attributes.addClass('w-3/12 flex-auto'); %}
+{% set attributes = attributes.addClass('w-3/12 flex-auto') %}
 <nav role="navigation" aria-labelledby="{{ heading_id }}" {{ attributes|without('role', 'aria-labelledby') }}>
 	{# Label. If not displayed, we still provide it for screen readers. #}
 	{% if not configuration.label_display %}
