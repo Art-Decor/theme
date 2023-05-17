@@ -39,6 +39,7 @@
           item.in_active_trail ? 'active',
           'menu-' ~ menu_name|clean_class ~ '__item',
           'menu__item',
+          'mb-[10px]',
         ]
       %}
       {%
@@ -46,8 +47,7 @@
           'menu-' ~ menu_name|clean_class ~ '__link',
           'menu__link',
           'text-[#382335]',
-          'mb-[20px]',
-          'text-[14px]'
+          'text-[14px]',
         ]
       %}
       {% if menu_level == 0 and item.is_expanded %}

@@ -34,7 +34,7 @@
  * @ingroup themeable
  */
 #}
-{% set title_attributes = title_attributes.addClass('text-[21px] mb-[30px]') %}
+{% set title_attributes = title_attributes.addClass('text-[21px] mb-[30px] font-medium') %}
 {% set heading_id = attributes.id ~ ('-menu'|clean_id) %}
 {% set attributes = attributes.addClass('w-3/12 flex-auto mb-[80px]') %}
 <nav role="navigation" aria-labelledby="{{ heading_id }}" {{ attributes|without('role', 'aria-labelledby') }}>
