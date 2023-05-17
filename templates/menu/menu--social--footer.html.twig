@@ -27,7 +27,7 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu', 'menu-' ~ menu_name|clean_class, 'list-unstyled') }}>
+      <ul{{ attributes.addClass('menu', 'menu-' ~ menu_name|clean_class, 'list-unstyled', 'flex', 'flex-wrap', 'flex-row') }}>
     {% else %}
       <ul{{ attributes.addClass('dropdown-menu') }}>
     {% endif %}
@@ -43,6 +43,7 @@
       {%
         set link_classes = [
           'menu-' ~ menu_name|clean_class ~ '__link',
+          'mr-[15px]'
         ]
       %}
       {%
