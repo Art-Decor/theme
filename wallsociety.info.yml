@@ -41,6 +41,7 @@ regions:
    sidebar_first: 'Primary'
    sidebar_second: 'Secondary'
    page_bottom: 'Page bottom'
+   bottom_content: 'Bottom page content'
    footer: 'Footer'
    bottom_bar_left: 'Bottom bar (Left)'
    bottom_bar: 'Bottom bar'
