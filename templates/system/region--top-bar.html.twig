@@ -14,10 +14,18 @@
  * @see template_preprocess_region()
  */
 #}
-{% extends 'region.html.twig' %}
-
-{% block region_content %}
-	<div class="footer--contents container mt-[100px] flex flex-wrap flex-row">
-		{{ parent() }}
-	</div>
-{% endblock %}
+{%
+  set classes = [
+    'region',
+    'region-' ~ region|clean_class,
+    'h-full',
+    'clearfix',
+  ]
+%}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block region_content %}
+      {{ content }}
+    {% endblock %}
+  </div>
+{% endif %}

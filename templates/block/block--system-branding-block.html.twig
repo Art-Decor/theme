@@ -1,4 +1,4 @@
-{% extends "block--bare.html.twig" %}
+{% extends 'block--bare.html.twig' %}
 {#
 /**
  * @file
@@ -16,17 +16,19 @@
  */
 #}
 {% block content %}
-  {% if site_logo %}
-    <a class="logo" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
-      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
-    </a>
-  {% endif %}
-  {% if site_name %}
-    <span class="sr-only">
-      <a class="name navbar-brand" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
-    </span>
-  {% endif %}
-  {% if site_slogan %}
-    <p class="navbar-text">{{ site_slogan }}</p>
-  {% endif %}
+	{% if site_logo %}
+		<a class="logo block w-[156px] h-[46px]" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+			<img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
+		</a>
+	{% endif %}
+	{% if site_name %}
+		<span class="sr-only">
+			<a class="name navbar-brand" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+		</span>
+	{% endif %}
+	{% if site_slogan %}
+		<p class="navbar-text">
+			{{ site_slogan }}
+		</p>
+	{% endif %}
 {% endblock %}
