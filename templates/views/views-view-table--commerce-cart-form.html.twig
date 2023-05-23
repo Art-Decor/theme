@@ -33,7 +33,7 @@
  * @see template_preprocess_views_view_table()
  */
 #}
-  <div class="table-responsive flex flex-col">
+  <div class="flex flex-col">
 {%
   set classes = [
     'table',
@@ -57,6 +57,7 @@
           fields[key] == 'total-price__number' ? 'basis-[15%]' : '',
           fields[key] == 'remove-button' ? 'basis-[5%]' : '',
           'views-field-' ~ fields[key],
+          'hidden md:!block'
           ]
           %}
         {% endif %}
@@ -67,16 +68,16 @@
     </div>
   {% endif %}
   {% for row in rows %}
-    <div class="w-full flex border-b border-[#F5F4F5] pb-5 mb-5 last:mb-0" {{ row.attributes }}>
+    <div class="relative w-full flex flex-wrap md:flex-nowrap border-b border-[#F5F4F5] pb-5 mb-5 last:mb-0" {{ row.attributes }}>
       {% for key, column in row.columns %}
         {%
           set column_classes = [
-          fields[key] == 'field-zdjecie' ? 'basis-[15%] pr-5 md:pr-10' : '',
-          fields[key] == 'purchased-entity' ? 'basis-[25%]' : '',
-          fields[key] == 'unit-price__number' or fields[key] == 'total-price__number' ? 'basis-[15%] text-xl md:text-2xl' : '',
-          fields[key] == 'edit-quantity' ? 'basis-[15%]' : '',
-          fields[key] == 'remove-button' ? 'basis-[5%]' : '',
-          'flex items-center',
+          fields[key] == 'field-zdjecie' ? 'mb-5 md:mb-0 basis-[35%] md:basis-[15%] pr-5 md:pr-10' : '',
+          fields[key] == 'purchased-entity' ? 'mb-5 md:mb-0 basis-[65%] md:basis-[25%]' : '',
+          fields[key] == 'unit-price__number' or fields[key] == 'total-price__number' ? 'mb-5 md:mb-0 basis-full md:basis-[15%] text-xl md:text-2xl' : '',
+          fields[key] == 'edit-quantity' ? 'mb-5 md:mb-0 basis-full md:basis-[15%]' : '',
+          fields[key] == 'remove-button' ? 'absolute top-0 right-0 md:static basis-[5%]' : '',
+          'flex justify-between items-start',
           'views-field-' ~ fields[key],
           ]
           %}
@@ -85,6 +86,9 @@
       <div class="flex aspect-square items-center justify-center bg-[#F5F4F5]">
       {% endif %}
           {% for content in column.content %}
+            {% if fields[key] != 'field-zdjecie' and fields[key] != 'purchased-entity' and fields[key] != 'remove-button' %}
+              <span class="md:hidden text-base"> {{header[key].content}} </span>
+            {% endif %}
             {{- content.separator }}{{ content.field_output -}}
           {% endfor %}
       {% if fields[key] == 'field-zdjecie' %}
