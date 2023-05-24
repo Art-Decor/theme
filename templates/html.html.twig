@@ -355,8 +355,9 @@
         .page-node-type-page:not(.path-frontpage) .page table{
           @apply bg-gray-10 rounded-md overflow-hidden;
         }
-        .page-node-type-page:not(.path-frontpage) .page td{
-          @apply !border-white;
+        .page-node-type-page:not(.path-frontpage) .page td,
+        .page-node-type-page:not(.path-frontpage) .page th{
+          @apply border !border-white p-2;
         }
         .page-node-type-page:not(.path-frontpage) .page img{
           @apply !w-full mb-5;
@@ -386,7 +387,7 @@
         .page-node-type-page:not(.path-frontpage) input[type="email"],
         .page-node-type-page:not(.path-frontpage) input[type="phone"],
         .page-node-type-page:not(.path-frontpage) input[type="search"],
-        .page-node-type-page:not(.path-frontpage) input[type="number"],
+        .page-node-type-page:not(.path-frontpage) input[type="number"]
         {
           @apply bg-white px-5 py-2.5 text-base rounded-full border border-gray-40 hover:border-gray-60 focus:border-primary-40 focus:outline-0 transition duration-200 invalid:border-red-60;
         }
