@@ -279,6 +279,26 @@
           @apply w-full md:w-[500px] md:ml-[calc(100%_-_500px)] !mb-0 bg-[#F5F4F5] p-5 order-5;
         }
 
+        .cart-form [data-drupal-selector="edit-submit"]{
+          @apply hidden;
+        }
+
+        .cart-form [data-drupal-selector="edit-coupon-redemption"]{
+          @apply relative;
+        }
+
+        .cart-form [data-drupal-selector="edit-coupon-redemption-apply"]{
+          @apply absolute right-5 bottom-[15px] w-auto h-12 rounded-l-none;
+        }
+
+        .cart-form .order-total-line__total{
+          @apply text-xl md:text-2xl pt-5 mt-5 border-t-2 border-t-[#D7D3D7]/20;
+        }
+
+        .cart-form .order-total-line{
+          @apply flex justify-between;
+        }
+
 
       }
     </style>

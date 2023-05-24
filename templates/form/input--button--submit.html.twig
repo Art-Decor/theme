@@ -25,7 +25,7 @@
   {% block input %}{% apply spaceless %}
     {%
       set classes = [
-      'btn bg-[#333] border-[#333] hover:border-[#333] hover:text-[#333]',
+      ' !bg-[#382335] hover:!bg-[#271525] !border-[#382335] hover:!border-[#271525] !text-white rounded-full px-5 py-3 w-full text-sm',
       type == 'submit' ? 'js-form-submit',
       icon and icon_position and not icon_only ? 'icon-' ~ icon_position,
     ]
