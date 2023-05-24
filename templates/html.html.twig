@@ -67,12 +67,12 @@
       theme: {
         extend: {
           colors: {
-            dark: {
+            primary: {
               100: '#382335', 
               80: '#604F5D', 
               60: '#887B86', 
               40: '#AFA7AE', 
-              20: '#D7D3D7', 
+              20: '#D7D3D7',
             },
             brown: {
               100: '#CB925F', 
@@ -101,7 +101,7 @@
               60: '#BBC2CE', 
               40: '#D1D6DF', 
               20: '#E8EBEF', 
-              10: '#EDF2F4', 
+              10: '#F9F8F9', 
             },
             black: {
               80: '#191919', 
@@ -353,11 +353,49 @@
           @apply mb-3;
         }
         .page-node-type-page:not(.path-frontpage) .page table{
-          @apply bg-[#F5F4F5] rounded-md overflow-hidden;
+          @apply bg-gray-10 rounded-md overflow-hidden;
         }
         .page-node-type-page:not(.path-frontpage) .page td{
           @apply !border-white;
         }
+        .page-node-type-page:not(.path-frontpage) .page img{
+          @apply !w-full mb-5;
+        }
+        .page-node-type-page:not(.path-frontpage) .page kbd{
+          @apply px-2 rounded-md bg-gray-100;
+        }
+        .page-node-type-page:not(.path-frontpage) .page .wp-block-pullquote{
+          @apply border-0 p-0 !bg-gray-10 rounded-md overflow-hidden;
+        }
+        .page-node-type-page:not(.path-frontpage) .page blockquote{
+          @apply border-primary-40;
+        }
+        .page-node-type-page:not(.path-frontpage) .wp-block-embed.is-provider-youtube iframe,
+        .page-node-type-page:not(.path-frontpage) video{
+          @apply w-full aspect-[16/9] h-auto !max-w-[800px];
+        }
+        .page-node-type-page:not(.path-frontpage) .wp-block-file__button{
+          @apply rounded-full !text-base md:!text-lg !bg-primary-100 hover:!bg-primary-80 transition duration-200 !px-7 !py-3;
+        }
+        .page-node-type-page:not(.path-frontpage) a:not(.wp-block-file__button){
+          @apply text-primary-100 hover:text-primary-80 transition;
+        }
+        .page-node-type-page:not(.path-frontpage) input [type="text"],
+        .page-node-type-page:not(.path-frontpage) input [type="password"],
+        .page-node-type-page:not(.path-frontpage) input [type="url"],
+        .page-node-type-page:not(.path-frontpage) input [type="email"],
+        .page-node-type-page:not(.path-frontpage) input [type="phone"],
+        .page-node-type-page:not(.path-frontpage) input [type="search"],
+        .page-node-type-page:not(.path-frontpage) input [type="number"],
+        {
+          @apply bg-white px-5 py-2.5 text-base rounded-full border border-gray-40 hover:border-gray-60 focus:border-primary-40 focus:outline-0 transition duration-200 invalid:border-red-60;
+        }
+
+        .page-node-type-page:not(.path-frontpage) select{
+          @apply !bg-gray-10 !px-7 !py-3 !text-base appearance-none duration-200 hover:!bg-primary-100 hover:text-white md:!text-lg relative rounded-full transition;
+        }
+
+        
         
 
         .views-field-purchased-entity .field--label,
