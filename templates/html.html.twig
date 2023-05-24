@@ -62,6 +62,85 @@
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: {
+              100: '#382335', 
+              80: '#604F5D', 
+              60: '#887B86', 
+              40: '#AFA7AE', 
+              20: '#D7D3D7', 
+            },
+            brown: {
+              100: '#CB925F', 
+              80: '#D5A87F', 
+              60: '#E0BE9F', 
+              40: '#EAD3BF', 
+              20: '#F5E9DF', 
+            },
+            'brown-light': {
+              100: '#EDC583', 
+              80: '#F1D19C', 
+              60: '#F4DCB5', 
+              40: '#F8E8CD', 
+              20: '#FBF3E6', 
+            },
+            mint: {
+              100: '#AACFCA', 
+              80: '#BBD9D5', 
+              60: '#CCE2DF', 
+              40: '#DDECEA', 
+              20: '#EEF5F4', 
+            },
+            gray: {
+              100: '#8D99AE', 
+              80: '#A4ADBE', 
+              60: '#BBC2CE', 
+              40: '#D1D6DF', 
+              20: '#E8EBEF', 
+              10: '#EDF2F4', 
+            },
+            black: {
+              80: '#191919', 
+              60: '#D2D2D2', 
+              40: '#EDEDED', 
+            },
+            green: {
+              100: '#0A5C30', 
+              80: '#10934D', 
+              60: '#16C568', 
+              40: '#93EBBC', 
+              20: '#D2F9E4', 
+            },
+            red: {
+              100: '#6E0C0C', 
+              80: '#A51212', 
+              60: '#E51A1A', 
+              40: '#F28C8C', 
+              20: '#FAD1D1', 
+            },
+            yellow: {
+              100: '#7A4800', 
+              80: '#B26800', 
+              60: '#FFBF00', 
+              40: '#FFDF80', 
+              20: '#FFF2CC', 
+            },
+            blue: {
+              100: '#103970', 
+              80: '#16509C', 
+              60: '#2073DF', 
+              40: '#89B8F5', 
+              20: '#D2E3F9', 
+            },
+          }
+        }
+      }
+    }
+  </script>
     <style type="text/tailwindcss">
       @tailwind base;
       @tailwind components;
@@ -135,19 +214,25 @@
             @apply mb-4 md:mb-7;
         }
         .path-frontpage .text-default h1{
-            @apply text-2xl md:text-3xl font-semibold;
+            @apply text-5xl lg:text-8xl font-semibold;
         }
         .path-frontpage .text-default h2{
-            @apply text-xl md:text-2xl font-semibold;
+            @apply text-4xl md:text-5xl lg:text-6xl font-semibold;
         }
         .path-frontpage .text-default h3{
-            @apply text-lg md:text-xl font-semibold;
+            @apply text-3xl md:text-4xl lg:text-5xl font-semibold;
         }
         .path-frontpage .text-default h4{
-            @apply text-sm md:text-base font-semibold;
+            @apply text-2xl md:text-3xl lg:text-4xl font-semibold lg:text-medium;
+        }
+        .path-frontpage .text-default h5{
+            @apply text-lg md:text-xl lg:text-3xl;
+        }
+        .path-frontpage .text-default h6{
+            @apply text-xl font-semibold;
         }
         .path-frontpage .text-default p{
-            @apply text-sm mb-6 md:mb-[50px];
+            @apply text-base lg:text-lg mb-6 md:mb-[50px];
         }
 
         .view-baner .swiper-container{
@@ -269,6 +354,13 @@
         .page-node-type-page:not(.path-frontpage) .page ul li{
           @apply mb-3;
         }
+        .page-node-type-page:not(.path-frontpage) .page table{
+          @apply bg-[#F5F4F5] rounded-md overflow-hidden;
+        }
+        .page-node-type-page:not(.path-frontpage) .page td{
+          @apply !border-white;
+        }
+        
 
         .views-field-purchased-entity .field--label,
         .views-field-purchased-entity .field--item{
@@ -308,7 +400,7 @@
         }
 
         .coupon-redemption-form__coupons tr{
-          @apply flex justify-between items-center text-lg md:text-xl font-semibold;
+          @apply flex justify-between items-center items-center text-lg md:text-xl font-semibold;
         }
 
 
