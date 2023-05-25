@@ -1,13 +1,12 @@
 <div{{ attributes.addClass('navbar-right' )}}>
-  <div class="cart-block--summary">
-    <a class="cart-block--link__expand" href="{{ url }}">
+    <a class="cart-block--link__expand w-10 h-10 rounded-full bg-gray-10 relative" href="{{ url }}">
       <span class="cart-block--summary__icon">
-        <i class="glyph glyph-cart"></i>
-        <span class="sr-only"></span>
+        <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.08301 1.125H3.68717L5.77051 15.7083H16.708M16.708 15.7083C15.5574 15.7083 14.6247 16.6411 14.6247 17.7917C14.6247 18.9423 15.5574 19.875 16.708 19.875C17.8586 19.875 18.7913 18.9423 18.7913 17.7917C18.7913 16.6411 17.8586 15.7083 16.708 15.7083ZM5.32407 12.5833H17.7497L20.8747 3.20833H3.98478M10.458 17.7917C10.458 18.9423 9.52527 19.875 8.37467 19.875C7.22408 19.875 6.29134 18.9423 6.29134 17.7917C6.29134 16.6411 7.22408 15.7083 8.37467 15.7083C9.52527 15.7083 10.458 16.6411 10.458 17.7917Z" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </span>
-      <span class="cart-block--summary__count">{% trans %}Cart{% endtrans %} / {{ count_text }}</span>
+      <span class="cart-block--summary__count absolute bottom-0 right-0 bg-black founded-full p-0.5">{{ count_text }}</span>
     </a>
-  </div>
   {% if content %}
   <div class="cart-block--contents">
     <button type="button" class="close-btn">
