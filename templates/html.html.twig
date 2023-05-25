@@ -468,7 +468,10 @@
           @apply !text-primary-100;
         }
         .menu-main__item{
-          @apply !text-primary-100 hover:!text-primary-80 transition duration-200 relative uppercase;
+          @apply relative;
+        }
+        .menu-main__item a{
+          @apply !text-primary-100 hover:!text-primary-80 transition duration-200 uppercase;
         }
         .active.menu-main__item{
           @apply after:-top-[0.5px] after:absolute after:bg-primary-100 after:content-[''] after:h-[3px] after:inset-x-0 relative;
