@@ -467,6 +467,12 @@
         .menu-account li a{
           @apply !text-primary-100
         }
+        .menu-main__item{
+          @apply !text-primary-100 hover:!text-primaty-80 transition duration-200 relative uppercase
+        }
+        .active.menu-main__item{
+          @apply active after:-top-[0.5px] after:absolute after:bg-primary-100 after:content-[''] after:h-[3px] after:inset-x-0 menu-main__item menu__item relative
+        }
       }
     </style>
   </head>
