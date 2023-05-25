@@ -168,7 +168,7 @@
 
 
 
-    <div class="container">
+    <div class="container-fluid">
       {# Highlighted #}
       {% if page.highlighted %}
         {% block highlighted %}
@@ -222,7 +222,7 @@
           {# Content #}
           {% block content %}
             <a id="main-content"></a>
-            <div class="container-fluid">
+            <div>
               {{ page.content }}
             </div>
           {% endblock %}
