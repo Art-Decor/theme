@@ -12,8 +12,19 @@
  * @ingroup themeable
  */
 #}
-<form {{ attributes.addClass('flex flex-wrap justify-end') }}>
-	{{ children }}
-	{{ dump() }}
-	{# {{ drupal_field('field_bl_status','node', nid) }} #}
-</form>
+<div class="flex flex-wrap justify-end">
+    {% for field in fields -%}
+    {{ field.separator }}
+    {%- if field.wrapper_element -%}
+        <{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
+    {%- endif %}
+    {%- if field.element_type -%}
+        <{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
+    {%- else -%}
+        {{ field.content }}
+    {%- endif %}
+    {%- if field.wrapper_element -%}
+        </{{ field.wrapper_element }}>
+    {%- endif %}
+    {%- endfor %}
+</div>
