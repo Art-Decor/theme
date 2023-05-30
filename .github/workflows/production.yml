@@ -36,7 +36,7 @@ jobs:
               passphrase: ${{ secrets.SSH_PRIVATE_KEY_PASSPHRASE }}
               script: |
                  /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush sql:dump --result-file=../../${{ env.RANDOM_STRING_NAME }}.sql --root=${{ secrets.REMOTE_ROOT_PATH }}
-                 scp -v ${{ secrets.REMOTE_ROOT_PATH }}/${{ env.RANDOM_STRING_NAME }}.sql ${SSH_CLIENT%% *}:.
+                 scp -p ${{ secrets.REMOTE_HOST }}:${{ secrets.REMOTE_ROOT_PATH }}/${{ env.RANDOM_STRING_NAME }}.sql .
 
          - name: Generate website
            run: npm run deploy --if-present
