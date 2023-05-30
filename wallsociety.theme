@@ -60,29 +60,3 @@ function wallsociety_theme_suggestions_form_alter(array &$suggestions, array $va
     $suggestions[] = 'form__' . str_replace('-', '_', $region);
   }
 }
-
-
-/**
- * Implements hook_theme_suggestions_HOOK() for form element templates.
- *
- * Add suggestions, as by default none are provided.
- */
-function wallsociety_theme_suggestions_form_element(array $variables) {
-
-  $suggestions = [];
-
-  $element = $variables['element'];
-
-  if (isset($element['#id'])) {
-    $suggestions[] = 'form_element__' . str_replace('-', '_', $element['#id']);
-  }
-
-  if (isset($element['#type'])) {
-    $suggestions[] = 'form_element__' . $element['#type'];
-  }
-
-
-  return $suggestions;
-
-}
-
