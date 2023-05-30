@@ -29,7 +29,7 @@
    # @see http://stackoverflow.com/q/21103542
    #}
   {% if not attributes.offsetExists('multiple') %}
-    <div class="select-wrapper relative !w-full after:text-[#333]">
+    <div class="select-wrapper relative !w-full after:text-[#333] after:!hidden">
   {% endif %}
     {% set classes = [
       'form-control',
