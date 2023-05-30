@@ -26,16 +26,16 @@ jobs:
          - name: Install dependency
            run: npm install
 
-         - name: Dump data with class for tailwind
-           uses: appleboy/ssh-action@master
-           with:
-              host: ${{ secrets.REMOTE_HOST }}
-              port: ${{ secrets.REMOTE_PORT }}
-              username: ${{ secrets.REMOTE_USER }}
-              key: ${{ secrets.SSH_PRIVATE_KEY }}
-              passphrase: ${{ secrets.SSH_PRIVATE_KEY_PASSPHRASE }}
-              script: |
-                 /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush sql:dump --result-file=../../${{ env.RANDOM_STRING_NAME }}.sql --root=${{ secrets.REMOTE_ROOT_PATH }}
+         #  - name: Dump data with class for tailwind
+         #    uses: appleboy/ssh-action@master
+         #    with:
+         #       host: ${{ secrets.REMOTE_HOST }}
+         #       port: ${{ secrets.REMOTE_PORT }}
+         #       username: ${{ secrets.REMOTE_USER }}
+         #       key: ${{ secrets.SSH_PRIVATE_KEY }}
+         #       passphrase: ${{ secrets.SSH_PRIVATE_KEY_PASSPHRASE }}
+         #       script: |
+         #          /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush sql:dump --result-file=../../${{ env.RANDOM_STRING_NAME }}.sql --root=${{ secrets.REMOTE_ROOT_PATH }}
 
          - name: Generate website
            run: npm run deploy --if-present
@@ -52,7 +52,7 @@ jobs:
               remote_key_pass: '${{ secrets.SSH_PRIVATE_KEY_PASSPHRASE }}'
               path: './'
 
-         - name: Run externall drupal task
+         - name: Cleanup on externall host
            uses: appleboy/ssh-action@master
            with:
               host: ${{ secrets.REMOTE_HOST }}
@@ -63,4 +63,4 @@ jobs:
               script: |
                  /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush cache:rebuild --root=${{ secrets.REMOTE_ROOT_PATH }}
                  /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush core:cron --root=${{ secrets.REMOTE_ROOT_PATH }}
-                 rm ${{ secrets.REMOTE_ROOT_PATH }}/../${{ env.RANDOM_STRING_NAME }}.sql
+              #  rm ${{ secrets.REMOTE_ROOT_PATH }}/../${{ env.RANDOM_STRING_NAME }}.sql
