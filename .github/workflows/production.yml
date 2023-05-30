@@ -17,6 +17,8 @@ jobs:
       steps:
          - name: Checkout code
            uses: actions/checkout@v3
+           with:
+            path: repository
 
          - name: Use Node.js 16.x
            uses: actions/setup-node@v3
@@ -36,7 +38,15 @@ jobs:
               passphrase: ${{ secrets.SSH_PRIVATE_KEY_PASSPHRASE }}
               script: |
                  /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush sql:dump --result-file=../../${{ env.RANDOM_STRING_NAME }}.sql --root=${{ secrets.REMOTE_ROOT_PATH }}
-                 scp -M -p ${{ secrets.REMOTE_HOST }}:${{ secrets.REMOTE_ROOT_PATH }}/${{ env.RANDOM_STRING_NAME }}.sql .
+                 
+
+         - name: Upload repo to remote server
+           env:
+              SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+           run: |
+              ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+              ssh-add - <<< "${{ secrets.PRIVATE_KEY }}"
+              scp -o StrictHostKeyChecking=no -r -P 59666 repository tomas@123.132.123.132:/target/directory
 
          - name: Generate website
            run: npm run deploy --if-present
