@@ -35,8 +35,8 @@ jobs:
               key: ${{ secrets.SSH_PRIVATE_KEY }}
               passphrase: ${{ secrets.SSH_PRIVATE_KEY_PASSPHRASE }}
               script: |
-                 /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush sql:dump --result-file=../web/themes/wallsociety/${{ env.RANDOM_STRING_NAME }}.sql --root=${{ secrets.REMOTE_ROOT_PATH }}
-                 scp -f /web/themes/wallsociety/${{ env.RANDOM_STRING_NAME }}.sql
+                 /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush sql:dump --result-file=../../${{ env.RANDOM_STRING_NAME }}.sql --root=${{ secrets.REMOTE_ROOT_PATH }}
+                 scp -d ../../${{ env.RANDOM_STRING_NAME }}.sql
 
          - name: Generate website
            run: npm run deploy --if-present
