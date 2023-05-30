@@ -1,56 +1,65 @@
 name: Deploy on production
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+   push:
+      branches:
+         - main
+   pull_request:
+      branches:
+         - main
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    environment: production
+   deploy:
+      runs-on: ubuntu-latest
+      environment: production
+      env:
+         RANDOM_STRING_NAME: tmp_file_${{ github.run_id }}_${{ github.run_attempt }}
+      steps:
+         - name: Checkout code
+           uses: actions/checkout@v3
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+         - name: Use Node.js 16.x
+           uses: actions/setup-node@v3
+           with:
+              node-version: 16.x
 
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
+         - name: Install dependency
+           run: npm install
 
-      - name: Install dependency
-        run: npm install
+         - name: Dump data with class for tailwind
+           uses: appleboy/ssh-action@master
+           with:
+              host: ${{ secrets.REMOTE_HOST }}
+              port: ${{ secrets.REMOTE_PORT }}
+              username: ${{ secrets.REMOTE_USER }}
+              key: ${{ secrets.SSH_PRIVATE_KEY }}
+              passphrase: ${{ secrets.SSH_PRIVATE_KEY_PASSPHRASE }}
+              script: |
+                 /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush sql:dump --result-file=../web/themes/wallsociety/${{ env.RANDOM_STRING_NAME }}.sql --root=${{ secrets.REMOTE_ROOT_PATH }}
 
-      - name: Generate website
-        run: npm run deploy --if-present
+         - name: Generate website
+           run: npm run deploy --if-present
 
-      - name: Remove node
-        run: sudo rm -rf node_modules
+         - name: Deploy to Server
+           uses: burnett01/rsync-deployments@5.2
+           with:
+              switches: -az --cvs-exclude --exclude='node_modules' --exclude='cache' --exclude='*.code-workspace' --exclude='.*' --exclude='*.sh'  --delete
+              remote_path: '${{ secrets.REMOTE_PATH }}'
+              remote_host: '${{ secrets.REMOTE_HOST }}'
+              remote_port: '${{ secrets.REMOTE_PORT }}'
+              remote_user: '${{ secrets.REMOTE_USER }}'
+              remote_key: '${{ secrets.SSH_PRIVATE_KEY }}'
+              remote_key_pass: '${{ secrets.SSH_PRIVATE_KEY_PASSPHRASE }}'
+              path: './'
 
-      - name: Deploy to Server
-        uses: burnett01/rsync-deployments@5.2
-        with:
-          switches: -az --cvs-exclude --exclude='node_modules' --exclude='cache' --exclude='*.code-workspace' --exclude='.*' --exclude='*.sh'  --delete
-          remote_path: "${{ secrets.REMOTE_PATH }}"
-          remote_host: "${{ secrets.REMOTE_HOST }}"
-          remote_port: "${{ secrets.REMOTE_PORT }}"
-          remote_user: "${{ secrets.REMOTE_USER }}"
-          remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
-          remote_key_pass: "${{ secrets.SSH_PRIVATE_KEY_PASSPHRASE }}"
-          path: "./"
-
-      - name: Run externall drupal task
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          port: ${{ secrets.REMOTE_PORT }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          passphrase: ${{ secrets.SSH_PRIVATE_KEY_PASSPHRASE }}
-          script: |
-            /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush cache:rebuild --root=${{ secrets.REMOTE_ROOT_PATH }}
-            /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush core:cron --root=${{ secrets.REMOTE_ROOT_PATH }}
+         - name: Run externall drupal task
+           uses: appleboy/ssh-action@master
+           with:
+              host: ${{ secrets.REMOTE_HOST }}
+              port: ${{ secrets.REMOTE_PORT }}
+              username: ${{ secrets.REMOTE_USER }}
+              key: ${{ secrets.SSH_PRIVATE_KEY }}
+              passphrase: ${{ secrets.SSH_PRIVATE_KEY_PASSPHRASE }}
+              script: |
+                 /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush cache:rebuild --root=${{ secrets.REMOTE_ROOT_PATH }}
+                 /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush core:cron --root=${{ secrets.REMOTE_ROOT_PATH }}
