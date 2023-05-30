@@ -63,4 +63,4 @@ jobs:
               script: |
                  /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush cache:rebuild --root=${{ secrets.REMOTE_ROOT_PATH }}
                  /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush core:cron --root=${{ secrets.REMOTE_ROOT_PATH }}
-                 rm ${{ secrets.REMOTE_ROOT_PATH }}/${{ env.RANDOM_STRING_NAME }}.sql
+                 rm ${{ secrets.REMOTE_ROOT_PATH }}/../${{ env.RANDOM_STRING_NAME }}.sql
