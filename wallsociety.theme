@@ -49,14 +49,12 @@ function wallsociety_preprocess_views_view(&$variables) {
 }
 
 /**
- * Implements hook_theme_suggestions_HOOK() for form templates.
- *
- * Add suggestions, as by default none are provided.
+ * Add class to cart form
  */
-function wallsociety_theme_suggestions_form_alter(array &$suggestions, array $variables)
+function wallsociety_form_views_form_commerce_cart_form_default_alter(&$form, &$form_state, $form_id)
 {
-  $region = $variables['element']['#attributes']['region'] ?? NULL;
-  if ($region) {
-    $suggestions[] = 'form__' . str_replace('-', '_', $region);
+  $attached_library = $form['#attached']['library'] ?? NULL;
+  if($attached_library && reset($attached_library) == 'commerce_cart/cart_form'){
+	 $form['#attributes']['class'] = ['flex','flex-wrap','justify-end'];
   }
 }
