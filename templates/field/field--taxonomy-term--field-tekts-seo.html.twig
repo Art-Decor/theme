@@ -38,31 +38,16 @@
  * @see template_preprocess_field()
  */
 #}
-{%
-  set classes = [
-    'text-default',
-    'field',
-    'field--name-' ~ field_name|clean_class,
-    'field--type-' ~ field_type|clean_class,
-    'field--label-' ~ label_display,
-  ]
-%}
-<style type="text/tailwindcss">
-    .text-default h3,
-    .text-default h4{
-        @apply mb-4 md:mb-7;
-    }
-    .text-default h3{
-        @apply text-lg md:text-xl font-semibold;
-    }
-    .text-default h4{
-        @apply text-sm md:text-base font-semibold;
-    }
-    .text-default p{
-        @apply text-sm mb-6 md:mb-[50px];
-    }
-</style>
+{% set classes = [
+	'text-default',
+	'field',
+	'field--name-' ~ (field_name|clean_class),
+	'field--type-' ~ (field_type|clean_class),
+	'field--label-' ~ label_display
+] %}
 
 {% for item in items %}
-    <div{{ attributes.addClass(classes, 'field--item') }}>{{ item.content }}</div>
+	<div {{ attributes.addClass(classes, 'field--item') }}>
+		{{ item.content }}
+	</div>
 {% endfor %}
