@@ -2,7 +2,7 @@ base:
    version: VERSION
    css:
       theme:
-         components/styles.css:
+         components/styles.min.css:
             weight: 10
       component:
          css/components/action-links.css:
