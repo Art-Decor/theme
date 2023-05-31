@@ -4,9 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "npx tailwindcss -i components/styles.pcss -o components/styles.css --watch",
-		"build": "npx tailwindcss -i components/styles.pcss -o components/styles.css --minify",
-		"deploy": "npx tailwindcss -i components/styles.pcss -o components/styles.css --minify"
+		"dev": "npx postcss components/styles.pcss -o components/styles.css --watch",
+		"build": "npx postcss components/styles.pcss -o components/styles.css --minify",
+		"deploy": "npx postcss  components/styles.pcss -o components/styles.css --minify"
 	},
 	"repository": {
 		"type": "git",
