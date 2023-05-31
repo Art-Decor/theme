@@ -58,3 +58,44 @@ function wallsociety_form_views_form_commerce_cart_form_default_alter(&$form, &$
 	 $form['#attributes']['class'] = ['flex','flex-wrap','justify-end'];
   }
 }
+
+/**
+ * Creates image items copy with fullsize style,
+ * Adds the swiper links to the HTML head section
+ */
+
+ function wallsociety_preprocess_field(&$variables) {
+  $field_name = $variables['element']['#field_name'];
+
+  if ($field_name == 'field_galeria') {
+    $itemsFullsize = $variables['items'];
+    foreach ($itemsFullsize as $delta => $item) {
+      if (isset($item['content']['#image_style'])) {
+        $itemsFullsize[$delta]['content']['#image_style'] = '';
+      }
+    }
+    $variables['itemsFullsize'] = $itemsFullsize;
+    
+    $styles_url = '//unpkg.com/swiper@8/swiper-bundle.min.css';
+    $script_url = '//unpkg.com/swiper@8/swiper-bundle.min.js';
+    $variables['#attached']['html_head'][] = [
+      [
+        '#tag' => 'link',
+        '#attributes' => [
+          'rel' => 'stylesheet',
+          'href' => $styles_url,
+        ],
+      ],
+      'wallsociety_swiper_styles',
+    ];
+    $variables['#attached']['html_head'][] = [
+      [
+        '#tag' => 'script',
+        '#attributes' => [
+          'src' => $script_url,
+        ],
+      ],
+      'wallsociety_swiper_script',
+    ];
+  }
+}

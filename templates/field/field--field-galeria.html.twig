@@ -61,8 +61,90 @@
 {% if multiple %}
   <div{{ attributes.addClass(classes, 'field--items') }}>
     {% for item in items %}
-      <div{{ item.attributes.addClass('field--item') }}>{{ item.content }}</div>
+      <div class="cursor-pointer" data-gallery-image >{{ item.content }}</div>
     {% endfor %}
   </div>
+{% endif %}
+
+{% if multiple %}
+
+<div class="modal fixed z-50 inset-0 flex justify-center items-center bg-[#333]/50 p-5 md:p-10 transition duration-200 opacity-0 hidden " data-modal-container>
+  <div class="modal-inner py-12 md:px-10 mx-auto max-h-[100%] flex relative">
+    <button onclick="closeModal()" class="appearance-none absolute w-10 h-10 top-0 md:top-10 -right-1 p-2 bg-primary-100 hover:bg-primary-80 transition duration-200 rounded-full" data-modal-btn-close>
+      <svg class="w-full h-full rotate-45 stroke-white" width="30" height="30" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.33325 8.00016H14.6666M7.99992 1.3335V14.6668" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="swiper max-h-[100%] transition-all duration-300" data-swiper-product-gallery>
+      <div class="swiper-wrapper max-h-[100%]">
+      {% for item in itemsFullsize %}
+        <div{{ item.attributes.addClass('swiper-slide w-full max-w-full max-h-[100%]') }}>{{ item.content }}</div>
+      {% endfor %}
+      </div>
+    </div>
+    <div class="swiper-button-prev bottom-0 left-0 md:mt-[-24px] top-auto md:top-1/2 md:-left-2 after:content-['prev'] after:pr-1 after:text-[20px] bg-[#333]/30 hover:bg-[#333]/50 transition duration-200 border-2 border-white w-10 h-10 md:h-12 md:w-12 overflow-hidden rounded-full text-white"></div>
+    <div class="swiper-button-next bottom-0 right-0 md:mt-[-24px] top-auto md:top-1/2 md:-right-2 after:content-['next'] after:pl-1 after:text-[20px] bg-[#333]/30 hover:bg-[#333]/50 transition duration-200 border-2 border-white w-10 h-10 md:h-12 md:w-12 overflow-hidden rounded-full text-white"></div>
+  </div>
+</div>
+<script>
+
+  const galleryImages = document.querySelectorAll('[data-gallery-image]')
+  const modalContainer = document.querySelector('[data-modal-container]')
+  const swiperContainer = document.querySelector('[data-swiper-product-gallery]')
+
+  let swiper = null
+
+  function initializeSwiper(){
+    if (window.Swiper){
+      swiper = new Swiper(swiperContainer,{
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        centeredSlides: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          disabledClass: 'opacity-50 hover:!bg-[#333]/30 !cursor-default'
+        },
+      })
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded',initializeSwiper)
+
+  galleryImages.forEach((image,index)=>{
+    image.addEventListener('click', ()=>{
+      openModal(index)
+      })
+  })
+
+  modalContainer.addEventListener('click',(e)=>{
+    const classListArray = [...event.target.classList];
+
+    if (classListArray.some((className) => ['swiper-slide', 'modal', 'modal-inner'].includes(className))) {
+      closeModal();
+    }
+  })
+
+  function closeModal(){
+    const modalCloseBtn = document.querySelector('[data-modal-btn-close]')
+    
+    modalContainer.classList.add('opacity-0')
+    setTimeout(()=>{
+      modalContainer.classList.add('hidden')
+    },200)
+  }
+
+  function openModal(slideIndex){
+    modalContainer.classList.remove('hidden')
+    if(swiper) swiper.slideTo(slideIndex)
+    setTimeout(()=>{
+      modalContainer.classList.remove('opacity-0')
+    },100)
+
+
+  }
+
+</script>
+
 {% endif %}
 
