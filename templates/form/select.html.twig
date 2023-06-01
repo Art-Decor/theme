@@ -33,7 +33,7 @@
   {% endif %}
     {% set classes = [
       'form-control',
-      'peer w-full block relative mr-3 px-3 py-2 rounded-full bg-[#F9F8F9] block relative mr-3 px-3 py-2 rounded-full bg-[#F9F8F9] border-0 text-base font-normal text-[#333] appearance-none'
+      'mb-[15px] peer w-full block relative mr-3 px-3 py-2 rounded-full block relative mr-3 px-5 py-[11px] rounded-full border !border-gray-40 focus:outline-0 hover:!border-gray-60 focus:!border-primary-100 text-base font-normal text-primary-100 appearance-none transition duration-200'
 
     ] %}
     <select{{ attributes.addClass(classes) }}>
@@ -51,7 +51,7 @@
         {% endif %}
       {% endfor %}
     </select>
-    <span class="absolute right-5 top-[18px] peer-focus-within:rotate-180 transform inline-block transition duration-300">
+    <span class="absolute right-5 top-[21px] peer-focus-within:rotate-180 transform inline-block transition duration-300">
       <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M9 1L5 5L1 1" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>

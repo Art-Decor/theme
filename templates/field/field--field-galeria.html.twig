@@ -68,7 +68,7 @@
 
 {% if multiple %}
 
-<div class="modal fixed z-50 inset-0 flex justify-center items-center bg-[#333]/50 p-5 md:p-10 transition duration-200 opacity-0 hidden " data-modal-container>
+<div class="modal fixed z-50 inset-0 flex justify-center items-center bg-[#333]/50 p-5 md:p-10 transition duration-200 opacity-0 !hidden " data-modal-container>
   <div class="modal-inner py-12 md:px-10 mx-auto max-h-[100%] flex relative">
     <button onclick="closeModal()" class="appearance-none absolute w-10 h-10 top-0 md:top-10 -right-1 p-2 bg-primary-100 hover:bg-primary-80 transition duration-200 rounded-full" data-modal-btn-close>
       <svg class="w-full h-full rotate-45 stroke-white" width="30" height="30" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -130,12 +130,12 @@
     
     modalContainer.classList.add('opacity-0')
     setTimeout(()=>{
-      modalContainer.classList.add('hidden')
+      modalContainer.classList.add('!hidden')
     },200)
   }
 
   function openModal(slideIndex){
-    modalContainer.classList.remove('hidden')
+    modalContainer.classList.remove('!hidden')
     if(swiper) swiper.slideTo(slideIndex)
     setTimeout(()=>{
       modalContainer.classList.remove('opacity-0')

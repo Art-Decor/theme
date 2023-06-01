@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Bootstrap theme implementation for a 'textarea' #type form element.
+ *
+ * Available variables
+ * - wrapper_attributes: A list of HTML attributes for the wrapper element.
+ * - attributes: A list of HTML attributes for the textarea element.
+ * - resizable: An indicator for whether the textarea is resizable.
+ * - required: An indicator for whether the textarea is required.
+ * - value: The textarea content.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_textarea()
+ */
+#}
+{%
+  set classes = [
+    'mb-[15px] w-full p-5 rounded-3xl border border-gray-40 hover:border-gray-60 focus:outline-0 focus:border-primary-100 transition duration-200 resize-none h-36 text-primary-100 placeholder:text-primary-100 placeholder:font-normal',
+    'form-textarea',
+    'form-control',
+    resizable ? 'resize-' ~ resizable,
+    required ? 'required',
+  ]
+%}
+<div{{ wrapper_attributes.addClass('form-textarea-wrapper') }}>
+    {% if attributes.placeholder %}
+      {% set placeholder = attributes.placeholder %}
+      {% if attributes.required %}
+        {% set placeholder = placeholder ~ ' *' %}
+      {% endif %}
+      {% set attributes = attributes.setAttribute('placeholder', placeholder) %}
+    {% endif %}
+  <textarea{{ attributes.addClass(classes) }}>{{ value }}</textarea>
+</div>

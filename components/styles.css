@@ -48,7 +48,7 @@
   .commerce-product--default .layout__region--second .field--name-price .field--label{
     @apply !hidden;
   }
-
+  
   .view-slider-produktow .views-field-view-commerce-product .field-content a{
     @apply w-full h-full block;
   }
@@ -65,7 +65,7 @@
   .path-frontpage .page > .content > .field--name-body > h2{
     @apply max-w-md mx-auto mb-4 md:mb-[30px];
   }
-
+  
   .path-frontpage .text-default h1,
   .path-frontpage .text-default h2,
   .path-frontpage .text-default h3,
@@ -121,7 +121,7 @@
   .pictures-grid {
     @apply mb-6 md:mb-[50px] min-[600px]:gap-4;
   }
-
+  
   ul.quicktabs-tabs{
     @apply text-center space-x-4 mb-6 md:mb-[50px];
   }
@@ -164,12 +164,12 @@
     @apply border-0 bg-[#F9F8F9] rounded-full px-3 h-8 font-normal text-[#333] ;
   }
 
-  /*  Static page */
+  {# Static page #}
 
   .page-node-type-page:not(.path-frontpage) .page{
     @apply md:w-3/4 lg:w-2/3;
   }
-
+  
   .page-node-type-page:not(.path-frontpage) .page h1,
   .page-node-type-page:not(.path-frontpage) .page h2,
   .page-node-type-page:not(.path-frontpage) .page h3,
@@ -178,7 +178,7 @@
   .page-node-type-page:not(.path-frontpage) .page h6{
     @apply text-[#333] mb-5;
   }
-
+  
   .page-node-type-page:not(.path-frontpage) .page h1{
       @apply text-5xl lg:text-8xl font-semibold;
   }
@@ -268,7 +268,7 @@
     @apply !bg-gray-10 !px-7 !py-3 !text-base duration-200 hover:!bg-primary-100 hover:text-white md:!text-lg relative rounded-full transition;
   }
   .page-node-type-page:not(.path-frontpage) textarea{
-    @apply min-h-[70px] max-h-96 p-5 rounded-md border border-gray-40 hover:border-gray-60 focus:border-primary-40 focus:outline-0 transition duration-200;
+    @apply min-h-[70px] max-h-96 p-5 rounded-3xl border border-gray-40 hover:border-gray-60 focus:border-primary-40 focus:outline-0 transition duration-200;
   }
   .page-node-type-page:not(.path-frontpage) input[type="range"]{
     @apply accent-primary-100
@@ -280,8 +280,8 @@
     @apply !m-0 !mr-5 !opacity-100 !outline-none !visible after:rotate-45 after:absolute after:border-b-2 after:border-r-2 after:border-transparent checked:after:border-white after:content-[''] after:h-[8px] after:left-1 after:w-2.5 after:bottom-[7px] appearance-none bg-transparent border border-primary-100 checked:!bg-brown-100 duration-200 h-5 hover:bg-brown-20 inline-block left-0 outline relative rounded-sm transition w-5
   }
 
-
-
+  
+  
   .views-field-purchased-entity .field--label,
   .views-field-purchased-entity .field--item{
     @apply inline-block;
@@ -334,6 +334,14 @@
   }
   .active.menu-main__item{
     @apply after:-top-[0.5px] after:absolute after:bg-primary-100 after:content-[''] after:h-[3px] after:inset-x-0 relative;
+  }
+
+
+  .contact-form label{
+    @apply hidden
+  }
+  .contact-form button{
+    @apply block max-w-xs mx-auto
   }
 }
 
