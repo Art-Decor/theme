@@ -341,6 +341,9 @@
   .contact-form button{
     @apply block max-w-xs mx-auto
   }
+  .form-group{
+    @apply !mb-0
+  }
 }
 
 @layer components {
