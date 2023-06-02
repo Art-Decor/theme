@@ -353,9 +353,13 @@
   form.contact-form .field--name-field-phone-number{
     @apply md:w-1/2 md:pl-2.5
   }
-  form.contact-form .field--name-field-subject{
+  form.contact-form .field--name-field-subject,
+  form.contact-form .field--name-field-full-name,
+  form.contact-form .field--name-message,{
     @apply w-full
   }
+
+  
 }
 
 @layer components {
