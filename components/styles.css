@@ -355,8 +355,19 @@
   }
   form.contact-form .field--name-field-subject,
   form.contact-form .field--name-field-full-name,
-  form.contact-form .field--name-message,{
+  form.contact-form .field--name-message,
+  form.contact-form [data-drupal-selector="edit-actions"]{
     @apply w-full
+  }
+  form.contact-form [data-drupal-selector="edit-actions"]
+  #block-termsandconditionstext{
+    @apply w-full max-w-xs
+  }
+  #block-termsandconditionstext{
+    @apply text-[10px] text-primary-100
+  }
+  #block-termsandconditionstext a{
+    @apply text-brown-100
   }
 
   
