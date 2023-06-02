@@ -359,15 +359,15 @@
   form.contact-form [data-drupal-selector="edit-actions"]{
     @apply w-full
   }
-  form.contact-form [data-drupal-selector="edit-actions"]
+  form.contact-form [data-drupal-selector="edit-actions"],
   #block-termsandconditionstext{
     @apply w-full max-w-xs
   }
   #block-termsandconditionstext{
-    @apply text-[10px] text-primary-100
+    @apply text-[10px] leading-normal text-primary-100
   }
   #block-termsandconditionstext a{
-    @apply text-brown-100
+    @apply text-brown-100 underline
   }
 
   
