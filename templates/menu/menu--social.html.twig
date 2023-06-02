@@ -35,7 +35,7 @@
       {%
         set item_classes = [
           'menu-' ~ menu_name|clean_class ~ '__item',
-          'mr-[15px]',
+          'mr-2.5',
           item.is_expanded? 'expanded',
           item.is_expanded and menu_level == 0 ? 'dropdown',
           item.in_active_trail ? 'active'
@@ -44,11 +44,12 @@
       {%
         set link_classes = [
           'menu-' ~ menu_name|clean_class ~ '__link',
-          'mr-[15px]'
+          'mr-2.5'
         ]
       %}
       {%
         set icon_classes = [
+          'bg-primary-100 text-white',
           'glyph',
           'glyph-' ~ item.title|clean_class,
           'glyph__circled',
