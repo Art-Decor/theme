@@ -49,6 +49,7 @@ module.exports = {
 					10: '#F9F8F9',
 				},
 				black: {
+					DEFAULT: '#000000',
 					80: '#191919',
 					60: '#D2D2D2',
 					40: '#EDEDED',
