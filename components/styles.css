@@ -361,7 +361,7 @@
   }
   form.contact-form [data-drupal-selector="edit-actions"],
   #block-termsandconditionstext{
-    @apply w-full max-w-xs
+    @apply w-full max-w-xs mx-auto
   }
   #block-termsandconditionstext{
     @apply text-[10px] leading-normal text-primary-100
