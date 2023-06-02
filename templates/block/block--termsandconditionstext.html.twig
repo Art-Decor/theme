@@ -54,14 +54,9 @@
       'clearfix',
     ]
   %}
-  <div>
-    {% if label %}
-        <h1{{ title_attributes.addClass('text-3xl mb-10 text-center') }}>{{ label }}</h1>
-    {% endif %}
   <section{{ attributes.addClass(classes) }}>
     {% block content %}
       {{ content }}
     {% endblock %}
   </section>
-  </div>
 
