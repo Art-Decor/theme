@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Default view template to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<div class="relative flex flex-col justify-end items-center h-[150px] md:h-[250px] w-1/3 md:w-1/6 p-2 md:p-5">
+{% for field in fields -%}
+    {%
+    set wrapper_classes = [
+        field.handler.field == 'field_baner_zdjecie' ? 'absolute inset-0 z-0' : 'relative z-10',
+    ]
+    %}
+    {%
+    set field_classes = [
+        field.handler.field == 'field_baner_zdjecie' ? 'img-fit w-full h-full after:absolute after:bg-gradient-to-t after:content-[""] after:from-black/50 after:inset-x-0 after:bottom-0 after:top-1/2 after:to-transparent after:pointer-events-none',
+        field.handler.field == 'name' ? 'inline-block text-white font-semibold text-xl text-center',
+    ]
+    %}
+  {%- if field.wrapper_element -%}
+    <{{ field.wrapper_element }}{{ field.wrapper_attributes.addClass(wrapper_classes) }}>
+  {%- endif %}
+  {%- if field.element_type -%}
+    <{{ field.element_type }}{{ field.element_attributes.addClass(field_classes) }}>{{ field.content }}</{{ field.element_type }}>
+  {%- else -%}
+    {{ field.content }}
+  {%- endif %}
+  {%- if field.wrapper_element -%}
+    </{{ field.wrapper_element }}>
+  {%- endif %}
+{%- endfor %}
+</div>
