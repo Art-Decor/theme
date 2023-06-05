@@ -34,7 +34,7 @@
 #}
 {%
   set classes = [
-    'mb-6 md:mb-[50px]',
+    'mb-10 md:mb-[50px]',
     'view',
     'view-' ~ id|clean_class,
     'view-id-' ~ id,
@@ -47,7 +47,7 @@
       {{ header }}
     </div>
   {% if rows %}
-    <div class="view-content flex flex-wrap gap-2">
+    <div class="view-content flex flex-wrap">
       {{ rows }}
     </div>
   {% elseif empty %}

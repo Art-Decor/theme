@@ -19,7 +19,7 @@
 #}
 
 {%
-  set row_classes = [' relative flex flex-col justify-end items-center h-[150px] md:h-[250px] w-1/3 md:w-1/6 p-2 md:p-5']
+  set row_classes = [' relative flex flex-col justify-end items-center h-[150px] md:h-[250px] basis-1/3 basis:w-1/6 min-w-min p-2 md:p-5 mr-2']
 %}
 {% for row in rows %}
   <div{{ row.attributes.addClass(row_classes) }}>
@@ -27,5 +27,5 @@
   </div>
 {% endfor %}
 {% if title %}
-  <div class="{{ row_classes|join(' ') }} bg-neutral-90 text-primary-100 font-semibold text-xl text-center [&>a]:absolute [&>a]:inset-0 [&>a]:flex [&>a]:flex-col [&>a]:justify-end">{{ title }}</div>
+  <div class="{{ row_classes|join(' ') }} bg-neutral-90 text-primary-100 font-semibold text-xl text-center [&>a]:p-2 [&>a]:md:p-5 [&>a]:absolute [&>a]:inset-0 [&>a]:flex [&>a]:flex-col [&>a]:justify-end">{{ title }}</div>
 {% endif %}
