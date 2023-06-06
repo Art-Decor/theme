@@ -370,6 +370,23 @@
     @apply text-brown-100 underline
   }
 
+  .js-form-type-search .input-group{
+    @apply relative
+  }
+  .js-form-type-search input.form-search{
+    @apply absolute top-0 right-0 w-full bg-transparent rounded-none border-0 border-r border-r-primary-20 transition duration-200
+  }
+  .js-form-type-search:hover input.form-search,
+  .js-form-type-search:focus input.form-search{
+    @apply w-32 sm:w-44 md:w-52 lg:w-72 xl:w-80 pr-10 rounded-full border border-primary-20
+  }
+  .js-form-type-search button.form-submit{
+    @apply pointer-events-none
+  }
+  .js-form-type-search:focus button.form-submit{
+    @apply !pointer-events-auto
+  }
+
   
 }
 

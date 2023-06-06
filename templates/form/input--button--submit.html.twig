@@ -28,7 +28,7 @@
       'w-full max-w-md group !text-white  text-basis md:text-lg transition duration-200',
       type == 'submit' ? 'js-form-submit',
       icon and icon_position and not icon_only ? 'icon-' ~ icon_position,
-      attributes.value == 'Search' ? ' h-10 py-2 pr-5 !border-0' : 'mb-[15px] rounded-full px-5 py-[11px] !bg-primary-100 hover:!bg-[#271525] !border-primary-100 hover:!border-[#271525]' 
+      attributes.value == 'Search' ? ' h-10 py-2 pl-2 pr-5 !border-0 relative z-10' : 'mb-[15px] rounded-full px-5 py-[11px] !bg-primary-100 hover:!bg-[#271525] !border-primary-100 hover:!border-[#271525]' 
     ]
     %}
     {% if icon and icon_only %}
