@@ -381,10 +381,10 @@
   }
 
   .region-header-right .js-form-type-search{
-    @apply relative z-10 transition duration-200 md:!px-0 md:!max-w-none
+    @apply relative z-10 transition-all duration-200 px-0
   }
   .region-header-right .js-form-type-search.expanded{
-    @apply translate-x-[129px] translate-y-11 w-screen 
+    @apply md:translate-x-[129px] md:translate-y-11 md:w-screen container px-5 md:px-0 
   }
   
 }
