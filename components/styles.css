@@ -374,17 +374,20 @@
     @apply relative
   }
   .region-header-right .js-form-type-search input.form-search{
-    @apply absolute top-0 right-0 w-full bg-white rounded-none !border !border-solid !border-r border-transparent !border-r-primary-20/20 transition-all duration-200 !text-transparent placeholder:text-transparent
+    @apply absolute top-0 right-0 w-12 md:w-full bg-white rounded-none !border !border-solid !border-r border-transparent !border-r-primary-20/20 transition-all duration-200 !text-transparent placeholder:text-transparent
   }
   .region-header-right .js-form-type-search.expanded input.form-search{
     @apply w-full md:w-80 xl:w-96 !pr-10 rounded-3xl !border-primary-20 !text-primary-100 placeholder:text-primary-80
   }
 
   .region-header-right .js-form-type-search{
-    @apply relative z-10 transition-all duration-200 px-0
+    @apply relative z-10 transition-all duration-200 px-0 bottom-0.5 md:bottom-0
   }
   .region-header-right .js-form-type-search.expanded{
     @apply translate-x-[129px] md:translate-x-0 translate-y-11 md:translate-y-0 w-screen md:w-auto container px-5 md:px-0 
+  }
+  i.better_search{
+    @apply !hidden
   }
   
 }
