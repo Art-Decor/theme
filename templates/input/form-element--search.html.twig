@@ -49,6 +49,7 @@
 #}
 {%
   set classes = [
+    'container-fluid',
     'form-item',
     'js-form-item',
     'form-type-' ~ type|clean_class,
@@ -99,31 +100,33 @@
     </div>
   {% endif %}
   <script>
+    const searchContainer = document.querySelector('.region-header-right .js-form-type-search')
+    const inputEl = document.querySelector('.js-form-type-search input.form-search')
     const searchBtn = document.querySelector('.js-form-type-search button.form-submit')
-    const inputContainer = document.querySelector('.js-form-type-search input.form-search')
 
     searchBtn.addEventListener('click',handleExpand)
     document.addEventListener('click',handleHide)
 
     function handleExpand(e){
-           if(!inputContainer.classList.contains('expanded')){
+           if(!inputEl.classList.contains('expanded')){
              e.preventDefault()
              expandInput()
            }
     }
 
     function handleHide(e){
-           if(e.target !== searchBtn && e.target.parentElement !== searchBtn && e.target !== inputContainer){
+           if(e.target !== searchBtn && e.target.parentElement !== searchBtn && e.target !== inputEl){
              hideInput()
            }
     }
 
     function expandInput(){
-        inputContainer.classList.add('expanded')
+        searchContainer.classList.add('expanded')
+        inputEl.focus()
     }
 
     function hideInput(){
-        inputContainer.classList.remove('expanded')        
+        searchContainer.classList.remove('expanded')        
     }
 
   </script>
