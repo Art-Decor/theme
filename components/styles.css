@@ -384,7 +384,7 @@
     @apply relative z-10 transition-all duration-200 px-0
   }
   .region-header-right .js-form-type-search.expanded{
-    @apply md:translate-x-[129px] md:translate-y-11 md:w-screen container px-5 md:px-0 
+    @apply translate-x-[129px] md:translate-x-0 translate-y-11 md:translate-y-0 w-screen md:w-auto container px-5 md:px-0 
   }
   
 }
