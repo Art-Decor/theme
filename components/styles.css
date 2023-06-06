@@ -384,7 +384,7 @@
     @apply relative z-10 transition-200 md:!px-0 md:!max-w-none
   }
   .region-header-right .js-form-type-search.expanded{
-    @apply translate-x-[129px] translate-y-11 w-screen
+    @apply translate-x-[129px] translate-y-11 w-screen 
   }
   
 }
