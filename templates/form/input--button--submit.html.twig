@@ -25,15 +25,22 @@
   {% block input %}{% apply spaceless %}
     {%
       set classes = [
-      'w-full max-w-md mb-[15px] group !bg-primary-100 hover:!bg-[#271525] !border-primary-100 hover:!border-[#271525] !text-white rounded-full px-5 py-[11px] text-basis md:text-lg transition duration-200',
+      'w-full max-w-md mb-[15px] group !text-white  text-basis md:text-lg transition duration-200',
       type == 'submit' ? 'js-form-submit',
       icon and icon_position and not icon_only ? 'icon-' ~ icon_position,
+      attributes.value == 'Search' ? 'w-10 h-10' : 'rounded-full px-5 py-[11px] !bg-primary-100 hover:!bg-[#271525] !border-primary-100 hover:!border-[#271525]' 
     ]
     %}
     {% if icon and icon_only %}
       <button{{ attributes.addClass(classes, 'icon-only') }}>
-        <span class="sr-only">{{ label }}</span>
-        {{ icon }}
+        {% if attributes.value == 'Search' %}
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.8333 18.8333L14.4618 14.4618M16.75 8.9375C16.75 4.62278 13.2522 1.125 8.9375 1.125C4.62278 1.125 1.125 4.62278 1.125 8.9375C1.125 13.2522 4.62278 16.75 8.9375 16.75C13.2522 16.75 16.75 13.2522 16.75 8.9375Z" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        {% elseif %}
+          <span class="sr-only">{{ label }}</span>
+          {{ icon }}
+        {% endif %}
       </button>
     {% else %}
       {% if icon_position == 'after' %}
