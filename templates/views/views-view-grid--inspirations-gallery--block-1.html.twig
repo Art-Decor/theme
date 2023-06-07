@@ -36,15 +36,14 @@
 %}
   {%
     set item_classes = [
-      'views-row',
-      options.alignment == 'horizontal' ? 'clearfix',
+      'test-class'
     ]
   %}
 
 <div{{ attributes.addClass(classes) }}>
     {% for row in items %}
         {% for item in row.content %}
-          <div{{ item.attributes.addClass(item_classes) }}>
+          <div class="{{ item_classes|join(' ') }}">
             {{- item.content -}}
           </div>
         {% endfor %}

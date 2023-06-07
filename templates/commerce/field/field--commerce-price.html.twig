@@ -59,6 +59,6 @@
   <div{{ attributes.addClass(classes) }}>
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
     {% for item in items %}
-      <div{{ item.attributes.addClass('field--item inline') }}>{{ item.content }}</div>
+      <div{{ item.attributes.addClass('text-xl md:text-2xl field--item inline ') }}>{{ item.content }}</div>
     {% endfor %}
   </div>

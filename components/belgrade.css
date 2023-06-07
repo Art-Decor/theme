@@ -7325,9 +7325,7 @@ body.navbar-is-fixed-top.toolbar-tray-open .cart-offcanvas{
     text-transform:uppercase;
     font-weight:bold
 }
-.commerce-product--full .field--name-price,.commerce-product--full .field--name-title{
-    font-size:48px
-}
+
 .commerce-product--full .field--name-variations h3{
     text-transform:uppercase;
     font-weight:bold;
