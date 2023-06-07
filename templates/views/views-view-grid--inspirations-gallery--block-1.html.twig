@@ -30,13 +30,12 @@
   set classes = [
     'views-view-grid',
     options.alignment,
-    'grid grid-cols-2 md:grid-cols-' ~ options.columns,
-    'clearfix',
+    'grid gap-5 grid-cols-2 md:grid-cols-' ~ options.columns,
   ]
 %}
   {%
     set item_classes = [
-      'test-class'
+      '[&_img]:!mb-0 [&_img]:!h-full [&_img]:object-cover'
     ]
   %}
 
