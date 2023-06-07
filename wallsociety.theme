@@ -49,13 +49,14 @@ function wallsociety_preprocess_views_view(&$variables) {
 
   if(strpos($view->storage->get('id'), 'inspirations_gallery') !== FALSE){
     
-    $clonedItems = [];
-    foreach ($variables['items'] as $row) {
-      foreach ($row['content'] as $item) {
-        $clonedItems[] = $item;
-      }
-    }
-    $variables['clonedItems'] = $clonedItems;
+    dpm($variables);
+    // $clonedItems = [];
+    // foreach ($variables['items'] as $row) {
+    //   foreach ($row['content'] as $item) {
+    //     $clonedItems[] = $item;
+    //   }
+    // }
+    // $variables['clonedItems'] = $clonedItems;
 
     attachSwiperLinksToHtmlHead($variables);
   }
