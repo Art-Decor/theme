@@ -59,7 +59,7 @@
     <div class="swiper max-h-[100%] transition-all duration-300" data-swiper-inspo-gallery>
       <div class="swiper-wrapper max-h-[100%]">
       {% for item in itemsFullsize %}
-        <div{{ item.attributes.addClass('swiper-slide w-full max-w-full max-h-[100%]') }}>{{ item.content }}</div>
+        <div 'swiper-slide w-full max-w-full max-h-[100%]' >{{ item.content }}</div>
       {% endfor %}
       </div>
     </div>
