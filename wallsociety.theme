@@ -55,13 +55,15 @@ function wallsociety_preprocess_views_view_grid(&$variables) {
   if(strpos($view->storage->get('id'), 'inspirations_gallery') !== FALSE){
     
     $itemsFullsize = $variables['items'];
+    foreach ($variables['items'] as $delta_row => $row) {
+      foreach ($row['content'] as $delta_col => $item) {
+        if (isset($item['content']['#image_style'])) {
+          $itemsFullsize[$delta_row + $delta_col]['content']['#image_style'] = '';
+        }
+        $itemsFullsize[] = $item;
+      }
+    }
     $variables['itemsFullsize'] = $itemsFullsize;
-    // foreach ($variables['items'] as $row) {
-    //   foreach ($row['content'] as $item) {
-    //     $clonedItems[] = $item;
-    //   }
-    // }
-    // $variables['clonedItems'] = $clonedItems;
 
     attachSwiperLinksToHtmlHead($variables);
   }
