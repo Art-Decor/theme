@@ -395,16 +395,16 @@
 @layer components {
   .text-default h3,
   .text-default h4{
-      @apply mb-4 md:mb-7;
+      @apply !mb-4 md:!mb-7;
   }
   .text-default h3{
-      @apply text-lg md:text-xl font-semibold;
+      @apply !text-lg md:!text-xl !font-semibold;
   }
   .text-default h4{
-      @apply text-sm md:text-base font-semibold;
+      @apply !text-sm md:!text-base !font-semibold;
   }
   .text-default p{
-      @apply text-sm mb-6 md:mb-[50px];
+      @apply !text-sm !mb-6 md:!mb-[50px];
   }
 }
 
