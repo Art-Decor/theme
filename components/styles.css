@@ -146,7 +146,7 @@
     @apply w-auto h-full object-contain mx-auto;
   }
 
-  .category-header{
+  .category-header, .page-banner{
     @apply relative flex flex-col justify-end p-5 md:p-10 lg:px-20 lg:py-[60px] text-white md:min-h-[300px] mb-3;
   }
 
@@ -164,7 +164,7 @@
     @apply border-0 bg-gray-10 rounded-full px-3 h-8 font-normal text-[#333] ;
   }
 
-  .page-node-type-page:not(.path-frontpage) .page{
+  .page-node-type-page:not(.path-frontpage) .page .container-staticpage{
     @apply md:w-3/4 lg:w-2/3;
   }
   
