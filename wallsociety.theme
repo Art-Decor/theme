@@ -49,8 +49,8 @@ function wallsociety_preprocess_views_view(&$variables) {
 
   if(strpos($view->storage->get('id'), 'inspirations_gallery') !== FALSE){
     
-    // var_dump($variables);
-    // $clonedItems = [];
+    $itemsFullsize = $variables['items'];
+    $variables['itemsFullsize'] = $itemsFullsize;
     // foreach ($variables['items'] as $row) {
     //   foreach ($row['content'] as $item) {
     //     $clonedItems[] = $item;
