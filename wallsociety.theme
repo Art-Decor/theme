@@ -82,9 +82,8 @@ function wallsociety_form_views_form_commerce_cart_form_default_alter(&$form, &$
 
 function wallsociety_preprocess_views_view_grid_inspirations_gallery_block_1(&$variables) {
   
-  dpm($variables);
     // $variables['items'] = $clonedItems;
-    // attachSwiperLinksToHtmlHead($variables);
+    attachSwiperLinksToHtmlHead($variables);
 }
 
 function attachSwiperLinksToHtmlHead(&$variables) {
