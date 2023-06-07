@@ -66,7 +66,7 @@ function wallsociety_form_views_form_commerce_cart_form_default_alter(&$form, &$
 
  function wallsociety_preprocess_field(&$variables) {
   $field_name = $variables['element']['#field_name'];
-
+  
   if ($field_name == 'field_galeria') {
     $itemsFullsize = $variables['items'];
     foreach ($itemsFullsize as $delta => $item) {
@@ -75,27 +75,38 @@ function wallsociety_form_views_form_commerce_cart_form_default_alter(&$form, &$
       }
     }
     $variables['itemsFullsize'] = $itemsFullsize;
-    
-    $styles_url = '//unpkg.com/swiper@8/swiper-bundle.min.css';
-    $script_url = '//unpkg.com/swiper@8/swiper-bundle.min.js';
-    $variables['#attached']['html_head'][] = [
-      [
-        '#tag' => 'link',
-        '#attributes' => [
-          'rel' => 'stylesheet',
-          'href' => $styles_url,
-        ],
-      ],
-      'wallsociety_swiper_styles',
-    ];
-    $variables['#attached']['html_head'][] = [
-      [
-        '#tag' => 'script',
-        '#attributes' => [
-          'src' => $script_url,
-        ],
-      ],
-      'wallsociety_swiper_script',
-    ];
+  
+    attachSwiperLinksToHtmlHead($variables);
   }
+}
+
+function yourtheme_preprocess_views_view_grid_inspirations_gallery_block_1(&$variables) {
+  
+  dpm($variables);
+    // $variables['items'] = $clonedItems;
+    // attachSwiperLinksToHtmlHead($variables);
+}
+
+function attachSwiperLinksToHtmlHead(&$variables) {
+  $styles_url = '//unpkg.com/swiper@8/swiper-bundle.min.css';
+  $script_url = '//unpkg.com/swiper@8/swiper-bundle.min.js';
+  $variables['#attached']['html_head'][] = [
+    [
+      '#tag' => 'link',
+      '#attributes' => [
+        'rel' => 'stylesheet',
+        'href' => $styles_url,
+      ],
+    ],
+    'wallsociety_swiper_styles',
+  ];
+  $variables['#attached']['html_head'][] = [
+    [
+      '#tag' => 'script',
+      '#attributes' => [
+        'src' => $script_url,
+      ],
+    ],
+    'wallsociety_swiper_script',
+  ];
 }
