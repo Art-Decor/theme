@@ -46,6 +46,10 @@ function wallsociety_preprocess_views_view(&$variables) {
     $variables['rows']['footer']['commerce_order_total']['#prefix'] = '<div class="order-4 !text-lg !font-light inline-block w-full md:w-[500px] !px-5 md:ml-[calc(100%_-_500px)] !mb-0 bg-[#F5F4F5]">';
     $variables['rows']['footer']['commerce_order_total']['#suffix'] = '</div>';
   }
+
+  if(strpos($view->storage->get('id'), 'inspirations_gallery') !== FALSE){
+    attachSwiperLinksToHtmlHead($variables);
+  }
 }
 
 /**
@@ -78,11 +82,6 @@ function wallsociety_form_views_form_commerce_cart_form_default_alter(&$form, &$
   
     attachSwiperLinksToHtmlHead($variables);
   }
-}
-
-function wallsociety_preprocess_views_view_grid_inspirations_gallery(&$variables) {
-  
-    attachSwiperLinksToHtmlHead($variables);
 }
 
 function attachSwiperLinksToHtmlHead(&$variables) {
