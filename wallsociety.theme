@@ -47,6 +47,11 @@ function wallsociety_preprocess_views_view(&$variables) {
     $variables['rows']['footer']['commerce_order_total']['#suffix'] = '</div>';
   }
 
+}
+
+function wallsociety_preprocess_views_view_grid(&$variables) {
+  $view = $variables['view'];
+
   if(strpos($view->storage->get('id'), 'inspirations_gallery') !== FALSE){
     
     $itemsFullsize = $variables['items'];
