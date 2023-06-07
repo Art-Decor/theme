@@ -51,11 +51,9 @@ function wallsociety_preprocess_views_view(&$variables) {
     
     $clonedItems = [];
     foreach ($variables['items'] as $row) {
-      $clonedRow = [];
       foreach ($row['content'] as $item) {
-        $clonedRow[] = $item;
+        $clonedItems[] = $item;
       }
-      $clonedItems[] = $clonedRow;
     }
     $variables['clonedItems'] = $clonedItems;
 
