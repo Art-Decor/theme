@@ -60,6 +60,7 @@ function wallsociety_preprocess_views_view_grid(&$variables) {
         if (isset($item['content']['#image_style'])) {
           $itemsFullsize[$delta_row + $delta_col] = $item;
           $itemsFullsize[$delta_row + $delta_col]['content']['#image_style'] = '';
+          $itemsFullsize[$delta_row + $delta_col]['number'] = $delta_row + $delta_col;
         }
       }
     }

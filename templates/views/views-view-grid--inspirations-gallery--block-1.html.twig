@@ -48,7 +48,7 @@
         {% endfor %}
     {% endfor %}
 </div>
-
+{{dump()}}
 <div class="modal fixed z-50 inset-0 flex justify-center items-center bg-[#333]/50 p-5 md:p-10 transition duration-200 opacity-0 !hidden " data-modal-inspo-container>
   <div class="modal-inner py-12 md:px-10 mx-auto max-h-[100%] flex relative">
     <button onclick="closeModal()" class="appearance-none absolute w-10 h-10 top-0 md:top-10 -right-1 p-2 bg-primary-100 hover:bg-primary-80 transition duration-200 rounded-full" data-modal-inspo-btn-close>
@@ -60,6 +60,7 @@
       <div class="swiper-wrapper max-h-[100%]">
       {% for item in itemsFullsize %}
         <div class="swiper-slide w-full max-w-full max-h-[100%] [&_*]:h-full [&_img]:object-contain" >{{ item.content }}</div>
+        {{ item.number }}
       {% endfor %}
       </div>
     </div>
