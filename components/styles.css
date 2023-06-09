@@ -302,7 +302,7 @@
   }
 
   .cart-form [data-drupal-selector="edit-coupon-redemption-apply"]{
-    @apply absolute right-5 bottom-[15px] w-auto h-12 rounded-l-none;
+    @apply absolute right-5 bottom-[15px] w-auto h-12 rounded-l-none !mb-0;
   }
 
   .cart-form .order-total-line__total{

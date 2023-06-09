@@ -7020,13 +7020,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed .toolbar-tra
 .form-header{
     margin-bottom:30px
 }
-.user-login-form .form-type-password{
-    margin-bottom:0
-}
-.user-login-form+.auth-user-form--footer{
-    background-color:#41449f;
-    color:white
-}
+
 .pass-link{
     float:right;
     margin-bottom:40px;

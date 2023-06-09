@@ -13,12 +13,12 @@
  */
 #}
 
-<div class="auth-user-form">
-  <form{{ attributes }}>
-    <h2 class="form-header">{% block form_header %}{% endblock %}</h2>
+<div class="auth-user-form rounded-md overflow-hidden">
+  <form{{ attributes.addClass('md:!px-20 !pb-10 !bg-gray-10') }}>
+    <h2 class="text-center bg-prima text-4xl md:text-5xl mb-10 md:mb-20">{% block form_header %}{% endblock %}</h2>
     {{ children }}
   </form>
-  <div class="auth-user-form--footer">
+  <div class="auth-user-form--footer md:px-20 !bg-gray-10 ">
     {% block form_footer %}{% endblock %}
   </div>
 </div>
