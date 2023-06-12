@@ -5698,14 +5698,6 @@ body{
 .well-primary .btn-link,.well-success .btn-link,#user-pass .btn-link,#user-register-form .btn-link,.well-primary .form-wrapper__returning-customer a,.form-wrapper__returning-customer .well-primary a,.well-success .form-wrapper__returning-customer a,.form-wrapper__returning-customer .well-success a,#user-pass .form-wrapper__returning-customer a,.form-wrapper__returning-customer #user-pass a,#user-register-form .form-wrapper__returning-customer a,.form-wrapper__returning-customer #user-register-form a{
     color:white
 }
-.well-primary .form-control,.well-success .form-control,#user-pass .form-control,#user-register-form .form-control{
-    border-color:white;
-    background-color:transparent;
-    color:white
-}
-.well-primary .form-control:focus,.well-success .form-control:focus,#user-pass .form-control:focus,#user-register-form .form-control:focus{
-    border-color:white
-}
 .well-primary .select-wrapper::after,.well-success .select-wrapper::after,#user-pass .select-wrapper::after,#user-register-form .select-wrapper::after{
     color:white
 }
