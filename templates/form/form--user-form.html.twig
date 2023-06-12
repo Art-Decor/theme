@@ -14,11 +14,11 @@
 #}
 
 <div class="auth-user-form rounded-md !mb-10 overflow-hidden">
-  <form{{ attributes.addClass('md:!px-20 !pb-5 !bg-gray-10 !text-primary-100 [&_button]:mx-auto [&_button]:block') }}>
+  <form{{ attributes.addClass('md:!px-20 !pb-5 !bg-gray-10 !text-primary-100 [&_button]:mx-auto [&_button]:block [&_p]:mb-5') }}>
     <h2 class="text-center bg-prima text-4xl md:text-5xl mb-5 md:mb-10">{% block form_header %}{% endblock %}</h2>
     {{ children }}
   </form>
-  <div class="auth-user-form--footer md:!px-20 pt-0 !bg-gray-10 text-primary-100 ">
+  <div class="auth-user-form--footer md:!px-20 !pt-0 !bg-gray-10 text-primary-100 ">
     <div class="border-0 border-solid border-t border-t-gray-40 !pt-7">
       {% block form_footer %}{% endblock %}
     </div>
