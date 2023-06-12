@@ -359,6 +359,9 @@
   form.contact-form [data-drupal-selector="edit-actions"]{
     @apply w-full
   }
+  .password-confirm-message{
+    @apply mb-5
+  }
   form.contact-form [data-drupal-selector="edit-actions"],
   #block-termsandconditionstext{
     @apply w-full max-w-xs mx-auto
