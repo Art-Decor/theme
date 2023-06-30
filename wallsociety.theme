@@ -127,7 +127,8 @@ function attachSwiperLinksToHtmlHead(&$variables) {
   ];
 }
 
-function wallsociety_simplenews_form_alter(&$form, &$form_state, $form_id) {
+function simplenews_form_alter(&$form, &$form_state, $form_id) {
+  var_dump($form_id);
   if($form_id == 'simplenews-subscriptions-block-footer') {
     $form['mail']['#title'] = '';
     $form['mail']['#attributes']['placeholder'] = t('PLACEHOLDER TEXT');
