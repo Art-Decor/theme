@@ -126,3 +126,10 @@ function attachSwiperLinksToHtmlHead(&$variables) {
     'wallsociety_swiper_script',
   ];
 }
+
+function simplenews_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'SIMPLENEWS_FORM_ID') {
+    $form['mail']['#title'] = '';
+    $form['mail']['#attributes']['placeholder'] = t('PLACEHOLDER TEXT');
+  }
+}
