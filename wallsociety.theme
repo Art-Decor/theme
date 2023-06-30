@@ -128,7 +128,7 @@ function attachSwiperLinksToHtmlHead(&$variables) {
 }
 
 function simplenews_form_alter(&$form, &$form_state, $form_id) {
-  if($form_id == 'simplenews-subscriptions-block-footer') {
+  if($form_id == 'footer') {
     $form['mail']['#title'] = '';
     $form['mail']['#attributes']['placeholder'] = t('PLACEHOLDER TEXT');
   }
