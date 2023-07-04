@@ -4,9 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "postcss components/styles.css -o components/styles.min.css --watch",
-		"build": "postcss components/styles.css -o components/styles.min.css",
-		"deploy": "NODE_ENV=production postcss components/styles.css -o components/styles.min.css --no-map"
+		"dev": "postcss assets/styles.css -o assets/styles.min.css --watch",
+		"build": "postcss assets/styles.css -o assets/styles.min.css",
+		"deploy": "NODE_ENV=production postcss assets/styles.css -o assets/styles.min.css --no-map"
 	},
 	"repository": {
 		"type": "git",

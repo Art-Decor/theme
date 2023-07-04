@@ -2,7 +2,7 @@ base:
    version: VERSION
    css:
       theme:
-         components/styles.min.css:
+         assets/styles.min.css:
             weight: 10
       component:
          css/components/action-links.css:
@@ -55,47 +55,47 @@ dialog:
    version: VERSION
    css:
       component:
-         css/components/dialog.css:
+         components/dialog.css:
             weight: -10
 dropbutton:
    version: VERSION
    css:
       component:
-         css/components/dropbutton.css:
+         components/dropbutton.css:
             weight: -10
 file:
    version: VERSION
    css:
       component:
-         css/components/file.css:
+         components/file.css:
             weight: -10
 image-widget:
    version: VERSION
    css:
       component:
-         css/components/image-widget.css: {}
+         components/image-widget.css: {}
 indented:
    version: VERSION
    css:
       component:
-         css/components/indented.css: {}
+         components/indented.css: {}
 messages:
    version: VERSION
    css:
       component:
-         css/components/messages.css:
+         components/messages.css:
             weight: -10
 node:
    version: VERSION
    css:
       component:
-         css/components/node.css:
+         components/node.css:
             weight: -10
 progress:
    version: VERSION
    css:
       component:
-         css/components/progress.css:
+         components/progress.css:
             weight: -10
 search-results:
    version: VERSION
@@ -108,3 +108,15 @@ user:
       component:
          css/components/user.css:
             weight: -10
+
+form.we-mega-menu-backend:
+   version: 1.0
+   js:
+      components/we_megamenu/we_megamenu.icon.js: {}
+      components/we_megamenu/we_megamenu.js: {}
+
+form.we-mega-menu-frontend:
+   version: 1.0
+   js:
+      components/we_megamenu/we_mobile_menu.js: {}
+      components/we_megamenu/we_megamenu_frontend.js: {}

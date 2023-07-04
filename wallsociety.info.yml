@@ -54,4 +54,4 @@ libraries-override:
    belgrade/theme:
       css:
          theme:
-            assets/css/style.css: components/belgrade.css
+            assets/css/style.css: components/belgrade/belgrade.css
