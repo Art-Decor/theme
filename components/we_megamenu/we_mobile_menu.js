@@ -6,7 +6,7 @@
     var settings = $.extend({
       targetWrapper: '.navbar-we-mega-menu',
       accordionMenu: 'true',
-      toggledClass: 'toggled',
+      toggledClass: 'menu-active',
       pageSelector: 'body'
     }, options);
 

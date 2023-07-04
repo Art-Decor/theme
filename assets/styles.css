@@ -392,6 +392,18 @@
   i.better_search{
     @apply !hidden
   }
+
+  .overlay,.mobile-main-menu{
+    @apply !top-[103px] 
+  }
+
+  .navbar-we-mega-menu.navbar{
+    @apply !w-full !-right-full
+  }
+
+  .navbar-we-mega-menu.navbar.we-mobile-megamenu-active{
+    @apply !w-full !right-0
+  }
   
 }
 
