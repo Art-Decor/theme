@@ -64,7 +64,7 @@
 #}
 <div class="w-full bg-neutral-90 text-xs">
   <div class="container-fluid flex flex-row flex-wrap">
-    <div class="w-full md:w-1/3 justify-start flex-auto">
+    <div class="hidden md:block w-full md:w-1/3 flex-auto">
       {% if page.top_bar_left %}
         {{ page.top_bar_left }}
       {% endif %}
@@ -74,7 +74,7 @@
         {{ page.top_bar }}
       {% endif %}
     </div>
-    <div class="w-full md:w-1/3 justify-end flex-auto">
+    <div class="hidden md:block w-full md:w-1/3flex-auto">
       {% if page.top_bar_right %}
         {{ page.top_bar_right }}
       {% endif %}
@@ -82,7 +82,7 @@
   </div>
 </div>
 <div class="container-fluid flex flex-row flex-wrap">
-  <div class="w-full md:w-1/3 flex items-center justify-start flex-auto">
+  <div class="w-full md:w-1/3 hidden md:flex items-center justify-start flex-auto">
 
    {% block navbar %}
     {%
@@ -121,7 +121,7 @@
       {{ page.header_left }}
     {% endif %}
   </div>
-  <div class="w-full md:w-1/3 flex items-center justify-center flex-auto">
+  <div class="w-full md:w-1/3 flex items-center justify-center">
     {% if page.header_center %}
       {{ page.header_center }}
     {% endif %}
