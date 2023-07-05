@@ -405,6 +405,11 @@
     @apply !w-full !right-0
   }
   
+  .navbar-we-mega-menu.navbar .nav-tabs>li.active.active>a,
+  .navbar-we-mega-menu.navbar .nav-tabs>li.open.open>a{
+    @apply !text-primary-100
+  }
+  
 }
 
 @layer components {
