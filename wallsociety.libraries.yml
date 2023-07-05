@@ -109,13 +109,13 @@ user:
          css/components/user.css:
             weight: -10
 
-we_megamenu_backend:
+form.we-mega-menu-backend:
    version: 1.0
    js:
       components/we_megamenu/we_megamenu.icon.js: {}
       components/we_megamenu/we_megamenu.js: {}
 
-we_megamenu_frontend:
+form.we-mega-menu-frontend:
    version: 1.0
    js:
       components/we_megamenu/we_mobile_menu.js: {}
