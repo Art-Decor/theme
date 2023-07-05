@@ -398,16 +398,26 @@
   }
 
   .navbar-we-mega-menu.navbar{
-    @apply !w-full !-right-full
+    @apply !w-full !-right-full !block
   }
 
   .navbar-we-mega-menu.navbar.we-mobile-megamenu-active{
-    @apply !w-full !right-0
+    @apply !right-0
   }
   
   .navbar-we-mega-menu.navbar .nav-tabs>li.active.active>a,
   .navbar-we-mega-menu.navbar .nav-tabs>li.open.open>a{
     @apply !text-primary-100
+  }
+
+  .cart--cart-block,
+  .block-commerce-wishlist{
+    @apply opacity-100 transition duration-200
+  }
+
+  body.menu-active .cart--cart-block,
+  body.menu-active .block-commerce-wishlist{
+    @apply opacity-0
   }
 
   .type-of-block{

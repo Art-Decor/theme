@@ -1,11 +1,20 @@
 <li {{ attributes }}>
   {% if href is empty %}
-    <a href='#' data-drupal-link-system-path="<front>" class="we-megamenu-nolink">
+    <a href='#' data-drupal-link-system-path="<front>" class="we-megamenu-nolink !flex justify-between items-center">
       {% if (attribute(attributes, 'data-icon') is defined and attribute(attributes, 'data-icon')|trim) %}
         <i class="{{ attribute(attributes, 'data-icon') }}"></i>
       {% endif %}
 
       {{- title -}}
+
+      {% if (content) %}
+      <div class="border border-primary-100 p-2.5 rounded-full md:hidden">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2.5 5L7.70833 5M7.70833 5L5.20833 2.5M7.70833 5L5.20833 7.5" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      {% endif %}
+
     </a>
   {% else %}
     <a class="we-mega-menu-li !py-5 !px-0 !border-0 !border-b !border-solid !border-gray-20 !text-primary-100 !text-xl !bg-white font-medium" title="{{ attribute(attributes, 'data-description') }}" href="{{ href }}" target="{{ attribute(attributes, 'data-target') }}">
