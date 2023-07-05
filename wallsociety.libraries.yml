@@ -109,7 +109,7 @@ user:
          css/components/user.css:
             weight: -10
 
-we-mega-menu:
+we_megamenu:
    version: 1.0
    js:
       components/we_megamenu/we_megamenu_frontend.js: {}
