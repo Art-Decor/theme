@@ -55,3 +55,7 @@ libraries-override:
       css:
          theme:
             assets/css/style.css: components/belgrade/belgrade.css
+   we_megamenu/assets/js/we_mobile_menu.js: components/we_megamenu/we_mobile_menu.js
+   we_megamenu/assets/js/we_megamenu_frontend.js: components/we_megamenu/we_megamenu_frontend.js
+
+
