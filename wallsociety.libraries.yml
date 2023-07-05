@@ -112,13 +112,11 @@ user:
 form.we-mega-menu-backend:
    version: 1.0
    js:
-      component:
-         components/we_megamenu/we_megamenu.icon.js: {}
-         components/we_megamenu/we_megamenu.js: {}
+      components/we_megamenu/we_megamenu.icon.js: {}
+      components/we_megamenu/we_megamenu.js: {}
 
 form.we-mega-menu-frontend:
    version: 1.0
    js:
-      component:
-         components/we_megamenu/we_mobile_menu.js: {}
-         components/we_megamenu/we_megamenu_frontend.js: {}
+      components/we_megamenu/we_mobile_menu.js: {}
+      components/we_megamenu/we_megamenu_frontend.js: {}
