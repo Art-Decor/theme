@@ -52,7 +52,7 @@
 	'w-full',
 	'clearfix'
 ] %}
-<section {{ attributes.addClass(classes) }}>
+<div {{ attributes.addClass(classes) }}>
 	{{ title_prefix }}
 	{% if label %}
 		<h2 {{ title_attributes.addClass('block-title') }}>
@@ -62,6 +62,10 @@
 	{{ title_suffix }}
 
 	{% block content %}
-		{{ content }}
+		{{ content['field-submenu-number'] }}
+		{{ content['field-submenu-title'] }}
+		{{ content['field-submenu-link'] }}
+		{{ content['field-submenu'] }}
+		{{ content['field-submenu-graphic'] }}
 	{% endblock %}
-</section>
+</div>
