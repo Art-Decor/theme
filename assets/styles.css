@@ -409,6 +409,10 @@
   .navbar-we-mega-menu.navbar .nav-tabs>li.open.open>a{
     @apply !text-primary-100
   }
+
+  .type-of-block{
+    @apply !block
+  }
   
 }
 
