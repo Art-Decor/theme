@@ -433,11 +433,15 @@
   }
 
   .we-mega-menu-li .menu-account{
-    @apply !py-2.5 !px-5 !mx-auto w-fit rounded-full text-neutral-90 gap-[15px]
+    @apply !py-2.5 !px-5 !mx-auto w-fit rounded-full bg-neutral-90 gap-[15px]
   }
 
   .we-mega-menu-li .menu-account li{
-    @apply flex after:content-['|'] after:ml-[15px] after:mt-[3px] bg-primary-20
+    @apply !flex after:content-['|'] after:ml-[15px] after:mt-[3px] last:after:hidden last:after:ml-0 after:text-primary-20
+  }
+
+  .we-mega-menu-li .menu-account li a{
+    @apply !border-0 font-medium text-primary-100
   }
 
   .user-logged-in a[href="/user/register"]{
