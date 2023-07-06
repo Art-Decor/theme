@@ -398,7 +398,7 @@
   }
 
   .navbar-we-mega-menu.navbar{
-    @apply !w-full !-right-full !block
+    @apply !w-full !-right-full md:!right-auto !block
   }
 
   .navbar-we-mega-menu.navbar.we-mobile-megamenu-active{
@@ -426,6 +426,10 @@
 
   .type-of-block .megamenu-title{
     @apply hidden
+  }
+
+  .we-mega-menu-li{
+    @apply md:!border-0
   }
 
   .we-mega-menu-li.no-link .we-mega-menu-submenu{
@@ -462,6 +466,10 @@
 
   .we-mega-menu-li .js-form-type-search .input-group{
     @apply border border-gray-40 rounded-full overflow-hidden my-5
+  }
+
+  .we-mega-menu-ul{
+    @apply md:justify-center
   }
   
 }
