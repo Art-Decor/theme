@@ -457,7 +457,7 @@
   }
 
   .we-mega-menu-li .js-form-type-search input.form-search{
-    @apply !w-full !bg-white !h-[50px]
+    @apply !w-full !bg-white !h-[50px] !text-primary-100
   }
 
   .we-mega-menu-li .js-form-type-search .input-group{
