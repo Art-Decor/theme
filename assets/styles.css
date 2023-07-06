@@ -451,6 +451,18 @@
   .user-logged-in .menu-account li:nth-child(2){
     @apply !hidden
   }
+
+  .region-header-right .block-search{
+    @apply hidden md:!block
+  }
+
+  .we-mega-menu-li .js-form-type-search input.form-search{
+    @apply !w-full !bg-white !h-[50px]
+  }
+
+  .we-mega-menu-li .js-form-type-search .input-group{
+    @apply border border-gray-40 rounded-full overflow-hidden mb-5
+  }
   
 }
 
