@@ -444,8 +444,8 @@
     @apply !border-0 font-medium text-primary-100
   }
 
-  .user-logged-in a[href="/user/register"]{
-    @apply hidden
+  .user-logged-in .we-mega-menu-li .menu-account li:nth-child(2){
+    @apply !hidden
   }
   
 }
