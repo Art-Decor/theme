@@ -423,6 +423,10 @@
   .type-of-block{
     @apply !block
   }
+
+  .type-of-block .megamenu-title{
+    @apply hidden
+  }
   
 }
 
