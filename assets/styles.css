@@ -461,7 +461,7 @@
   }
 
   .we-mega-menu-li .js-form-type-search .input-group{
-    @apply border border-gray-40 rounded-full overflow-hidden mb-5
+    @apply border border-gray-40 rounded-full overflow-hidden my-5
   }
   
 }
