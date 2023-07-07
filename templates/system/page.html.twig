@@ -62,28 +62,28 @@
  * @see html.html.twig
  */
 #}
-<div class="w-full bg-neutral-90 text-[10px] md:text-sm py-[5px]">
+<div class="w-full bg-neutral-90 text-[10px] md-wide:text-sm py-[5px]">
   <div class="container-fluid flex flex-row flex-wrap">
-    <div class="hidden md:!block w-full md:w-1/3 flex-auto">
+    <div class="hidden md-wide:!block w-full md-wide:w-1/3 flex-auto">
       {% if page.top_bar_left %}
         {{ page.top_bar_left }}
       {% endif %}
     </div>
-    <div class="w-full md:w-1/3 justify-center flex-auto">
+    <div class="w-full md-wide:w-1/3 justify-center flex-auto">
       {% if page.top_bar %}
         {{ page.top_bar }}
       {% endif %}
     </div>
-    <div class="hidden md:!block w-full md:w-1/3 flex-auto">
+    <div class="hidden md-wide:!block w-full md-wide:w-1/3 flex-auto">
       {% if page.top_bar_right %}
         {{ page.top_bar_right }}
       {% endif %}
     </div>
   </div>
 </div>
-<div class="container-fluid border-0 border-b border-neutral-90 md:border-b-0">
+<div class="container-fluid border-0 border-b border-neutral-90 md-wide:border-b-0">
   <div class="row flex flex-row flex-wrap py-2.5">
-    <div class="w-full md:w-1/3 hidden md:!flex items-center justify-start flex-auto">
+    <div class="w-full md-wide:w-1/3 hidden md-wide:!flex items-center justify-start flex-auto">
 
     {% block navbar %}
       {%
@@ -122,21 +122,21 @@
         {{ page.header_left }}
       {% endif %}
     </div>
-    <div class="md:w-1/3 flex items-center justify-center">
+    <div class="md-wide:w-1/3 flex items-center justify-center">
       {% if page.header_center %}
         {{ page.header_center }}
       {% endif %}
     </div>
-    <div class="md:w-1/3 flex items-center justify-end flex-auto">
+    <div class="md-wide:w-1/3 flex items-center justify-end flex-auto">
       {% if page.header_right %}
         {{ page.header_right }}
       {% endif %}
     </div>
-    <div class="md:w-full">
+    <div class="md-wide:w-full">
       {# Navbar #}
       {% if page.navigation or page.top_navigation %}
 
-      <hr class="hidden md:!block bg-neutral-90 !mb-0 mt-2.5" />
+      <hr class="hidden md-wide:!block bg-neutral-90 !mb-0 mt-2.5" />
 
         {% if page.top_navigation %}
           {{ page.top_navigation }}

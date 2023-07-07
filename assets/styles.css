@@ -394,7 +394,7 @@
   }
 
   .overlay,.mobile-main-menu{
-    @apply !top-[103px] 
+    @apply !top-[103px] md-wide:!top-0
   }
 
   .navbar-we-mega-menu.navbar{
@@ -468,12 +468,12 @@
     @apply border border-gray-40 rounded-full overflow-hidden my-5
   }
 
-  .we-mega-menu-li.active{
+  .we-mega-menu-li.active > div{
     @apply relative before:hidden md-wide:before:block before:content-[''] before:absolute before:-top-px before:inset-x-0 before:h-0.5 before:bg-brown-100
   }
 
   .we-mega-menu-ul{
-    @apply md-wide:justify-center
+    @apply md-wide:justify-center md-wide:w-full
   }
 
   .we-mega-menu-ul .dropdown-menu{
@@ -481,12 +481,16 @@
   }
 
   .we-mega-menu-col{
-    @apply md-wide:pt-[50px] md-wide:pb-[70px]
+    @apply md-wide:pt-[50px] md-wide:pb-[70px] md-wide:!my-0
   }
 
   [data-block="wallartsubmenuimage"],
   [data-block="wallmuralssubmenuimage"]{
     @apply md-wide:!py-0
+  }
+
+  .navbar-toggle{
+    @apply !block md-wide:!hidden
   }
   
 }
