@@ -84,7 +84,7 @@ module.exports = {
 				},
 			},
 			screens: {
-				'md-wide': '991px'
+				'md-wide': '992px'
 			}
 		},
 	},

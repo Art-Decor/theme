@@ -494,7 +494,8 @@
     @apply md-wide:!basis-1/4 !max-w-none
   }
 
-  [data-block="wallarttaksonomysubmenu"]{
+  [data-block="wallarttaksonomysubmenu"],
+  [data-block="wallmuralstaksonomysubmenu"]{
     @apply md-wide:!basis-1/2 !max-w-none
   }
 
