@@ -517,9 +517,14 @@
     @apply relative !p-0 !m-0 md-wide:basis-1/2 !max-w-none
   }
 
+  [data-block="youimagesubmenuimagewallart"] img,
+  [data-block="youimagesubmenuimagewallmural"] img{
+    @apply object-cover
+  }
+
   [data-block="youimagesubmenuimagewallart"] a,
   [data-block="youimagesubmenuimagewallmural"] a{
-    @apply absolute z-20 inset-0 flex flex-col items-center justify-end md-wide:!p-[30px] md-wide:!text-3xl !font-normal !text-white
+    @apply md-wide:absolute z-20 inset-0 flex flex-col items-center justify-end py-[13px] md-wide:!p-[30px] !text-lg md-wide:!text-3xl !border-0 md-wide:!font-normal md-wide:!text-white
   }
 
   .we-mega-menu-submenu-inner,
