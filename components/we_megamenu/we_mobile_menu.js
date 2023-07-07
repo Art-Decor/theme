@@ -67,7 +67,7 @@
         $(settings.targetWrapper).addClass('mobile-main-menu');
         targetWrapper.addClass('we-mobile-megamenu-active');
         if (wrapper.find('.overlay').length == 0) {
-          var overlay = $(`<div class="overlay" style="top: ${offsetTop}px "></div>`);
+          var overlay = $(`<div class="overlay" style="top: ${offsetTop}px"></div>`);
           overlay.prependTo(wrapper);
           overlay.click(function () {
             _weMegaMenuClear();

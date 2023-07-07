@@ -100,34 +100,39 @@
     </div>
   {% endif %}
   <script>
-    const searchContainer = document.querySelector('.region-header-right .js-form-type-search')
-    const inputEl = document.querySelector('.js-form-type-search input.form-search')
-    const searchBtn = document.querySelector('.js-form-type-search button.form-submit')
+    
+    if(!searchContainer){ //temp double declaration fix
 
-    searchBtn.addEventListener('click',handleExpand)
-    document.addEventListener('click',handleHide)
+      const searchContainer = document.querySelector('.region-header-right .js-form-type-search')
+      const inputEl = document.querySelector('.js-form-type-search input.form-search')
+      const searchBtn = document.querySelector('.js-form-type-search button.form-submit')
 
-    function handleExpand(e){
-           if(!searchContainer.classList.contains('expanded')){
-             e.preventDefault()
-             expandInput()
-           }
+      searchBtn.addEventListener('click',handleExpand)
+      document.addEventListener('click',handleHide)
+      
+      function handleExpand(e){
+            if(!searchContainer.classList.contains('expanded')){
+              e.preventDefault()
+              expandInput()
+            }
+      }
+
+      function handleHide(e){
+            if(e.target !== searchBtn && e.target.parentElement !== searchBtn && e.target !== inputEl){
+              hideInput()
+            }
+      }
+
+      function expandInput(){
+          searchContainer.classList.add('expanded')
+          inputEl.focus()
+      }
+
+      function hideInput(){
+          searchContainer.classList.remove('expanded')        
+      }
     }
 
-    function handleHide(e){
-           if(e.target !== searchBtn && e.target.parentElement !== searchBtn && e.target !== inputEl){
-             hideInput()
-           }
-    }
-
-    function expandInput(){
-        searchContainer.classList.add('expanded')
-        inputEl.focus()
-    }
-
-    function hideInput(){
-        searchContainer.classList.remove('expanded')        
-    }
 
   </script>
 </div>

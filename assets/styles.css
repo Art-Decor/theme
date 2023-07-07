@@ -538,11 +538,7 @@
   }
   
   .navbar-toggle{
-    @apply !block md-wide:!hidden
-  }
-
-  .menu-active .navbar-toggle{
-    @apply relative transition-all duration-300
+    @apply !relative !block md-wide:!hidden transition-all duration-300
   }
 
   .menu-active .navbar-toggle span:nth-child(1){
