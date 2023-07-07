@@ -101,7 +101,7 @@
   {% endif %}
   <script>
     
-    if(!searchContainer){ //temp double declaration fix
+    if(!window.searchExpandHandlers){ //temp double declaration fix
 
       const searchContainer = document.querySelector('.region-header-right .js-form-type-search')
       const inputEl = document.querySelector('.js-form-type-search input.form-search')
@@ -131,6 +131,8 @@
       function hideInput(){
           searchContainer.classList.remove('expanded')        
       }
+
+      window.searchExpandHandlers = true
     }
 
 

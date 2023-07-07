@@ -123,6 +123,7 @@
           }else {
             $sub_menu_inner.slideUp();
           }
+          return false
         }
       });
     }
