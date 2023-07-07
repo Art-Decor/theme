@@ -394,7 +394,7 @@
   }
 
   .overlay,.mobile-main-menu{
-    @apply !top-[103px] md-wide:!top-0
+    @apply md-wide:!top-0
   }
 
   .navbar-we-mega-menu.navbar{
@@ -504,22 +504,24 @@
     @apply md-wide:!basis-1/4 !max-w-none
   }
 
-  .navbar-toggle{
-    @apply !block md-wide:!hidden
-  }
-
+  
   .navbar-we-mega-menu .we-mega-menu-row{
     @apply md-wide:!mx-0
   }
-
+  
   [data-block="youimagesubmenuimagewallart"],
   [data-block="youimagesubmenuimagewallmural"]{
     @apply relative !p-0 !m-0 md-wide:basis-1/2 !max-w-none
   }
-
+  
   [data-block="youimagesubmenuimagewallart"] img,
   [data-block="youimagesubmenuimagewallmural"] img{
-    @apply object-cover
+    @apply object-cover w-full transition duration-300
+  }
+  
+  [data-block="youimagesubmenuimagewallart"]:hover img,
+  [data-block="youimagesubmenuimagewallmural"]:hover img{
+    @apply scale-105
   }
 
   [data-block="youimagesubmenuimagewallart"] a,
@@ -535,12 +537,30 @@
     @apply h-full
   }
   
+  .navbar-toggle{
+    @apply !block md-wide:!hidden
+  }
+
+  .menu-active .navbar-toggle{
+    @apply relative transition-all duration-300
+  }
+
+  .menu-active .navbar-toggle span:nth-child(1){
+    @apply -rotate-45 top-[6px]
+  }
+  .menu-active .navbar-toggle span:nth-child(2){
+    @apply scale-x-0
+  }
+  .menu-active .navbar-toggle span:nth-child(3){
+    @apply rotate-45 bottom-[6px]
+  }
+
 }
 
 @layer components {
   .text-default h3,
   .text-default h4{
-      @apply !mb-4 md:!mb-7;
+    @apply !mb-4 md:!mb-7;
   }
   .text-default h3{
       @apply !text-lg md:!text-xl !font-semibold;
