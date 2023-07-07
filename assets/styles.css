@@ -524,7 +524,7 @@
 
   [data-block="youimagesubmenuimagewallart"] a,
   [data-block="youimagesubmenuimagewallmural"] a{
-    @apply md-wide:absolute z-20 inset-0 flex flex-col items-center justify-end py-[13px] md-wide:!p-[30px] !text-lg md-wide:!text-3xl !border-0 md-wide:!font-normal md-wide:!text-white
+    @apply md-wide:absolute z-20 inset-0 flex flex-col items-center justify-end !pl-[30px] !py-[13px] md-wide:!p-[30px] !text-lg md-wide:!text-3xl !border-0 md-wide:!font-normal !text-primaty-100 md-wide:!text-white
   }
 
   .we-mega-menu-submenu-inner,
