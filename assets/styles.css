@@ -398,7 +398,7 @@
   }
 
   .navbar-we-mega-menu.navbar{
-    @apply !w-full !-right-full md:!right-auto !block
+    @apply !w-full !-right-full md-wide:!right-auto !block
   }
 
   .navbar-we-mega-menu.navbar.we-mobile-megamenu-active{
@@ -429,7 +429,7 @@
   }
 
   .we-mega-menu-li{
-    @apply md:!border-0
+    @apply md-wide:!border-0
   }
 
   .we-mega-menu-li.no-link .we-mega-menu-submenu{
@@ -457,7 +457,7 @@
   }
 
   .region-header-right .block-search{
-    @apply hidden md:!block
+    @apply hidden md-wide:!block
   }
 
   .we-mega-menu-li .js-form-type-search input.form-search{
@@ -469,11 +469,24 @@
   }
 
   .we-mega-menu-li.active{
-    @apply relative before:hidden md:before:block before:content-[''] before:absolute before:-top-px before:inset-x-0 before:h-0.5 before:bg-brown-100
+    @apply relative before:hidden md-wide:before:block before:content-[''] before:absolute before:-top-px before:inset-x-0 before:h-0.5 before:bg-brown-100
   }
 
   .we-mega-menu-ul{
-    @apply md:justify-center
+    @apply md-wide:justify-center
+  }
+
+  .we-mega-menu-ul .dropdown-menu{
+    @apply md-wide:static
+  }
+
+  .we-mega-menu-col{
+    @apply md-wide:pt-[50px] md-wide:pb-[70px]
+  }
+
+  [data-block="wallartsubmenuimage"],
+  [data-block="wallmuralssubmenuimage"]{
+    @apply md-wide:!py-0
   }
   
 }

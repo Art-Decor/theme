@@ -83,6 +83,9 @@ module.exports = {
 					20: '#D2E3F9',
 				},
 			},
+			screens: {
+				'md-wide': '991px'
+			}
 		},
 	},
 	plugins: [],

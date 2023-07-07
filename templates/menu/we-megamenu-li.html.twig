@@ -1,11 +1,11 @@
   {% if href is empty %}
-  <li class="we-mega-menu-li no-link md:!hidden">
+  <li class="we-mega-menu-li no-link md-wide:!hidden">
     {{ content }}
   </li>
   {% else %}
   <li {{ attributes }}>
     <div class="px-5">
-      <a class="we-mega-menu-li !py-5 md:!py-[7px] !px-0 md:mx-0 border-0 border-b md:border-b-0 border-solid border-gray-20 !text-primary-100 !text-xl md:!text-[14px] md:uppercase !bg-white font-medium !flex justify-between items-center" title="{{ attribute(attributes, 'data-description') }}" href="{{ href }}" target="{{ attribute(attributes, 'data-target') }}">
+      <a class="we-mega-menu-li !py-5 md-wide:!py-[7px] !px-0 md-wide:mx-0 border-0 border-b md-wide:border-b-0 border-solid border-gray-20 !text-primary-100 !text-xl md-wide:!text-[14px] md-wide:uppercase !bg-white font-medium !flex justify-between items-center" title="{{ attribute(attributes, 'data-description') }}" href="{{ href }}" target="{{ attribute(attributes, 'data-target') }}">
         {% if (attribute(attributes, 'data-icon') is defined and attribute(attributes, 'data-icon')|trim) %}
           <i class="{{ attribute(attributes, 'data-icon') }}"></i>
         {% endif %}
@@ -17,7 +17,7 @@
         {% endif %}
 
         {% if (content) %}
-        <div class="border border-primary-100 p-2.5 rounded-full md:hidden">
+        <div class="border border-primary-100 p-2.5 rounded-full md-wide:hidden">
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M2.5 5L7.70833 5M7.70833 5L5.20833 2.5M7.70833 5L5.20833 7.5" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
