@@ -3419,7 +3419,6 @@ tbody.collapse.in{
     position:relative;
     min-height:60px;
     margin-bottom:0;
-    border:1px solid transparent
 }
 .navbar:before,.navbar:after{
     content:" ";
