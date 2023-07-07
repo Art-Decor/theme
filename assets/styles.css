@@ -491,16 +491,16 @@
 
   [data-block="wallartmostpopularsubmenu"],
   [data-block="wallmuralsmostpopularsubmenu"]{
-    @apply md-wide:!basis-1/5 2xl:!basis-2/4 !max-w-none
+    @apply md-wide:!basis-1/4 !max-w-none
   }
 
   [data-block="wallarttaksonomysubmenu"]{
-    @apply md-wide:!basis-3/5 2xl:!basis-1/2 !max-w-none
+    @apply md-wide:!basis-1/2 !max-w-none
   }
 
   [data-block="wallartsubmenuimage"],
   [data-block="wallmuralssubmenuimage"]{
-    @apply md-wide:!basis-1/5 2xl:!basis-2/4 !max-w-none
+    @apply md-wide:!basis-1/4 !max-w-none
   }
 
   .navbar-toggle{
