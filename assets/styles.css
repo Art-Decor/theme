@@ -468,7 +468,7 @@
     @apply border border-gray-40 rounded-full overflow-hidden my-5
   }
 
-  .we-mega-menu-li.active > div{
+  .we-mega-menu-li.active .we-mega-menu-item{
     @apply relative before:hidden md-wide:before:block before:content-[''] before:absolute before:-top-px before:inset-x-0 before:h-0.5 before:bg-brown-100
   }
 
