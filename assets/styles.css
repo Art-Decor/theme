@@ -481,7 +481,7 @@
   }
 
   .we-mega-menu-col{
-    @apply md-wide:pt-[50px] md-wide:pb-[70px] md-wide:!my-0
+    @apply md-wide:pt-[50px] md-wide:pb-[70px] md-wide:!my-0 md-wide:!mx-0 md-wide:pl-5 xl:pl-[30px] 2xl:pl-[30px]
   }
 
   [data-block="wallartsubmenuimage"],
@@ -489,8 +489,26 @@
     @apply md-wide:!py-0
   }
 
+  [data-block="wallartmostpopularsubmenu"],
+  [data-block="wallmuralsmostpopularsubmenu"]{
+    @apply md-wide:!basis-1/5 2xl:!basis-2/4 !max-w-none
+  }
+
+  [data-block="wallarttaksonomysubmenu"]{
+    @apply md-wide:!basis-3/5 2xl:!basis-1/2 !max-w-none
+  }
+
+  [data-block="wallartsubmenuimage"],
+  [data-block="wallmuralssubmenuimage"]{
+    @apply md-wide:!basis-1/5 2xl:!basis-2/4 !max-w-none
+  }
+
   .navbar-toggle{
     @apply !block md-wide:!hidden
+  }
+
+  .navbar-we-mega-menu .we-mega-menu-row{
+    @apply md-wide:!mx-0
   }
 
   .we-mega-menu-submenu-inner,
