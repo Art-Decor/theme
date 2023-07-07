@@ -492,6 +492,14 @@
   .navbar-toggle{
     @apply !block md-wide:!hidden
   }
+
+  .we-mega-menu-submenu-inner,
+  .we-mega-menu-row,
+  .we-mega-menu-col,
+  .type-of-block,
+  .type-of-block .block-inner{
+    @apply h-full
+  }
   
 }
 
