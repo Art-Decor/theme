@@ -11,16 +11,19 @@
       headerSelector: '[data-header-main]'
     }, options);
 
+    let offsetTop = 0
+    if ($(settings.headerSelector).length) {
+      offsetTop = $(settings.headerSelector).offset().top + $(settings.headerSelector).height()
+    }
+
+    $(settings.targetWrapper).css('top',`${offsetTop}px`)
+
     if ($(window).width() <= 991) {
       $(settings.targetWrapper).addClass('mobile-main-menu');
     }
 
     var toggleButton = this;
     
-    let offsetTop = 0
-    if ($(settings.headerSelector).length) {
-      offsetTop = $(settings.headerSelector).offset().top + $(settings.headerSelector).height()
-    }
 
     $(window).resize(function () {
       if ($(window).width() <= 991) {
