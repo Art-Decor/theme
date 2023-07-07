@@ -18,8 +18,8 @@
     var toggleButton = this;
     
     let offsetTop = 0
-    if ($(headerSelector).length) {
-      offsetTop = $(headerSelector).offset().top + $(headerSelector).height()
+    if ($(settings.headerSelector).length) {
+      offsetTop = $(settings.headerSelector).offset().top + $(settings.headerSelector).height()
     }
 
     $(window).resize(function () {
