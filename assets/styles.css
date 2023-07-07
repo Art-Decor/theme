@@ -468,6 +468,10 @@
     @apply border border-gray-40 rounded-full overflow-hidden my-5
   }
 
+  .we-mega-menu-li.active{
+    @apply relative before:content-[''] before:absolute before:top-0 before:inset-x-0 before:h-0.5 before:bg-brown-100
+  }
+
   .we-mega-menu-ul{
     @apply md:justify-center
   }

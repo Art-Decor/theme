@@ -3415,11 +3415,6 @@ tbody.collapse.in{
 .tab-content>.active{
     display:block
 }
-.nav-tabs .dropdown-menu{
-    margin-top:-1px;
-    border-top-right-radius:0;
-    border-top-left-radius:0
-}
 .navbar{
     position:relative;
     min-height:60px;
