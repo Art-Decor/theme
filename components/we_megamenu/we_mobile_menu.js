@@ -37,9 +37,11 @@
       if ($(window).width() <= 991) {
         $(settings.targetWrapper).addClass('mobile-main-menu');
         $(settings.targetWrapper).css('top',`${_calcOffsetTop()}px`)
+        $(settings.targetWrapper).css('height',`calc(100vh - ${_calcOffsetTop()}px)`)
       } else {
         $(settings.targetWrapper).removeClass('mobile-main-menu');
         $(settings.targetWrapper).css('top','')
+        $(settings.targetWrapper).css('height','')
         $('body').css('overflow', '');
         $('body').css('height', '');
         $('body').css('position', '');
@@ -79,6 +81,7 @@
         wrapper.addClass(settings.toggledClass).css('position', 'relative');
         $(settings.targetWrapper).addClass('mobile-main-menu');
         $(settings.targetWrapper).css('top',`${_calcOffsetTop()}px`)
+        $(settings.targetWrapper).css('height',`calc(100vh - ${_calcOffsetTop()}px)`)
         targetWrapper.addClass('we-mobile-megamenu-active');
         if (wrapper.find('.overlay').length == 0) {
           var overlay = $(`<div class="overlay" style="top: ${_calcOffsetTop()}px"></div>`);
@@ -121,20 +124,9 @@
       item.click(function (e) {
         if ($(window).width() <= 991) {
           var $this = $(this);
-          var $sub_menu_inner = $this.find('> .we-mega-menu-submenu');
           if (!$this.hasClass('open')) {
             $(item).not($this).removeClass('open');
-            item.find('> .we-mega-menu-submenu').slideUp();
             $this.toggleClass('open');
-            if ($this.hasClass('open')) {
-              // $sub_menu_inner.slideDown();
-              console.log('open ?');
-              return false         
-            }
-          }else {
-            // $sub_menu_inner.slideUp();
-            console.log('close ? ');
-            return false
           }
           return false         
         }

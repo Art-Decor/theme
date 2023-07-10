@@ -485,6 +485,15 @@
 		@apply relative before:hidden md-wide:before:block before:content-[''] before:absolute before:-top-px before:inset-x-0 before:h-0.5 before:bg-brown-100;
 	}
 
+  .we-mega-menu-li.dropdown-menu .we-mega-menu-submenu{
+    @apply translate-x-full md-wide:!translate-x-0 transition duration-300
+  }
+
+  .we-mega-menu-li.dropdown-menu.open .we-mega-menu-submenu{
+    @apply !translate-x-0
+  }
+
+
 	.we-mega-menu-ul {
 		@apply md-wide:justify-center md-wide:w-full;
 	}
@@ -546,7 +555,7 @@
 	.we-mega-menu-col,
 	.type-of-block,
 	.type-of-block .block-inner {
-		@apply h-full;
+		@apply md-wide:h-full;
 	}
 
 	.navbar-toggle {
