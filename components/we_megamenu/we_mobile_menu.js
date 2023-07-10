@@ -17,8 +17,8 @@
         return 0
       }
       let offsetTop = 0
-      if ($(settings.headerSelector).length) {
-        offsetTop = $(settings.headerSelector).height()
+      if ($(settings.headerContainerSelector).length) {
+        offsetTop = $(settings.headerContainerSelector).height()
       }
       return offsetTop
     }
