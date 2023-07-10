@@ -485,11 +485,15 @@
 		@apply relative before:hidden md-wide:before:block before:content-[''] before:absolute before:-top-px before:inset-x-0 before:h-0.5 before:bg-brown-100;
 	}
 
-  .we-mega-menu-li.dropdown-menu .we-mega-menu-submenu{
+  .we-mega-menu-li:not(.no-link) .we-mega-menu-submenu{
+    @apply !block absolute inset-0 z-10 md-wide:static
+  }
+
+  .we-mega-menu-li.dropdown-menu:not(.no-link) .we-mega-menu-submenu{
     @apply translate-x-full md-wide:!translate-x-0 transition duration-300
   }
 
-  .we-mega-menu-li.dropdown-menu.open .we-mega-menu-submenu{
+  .we-mega-menu-li.dropdown-menu.open:not(.no-link) .we-mega-menu-submenu{
     @apply !translate-x-0
   }
 
