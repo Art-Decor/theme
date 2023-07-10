@@ -128,11 +128,11 @@
             $this.toggleClass('open');
             if ($this.hasClass('open')) {
               $sub_menu_inner.slideDown();
-              setTimeout(function () {
-                $(targetWrapper).animate({
-                  scrollTop: $this.offset().top + _calcOffsetTop()
-                }, 700);
-              }, 500);
+              // setTimeout(function () {
+              //   $(targetWrapper).animate({
+              //     scrollTop: $this.offset().top + _calcOffsetTop()
+              //   }, 700);
+              // }, 500);
             }
           }else {
             $sub_menu_inner.slideUp();
