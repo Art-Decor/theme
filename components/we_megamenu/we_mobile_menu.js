@@ -128,8 +128,8 @@
             $this.toggleClass('open');
             if ($this.hasClass('open')) {
               $sub_menu_inner.slideDown();
-              return false              
             }
+            return false              
           }else {
             $sub_menu_inner.slideUp();
           }
@@ -143,11 +143,11 @@
 
     window.addEventListener('scroll',()=>{
 
-      if (window.scrollY < 200) {
+      if (window.scrollY < 100) {
         $(settings.headerContainerSelector).removeClass('nav-collapsed')
       }else if(scrollState > window.scrollY) {
         $(settings.headerContainerSelector).removeClass('nav-collapsed')        
-      }else{
+      }else if(!$(settings.pageSelector).hasClass(settings.toggledClass)){
         $(settings.headerContainerSelector).addClass('nav-collapsed')
       }
 
