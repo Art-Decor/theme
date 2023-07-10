@@ -18,7 +18,7 @@
       }
       let offsetTop = 0
       if ($(settings.headerContainerSelector).length) {
-        offsetTop = $(settings.headerContainerSelector).height()
+        offsetTop = $(settings.headerContainerSelector).getBoundingClientRect().top + $(settings.headerContainerSelector).height()
       }
       return offsetTop
     }
@@ -128,11 +128,7 @@
             $this.toggleClass('open');
             if ($this.hasClass('open')) {
               $sub_menu_inner.slideDown();
-              // setTimeout(function () {
-              //   $(targetWrapper).animate({
-              //     scrollTop: $this.offset().top + _calcOffsetTop()
-              //   }, 700);
-              // }, 500);
+              return false              
             }
           }else {
             $sub_menu_inner.slideUp();
