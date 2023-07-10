@@ -18,7 +18,7 @@
       }
       let offsetTop = 0
       if ($(settings.headerSelector).length) {
-        offsetTop = $(settings.headerSelector).offset().top + $(settings.headerSelector).height()
+        offsetTop = $(settings.headerSelector).height()
       }
       return offsetTop
     }
@@ -146,8 +146,8 @@
     let scrollState = 0 
 
     window.addEventListener('scroll',()=>{
-      
-      if (window.scrollY < 100) {
+
+      if (window.scrollY < 200) {
         $(settings.headerContainerSelector).removeClass('nav-collapsed')
       }else if(scrollState > window.scrollY) {
         $(settings.headerContainerSelector).removeClass('nav-collapsed')        
