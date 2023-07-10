@@ -542,13 +542,13 @@
   }
 
   .menu-active .navbar-toggle span:nth-child(1){
-    @apply -rotate-45 top-[6px]
+    @apply -rotate-45 translate-y-[6px]
   }
   .menu-active .navbar-toggle span:nth-child(2){
     @apply scale-x-0
   }
   .menu-active .navbar-toggle span:nth-child(3){
-    @apply rotate-45 bottom-[6px]
+    @apply rotate-45 translate-y-[-6px]
   }
 
 }

@@ -18,6 +18,9 @@
 
     if ($(window).width() <= 991) {
       $(settings.targetWrapper).addClass('mobile-main-menu');
+      $(settings.targetWrapper).css('top',`${offsetTop}px`)
+    }else{
+      $(settings.targetWrapper).css('top','')
     }
 
     var toggleButton = this;
@@ -26,6 +29,7 @@
     $(window).resize(function () {
       if ($(window).width() <= 991) {
         $(settings.targetWrapper).addClass('mobile-main-menu');
+        $(settings.targetWrapper).css('top',`${offsetTop}px`)
       } else {
         $(settings.targetWrapper).removeClass('mobile-main-menu');
         $(settings.targetWrapper).css('top','')
@@ -67,7 +71,6 @@
       if (!wrapper.hasClass(settings.toggledClass)) {
         wrapper.addClass(settings.toggledClass).css('position', 'relative');
         $(settings.targetWrapper).addClass('mobile-main-menu');
-        $(settings.targetWrapper).css('top',`${offsetTop}px`)
         targetWrapper.addClass('we-mobile-megamenu-active');
         if (wrapper.find('.overlay').length == 0) {
           var overlay = $(`<div class="overlay" style="top: ${offsetTop}px"></div>`);
