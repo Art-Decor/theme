@@ -555,7 +555,7 @@
 	.we-mega-menu-col,
 	.type-of-block,
 	.type-of-block .block-inner {
-		@apply md-wide:h-full;
+		@apply h-full;
 	}
 
 	.navbar-toggle {
