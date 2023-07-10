@@ -16,8 +16,6 @@
       offsetTop = $(settings.headerSelector).offset().top + $(settings.headerSelector).height()
     }
 
-    $(settings.targetWrapper).css('top',`${offsetTop}px`)
-
     if ($(window).width() <= 991) {
       $(settings.targetWrapper).addClass('mobile-main-menu');
     }
@@ -30,6 +28,7 @@
         $(settings.targetWrapper).addClass('mobile-main-menu');
       } else {
         $(settings.targetWrapper).removeClass('mobile-main-menu');
+        $(settings.targetWrapper).css('top','')
         $('body').css('overflow', '');
         $('body').css('height', '');
         $('body').css('position', '');
@@ -68,6 +67,7 @@
       if (!wrapper.hasClass(settings.toggledClass)) {
         wrapper.addClass(settings.toggledClass).css('position', 'relative');
         $(settings.targetWrapper).addClass('mobile-main-menu');
+        $(settings.targetWrapper).css('top',`${offsetTop}px`)
         targetWrapper.addClass('we-mobile-megamenu-active');
         if (wrapper.find('.overlay').length == 0) {
           var overlay = $(`<div class="overlay" style="top: ${offsetTop}px"></div>`);
