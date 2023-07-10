@@ -18,7 +18,7 @@
       }
       let offsetTop = 0
       if ($(settings.headerContainerSelector).length) {
-        offsetTop = $(settings.headerContainerSelector).getBoundingClientRect().top + $(settings.headerContainerSelector).height()
+        offsetTop = document.querySelector(settings.headerContainerSelector).getBoundingClientRect().top + $(settings.headerContainerSelector).height()
       }
       return offsetTop
     }
