@@ -555,7 +555,7 @@
 	}
 
 	.we-mega-menu-submenu-inner,
-	.we-mega-menu-row,
+	.we-mega-menu-li:not(.dropdown-menu) .we-mega-menu-row,
 	.we-mega-menu-col,
 	.type-of-block,
 	.type-of-block .block-inner {
