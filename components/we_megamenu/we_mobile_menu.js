@@ -127,13 +127,16 @@
             item.find('> .we-mega-menu-submenu').slideUp();
             $this.toggleClass('open');
             if ($this.hasClass('open')) {
-              $sub_menu_inner.slideDown();
+              // $sub_menu_inner.slideDown();
+              console.log('open ?');
+              return false         
             }
-            return false              
           }else {
-            $sub_menu_inner.slideUp();
+            // $sub_menu_inner.slideUp();
+            console.log('close ? ');
+            return false
           }
-          return false
+          return false         
         }
       });
     }

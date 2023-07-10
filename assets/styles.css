@@ -414,10 +414,6 @@
 		@apply md-wide:!top-0;
 	}
 
-	.navbar-we-mega-menu.navbar {
-		@apply !w-full !-right-full md-wide:!right-auto !block;
-	}
-
 	.navbar-we-mega-menu.navbar.we-mobile-megamenu-active {
 		@apply !right-0;
 	}
