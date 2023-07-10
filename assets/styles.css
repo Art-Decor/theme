@@ -551,6 +551,10 @@
     @apply rotate-45 translate-y-[-6px]
   }
 
+  [data-header-container].nav-collapsed{
+    @apply -translate-y-full pointer-events-none
+  }
+
 }
 
 @layer components {
