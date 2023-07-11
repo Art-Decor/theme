@@ -586,6 +586,10 @@
 	[data-header-container].nav-collapsed {
 		@apply -translate-y-full pointer-events-none;
 	}
+
+	[data-header-container].nav-collapsed .navbar-we-mega-menu{
+		@apply !hidden md-wide:!block 
+	}
 }
 
 @layer components {
