@@ -43,6 +43,7 @@
         $(settings.targetWrapper).removeClass('mobile-main-menu');
         $(settings.targetWrapper).css('top','')
         $(settings.targetWrapper).css('height','')
+        $(settings.targetWrapper).css('overflow','')
         $('body').css('overflow', '');
         $('body').css('height', '');
         $('body').css('position', '');
@@ -129,6 +130,9 @@
           if (!$this.hasClass('open')) {
             $(item).not($this).removeClass('open');
             $this.toggleClass('open');
+            let scrollOffset = $(settings.targetWrapper).scrollTop()
+            $(settings.targetWrapper).css('overflow','hidden')
+            $this.find('we-mega-menu-submenu').css('top',`${scrollOffset}px`)
           }
           return false         
         }
@@ -137,7 +141,13 @@
 
     $(settings.closeButtonsCelector).on('click',function(){
       let parentId = $(this).attr('data-parent-id')
-      $(`[data-id="${parentId}"].we-mega-menu-li`).removeClass('open')
+      let $parentItem = $(`[data-id="${parentId}"].we-mega-menu-li`)
+      $parentItem.removeClass('open')
+      setTimeout(()=>{
+        $(settings.targetWrapper).css('overflow','')
+        $parentItem.find('we-mega-menu-submenu').css('top','')
+      },300)
+
       return false
     })
 

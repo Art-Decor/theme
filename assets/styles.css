@@ -486,11 +486,11 @@
 	}
 
   .we-mega-menu-li:not(.no-link) .we-mega-menu-submenu{
-    @apply !block absolute inset-0 z-10 md-wide:static overflow-auto
+    @apply !block absolute inset-0 z-10 md-wide:static overflow-auto h-full md-wide::h-auto
   }
 
   .we-mega-menu-li.dropdown-menu:not(.no-link) .we-mega-menu-submenu{
-    @apply translate-x-full md-wide:!translate-x-0 transition duration-300
+    @apply translate-x-full md-wide:!translate-x-0 transition-translate duration-300
   }
 
   .we-mega-menu-li.dropdown-menu.open:not(.no-link) .we-mega-menu-submenu{
@@ -562,7 +562,6 @@
 		@apply md-wide:absolute z-20 inset-0 flex flex-col items-center justify-end !pl-[30px] !py-[13px] md-wide:!p-[30px] !text-lg md-wide:!text-3xl !border-0 md-wide:!font-normal !text-primary-100 md-wide:!text-white;
 	}
 
-	.we-mega-menu-submenu-inner,
 	.we-mega-menu-li:not(.dropdown-menu) .we-mega-menu-row,
 	.we-mega-menu-col,
 	.type-of-block,
