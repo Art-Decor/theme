@@ -490,7 +490,7 @@
   }
 
   .we-mega-menu-li.dropdown-menu:not(.no-link) .we-mega-menu-submenu{
-    @apply translate-x-full md-wide:!translate-x-0 transition-transform duration-300
+    @apply translate-x-full md-wide:!translate-x-0 transition-transform md-wide:!transition-all duration-300 md-wide:!visible md-wide:block md-wide:opacity-0 md-wide:pointer-events-none
   }
 
   .we-mega-menu-li.dropdown-menu.open:not(.no-link) .we-mega-menu-submenu{
@@ -589,10 +589,6 @@
 
 	[data-header-container].nav-collapsed .navbar-we-mega-menu{
 		@apply !hidden md-wide:!block 
-	}
-
-	.we-mega-menu-submenu{
-		@apply md-wide:!visible md-wide:block md-wide:opacity-0 md-wide:transition md-wide:duration-300 md-wide:pointer-events-none
 	}
 
 	.we-mega-menu-ul .dropdown-menu:hover > .we-mega-menu-submenu,
