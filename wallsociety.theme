@@ -53,7 +53,7 @@ function wallsociety_preprocess_views_view_grid(&$variables) {
   $view = $variables['view'];
 
   if(strpos($view->storage->get('id'), 'inspirations_gallery') !== FALSE){
-    
+
     $index = 0;
     $itemsFullsize = [];
     foreach ($variables['items'] as $row) {
@@ -89,7 +89,7 @@ function wallsociety_form_views_form_commerce_cart_form_default_alter(&$form, &$
 
  function wallsociety_preprocess_field(&$variables) {
   $field_name = $variables['element']['#field_name'];
-  
+
   if ($field_name == 'field_galeria') {
     $itemsFullsize = $variables['items'];
     foreach ($itemsFullsize as $delta => $item) {
@@ -98,7 +98,7 @@ function wallsociety_form_views_form_commerce_cart_form_default_alter(&$form, &$
       }
     }
     $variables['itemsFullsize'] = $itemsFullsize;
-  
+
     attachSwiperLinksToHtmlHead($variables);
   }
 }
@@ -125,4 +125,13 @@ function attachSwiperLinksToHtmlHead(&$variables) {
     ],
     'wallsociety_swiper_script',
   ];
+}
+
+ /**
+ * Implements hook__theme_suggestions_HOOK_alter().
+ */
+function wallsociety_theme_suggestions_item_list_alter(&$suggestions, $variables, $hook) {
+  if (isset($variables['attributes']['class']) && isset($variables['attributes']['class'][0])) {
+	$suggestions[] = $variables['theme_hook_original'] . '__' . str_replace('-','_',$variables['attributes']['class'][0]);
+  }
 }
