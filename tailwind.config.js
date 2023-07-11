@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: [
+		'./assets/styles.css',
 		'./components/**/*.{html,js,twig,css}',
 		'./src/**/*.{html,twig,php}',
 		'./templates/**/*.{html,js,twig}',
@@ -84,8 +85,8 @@ module.exports = {
 				},
 			},
 			screens: {
-				'md-wide': '992px'
-			}
+				'md-wide': '992px',
+			},
 		},
 	},
 	plugins: [],
