@@ -25,6 +25,7 @@
         {% endif %}
       </a>
     </div>
-    {{ content }}
+    {% set content_updated = content|merge({ title: title }) %}
+    {{ content_updated }}
   </li>
   {% endif %}
