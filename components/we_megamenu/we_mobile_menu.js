@@ -116,7 +116,7 @@
     
     $(settings.closeButtonsCelector).on('click',function(){
       let parentId = $(this).attr('data-parent-id')
-      $(`[data-id="${parentId}"].we-mega-menu-li`).toggleClass('open')
+      $(`[data-id="${parentId}"].we-mega-menu-li`).removeClass('open')
     })
 
     if (settings.accordionMenu == 'true') {

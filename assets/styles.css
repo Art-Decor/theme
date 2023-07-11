@@ -490,7 +490,7 @@
   }
 
   .we-mega-menu-li.dropdown-menu:not(.no-link) .we-mega-menu-submenu{
-    @apply -translate-x-full md-wide:!translate-x-0 transition duration-300
+    @apply translate-x-full md-wide:!translate-x-0 transition duration-300
   }
 
   .we-mega-menu-li.dropdown-menu.open:not(.no-link) .we-mega-menu-submenu{
