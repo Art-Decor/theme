@@ -5,6 +5,10 @@
 	html {
 		font-size: 16px;
 	}
+}
+
+@layer components {
+
 
 	.container-fluid {
 		@apply container px-5 md:px-10 lg:px-20;
@@ -120,7 +124,7 @@
 	.cta-upload h2 {
 		@apply mb-4 md:mb-[30px] text-[#333];
 	}
-  
+
 	.cta-upload p {
 		@apply mb-6 md:mb-[50px] text-[#333];
 	}
@@ -137,15 +141,15 @@
 		@apply mb-6 md:mb-[50px] min-[600px]:gap-4;
 	}
 
-	ul.quicktabs-tabs {
+	.quicktabs-tabs {
 		@apply text-center space-x-4 mb-6 md:mb-[50px];
 	}
 
-	ul.quicktabs-tabs li {
+	.quicktabs-tabs li {
 		@apply relative font-semibold text-gray-500;
 	}
 
-	ul.quicktabs-tabs li.active {
+	.quicktabs-tabs li.active {
 		@apply after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:w-full after:h-0.5 after:bg-gray-500;
 	}
 
@@ -588,16 +592,14 @@
 	}
 
 	[data-header-container].nav-collapsed .navbar-we-mega-menu{
-		@apply !hidden md-wide:!block 
+		@apply !hidden md-wide:!block
 	}
 
 	.we-mega-menu-ul .dropdown-menu:hover > .we-mega-menu-submenu,
 	.we-mega-menu-ul .dropdown-menu:focus > .we-mega-menu-submenu{
 		@apply md-wide:!pointer-events-auto md-wide:!opacity-100
 	}
-}
 
-@layer components {
 	.text-default h3,
 	.text-default h4 {
 		@apply !mb-4 md:!mb-7;
