@@ -415,7 +415,7 @@
 	}
 
 	.navbar-we-mega-menu.navbar.we-mobile-megamenu-active {
-		@apply !-translate-x-full md:!translate-x-0;
+		@apply !-translate-x-full md-wide:!translate-x-0;
 	}
 
 	.navbar-we-mega-menu.navbar .nav-tabs > li.active.active > a,
@@ -486,7 +486,7 @@
 	}
 
   .we-mega-menu-li:not(.no-link) .we-mega-menu-submenu{
-    @apply !block absolute inset-0 z-10 md-wide:static overflow-auto h-full md-wide:h-auto
+    @apply !block absolute inset-0 md-wide:top-full z-10 overflow-auto h-full
   }
 
   .we-mega-menu-li.dropdown-menu:not(.no-link) .we-mega-menu-submenu{
@@ -539,7 +539,7 @@
 	}
 
 	.navbar-we-mega-menu .we-mega-menu-row {
-		@apply md-wide:!mx-0;
+		@apply md-wide:!mx-0 md-wide:h-full;
 	}
 
 	[data-block='youimagesubmenuimagewallart'],
