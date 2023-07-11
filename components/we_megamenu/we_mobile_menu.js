@@ -79,6 +79,8 @@
 				.find('.we-mega-menu-li.open')
 				.removeClass('open')
 
+      $(settings.targetWrapper).css('overflow','')
+
 			if (overlay.length > 0) {
 				wrapper.find('.btn-close').remove()
 				overlay.remove()
