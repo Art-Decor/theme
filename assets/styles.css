@@ -141,14 +141,6 @@
 		@apply mb-6 md:mb-[50px] min-[600px]:gap-4;
 	}
 
-	.quicktabs-tabs {
-		@apply text-center space-x-4 mb-6 md:mb-[50px];
-	}
-
-	.quicktabs-tabs li {
-		@apply relative font-semibold text-gray-500;
-	}
-
 	.quicktabs-tabs li.active {
 		@apply after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:w-full after:h-0.5 after:bg-gray-500;
 	}
