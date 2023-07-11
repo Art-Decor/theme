@@ -49,6 +49,7 @@
 				)
 			} else {
 				$(settings.targetWrapper).removeClass('mobile-main-menu')
+        $(settings.targetWrapper).removeClass('we-mobile-megamenu-active')
 				$(settings.targetWrapper).css('top', '')
 				$(settings.targetWrapper).css('height', '')
 				$(settings.targetWrapper).css('overflow', '')
