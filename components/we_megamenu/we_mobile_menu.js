@@ -10,7 +10,7 @@
       pageSelector: 'body',
       headerSelector: '[data-header-main]',
       headerContainerSelector: '[data-header-container]',
-      closeButtonsCelector: '[data-submenu-close-btn]'
+      closeButtonsSelector: '[data-submenu-close-btn]'
     }, options);
 
     function _calcOffsetTop() {
@@ -65,6 +65,7 @@
       });
       wrapper.removeClass(settings.toggledClass);
       wrapper.find('div.region-we-mega-menu nav').removeClass('we-mobile-megamenu-active');
+      $(settings.targetWrapper).find('.we-mega-menu-li.open').removeClass('open')
 
       if (overlay.length > 0) {
         wrapper.find('.btn-close').remove();
@@ -139,7 +140,7 @@
       });
     }
 
-    $(settings.closeButtonsCelector).on('click',function(){
+    $(settings.closeButtonsSelector).on('click',function(){
       let parentId = $(this).attr('data-parent-id')
       let $parentItem = $(`[data-id="${parentId}"].we-mega-menu-li`)
       $parentItem.removeClass('open')
