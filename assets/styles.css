@@ -486,7 +486,7 @@
 	}
 
   .we-mega-menu-li:not(.no-link) .we-mega-menu-submenu{
-    @apply !block absolute inset-0 z-10 md-wide:static overflow-auto h-full md-wide::h-auto
+    @apply !block absolute inset-0 z-10 md-wide:static overflow-auto h-full md-wide:h-auto
   }
 
   .we-mega-menu-li.dropdown-menu:not(.no-link) .we-mega-menu-submenu{
