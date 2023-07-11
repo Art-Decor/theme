@@ -5,6 +5,10 @@
 	html {
 		font-size: 16px;
 	}
+}
+
+@layer components {
+
 
 	.container-fluid {
 		@apply container px-5 md:px-10 lg:px-20;
@@ -595,9 +599,7 @@
 	.we-mega-menu-ul .dropdown-menu:focus > .we-mega-menu-submenu{
 		@apply md-wide:!pointer-events-auto md-wide:!opacity-100
 	}
-}
 
-@layer components {
 	.text-default h3,
 	.text-default h4 {
 		@apply !mb-4 md:!mb-7;
