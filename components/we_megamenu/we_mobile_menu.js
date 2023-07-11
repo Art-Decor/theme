@@ -132,7 +132,7 @@
             $this.toggleClass('open');
             let scrollOffset = $(settings.targetWrapper).scrollTop()
             $(settings.targetWrapper).css('overflow','hidden')
-            $this.find('we-mega-menu-submenu').css('top',`${scrollOffset}px`)
+            $this.find('.we-mega-menu-submenu').css('top',`${scrollOffset}px`)
           }
           return false         
         }
@@ -145,7 +145,7 @@
       $parentItem.removeClass('open')
       setTimeout(()=>{
         $(settings.targetWrapper).css('overflow','')
-        $parentItem.find('we-mega-menu-submenu').css('top','')
+        $parentItem.find('.we-mega-menu-submenu').css('top','')
       },300)
 
       return false
