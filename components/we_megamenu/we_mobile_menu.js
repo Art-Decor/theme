@@ -113,12 +113,7 @@
       e.stopPropagation();
     });
 
-    
-    $(settings.closeButtonsCelector).on('click',function(){
-      let parentId = $(this).attr('data-parent-id')
-      $(`[data-id="${parentId}"].we-mega-menu-li`).removeClass('open')
-    })
-
+  
     if (settings.accordionMenu == 'true') {
       var targetWrapper = $(this).closest('div.region-we-mega-menu').find('nav.navbar-we-mega-menu');
       var menu = $(targetWrapper).find('ul.we-mega-menu-ul').first();
@@ -140,6 +135,11 @@
       });
     }
 
+    $(settings.closeButtonsCelector).on('click',function(){
+      let parentId = $(this).attr('data-parent-id')
+      $(`[data-id="${parentId}"].we-mega-menu-li`).removeClass('open')
+      return false
+    })
 
     let scrollState = 0 
 
@@ -155,6 +155,8 @@
 
       scrollState = window.scrollY
     })
+
+
   }
 
 }(jQuery));
