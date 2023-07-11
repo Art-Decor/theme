@@ -415,7 +415,7 @@
 	}
 
 	.navbar-we-mega-menu.navbar.we-mobile-megamenu-active {
-		@apply !right-0;
+		@apply !-translate-x-full md:!translate-x-0;
 	}
 
 	.navbar-we-mega-menu.navbar .nav-tabs > li.active.active > a,
@@ -486,7 +486,7 @@
 	}
 
   .we-mega-menu-li:not(.no-link) .we-mega-menu-submenu{
-    @apply !block absolute inset-0 z-10 md-wide:static
+    @apply !block absolute inset-0 z-10 md-wide:static overflow-auto
   }
 
   .we-mega-menu-li.dropdown-menu:not(.no-link) .we-mega-menu-submenu{
