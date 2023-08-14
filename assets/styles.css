@@ -116,7 +116,7 @@
 	}
 
 	.view-footer a:after{
-		background: url('data:image/svg+xml,<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L1 9" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"></path></svg>')
+		background: url('data:image/svg+xml,<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L1 9" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
 		@apply ml-5 mb-1 w-[6px] h-2.5 inline-block content-[''] transition duration-200
 	}
 
