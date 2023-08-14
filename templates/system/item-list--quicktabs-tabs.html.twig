@@ -30,9 +30,9 @@
   {%- endif -%}
 
   {%- if items -%}
-    <{{ list_type }}{{ attributes.addClass('text-center space-x-4 mb-6 md:mb-[50px]') }}>
+    <{{ list_type }}{{ attributes.addClass('space-x-4 mb-6 md:mb-[50px]') }}>
       {%- for item in items -%}
-        <li{{ item.attributes.addClass('relative font-semibold text-gray-500') }}>{{ item.value }}</li>
+        <li{{ item.attributes.addClass('relative font-normal text-primary-100 [&_a]:py-2.5') }}>{{ item.value }}</li>
       {%- endfor -%}
     </{{ list_type }}>
   {%- else -%}

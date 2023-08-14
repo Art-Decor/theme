@@ -87,6 +87,10 @@ module.exports = {
 			screens: {
 				'md-wide': '992px',
 			},
+			fontFamily: {
+				'header':['Playfair Display', 'serif'],
+				'body':['Montserrat', 'sans-serif']
+			}
 		},
 	},
 	plugins: [],
