@@ -86,7 +86,7 @@
 	.path-frontpage .text-default h2,
 	.path-frontpage .text-default h3,
 	.path-frontpage .text-default h4 {
-		@apply mb-4 md:mb-7;
+		@apply mb-5 md:mb-7;
 	}
 	.path-frontpage .text-default h1 {
 		@apply text-2xl md:text-3xl font-semibold;
@@ -95,10 +95,10 @@
 		@apply text-xl md:text-2xl font-semibold;
 	}
 	.path-frontpage .text-default h3 {
-		@apply text-lg md:text-xl font-semibold;
+		@apply text-lg md:text-xl font-semibold mt-8 md:mt-12;
 	}
 	.path-frontpage .text-default h4 {
-		@apply text-sm md:text-base font-semibold  mt-6 md:mt-10;
+		@apply text-sm md:text-base font-semibold mt-8 md:mt-12;
 	}
 	.path-frontpage .text-default p {
 		@apply !text-sm !mb-4 md:!mb-5;
@@ -107,11 +107,11 @@
 	.view-baner .swiper-container {
 		@apply my-0;
 	}
-	.view-footer a, .text-default button {
+	.view-footer a, .text-default a.wp-block-button__link{
 		@apply px-4 py-2 border border-gray-500 rounded-none text-gray-500 bg-transparent hover:bg-[#333] hover:text-white transition duration-200;
 	}
 
-	.text-default button{
+	.text-default a.wp-block-button__link{
 		@apply text-center mb-5
 	}
 
