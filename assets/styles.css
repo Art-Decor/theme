@@ -65,7 +65,7 @@
 	}
 
 	.path-frontpage h2 {
-		@apply text-xl md:text-2xl font-semibold;
+		@apply text-xl md:text-2xl font-normal;
 	}
 	.path-frontpage hr {
 		@apply !w-full border-gray-300 mb-6 md:mb-[50px];
@@ -108,7 +108,16 @@
 		@apply my-0;
 	}
 	.view-footer a, .text-default a.wp-block-button__link{
-		@apply inline-block px-4 py-2.5 text-sm font-medium border border-primary-20 rounded-full text-primary-100 bg-transparent hover:border-primary-100 transition duration-200;
+		@apply inline-block py-[15px] px-5 text-sm font-body font-medium border border-primary-20 rounded-full text-primary-100 bg-transparent hover:border-primary-100 transition duration-200;
+	}
+
+	.view-footer a:hover:after{
+		@apply translate-x-2
+	}
+
+	.view-footer a:after{
+		background: url('data:image/svg+xml,<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L1 9" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"></path></svg>')
+		@apply ml-5 mb-1 w-[6px] h-2.5 inline-block content-[''] transition duration-200
 	}
 
 	.text-default a.wp-block-button__link{
