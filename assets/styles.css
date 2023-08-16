@@ -120,6 +120,11 @@
 		@apply ml-5 w-[6px] h-2.5 inline-block content-[''] transition duration-200
 	}
 
+	.view-slider-produktow .swiper-navigation-disabled .swiper-button-next,
+	.view-slider-produktow .swiper-navigation-disabled .swiper-button-prev{
+		@apply !flex
+	}
+
 	.view-slider-produktow .swiper-button-next{
 		@apply after:content-none
 	}
