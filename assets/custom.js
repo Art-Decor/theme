@@ -7,8 +7,13 @@ Drupal.behaviors.overrideSwiper = {
                 let swiper = swipers[key];                
                 if (swiper.label == 'Products swiper custom') {
                     swiper.slidesPerView = 1.5
-                    swiper.breakpoints['500'] = {
-                        slidesPerView: 2.5,
+                    swiper.breakpoints = {
+                        500: {
+                            slidesPerView: 2.5,
+                        },
+                        768: {
+                            slidesPerView: 4,
+                        }
                     };
                 }
             }
