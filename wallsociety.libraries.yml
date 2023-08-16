@@ -1,5 +1,9 @@
 base:
    version: VERSION
+   js:
+      theme:
+         assets/custom.js:
+            weight: 10
    css:
       theme:
          assets/styles.min.css:
@@ -108,8 +112,3 @@ user:
       component:
          css/components/user.css:
             weight: -10
-global-scripts:
-   version: VERSION
-      js: 
-         assets/custom.js: 
-            weight: 50
