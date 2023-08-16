@@ -1,14 +1,16 @@
 Drupal.behaviors.overrideSwiper = {
 attach: function(context, settings) {
-    var swiperSettings = drupalSettings.swiper_formatter && drupalSettings.swiper_formatter.swipers['swiper-slider-produktow-block-1--5'] ? drupalSettings.swiper_formatter.swipers['swiper-slider-produktow-block-1--5'] : null;
+    var swipers = drupalSettings.swiper_formatter && drupalSettings.swiper_formatter.swipers ? drupalSettings.swiper_formatter.swipers : null;
     
-    if (swiperSettings) {
-    swiperSettings.slidesPerView = 1.5
-    swiperSettings.breakpoints = {
-        540: {
-        slidesPerView: 2.5,
-        },
-    };
+    if (swipers) {
+        swipers.forEach((swiper)=>{
+            if (swiper.label =- 'Products swiper custom') {
+                swiperSettings.slidesPerView = 1.5
+                swiperSettings.breakpoints['500'] = {
+                    slidesPerView: 2.5,
+                };
+            }
+        })
     }
 }
 };
