@@ -111,5 +111,4 @@ user:
 global-scripts:
    version: VERSION
    js:
-      assets/custom.js:
-         weight: 10
+      assets/custom.js: {}
