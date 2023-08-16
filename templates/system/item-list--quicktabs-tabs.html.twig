@@ -32,7 +32,7 @@
   {%- if items -%}
     <{{ list_type }}{{ attributes.addClass('space-x-4 mb-6 md:mb-[50px]') }}>
       {%- for item in items -%}
-        <li{{ item.attributes.addClass('relative font-normal ![&_a]:text-primary-100 [&_a]:py-2.5 !inline-block [&_a]:inline-block') }}>{{ item.value }}</li>
+        <li{{ item.attributes.addClass('relative font-normal [&_a]:!text-primary-100 [&_a]:py-2.5 !inline-block [&_a]:inline-block') }}>{{ item.value }}</li>
       {%- endfor -%}
     </{{ list_type }}>
   {%- else -%}
