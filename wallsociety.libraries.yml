@@ -1,8 +1,7 @@
 base:
    version: VERSION
    js:
-      assets/custom.js:
-         weight: 10
+      assets/custom.js: {}
    css:
       theme:
          assets/styles.min.css:
