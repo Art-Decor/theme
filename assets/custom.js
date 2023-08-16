@@ -11,6 +11,9 @@ Drupal.behaviors.overrideSwiper = {
                         500: {
                             slidesPerView: 2.35,
                         },
+                        1000: {
+                            slidesPerView: 3,
+                        },
                         768: {
                             slidesPerView: 4,
                         }
