@@ -34,7 +34,7 @@
 #}
 {%
   set classes = [
-    'mb-6 md:mb-[50px]',
+    'mb-6 md:mb-[50px] relative',
     'view',
     'view-' ~ id|clean_class,
     'view-id-' ~ id,
@@ -44,6 +44,9 @@
 %}
 <div{{ attributes.addClass(classes) }}>
 
+  <div class="view-header absolute inset-x-0 top-0 font-body text-primary-100 bg-white/75">
+    {{ header }}
+  </div>
   {% if rows %}
     <div class="view-content">
       {{ rows }}
