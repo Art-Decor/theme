@@ -34,7 +34,7 @@
 #}
 {%
   set classes = [
-    'mb-6 md:mb-[50px] relative h-[500px] md:h-[550px]',
+    'mb-6 md:mb-[50px] relative h-[500px] md:h-[550px] mx-[calc(50%_-_50vw)]',
     'view',
     'view-' ~ id|clean_class,
     'view-id-' ~ id,
@@ -50,7 +50,7 @@
     </div>
   </div>
   {% if rows %}
-    <div class="view-content">
+    <div class="view-content h-full">
       {{ rows }}
     </div>
   {% elseif empty %}
