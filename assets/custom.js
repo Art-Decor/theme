@@ -19,6 +19,15 @@ Drupal.behaviors.overrideSwiper = {
                         },
                     };
                 }
+                if (key == 'swiper-baner-block-1'){
+                    swiper.pagination = {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                        renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + ( index < 9 ? '0' + (index + 1) : (index + 1)) + "</span>";
+                        },
+                    }
+                }
             }
         }
     }
