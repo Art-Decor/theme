@@ -41,9 +41,9 @@
     set field_classes = [
         field.handler.field == 'field_zdjecie' ? 'hidden md:!block absolute inset-0 -z-10',
         field.handler.field == 'field_zdjecie_mobile' ? 'block md:hidden absolute inset-0 -z-10',
-        field.handler.field == 'field_naglowek' ? 'row text-white font-body text-4xl text-[40px] font-light md:text-6xl [&_em]:font-header [&_em]:font-normal mb-7 mt-[131px] md:mt-[167px] max-w-[555px]',
-        field.handler.field == 'field_tekst_pod_naglowkiem' ? 'row text-white font-body text-xl font-normal mb-9',
-        field.handler.field == 'field_tekst_przycisku' ? 'row w-fit [&_a]:whitespace-nowrap [&_a]:inline-block [&_a]:text-primary-100 [&_a]:font-body [&_a]:font-medium [&_a]:text-sm [&_a]:bg-white [&_a]:px-8 [&_a]:pr-[50px] [&_a]:py-[15px] [&_a]:border [&_a]:border-solid [&_a]:border-white [&_a]:rounded-full [&_a]:hover:text-white [&_a]:hover:bg-transparent [&_a]:transition [&_a]:duration-200',
+        field.handler.field == 'field_naglowek' ? 'text-white font-body text-4xl text-[40px] font-extralight md:text-6xl [&_em]:font-header [&_em]:font-normal mb-7 mt-[131px] md:mt-[167px] max-w-[555px]',
+        field.handler.field == 'field_tekst_pod_naglowkiem' ? 'text-white font-body text-xl font-light mb-9',
+        field.handler.field == 'field_tekst_przycisku' ? 'w-fit [&_a]:whitespace-nowrap [&_a]:inline-block [&_a]:text-primary-100 [&_a]:font-body [&_a]:font-medium [&_a]:text-sm [&_a]:bg-white [&_a]:px-8 [&_a]:pr-[50px] [&_a]:py-[15px] [&_a]:border [&_a]:border-solid [&_a]:border-white [&_a]:rounded-full [&_a]:hover:text-white [&_a]:hover:bg-transparent [&_a]:transition [&_a]:duration-200',
     ]
     %}
   {%- if field.wrapper_element -%}
