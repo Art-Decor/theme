@@ -20,8 +20,8 @@
 {% for row in rows %}
   {%
     set row_classes = [
-      'flex flex-col md:flex-row gap-2 md:gap-4 text-center items-center max-w-[240px] font-body font-light text-base text-[15px] [&_strong]:font-medium leading-normal text-primary-100',
-      loop.index == 1 ? 'md:row-span-2',
+      'flex flex-col md:flex-row gap-2 md:gap-4 text-center md:text-left items-center max-w-[260px] font-body font-light text-base text-[15px] [&_strong]:font-medium leading-normal text-primary-100',
+      '[&_img]:w-10 [&_img]:h-10 [&_img]:md:w-[50px] [&_img]:md:h-[50px] [&_img]:object-contain',
       default_row_class ? 'views-row',
     ]
   %}
