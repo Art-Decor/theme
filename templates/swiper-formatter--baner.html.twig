@@ -37,7 +37,7 @@
       
       {# Add Pagination #}
       {% if settings.pagination.enabled %}
-        <div{{ pagination_attributes}}></div>
+        <div{{ pagination_attributes.addClass('flex container-fluid inset-x-0')}}></div>
       {% endif %}
 
       {# Add navigation buttons #}

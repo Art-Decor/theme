@@ -642,6 +642,13 @@
 	.text-default ul{
 		@apply list-disc
 	}
+
+	.pagination-swiper-baner-block-1 .swiper-pagination-bullet{
+		@apply relative h-[18px] flex items-end w-10 font-body text-xs text-[10px] font-semibold text-gray-40 bg-transparent rounded-none ml-0 mr-2.5 transition-all duration-200 after:content-[''] after:block after:absolute after:w-full after:h-px after:bg-gray-40 after:top-px after:transition-all after:duration-200
+	}
+	.pagination-swiper-baner-block-1 .swiper-pagination-bullet.swiper-pagination-bullet-active{
+		@apply text-white text-sm after:bg-white after:h-[3px] after:top-0
+	}
 }
 
 @tailwind utilities;
