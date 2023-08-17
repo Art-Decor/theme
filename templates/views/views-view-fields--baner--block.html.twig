@@ -31,17 +31,19 @@
  * @ingroup themeable
  */
 #}
-
+<div class="text-4xl font-medium text-sm">
+</div>
 {% for field in fields -%}
     {%
     set wrapper_classes = ['']
     %}
     {%
     set field_classes = [
-        field.handler.field == 'field_zdjecie' ? 'hidden md:block absolute inset-0 -z-10',
-        field.handler.field == 'field_zdjecie-mobile' ? 'block md:hidden absolute inset-0 -z-10',
-        field.handler.field == 'title' ? 'inline-block text-white text-xl md:text-2xl font-semibold mb-4 md:mb-[30px]',
-        field.handler.field == 'view_node' ? 'text-white font-semibold',
+        field.handler.field == 'field_zdjecie' ? 'hidden md:!block absolute inset-0 -z-10',
+        field.handler.field == 'field_zdjecie_mobile' ? 'block md:hidden absolute inset-0 -z-10',
+        field.handler.field == 'field_naglowek' ? 'text-white font-body text-4xl text-[40px] font-light md:text-6xl [&_em]:font-header [&_em]:font-normal mb-10 mt-[140px] md:mt-44',
+        field.handler.field == 'field_tekst_pod_naglowkiem' ? 'text-white font-body text-xl font-normal mb-10',
+        field.handler.field == 'field_tekst_przycisku' ? 'text-primary-100 font-body font-medium text-sm bg-white px-6 py-5 border border-solid border-white rounded-full hover:text-white hover:bg-transparent transition duration-200',
     ]
     %}
   {%- if field.wrapper_element -%}
