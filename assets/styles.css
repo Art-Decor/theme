@@ -64,24 +64,6 @@
 		@apply w-full h-full block;
 	}
 
-	.path-frontpage h2 {
-		@apply text-xl md:text-2xl font-normal;
-	}
-	.path-frontpage hr {
-		@apply !w-full border-gray-300 mb-6 md:mb-[50px];
-	}
-	.path-frontpage
-		.page
-		> .content
-		> .field--name-body
-		> h2
-		~ p.has-text-align-center {
-		@apply max-w-xl mx-auto mb-6 md:mb-[50px];
-	}
-	.path-frontpage .page > .content > .field--name-body > h2 {
-		@apply max-w-md mx-auto mb-4 md:mb-[30px];
-	}
-
 	.path-frontpage .text-default h1,
 	.path-frontpage .text-default h2,
 	.path-frontpage .text-default h3,
@@ -668,6 +650,28 @@
 
 	.path-frontpage .wp-block-column h2 em{
 		@apply font-header
+	}
+
+	.path-frontpage h2 {
+		@apply text-xl md:text-2xl font-normal;
+	}
+	.path-frontpage hr {
+		@apply !w-full border-gray-300 mb-6 md:mb-[50px];
+	}
+	.path-frontpage
+		.page
+		> .content
+		> .field--name-body
+		> h2
+		~ p.has-text-align-center {
+		@apply max-w-xl mx-auto mb-4 md:mb-10 text-base text-[15px] text-primary-100 font-body font-light
+
+	}
+	.path-frontpage .page > .content > .field--name-body > h2 {
+		@apply max-w-md mx-auto mb-[30px] md:mb-4 text-2xl md:text-3xl text-primary-100 font-body font-light;
+	}	
+	.path-frontpage .page > .content > .field--name-body > h2 em {
+		@apply font-header;
 	}
 
 	.path-frontpage .wp-block-column .wp-block-buttons{
