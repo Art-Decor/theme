@@ -35,15 +35,15 @@
 {% for field in fields -%}
     {%
     set wrapper_classes = [
-        field.handler.field == 'field_image' ? 'absolute inset-0 z-0' : 'relative z-10',
+        field.handler.field == 'field_image' ? 'absolute inset-0 z-0' : 'relative z-10 w-fit [&_a]:w-full max-w-[380px]',
     ]
     %}
     {%
     set field_classes = [
         field.handler.field == 'field_image' ? 'img-fit w-full h-full after:absolute after:bg-gradient-to-t after:content-[""] after:from-black/50 after:inset-0 after:to-transparent after:pointer-events-none',
-        field.handler.field == 'created' ? 'text-white font-light',
-        field.handler.field == 'title' ? 'inline-block text-white text-xl md:text-2xl font-semibold mb-4 md:mb-[30px]',
-        field.handler.field == 'view_node' ? 'text-white font-semibold',
+        field.handler.field == 'created' ? 'text-sm font-semibold [&_a]:before:content-[''] [&_a]:before:h-px [&_a]:before:bg-white [&_a]:before:inline-block [&_a]:before:mb-[3px] [&_a]:before:w-2.5 [&_a]:before:mr-[5px] [&_a]:before:pointer-events-none',
+        field.handler.field == 'title' ? ' group-hover:underline inline-block text-xl md:text-2xl font-normal mb-4 md:mb-5',
+        field.handler.field == 'view_node' ? ' font-semibold',
     ]
     %}
   {%- if field.wrapper_element -%}
@@ -58,3 +58,10 @@
     </{{ field.wrapper_element }}>
   {%- endif %}
 {%- endfor %}
+<div>
+  <div class="relative z-10 flex items-center justify-center w-[50px] h-[50px] rounded-full group-hover:bg-white border border-white bg-transparent transition duration-200" >
+    <svg class="group-hover:stroke-brown-100 stroke-white transition duration-200" width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.75 4.5H8.5625M8.5625 4.5L4.8125 0.75M8.5625 4.5L4.8125 8.25" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </div>
+</div>
