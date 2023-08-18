@@ -107,7 +107,7 @@
 	.view-baner .swiper-container {
 		@apply my-0;
 	}
-	.view-footer a, .text-default a.wp-block-button__link{
+	.view-footer a{
 		@apply inline-block py-[15px] px-5 text-sm font-body font-medium border border-primary-20 rounded-full text-primary-100 bg-transparent hover:border-primary-100 transition duration-200;
 	}
 
@@ -652,6 +652,31 @@
 	}
 	.pagination-swiper-baner-block-1 .swiper-pagination-bullet.swiper-pagination-bullet-active{
 		@apply text-white !leading-[10px] !text-sm after:bg-white after:h-[3px] after:top-0 font-semibold
+	}
+
+	.path-frontpage .wp-block-columns{
+		@apply relative z-10 mb-[60px] md:mb-16
+	}
+
+	.path-frontpage .wp-block-column p{
+		@apply text-base text-[15px] text-primary-100 font-body font-light mb-4 lg:max-w-[80%]
+	}
+
+	.path-frontpage .wp-block-column h2{
+		@apply text-2xl md:text-3xl text-primary-100 font-body font-light mb-9 lg:max-w-[90%]
+	}
+
+	.path-frontpage .wp-block-column h2 em{
+		@apply font-header
+	}
+
+	.path-frontpage .wp-block-column .wp-block-buttons{
+		@apply min-[600px]:justify-center
+	}
+
+	.path-frontpage a.wp-block-button__link{
+		background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 6L12 10L8 14" stroke="%23382335" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+		@apply bg-right font-body text-sm text-primary-100 py-[15px] pr-10 border-b-2 border-b-primary-20 hover:border-b-brown-100 transition duration-200
 	}
 }
 
