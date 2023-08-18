@@ -42,7 +42,7 @@
     set field_classes = [
         field.handler.field == 'field_image' ? 'img-fit w-full h-full after:absolute after:bg-gradient-to-t after:content-[""] after:from-black/50 after:inset-0 after:to-transparent after:pointer-events-none',
         field.handler.field == 'created' ? 'text-sm font-semibold [&_a]:before:content-[""] [&_a]:before:h-px [&_a]:before:bg-white [&_a]:before:inline-block [&_a]:before:mb-[3px] [&_a]:before:w-2.5 [&_a]:before:mr-[5px] [&_a]:before:pointer-events-none',
-        field.handler.field == 'title' ? ' group-hover:underline inline-block text-xl md:text-2xl font-normal mb-4 md:mb-5',
+        field.handler.field == 'title' ? ' group-hover:underline [&_a]:!decoration-white inline-block text-xl md:text-2xl font-normal mb-4 md:mb-5',
     ]
     %}
   {%- if field.wrapper_element -%}

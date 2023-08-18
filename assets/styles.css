@@ -674,7 +674,7 @@
 		@apply min-[600px]:justify-center
 	}
 
-	.path-frontpage :not(.wp-block-cover) a.wp-block-button__link{
+	.path-frontpage .wp-block-button:not(.button-full) a.wp-block-button__link{
 		background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 6L12 10L8 14" stroke="%23382335" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 		@apply bg-transparent rounded-none bg-no-repeat bg-right font-body text-sm text-primary-100 py-[14px] pl-0 pr-10 border-b-2 border-b-primary-20 hover:border-b-brown-100 transition duration-200
 	}
