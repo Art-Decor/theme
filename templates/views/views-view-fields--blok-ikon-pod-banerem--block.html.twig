@@ -35,8 +35,8 @@
 {% for field in fields -%}
     {%
     set field_classes = [
-        field.handler.field == 'field_icon_under_banner' ? 'max-w-[260px] w-auto h-20 [&_img]:object-contain  ',
-        field.handler.field == 'field_text_under_banner' ? 'max-w-[260px] text-primary-100 text-base text-[15px] [&_h3]:text-lg md:[&_h3]:text-2xl [&_h3]:mb-2.5 [&_em]:font-header font-light font-body pr-5',
+        field.handler.field == 'field_icon_under_banner' ? 'max-w-[340px] w-auto h-20 [&_img]:object-contain mb-2 ',
+        field.handler.field == 'field_text_under_banner' ? 'max-w-[340px] text-primary-100 text-base text-[15px] [&_h3]:text-lg md:[&_h3]:text-2xl [&_h3]:mb-2.5 [&_em]:font-header font-light font-body pr-5',
     ]
     %}
   {%- if field.wrapper_element -%}
