@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Default output for a Swiper object.
+ *
+ * Available variables:
+ * - object: \Drupal\views\ViewExecutable or \Drupal\node\Entity\Node object.
+ * - attributes: An array of attributes to apply to wrapper element.
+ * - content: A renderable array of the swiper list
+ * - settings: An array with various settings, properties of a chosen swiper configuration entity,
+ *   combined with either Field formatter settings values or with Views style options values.
+ * - swiper_title: Currently not rendered from anywhere.
+ *
+ * @see template_preprocess_swiper_formatter().
+ */
+#}
+
+{% apply spaceless %}
+  {% if content is not empty %}
+
+   {% if settings.swiper_title %}
+      <h3>{{ settings.swiper_title }}</h3>
+    {% endif %}
+
+    {% 
+      set wrapper_classes = [
+        settings.slidesPerView > 1 ? 'slides-multiple' : 'slide-single',
+      ]
+    %}
+    <div{{ attributes.addClass(wrapper_classes) }}>
+
+      {# Slides #}
+      <div{{ content_attributes.addClass('md:!grid md:grid-cols-2 md:grid-rows-2 gap-5 h-[325px] md:h-[400px] lg:h-[500px] mb-[30px]') }}>
+        {{ content }}
+      </div> 
+
+      {# Add navigation buttons #}
+      {% if settings.navigation.enabled %}
+        <div{{ navigation_attributes.next.addClass('group !content-none after:!hidden !flex items-center justify-center w-[50px] h-[50px] rounded-full bg-white border border-white hover:bg-transparent transition duration-200') }}>
+            <svg class="stroke-brown-100 group-hover:stroke-white transition duration-200" width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.75 4.5H8.5625M8.5625 4.5L4.8125 0.75M8.5625 4.5L4.8125 8.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+      {% endif %}
+    
+    </div>
+    
+  {% endif %}
+{% endapply %}
