@@ -21,10 +21,10 @@
     <div{{ attributes.addClass('slides-multiple') }}>
 
       {# Slides #}
-      <div{{ content_attributes.addClass('lg:!flex lg:justify-between ') }}>
+      <div{{ content_attributes.addClass('lg:!flex lg:justify-between lg:[&_swiper-slide]:!w-auto ') }}>
         {{ content }}
       </div> 
-    
+
     </div>
     
   {% endif %}
