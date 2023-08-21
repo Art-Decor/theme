@@ -30,15 +30,18 @@ Drupal.behaviors.overrideSwiper = {
                 }
                 if (key == 'swiper-ostatnie-artykuly-block-1') {
                     swiper.slidesPerView = 1.35
+                    swiper.spaceBetween = 20
                     swiper.enabled = true
                     swiper.breakpoints = {
                         500: {
                             slidesPerView: 2.35,
                             enabled: true,
+                            spaceBetween: 20
                         },
                         768: {
                             slidesPerView: 3,
                             enabled: false,
+                            spaceBetween: 0
                         },
                     };
                 }
