@@ -157,9 +157,12 @@
 	}
 
 	.pictures-grid {
-		@apply mb-6 md:mb-[50px] gap-[5px] min-[600px]:gap-4;
+		@apply mb-6 md:mb-[50px] gap-[5px] min-[600px]:gap-2;
 	}
 
+	.pictures-grid .wp-block-column{
+		@apply min-[600px]:!basis-[calc(50%_-_0.25em)]
+	}
 	.pictures-grid .blocks-gallery-grid {
 		@apply gap-[5px] min-[600px]:gap-2
 	}
