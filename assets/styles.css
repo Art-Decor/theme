@@ -611,18 +611,21 @@
 		@apply md-wide:!pointer-events-auto md-wide:!opacity-100
 	}
 
+	.text-default {
+		@apply font-body text-primary-100
+	},
 	.text-default h3,
 	.text-default h4 {
 		@apply !mb-4 md:!mb-7;
 	}
 	.text-default h3 {
-		@apply !text-lg md:!text-xl !font-semibold;
+		@apply !text-base !text-[20px] !font-normal;
 	}
 	.text-default h4 {
-		@apply !text-sm md:!text-base !font-semibold mt-6 md:mt-10;
+		@apply !text-base !font-normal mt-6 md:mt-10;
 	}
 	.text-default p,.text-default li {
-		@apply !text-sm !mb-4 md:!mb-5;
+		@apply !text-sm !text-[15px] md:text-[13px] md:leading-[18px] !mb-4 md:!mb-5;
 	}
 	.text-default ul{
 		@apply list-disc
