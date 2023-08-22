@@ -12,12 +12,12 @@
  */
 #}
 {% set hiddeneDecorUrls = [
-  '/wall-murals',
-  '/wall-art',
-  '/taxonomy/term/1'
+  'https://wallsociety.com/wall-murals',
+  'https://wallsociety.com/wall-art',
+  'https://wallsociety.com/taxonomy/term/1'
 ] %}
 
-{% set url = url('<current>')
+{% set url = url('<current>')|render|render
 %}
 
 {{dump()}}
@@ -27,7 +27,7 @@
   <div{{ attributes.addClass('container-fluid pt-12 pb-5 lg:pt-16 text-white min-h-[250px] lg:min-h-[300px] mb-3 lg:[&_.layout-content-region]:max-w-[50%] lg:[&_.layout-content-region]:pr-5') }}>
     {{ content }}
   </div>
-  <div class="hidden lg:!block absolute bottom-0 left-1/2 translate-x-[-50%]">
+  <div class="hidden lg:!block absolute bottom-[30px] left-1/2 translate-x-[-50%]">
     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="66" viewBox="0 0 19 66" fill="none">
       <path d="M9.5 1L9.5 13M9.5 13L5 8.68M9.5 13L14 8.68" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M9.5 23V56" stroke="white"/>
@@ -48,7 +48,7 @@
   </svg>
 
 
-  {% if url('<current>') not in hiddeneDecorUrls %}
+  {% if url('<current>')|render|render not in hiddeneDecorUrls %}
   <div class="-z-20 pointer-events-none absolute container-fluid inset-x-0 mx-auto top-[calc(100%_-_40px)] md:top-full">
     <svg class="left-1/4 md:left-1/2 lg:left-auto lg:right-20 max-w-full absolute h-auto" width="597" height="147" viewBox="0 0 597 147" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_203_4)">
