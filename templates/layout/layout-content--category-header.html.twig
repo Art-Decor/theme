@@ -20,8 +20,6 @@
 {% set url = url('<current>')|render|render
 %}
 
-{{dump()}}
-
 {% if content %}
 <div class="relative mx-[calc(50%_-_50vw)]">
   <div{{ attributes.addClass('container-fluid pt-12 pb-5 lg:pt-16 text-white min-h-[250px] lg:min-h-[300px] mb-3 lg:[&_.layout-content-region]:max-w-[50%] lg:[&_.layout-content-region]:pr-5') }}>
