@@ -49,5 +49,5 @@
 %}
 
 {% for item in items %}
-    <p{{ attributes.addClass(classes, 'field--item') }}>{{ item.content }}</p>
+    <div{{ attributes.addClass(classes, 'field--item') }}>{{ item.content }}</div>
 {% endfor %}
