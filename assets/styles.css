@@ -132,11 +132,15 @@
 	}
 
 	.cta-upload {
-		@apply bg-gray-10 py-2 px-14 md:px-24 mb-10 md:mb-20;
+		@apply bg-gray-10 pt-2 md:pb-2 lg:px-10 xl:px-24 mb-10 md:mb-20 md:items-center;
+	}
+
+	.cta-upload .wp-block-column{
+		@apply last:hidden xl:block
 	}
 
 	.cta-upload h2 {
-		@apply mb-4 md:mb-[30px] text-primary-100 font-light font-body;
+		@apply mb-4 md:mb-[30px] text-primary-100 font-light font-body text-3xl md:text-4xl md:text-[40px];
 	}
 	.cta-upload h2 em {
 		@apply font-header;
@@ -146,14 +150,22 @@
 		@apply mb-6 md:mb-[50px] text-primary-100 font-light font-body text-base text-[15px];
 	}
 
-	.cta-upload .wp-block-button__link {
-		@apply relative rounded-full mb-6 md:mb-[50px] !text-white !bg-primary-100 !border border-primary-100 hover:!bg-transparent hover:text-primary-100 transition duration-200;
+	.cta-upload .wp-block-buttons{
+		@apply !justify-start
 	}
-	.cta-upload .wp-block-button__link:before {
+
+	.cta-upload .button-full{
+		@apply !mb-0
+	}
+
+	.cta-upload .button-full .wp-block-button__link {
+		@apply relative rounded-full mt-2 md:mt-6 !mb-0 !text-white !bg-primary-100 !border !border-primary-100 hover:!bg-transparent hover:!text-primary-100 transition duration-200;
+	}
+	.cta-upload .button-full .wp-block-button__link:before {
 		background: url('data:image/svg+xml,<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L1 9" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
-		@apply w-[6px] h-2.5 inline-block content-[''] right-5 top-0 transition duration-200
+		@apply w-[6px] h-2.5 inline-block content-[''] right-5 top-5 transition duration-200
 	}
-	.cta-upload .wp-block-button__link:hover:before {
+	.cta-upload .button-full .wp-block-button__link:hover:before {
 		background: url('data:image/svg+xml,<svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L1 9" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
 		@apply opacity-0
 	}
@@ -167,7 +179,7 @@
 	} 
 
 	.cta-upload .wp-block-image.size-large img{
-		@apply mx-auto
+		@apply mx-auto my-10 md:my-0 w-52 md:w-auto
 	}
 
 	.pictures-grid {
