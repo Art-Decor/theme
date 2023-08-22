@@ -136,11 +136,11 @@
 	}
 
 	.cta-upload .wp-block-column{
-		@apply last:hidden xl:last:block
+		@apply last:hidden xl:last:block !ml-0
 	}
 
 	.cta-upload h2 {
-		@apply !mb-4 md:!mb-[30px] text-primary-100 !font-light font-body !text-3xl md:!text-4xl md:!text-[40px];
+		@apply !mb-7 md:!mb-9 text-primary-100 !font-light font-body !text-3xl md:!text-4xl md:!text-[40px];
 	}
 	.cta-upload h2 em {
 		@apply font-header;
