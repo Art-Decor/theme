@@ -215,11 +215,6 @@
 		@apply w-auto h-full object-contain mx-auto;
 	}
 
-	.category-header,
-	.page-banner {
-		@apply relative flex flex-col justify-end p-5 pt-10 md:p-10 lg:px-20 lg:py-[60px] text-white min-h-fit md:min-h-[300px] mb-3;
-	}
-
 	.layout-content-region--filters {
 		@apply flex flex-wrap;
 	}
