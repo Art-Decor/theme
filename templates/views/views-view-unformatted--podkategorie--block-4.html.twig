@@ -38,5 +38,8 @@
     <div class="{{ row_classes|join(' ') }} bg-neutral-90 text-primary-100 font-semibold text-base md:text-xl text-center [&>a]:p-2 [&>a]:md:p-5 [&>a]:absolute [&>a]:inset-0 [&>a]:flex [&>a]:flex-col [&>a]:justify-end">{{ title }}</div>
   </div>
 {% endif %}
-
-{{ dump() }}
+{% if title %}
+  <div class="{{ row_wrapper_classes|join(' ') }}">
+    <div class="{{ row_classes|join(' ') }} bg-neutral-90 text-primary-100 font-semibold text-base md:text-xl text-center [&>a]:p-2 [&>a]:md:p-5 [&>a]:absolute [&>a]:inset-0 [&>a]:flex [&>a]:flex-col [&>a]:justify-end">{{ title }}</div>
+  </div>
+{% endif %}
