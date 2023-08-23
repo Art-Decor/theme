@@ -67,12 +67,27 @@ Drupal.behaviors.overrideSwiper = {
                     swiper.centerInsufficientSlides = true,
                     swiper.watchOverflow = true,
                     swiper.watchSlidesProgress = true,
+                    swiper.navigation = {
+                        enabled: true,
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    }
                     swiper.breakpoints = {
                         768: {
                             slidesPerView: 4,
+                            navigation: {
+                                enabled: true,
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            }
                         },
                         1024: {
                             slidesPerView: 6,
+                            navigation: {
+                                enabled: true,
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            }
                         },
                     };
                 }
