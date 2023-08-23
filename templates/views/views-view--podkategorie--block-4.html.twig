@@ -34,7 +34,7 @@
 #}
 {%
   set classes = [
-    'mb-10 md:mb-[50px]',
+    'mb-[60px] md:mb-[78px]',
     'view',
     'view-' ~ id|clean_class,
     'view-id-' ~ id,
@@ -43,7 +43,7 @@
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
-    <div class="view-header max-w-xs mx-auto text-center text-xl md:text-2xl font-semibold mb-6 md:mb-[50px]">
+    <div class="view-header max-w-xs mx-auto text-center text-2xl md:text-3xl font-light font-body [&_em]:font-header text-primary-100 mb-6 md:mb-12">
       {{ header }}
     </div>
   {% if rows %}
