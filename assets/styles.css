@@ -748,6 +748,12 @@
 	.view-display-id-block_4 .swiper-button-next.swiper-button-disabled{
 		@apply !flex !opacity-0 !pointer-events-none
 	}
+
+	.view-display-id-block_4 .swiper-navigation-disabled .swiper-button-prev,
+	.view-display-id-block_4 .swiper-navigation-disabled .swiper-button-next{
+		@apply !flex
+	}
+
 }
 
 @tailwind utilities;
