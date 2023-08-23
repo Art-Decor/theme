@@ -51,8 +51,8 @@
     
     </div>
     
-  {% endif %}
-    {{ content['#view'] }}
+    {{ content['#view'].build_info }}
     {{ content['#view'].build_info.substitutions['{{ raw_arguments.parent_target_id }}'] }}
+  {% endif %}
     {# {{ dump() }} #}
 {% endapply %}
