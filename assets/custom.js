@@ -62,6 +62,20 @@ Drupal.behaviors.overrideSwiper = {
                         },
                     };
                 }
+                if (swiper.id == 'swiper-podkategorie-block-4') {
+                    swiper.slidesPerView = 3,
+                    swiper.centeredSlides = true,
+                    swiper.breakpoints = {
+                        768: {
+                            slidesPerView: 4,
+                            centeredSlides: true,
+                        },
+                        1024: {
+                            slidesPerView: 6,
+                            centeredSlides: true,
+                        },
+                    };
+                }
             }
         }
     }
