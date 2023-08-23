@@ -64,6 +64,7 @@ Drupal.behaviors.overrideSwiper = {
                 }
                 if (swiper.id == 'swiper-podkategorie-block-4') {
                     swiper.slidesPerView = 3,
+                    swiper.spaceBetween = 8
                     swiper.centerInsufficientSlides = true,
                     swiper.watchOverflow = true,
                     swiper.watchSlidesProgress = true,
@@ -75,6 +76,7 @@ Drupal.behaviors.overrideSwiper = {
                     swiper.breakpoints = {
                         768: {
                             slidesPerView: 4,
+                            spaceBetween: 8,
                             navigation: {
                                 enabled: true,
                                 nextEl: '.swiper-button-next',
@@ -83,6 +85,7 @@ Drupal.behaviors.overrideSwiper = {
                         },
                         1024: {
                             slidesPerView: 6,
+                            spaceBetween: 8,
                             navigation: {
                                 enabled: true,
                                 nextEl: '.swiper-button-next',
