@@ -53,6 +53,6 @@
     
     {# {{ content['#view'].build_info.substitutions['{{ raw_arguments.parent_target_id }}'] }} #}
   {% endif %}
-    {{ content[0] }}
-    {{ dump() }}
+    {{ content[0]["view"].build_info["title"] }}
+    {{ dump(content[0]) }}
 {% endapply %}
