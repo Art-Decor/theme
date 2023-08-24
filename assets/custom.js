@@ -62,7 +62,7 @@ Drupal.behaviors.overrideSwiper = {
                         },
                     };
                 }
-                if (swiper.id == 'swiper-podkategorie-block-4') {
+                if (swiper.id == 'swiper-podkategorie-block-4' || swiper.id == 'swiper-podkategorie-block-3' ) {
                     swiper.slidesPerView = 3,
                     swiper.spaceBetween = 6
                     swiper.centerInsufficientSlides = true,

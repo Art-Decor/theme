@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the individual Swiper item/slide template.
+ *
+ * Available variables:
+ * - attributes: An array of attributes to apply to the element.
+ * - background: For images only - url to image instance, used for lazy loading.
+ * - slide: A renderable array representing one slide.
+ * - slide_url: Url string for image slides that have this set.
+ * - caption: A renderable array containing caption fields if provided:
+ * - settings: An array with various settings, properties of a chosen swiper configuration entity,
+ *   combined with either Field formatter settings values or with Views style options values.
+ *
+ * @see template_preprocess_swiper_formatter().
+ */
+#}
+{% apply spaceless %}
+  <div{{ attributes.addClass('basis-1/3 md:basis-3/12 lg:basis-1/6 shrink-0 grow-0 max-w-[200px] overflow-hidden') }}>
+      <div class="group relative flex flex-col justify-end items-center h-[133px] md:h-[200px] lg:h-[250px] pb-3 p-2 md:p-5 md:pb-7">
+        {{ slide }}
+      </div>
+  </div>
+{% endapply %}
