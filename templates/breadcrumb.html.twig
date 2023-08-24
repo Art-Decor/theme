@@ -10,9 +10,9 @@
  */
 #}
 {% if breadcrumb %}
-  <ol class="breadcrumb my-3 mb-16">
+  <ol class="breadcrumb mt-2.5 mb-8 md:mb-16 ">
     {% for item in breadcrumb %}
-      <li {{ item.attributes }}>
+      <li {{ item.attributes.addClass('font-body text-xs text-primary-100 font-medium last:font-normal before:font-sm before:font-semibold before:mr-[3px] before:!text-brown-100') }}>
         {% if item.url %}
           <a href="{{ item.url }}">{{ item.text }}</a>
         {% else %}
