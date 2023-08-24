@@ -13,7 +13,7 @@
   <ol class="breadcrumb mt-1 mb-8 md:mb-16 ml-3 ">
     {% for item in breadcrumb %}
       <li class="font-body text-xs !text-primary-100 font-medium last:font-normal before:text-[9px] before:italic before:font-semibold before:mr-[5px] before:!text-brown-100" >
-        {% if item.url %}
+        {% if item.url && item.text %}
           <a href="{{ item.url }}" class="!text-primary-100">{{ item.text }}</a>
         {% else %}
           {{ item.text }}
