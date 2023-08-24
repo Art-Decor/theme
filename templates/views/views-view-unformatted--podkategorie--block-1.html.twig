@@ -18,13 +18,13 @@
  */
 #}
 
-{% set row_classes = ['views-row group relative h-[200px] md:h-[250px] p-[18px] pb-3 flex flex-col justify-end md:flex-row md:items-end md:justify-between'] %}
+{% set row_classes = ['views-row group relative h-[200px] md:h-[250px] p-[18px] pb-3 md:p-4 flex flex-col justify-end md:flex-row md:items-end md:justify-between'] %}
 
 <div class="grid grid-cols-2 md:grid-cols-4 gap-[6px] gap-y-2.5 md:gap-2">
 	{% for row in rows|slice(0, 8) %}
 		<div {{ row.attributes.addClass(row_classes) }}>
 			{{- row.content -}}
-			<span class="pointer-events-none shrink-0 z-10 mt-4 flex justify-center items-center w-[30px] h-[30px] rounded-full border border-white bg-transparent group-hover:bg-white transition duration-200">
+			<span class="pointer-events-none shrink-0 z-10 mt-2 md:ml-2 flex justify-center items-center w-[30px] h-[30px] rounded-full border border-white bg-transparent group-hover:bg-white transition duration-200">
 				<svg class="stroke-white group-hover:stroke-brown-100 transition duration-200"
 					width="10"
 					height="10"
@@ -46,7 +46,7 @@
 			{% for row in rows|slice(8) %}
 				<div {{ row.attributes.addClass(row_classes) }}>
 					{{- row.content -}}
-          <span class="pointer-events-none shrink-0 z-10 mt-4 flex justify-center items-center w-[30px] h-[30px] rounded-full border border-white bg-transparent group-hover:bg-white transition duration-200">
+          <span class="pointer-events-none shrink-0 z-10 mt-2 md:ml-2 flex justify-center items-center w-[30px] h-[30px] rounded-full border border-white bg-transparent group-hover:bg-white transition duration-200">
             <svg class="stroke-white group-hover:stroke-brown-100 transition duration-200"
               width="10"
               height="10"
