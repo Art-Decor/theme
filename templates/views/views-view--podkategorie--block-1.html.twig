@@ -58,8 +58,11 @@
 
   {% if footer and rows[0]['#rows']|length > 8 %}
     <div class="view-footer flex justify-center">
-        <button data-toggle="collapse" data-target="#more-categories" class="px-4 py-2 border border-gray-500 text-gray-500 hover:bg-[#333] hover:text-white transition duration-200">
+        <button data-toggle="collapse" data-target="#more-categories" class="inline-block py-[15px] px-5 text-sm font-body font-medium border border-primary-20 rounded-full text-primary-100 bg-transparent hover:border-primary-100 transition duration-200 [&.collapsed_.button]:rotate-0">
         {{ footer }}
+          <svg class="ml-5 rotate-180 transition duration-200" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M14 8L10 12L6 8" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </button>
     </div>
   {% endif %}
