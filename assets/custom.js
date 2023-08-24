@@ -64,7 +64,7 @@ Drupal.behaviors.overrideSwiper = {
                 }
                 if (swiper.id == 'swiper-podkategorie-block-4') {
                     swiper.slidesPerView = 3,
-                    swiper.spaceBetween = 8
+                    swiper.spaceBetween = 6
                     swiper.centerInsufficientSlides = true,
                     swiper.watchOverflow = true,
                     swiper.watchSlidesProgress = true,
