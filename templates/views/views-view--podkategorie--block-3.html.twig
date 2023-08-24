@@ -42,6 +42,11 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
+{% set parentPath = pathInfo|split('/')|slice(0, -1)|join('/') %}
+
+{{ parentPath }}
+{{ view_array["#view"].build_info["query"]["#tables"]["taxonomy_term__parent"] }}
+
 <div{{ attributes.addClass(classes) }}>
     <div class="view-header relative mb-7 md:mb-12 ">
       {{ header }}
@@ -55,5 +60,5 @@
       {{ empty }}
     </div>
   {% endif %}
-  {{ dump() }}
+  {{ dump(view_array["#view"].build_info["query"]["#tables"]) }}
 </div>
