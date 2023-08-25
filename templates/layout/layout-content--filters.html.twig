@@ -10,35 +10,62 @@
  * - content: The content of this custom layout.
 #}
 <div{{ attributes.addClass('mb-3 pb-3 md:pb-6 border-b border-gray-200') }}>
-    <div class="flex justify-between">
-        {% if content.layout_regions.filters %}
-            <div class="grow">
-                {{ content.layout_regions.filters }}
+
+    {% if content.layout_regions.filters %}
+        <span>Filter by:</span>
+        <div class="swiper" data-swiper-facets>
+            <div class="swiper-wrapper flex justify-between !flex-row-reverse md:!flex-row">
+                <div class="grow flex font-body">
+                    {{ content.layout_regions.filters }}
+                </div>
+                {% if content.layout_regions.sort %}
+                    <div class="shrink-0">
+                        {{ content.layout_regions.sort }}
+                    </div>
+                {% endif %}
             </div>
-            <script>
-                window.addEventListener("DOMContentLoaded", () => {
+        </div>
+    {% endif %}
+    <script>
 
-                    if (window.jQuery) {
-                        
-                        var $filtersGroup = jQuery('.layout-content-region--filters');
-                        
-                        $filtersGroup.on('show.bs.collapse','.collapse', function() {
-                            $filtersGroup.find('.collapse.in').collapse('hide');
-                        });
 
-                        jQuery(document).on('click',function(){
-                            $filtersGroup.find('.collapse.in').collapse('hide');
-                        });
+        function initializeSwiper(){
+            const swiperContainer = document.querySelector('[data-swiper-facets]')
+
+            if (window.Swiper && swiperContainer){
+                new Swiper(swiperContainer,{
+                    slidesPerView: 'auto',
+                    spaceBetween: 0,
+                    enabled: true,
+                    freemode:{
+                        enabled: true
                     }
+                    breakpoints:{
+                        768:{
+                            enabled: false
+                        }
+                    }
+                })
+            }
+        }
 
-                });
-            </script>
-        {% endif %}
+        window.addEventListener("DOMContentLoaded", () => {
 
-        {% if content.layout_regions.sort %}
-            <div class="shrink-0">
-                {{ content.layout_regions.sort }}
-            </div>
-        {% endif %}
-    </div>
+        if (window.jQuery) {
+            
+            var $filtersGroup = jQuery('.layout-content-region--filters');
+            
+            $filtersGroup.on('show.bs.collapse','.collapse', function() {
+                $filtersGroup.find('.collapse.in').collapse('hide');
+            });
+
+            jQuery(document).on('click',function(){
+                $filtersGroup.find('.collapse.in').collapse('hide');
+            });
+        }
+
+        initializeSwiper()
+
+    });
+</script>
 </div>

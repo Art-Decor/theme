@@ -135,29 +135,3 @@ function wallsociety_theme_suggestions_item_list_alter(&$suggestions, $variables
 	$suggestions[] = $variables['theme_hook_original'] . '__' . str_replace('-','_',$variables['attributes']['class'][0]);
   }
 }
-
-function wallsociety_preprocess_node(&$variables) {
-  $node = $variables['node'];
-  
-  // Check if the node is associated with a taxonomy term.
-  if ($node->hasField('field_taxonomy_reference')) {
-    $term_reference = $node->get('field_taxonomy_reference')->referencedEntities();
-    
-    if (!empty($term_reference)) {
-      // Load the first referenced term.
-      $term = reset($term_reference);
-      $parent_tids = \Drupal::entityQuery('taxonomy_term')
-        ->condition('tid', $term->id())
-        ->execute();
-        
-      // Load the parent term.
-      if (!empty($parent_tids)) {
-        $parent_tid = key($parent_tids);
-        $parent_term = Term::load($parent_tid);
-        
-        // Pass the parent term information to the template.
-        $variables['parent_term'] = $parent_term;
-      }
-    }
-  }
-}

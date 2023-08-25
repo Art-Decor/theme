@@ -34,7 +34,7 @@
 #}
 {%
   set classes = [
-    'mb-[60px] md:mb-[100px]',
+    'md:mb-5 mt-7 md:mt-12',
     'view',
     'view-' ~ id|clean_class,
     'view-id-' ~ id,
@@ -56,5 +56,4 @@
       {{ empty }}
     </div>
   {% endif %}
-  {{ dump(parent_term) }}
 </div>
