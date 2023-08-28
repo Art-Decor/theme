@@ -57,7 +57,7 @@
 <section{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
-    <h2{{ title_attributes.addClass('block-title', 'md:text-center text-2xl md:text-3xl font-light font-body [&_em]:font-header text-primary-100 mb-9') }}>{{ label }}</h2>
+    <h2{{ title_attributes.addClass('block-title', 'md:text-center text-2xl md:text-3xl font-light font-body [&_em]:font-header text-primary-100 mb-9') }}>{{ label|raw }}</h2>
   {% endif %}
   {{ title_suffix }}
 
