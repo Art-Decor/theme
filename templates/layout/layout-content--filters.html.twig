@@ -13,13 +13,13 @@
 
     {% if content.layout_regions.filters %}
         <span>Filter by:</span>
-        <div class="swiper" data-swiper-facets>
+        <div class="swiper overflow-visible" data-swiper-facets>
             <div class="swiper-wrapper flex justify-between !flex-row-reverse md:!flex-row">
-                <div class="grow flex font-body">
+                <div class="grow flex font-body shrink-0 md:shrink">
                     {{ content.layout_regions.filters }}
                 </div>
                 {% if content.layout_regions.sort %}
-                    <div class="shrink-0">
+                    <div class="shrink-0 [&_.form-item]:!m-0">
                         {{ content.layout_regions.sort }}
                     </div>
                 {% endif %}
