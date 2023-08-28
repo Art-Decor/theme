@@ -10,7 +10,9 @@ module.exports = {
 	theme: {
 		extend: {
 			fontSize:{
-				'2xl': ['25px','2rem']
+				'2xl': ['25px','2rem'],
+				'4xl': ['35px','2.5rem'],
+				'5xl': ['50px','1'],
 			},
 			colors: {
 				neutral: {

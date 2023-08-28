@@ -5,7 +5,7 @@
   {% else %}
   <li {{ attributes }}>
     <div class="we-mega-menu-item px-5">
-      <a class="we-mega-menu-li !py-5 md-wide:!py-[7px] !px-0 md-wide:mx-0 !border-0 !border-b md-wide:!border-b-0 border-solid !border-gray-20 !text-primary-100 !text-xl md-wide:!text-[14px] md-wide:uppercase !bg-white font-medium !flex justify-between items-center" title="{{ attribute(attributes, 'data-description') }}" href="{{ href }}" target="{{ attribute(attributes, 'data-target') }}">
+      <a class="we-mega-menu-li !py-5 md-wide:!py-[7px] !px-0 md-wide:mx-0 !border-0 !border-b md-wide:!border-b-0 border-solid !border-gray-20 !text-primary-100 !text-xl md-wide:!text-[14px] md-wide:uppercase !bg-white font-medium !flex justify-between items-center font-body" title="{{ attribute(attributes, 'data-description') }}" href="{{ href }}" target="{{ attribute(attributes, 'data-target') }}">
         {% if (attribute(attributes, 'data-icon') is defined and attribute(attributes, 'data-icon')|trim) %}
           <i class="{{ attribute(attributes, 'data-icon') }}"></i>
         {% endif %}
