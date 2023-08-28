@@ -47,7 +47,7 @@
 #}
 {%
   set classes = [
-    'block relative mr-3 px-3 py-2 rounded-full bg-gray-10'
+    'block group relative mr-1 md:mr-2.5 !px-4 !py-[6px] md:py-3 rounded-full bg-gray-10 transition duration-200 hover:bg-primary-100'
   ]
 %}
 
@@ -60,13 +60,13 @@
   ] 
 %}
 
-<section{{ attributes.addClass(classes) }}>
+<section{{ attributes.addClass(classes).setAttribute('data-target', '#' ~ content_id).setAttribute('data-toggle', 'collapse').setAttribute('aria-expanded','false') }}>
   {{ title_prefix }}
   {% if label %}
-    <h3{{ title_attributes.addClass('block-title before:!hidden group').setAttribute('data-target', '#' ~ content_id).setAttribute('data-toggle', 'collapse').setAttribute('aria-expanded','false') }}>{{ label }}
+    <h3{{ title_attributes.addClass('block-title before:!hidden group font-body text-sm font-medium text-primary-100 group-hover:text-white transition duration-200') }}>{{ label }}
       <span class="group-aria-expanded:rotate-180 transform inline-block mb-0.5 ml-2 transition duration-300">
-        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 1L5 5L1 1" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg class="stroke-primary-100 group-hover:stroke-white transition duration-200" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 1L5 5L1 1"  stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </span>
     </h3>

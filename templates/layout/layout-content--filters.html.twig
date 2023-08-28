@@ -14,12 +14,17 @@
     {% if content.layout_regions.filters %}
         <span class="font-body text-sm text-primary-100 font-medium mb-2.5 md:mb-0">Filter by:</span>
         <div class="swiper overflow-visible" data-swiper-facets>
-            <div class="swiper-wrapper flex justify-between !flex-row-reverse md:!flex-row">
+            <div class="swiper-wrapper flex justify-between ">
+                {% if content.layout_regions.sort %}
+                    <div class="swiper-slide md:hidden !w-auto shrink-0 [&_.form-item]:!m-0 pr-1 md:pr-0">
+                        {{ content.layout_regions.sort }}
+                    </div>
+                {% endif %}
                 <div class="swiper-slide !w-auto grow flex font-body shrink-0 md:shrink">
                     {{ content.layout_regions.filters }}
                 </div>
                 {% if content.layout_regions.sort %}
-                    <div class="swiper-slide !w-auto shrink-0 [&_.form-item]:!m-0 pr-1 md:pr-0">
+                    <div class="swiper-slide !hidden md:!block !w-auto shrink-0 [&_.form-item]:!m-0 pr-1 md:pr-0">
                         {{ content.layout_regions.sort }}
                     </div>
                 {% endif %}
