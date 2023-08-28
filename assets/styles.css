@@ -86,7 +86,7 @@
 		@apply text-sm md:text-base font-semibold mt-8 md:mt-12;
 	}
 	.path-frontpage .text-default p {
-		@apply !text-sm !mb-4 md:!mb-5;
+		@apply text-base leading-normal !text-[15px] md:!text-[13px] !mb-4 md:!mb-5;
 	}
 
 	.view-baner .swiper-container {
