@@ -37,7 +37,7 @@
     %}
     {%
     set field_classes = [
-        field.handler.field == 'parent_target_id' ? 'group pl-[23px] md:pl-[17px] font-body text-sm md:text-xl [&_a]:!text-primary-40 [&_a]:hover:!text-brown-100 [&_a]:hover:transition whitespace-nowrap relative ',
+        field.handler.field == 'parent_target_id' ? 'group mr-5 pl-[23px] md:pl-[17px] font-body font-semibold text-sm md:text-xl [&_a]:!text-primary-40 [&_a]:hover:!text-brown-100 [&_a]:hover:transition whitespace-nowrap relative ',
     ]
     %}
   {%- if field.wrapper_element -%}
@@ -49,8 +49,8 @@
       {{ field.content }}
 
       {%- if field.handler.field == 'parent_target_id' -%}
-        <svg xmlns="http://www.w3.org/2000/svg" class="md:h-2 absolute left-0 bottom-0 md:bottom-1 stroke-gray-40 transition duration-200 group-hover:stroke-brown-100 pointer-events-none" width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M13.5 7H1M1 7L7 1M1 7L7 13" stroke="#AFA7AE" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg xmlns="http://www.w3.org/2000/svg" class="md:h-2 absolute left-0 md:-left-0.5 bottom-0.5 md:bottom-2 stroke-gray-40 transition duration-200 group-hover:stroke-brown-100 pointer-events-none" width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M13.5 7H1M1 7L7 1M1 7L7 13" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       {%- endif %}
     
