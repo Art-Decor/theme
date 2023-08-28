@@ -357,13 +357,17 @@
 		@apply !text-sm font-body !font-medium !text-primary-100
 	}
 
-	li.facet-item [type="checkbox"]:checked+label:before,
-	li.facet-item [type="checkbox"]:not(:checked)+label:after{
+	li.facet-item [type="checkbox"]:checked+label:before{
 		@apply !top-[6px] !left-[9px] !w-[6px] !h-2.5
 	}
 
+	li.facet-item [type="checkbox"]:checked+label:after,
+	li.facet-item [type="checkbox"]:not(:checked)+label:after{
+		@apply !w-4 !h-4 !top-[6px] left-2 border-primary-40 rounded-sm		
+	}
+
 	li.facet-item [type="checkbox"]:checked+label:after{
-		@apply !w-4 !h-4 !top-[6px] left-2
+		@apply !border-primary-100 !bg-primary-100
 		
 	}
 
