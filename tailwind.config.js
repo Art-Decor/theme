@@ -9,6 +9,9 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			fontSize:{
+				'2xl': ['25px','2rem']
+			},
 			colors: {
 				neutral: {
 					90: '#F5F4F5',
