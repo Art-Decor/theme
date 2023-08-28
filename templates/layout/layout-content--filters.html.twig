@@ -10,16 +10,16 @@
  * - content: The content of this custom layout.
 #}
 <div{{ attributes.addClass('mb-3 pb-3 md:pb-6 border-b border-gray-200') }}>
-
+ 
     {% if content.layout_regions.filters %}
-        <span>Filter by:</span>
+        <span class="font-body text-sm text-primary-100 font-medium mb-2.5 md:mb-0">Filter by:</span>
         <div class="swiper overflow-visible" data-swiper-facets>
             <div class="swiper-wrapper flex justify-between !flex-row-reverse md:!flex-row">
                 <div class="swiper-slide !w-auto grow flex font-body shrink-0 md:shrink">
                     {{ content.layout_regions.filters }}
                 </div>
                 {% if content.layout_regions.sort %}
-                    <div class="swiper-slide !w-auto shrink-0 [&_.form-item]:!m-0">
+                    <div class="swiper-slide !w-auto shrink-0 [&_.form-item]:!m-0 pr-1 md:pr-0">
                         {{ content.layout_regions.sort }}
                     </div>
                 {% endif %}
@@ -37,7 +37,7 @@
                     slidesPerView: 'auto',
                     spaceBetween: 0,
                     enabled: true,
-                    freeMode: true
+                    freeMode: true,
                     breakpoints:{
                         768:{
                             enabled: false
