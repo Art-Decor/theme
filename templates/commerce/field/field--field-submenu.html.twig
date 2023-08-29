@@ -53,7 +53,7 @@
       <div class="field__items md-wide:pt-4 h-full flex flex-col flex-wrap">
     {% endif %}
     {% for item in items %}
-      <div{{ item.attributes.addClass('field--item [&>a]:!text-primary-100 [&>a]:!text-base md:[&>a]:!text-sm md:[&>a]:!leading-6 [&>a]:!font-medium [&>a]:!font-body [&>a]:!py-[13px] md:[&>a]:!py-[4px] [&>a]:!border-0 md-wide:[&>a]:!block') }}>{{ item.content }}</div>
+      <div{{ item.attributes.addClass('field--item [&>a]:!text-primary-100 [&>a]:!text-base md:[&>a]:!text-sm [&>a]:!font-medium [&>a]:!font-body [&>a]:!py-[13px] md:[&>a]:!py-[4px] [&>a]:!border-0 md-wide:[&>a]:!block') }}>{{ item.content }}</div>
     {% endfor %}
     {% if multiple %}
       </div>
