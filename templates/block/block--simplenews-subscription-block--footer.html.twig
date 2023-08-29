@@ -52,12 +52,13 @@
       'block-' ~ configuration.provider|clean_class,
       'block-' ~ plugin_id|clean_class,
       'clearfix',
+      '[&_p]:text-[15px] [&_p]:leading-normal [&_p]:font-body [&_p]:font-light'
     ]
   %}
   <section{{ attributes.addClass(classes) }}>
     {{ title_prefix }}
     {% if label %}
-      <h2{{ title_attributes.addClass('block-title mb-5 md:mb-[30px] text-[21px] font-medium') }}>{{ label }}</h2>
+      <h2{{ title_attributes.addClass('block-title mb-5 md:mb-[30px] font-medium text-primary-100 font-body text-xl') }}>{{ label }}</h2>
     {% endif %}
     {{ title_suffix }}
 

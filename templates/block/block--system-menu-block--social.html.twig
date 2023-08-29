@@ -36,16 +36,16 @@
 #}
 {% set heading_id = attributes.id ~ ('-menu'|clean_id) %}
 {% set attributes = attributes.addClass('w-full mb-[50px] flex flex-row flex-wrap justify-start items-center') %}
-{% set title_attributes = title_attributes.addClass('text-[14px] mr-[30px] font-medium') %}
+{% set title_attributes = title_attributes.addClass('font-body !text-sm mr-[30px] !font-medium text-primary-100') %}
 <nav role="navigation" aria-labelledby="{{ heading_id }}" {{ attributes|without('role', 'aria-labelledby') }}>
 	{# Label. If not displayed, we still provide it for screen readers. #}
 	{% if not configuration.label_display %}
 		{% set title_attributes = title_attributes.addClass('visually-hidden') %}
 	{% endif %}
 	{{ title_prefix }}
-	<h2 {{ title_attributes.setAttribute('id', heading_id) }}>
+	<span {{ title_attributes.setAttribute('id', heading_id) }}>
 		{{ configuration.label }}
-	</h2>
+	</span>
 	{{ title_suffix }}
 
 	{# Menu. #}
