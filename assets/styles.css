@@ -646,7 +646,7 @@
 
 	[data-block='youimagesubmenuimagewallart'] a,
 	[data-block='youimagesubmenuimagewallmural'] a {
-		@apply md-wide:absolute z-20 inset-0 flex flex-col items-center justify-end !pl-[30px] !py-[13px] md-wide:!p-[30px] md-wide:!pb-[100px] font-body !text-base md-wide:!text-3xl !border-0 font-medium md-wide:!font-semibold !text-primary-100 md-wide:!text-white;
+		@apply md-wide:absolute z-20 inset-0 flex flex-col items-center justify-end !pl-[30px] !py-[13px] md-wide:!p-[30px] md-wide:!pb-[100px] !font-body !text-base md-wide:!text-3xl !border-0 font-medium md-wide:!font-semibold !text-primary-100 md-wide:!text-white;
 	}
 
 	.we-mega-menu-li:not(.dropdown-menu) .we-mega-menu-row,
