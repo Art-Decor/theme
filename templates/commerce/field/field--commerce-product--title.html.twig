@@ -40,14 +40,21 @@
 #}
 {%
   set classes = [
-    'font-normal font-body text-base !text-[15px] md:!text-lg',
     'field',
     'field--name-' ~ field_name|clean_class,
     'field--type-' ~ field_type|clean_class,
     'field--label-' ~ label_display,
   ]
 %}
-
-{% for item in items %}
-    <div{{ attributes.addClass(classes, 'field--item') }}>{{ item.content }}</div>
-{% endfor %}
+{%
+  set title_classes = [
+    'field--label',
+    label_display == 'visually_hidden' ? 'sr-only',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+    {% for item in items %}
+        <div{{ item.attributes.addClass('field--item font-body text-primary-100 text-2xl font-medium md:text-3xl') }}>{{ item.content }}</div>
+    {% endfor %}
+</div>

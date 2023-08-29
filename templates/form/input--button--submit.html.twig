@@ -25,10 +25,10 @@
   {% block input %}{% apply spaceless %}
     {%
       set classes = [
-      'w-full max-w-md group !text-white  text-basis md:text-lg transition duration-200',
+      'w-full max-w-md group !text-white text-sm font-body font-medium transition duration-200',
       type == 'submit' ? 'js-form-submit',
       icon and icon_position and not icon_only ? 'icon-' ~ icon_position,
-      attributes.value == 'Search' ? ' h-10 py-2 pl-2 pr-5 !border-0 relative z-10' : 'mb-[15px] rounded-full px-5 py-[11px] !bg-primary-100 hover:!bg-[#271525] !border-primary-100 hover:!border-[#271525]' 
+      attributes.value == 'Search' ? ' h-10 py-2 pl-2 pr-5 !border-0 relative z-10' : 'mb-[15px] rounded-full !normal-case px-5 py-[11px] !bg-primary-100 hover:!bg-[#271525] !border-primary-100 hover:!border-[#271525]' 
     ]
     %}
     {% if icon and icon_only %}
@@ -38,7 +38,7 @@
             <path d="M18.8333 18.8333L14.4618 14.4618M16.75 8.9375C16.75 4.62278 13.2522 1.125 8.9375 1.125C4.62278 1.125 1.125 4.62278 1.125 8.9375C1.125 13.2522 4.62278 16.75 8.9375 16.75C13.2522 16.75 16.75 13.2522 16.75 8.9375Z" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         {% else %}
-          <span class="sr-only">{{ label }}</span>
+          <span class="sr-only ">{{ label }}</span>
           {{ icon }}
         {% endif %}
       </button>

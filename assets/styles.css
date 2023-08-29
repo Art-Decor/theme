@@ -29,7 +29,15 @@
 	}
 
 	.commerce-product h2.block-title {
-		@apply mb-6 md:mb-8 text-xl md:text-2xl font-semibold;
+		@apply mb-6 md:mb-8 text-xl md:text-2xl font-medium text-primary-100;
+	}
+
+	.layout-content--list .field--label{
+		@apply text-[15px] font-medium
+	}
+
+	.layout-content--list .field--item{
+		@apply text-[13px] font-light
 	}
 
 	.layout-content--list .field--label-inline {
@@ -54,7 +62,7 @@
 		.layout__region--second
 		.field--name-price
 		.field--item {
-		@apply mb-5 !font-semibold !text-3xl md:!text-4xl;
+		@apply mb-5 font-body !font-medium !text-3xl;
 	}
 	.commerce-product--default
 		.layout__region--second
@@ -770,7 +778,8 @@
 		@apply min-[600px]:justify-center
 	}
 
-	.path-frontpage .wp-block-button:not(.button-full) a.wp-block-button__link{
+	.path-frontpage .wp-block-button:not(.button-full) a.wp-block-button__link,
+	a.artist-link{
 		background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 6L12 10L8 14" stroke="%23382335" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 		@apply bg-transparent rounded-none bg-no-repeat bg-right font-body font-medium text-sm text-primary-100 py-[14px] pl-0 pr-10 border-b-2 border-b-primary-20 hover:border-b-brown-100 transition duration-200
 	}

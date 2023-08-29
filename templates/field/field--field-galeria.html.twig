@@ -49,7 +49,7 @@
 %}
 {%
   set title_classes = [
-    'mt-20 mb-4 !normal-case',
+    'mt-20 mb-4 !normal-case text-2xl md:text-3xl font-body font-light',
     'field--label ',
     label_display == 'visually_hidden' ? 'sr-only',
   ]
@@ -68,7 +68,7 @@
 
 {% if multiple %}
 
-<div class="modal fixed z-[1200] inset-0 flex justify-center items-center bg-[#333]/50 p-5 md:p-10 transition duration-200 opacity-0 !hidden " data-modal-container>
+<div class=" modal fixed z-[1200] inset-0 flex justify-center items-center bg-[#333]/50 p-5 md:p-10 transition duration-200 opacity-0 !hidden " data-modal-container>
   <div class="modal-inner py-12 md:px-10 mx-auto max-h-[100%] flex relative">
     <button onclick="closeModal()" class="appearance-none absolute w-10 h-10 top-0 md:top-10 -right-1 p-2 bg-primary-100 hover:bg-primary-80 transition duration-200 rounded-full" data-modal-btn-close>
       <svg class="w-full h-full rotate-45 stroke-white" width="30" height="30" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

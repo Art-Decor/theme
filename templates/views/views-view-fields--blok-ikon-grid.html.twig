@@ -38,7 +38,7 @@
         {%- if field.handler.field == 'field_ikona' -%}
             <{{ field.wrapper_element }}{{ field.wrapper_attributes.addClass('shrink-0 mr-2') }}>
         {%- else -%}
-            <{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
+            <{{ field.wrapper_element }}{{ field.wrapper_attributes.addClass('text-sm md:text-xs font-medium font-body text-primary-100') }}>
         {%- endif %}
     {%- endif %}
     {%- if field.element_type -%}
