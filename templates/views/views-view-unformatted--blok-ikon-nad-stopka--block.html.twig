@@ -20,7 +20,7 @@
 {% for row in rows %}
   {%
     set row_classes = [
-      'flex flex-col lg:flex-row gap-2 lg:gap-4 text-center lg:text-left items-center max-w-[260px] lg:max-w-[322px] font-body font-light text-base text-[15px] [&_strong]:font-medium leading-normal text-primary-100',
+      'flex flex-col lg:flex-row gap-2 lg:gap-4 text-center lg:text-left items-center max-w-[260px] lg:max-w-[322px] font-body font-light text-base !text-[15px] md:!text-sm md:!text-[13px] [&_strong]:font-medium md:[&_strong]:!text-sm leading-normal text-primary-100',
       '[&_img]:w-10 [&_img]:h-10 [&_img]:md:w-[50px] [&_img]:md:h-[50px] [&_img]:object-contain [&_.views-field-field-icon-above-footer]:shrink-0',
       default_row_class ? 'views-row',
     ]
