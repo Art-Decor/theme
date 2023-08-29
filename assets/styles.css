@@ -634,9 +634,19 @@
 		@apply scale-105;
 	}
 
+	[data-block='youimagesubmenuimagewallart']:hover .link-icon,
+	[data-block='youimagesubmenuimagewallmural']:hover .link-icon {
+		@apply bg-white;
+	}
+
+	[data-block='youimagesubmenuimagewallart']:hover .link-icon svg,
+	[data-block='youimagesubmenuimagewallmural']:hover .link-icon svg {
+		@apply stroke-brown-100;
+	}
+
 	[data-block='youimagesubmenuimagewallart'] a,
 	[data-block='youimagesubmenuimagewallmural'] a {
-		@apply md-wide:absolute z-20 inset-0 flex flex-col items-center justify-end !pl-[30px] !py-[13px] md-wide:!p-[30px] !text-lg md-wide:!text-3xl !border-0 md-wide:!font-normal !text-primary-100 md-wide:!text-white;
+		@apply md-wide:absolute z-20 inset-0 flex flex-col items-center justify-end !pl-[30px] !py-[13px] md-wide:!p-[30px] md-wide:!pb-[100px] font-body !text-base md-wide:!text-3xl !border-0 font-medium md-wide:!font-semibold !text-primary-100 md-wide:!text-white;
 	}
 
 	.we-mega-menu-li:not(.dropdown-menu) .we-mega-menu-row,
