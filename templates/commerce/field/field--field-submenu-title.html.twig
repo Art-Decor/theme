@@ -54,7 +54,7 @@
       <div class="field__items">
     {% endif %}
     {% for item in items %}
-      <h4{{ item.attributes.addClass('field--item text-primary-100 text-lg uppercase font-semibold') }}>{{ item.content }}</h4>
+      <h4{{ item.attributes.addClass('field--item text-primary-100 text-lg md:text-sm font-body uppercase font-semibold') }}>{{ item.content }}</h4>
     {% endfor %}
     {% if multiple %}
       </div>
