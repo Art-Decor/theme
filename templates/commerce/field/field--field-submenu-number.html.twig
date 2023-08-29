@@ -53,7 +53,7 @@
       <div class="field__items">
     {% endif %}
     {% for item in items %}
-      <span{{ item.attributes.addClass('field--item text-primary-20 text-[14px] font-medium') }}>0{{ item.content }}</span>
+      <span{{ item.attributes.addClass('field--item text-primary-20 text-[14px] font-medium font-body md:text-xs') }}>0{{ item.content }}</span>
     {% endfor %}
     {% if multiple %}
       </div>
