@@ -40,7 +40,7 @@
 #}
 {%
   set classes = [
-    '!border-0 !mb-0',
+    '!border-0 !mb-0 text-primary-100',
     'w-full',
     'field',
     'field--name-' ~ field_name|clean_class,
@@ -59,6 +59,6 @@
   <div{{ attributes.addClass(classes) }}>
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
     {% for item in items %}
-      <div{{ item.attributes.addClass('!text-base md:!text-lg field--item inline font-body ') }}>{{ item.content }}</div>
+      <div{{ item.attributes.addClass('!text-base md:!text-lg field--item inline font-body text-primary-100') }}>{{ item.content }}</div>
     {% endfor %}
   </div>

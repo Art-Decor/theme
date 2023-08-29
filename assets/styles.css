@@ -33,11 +33,11 @@
 	}
 
 	.layout-content--list .field--label{
-		@apply text-[15px] font-medium
+		@apply text-[15px] font-medium leading-5
 	}
 
 	.layout-content--list .field--item{
-		@apply text-[13px] font-light
+		@apply text-[13px] font-light leading-5
 	}
 
 	.layout-content--list .field--label-inline {
@@ -47,11 +47,19 @@
 		@apply border-0 border-b first:border-b-0 last:border-b-0 last:!mb-[60px] md:last:!mb-20 border-gray-300;
 	}
 	.layout-content--list .field--label-inline .field--label {
-		@apply md:basis-44 md:mr-8 shrink-0 grow-0 !normal-case;
+		@apply md:basis-44 md:mr-8 shrink-0 grow-0 !normal-case text-primary-100;
 	}
 	.layout-content--list
 		.field.field--name-sku.field--type-string.field--label-inline {
 		@apply m-0;
+	}
+
+	.commerce-product .layout.layout--twocol-section.layout--twocol-section--67-33 p{
+		@apply text-[15px] font-light text-primary-100
+	}
+
+	.commerce-product .layout.layout--twocol-section.layout--twocol-section--67-33 p strong{
+		@apply font-medium
 	}
 
 	.commerce-product--default .layout:not(:first-of-type) section {
@@ -62,7 +70,7 @@
 		.layout__region--second
 		.field--name-price
 		.field--item {
-		@apply mb-5 font-body !font-medium !text-3xl;
+		@apply mb-5 font-body !font-medium !text-3xl text-primary-100;
 	}
 	.commerce-product--default
 		.layout__region--second
