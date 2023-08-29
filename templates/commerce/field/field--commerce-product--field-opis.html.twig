@@ -53,8 +53,7 @@
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
-    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
     {% for item in items %}
-        <div{{ item.attributes.addClass('field--item font-body text-primary-100 font-light text-[15px] md:text-[13px] leading-normal') }}>{{ item.content }}</div>
+        <div{{ item.attributes.addClass('field--item font-body text-primary-100 font-light text-[15px] md:[&_p]:!text-[13px] leading-normal') }}>{{ item.content }}</div>
     {% endfor %}
 </div>
