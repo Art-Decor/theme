@@ -27,7 +27,7 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu', 'menu-' ~ menu_name|clean_class).addClass(menu_class) }}>
+      <ul{{ attributes.addClass('menu !ml-0', 'menu-' ~ menu_name|clean_class).addClass(menu_class) }}>
     {% else %}
       <ul class="dropdown-menu">
     {% endif %}
@@ -46,8 +46,7 @@
         set link_classes = [
           'menu-' ~ menu_name|clean_class ~ '__link',
           'menu__link',
-          'text-primary-100',
-          'text-[14px]',
+          'font-body text-primary-100 text-sm font-normal',
         ]
       %}
       {% if menu_level == 0 and item.is_expanded %}
