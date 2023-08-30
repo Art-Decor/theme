@@ -430,7 +430,7 @@
 	}
 
 	.cart-form .order-total-line-value{
-		@apply !w-auto
+		@apply !w-auto;
 	}
 
 	.cart-form .order-total-line__adjustment--shipping .order-total-line-label{
@@ -829,6 +829,26 @@
 	.view-display-id-block_3 .swiper-navigation-disabled .swiper-button-prev,
 	.view-display-id-block_3 .swiper-navigation-disabled .swiper-button-next{
 		@apply !flex
+	}
+
+	.path-checkout .panel-body{
+		@apply text-[15px] font-light font-body text-primary-100
+	}
+
+	.path-checkout .form-item-login-returning-customer-name label,
+	.path-checkout .form-item-login-returning-customer-password label{
+		@apply text-[15px] md:text-lg font-medium font-body text-primary-100
+	}
+
+	.path-checkout .panel-title{
+		@apply text-primary-100 font-body text-2xl md:text-3xl font-light
+	}
+	.path-checkout .panel-title em{
+		@apply font-header
+	}
+
+	[data-drupal-selector="edit-login-returning-customer-forgot-password"]{
+		@apply !p-0 !text-xs !font-medium underline !text-primary-60 hover:!text-brown-100 transition duration-200
 	}
 
 }
