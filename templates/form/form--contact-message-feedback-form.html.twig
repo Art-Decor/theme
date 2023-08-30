@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ *
+ * @ingroup themeable
+ */
+#}
+<h3 class="text-center mb-5 text-2xl md:text-3xl font-body text-primary-100 font-light">
+    Email <em class="font-header italic font-medium">Us</em>
+</h3>
+<form{{ attributes }}>
+  {{ children }}
+</form>

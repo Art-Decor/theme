@@ -47,11 +47,13 @@
 #}
 {%
     set classes = [
-      'text-center mb-10 md:mb-[60px] mx-auto max-w-4xl',
       'block',
       'block-' ~ configuration.provider|clean_class,
       'block-' ~ plugin_id|clean_class,
       'clearfix',
+      'mb-10 md:mb-[60px] mx-auto max-w-4xl text-center font-light font-body text-primary-100',
+      '[&_h2]:mb-10 [&_h2]:text-2xl md:[&_h2]:text-3xl [&_h2_em]:text-4xl md:[&_h2_em]:text-5xl [&_h2_em]:font-header [&_h2_em]:font-medium [&_h2_em]:italic',
+      '[&_p]:mb-3 [&_p]:mb-3 [&_p]:text-[15px] ',
     ]
   %}
   <section{{ attributes.addClass(classes) }}>

@@ -860,6 +860,14 @@
 		@apply font-header
 	}
 
+	.coupon-redemption-form__coupons h3{
+		@apply !text-xs !font-normal !text-primary-100
+	}
+
+	.contact-message-feedback-form .fotm-item{
+		@apply !mt-0
+	}
+
 	.checkout-pane .panel-heading{
 		@apply !border-0 !p-0  
 	}
@@ -867,7 +875,16 @@
 		@apply !font-medium !text-lg text-primary-100 
 	}
 
-	[data-drupal-selector="edit-payment-information-add-payment-method-billing-information-copy-fields-enable"]{
+	.checkout-pane .checkout-complete p{
+		@apply text-2xl md:text-3xl text-primary-100 font-light font-body
+	}
+
+	.path-contact .page-header{
+		@apply !hidden
+	}
+
+	[data-drupal-selector="edit-payment-information-add-payment-method-billing-information-copy-fields-enable"] label,
+	.form-item-subscriptions-default.checkbox label{
 		@apply !text-xs !font-normal !text-primary-100
 	}
 	[data-drupal-selector="edit-login-returning-customer-forgot-password"]{
