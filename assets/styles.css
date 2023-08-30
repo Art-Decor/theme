@@ -867,6 +867,9 @@
 		@apply !font-medium !text-lg text-primary-100 
 	}
 
+	[data-drupal-selector="edit-payment-information-add-payment-method-billing-information-copy-fields-enable"]{
+		@apply !text-xs !font-normal !text-primary-100
+	}
 	[data-drupal-selector="edit-login-returning-customer-forgot-password"]{
 		@apply !p-0 !text-xs !font-medium underline hover:!underline !text-primary-60 hover:!text-brown-100 transition duration-200
 	}
