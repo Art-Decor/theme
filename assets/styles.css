@@ -860,6 +860,13 @@
 		@apply font-header
 	}
 
+	.checkout-pane .panel-heading{
+		@apply !border-0 !p-0  
+	}
+	.checkout-pane .panel-heading .panel-title{
+		@apply !font-medium !text-lg text-primary-100 
+	}
+
 	[data-drupal-selector="edit-login-returning-customer-forgot-password"]{
 		@apply !p-0 !text-xs !font-medium underline hover:!underline !text-primary-60 hover:!text-brown-100 transition duration-200
 	}
