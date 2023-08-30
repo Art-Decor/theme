@@ -840,7 +840,8 @@
 	.path-checkout .form-item-login-returning-customer-name label,
 	.path-checkout .form-item-login-returning-customer-password label,
 	.path-user .user-login-form label,
-	.path-user .user-register-form label{
+	.path-user .user-register-form label,
+	.path-user .user-pass label{
 		@apply text-[15px] md:text-lg font-medium font-body text-primary-100
 	}
 
