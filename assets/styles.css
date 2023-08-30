@@ -868,6 +868,10 @@
 		@apply !mt-0
 	}
 
+	.contact-message-feedback-form select{
+		@apply !text-sm
+	}
+
 	.checkout-pane .panel-heading{
 		@apply !border-0 !p-0  
 	}
