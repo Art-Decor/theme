@@ -52,7 +52,6 @@
       <div class="field__items">
     {% endif %}
     {% for item in items %}
-    {{ dump(item) }}
       <div{{ item.attributes.addClass('field--item') }}>{{ item.content }}</div>
 
       {% if item.content['#title'] != '' %}
