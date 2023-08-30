@@ -52,13 +52,17 @@
       <div class="field__items">
     {% endif %}
     {% for item in items %}
-    {{ dump(item.attributes) }}
+    {{ dump(item) }}
       <div{{ item.attributes.addClass('field--item') }}>{{ item.content }}</div>
-      <div class="link-icon absolute z-10 pointer-events-none bottom-[30px] left-0 ml-[calc(50%_-_25px)] hidden md-wide:!flex !content-none  items-center justify-center w-[50px] h-[50px] rounded-full border border-white bg-transparent transition duration-200" >
-        <svg class=" stroke-white transition duration-200" width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.75 4.5H8.5625M8.5625 4.5L4.8125 0.75M8.5625 4.5L4.8125 8.25" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
-      </div>
+
+      {% if item.content != '<span></span>' %}
+        <div class="link-icon absolute z-10 pointer-events-none bottom-[30px] left-0 ml-[calc(50%_-_25px)] hidden md-wide:!flex !content-none  items-center justify-center w-[50px] h-[50px] rounded-full border border-white bg-transparent transition duration-200" >
+          <svg class=" stroke-white transition duration-200" width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.75 4.5H8.5625M8.5625 4.5L4.8125 0.75M8.5625 4.5L4.8125 8.25" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+      {% endif %}
+
     {% endfor %}
     {% if multiple %}
       </div>
