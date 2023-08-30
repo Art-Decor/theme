@@ -864,7 +864,7 @@
 		@apply !text-xs !font-normal !text-primary-100
 	}
 
-	.contact-message-feedback-form .fotm-item{
+	.contact-message-feedback-form .form-item{
 		@apply !mt-0
 	}
 
