@@ -46,7 +46,7 @@
         set link_classes = [
           'menu-' ~ menu_name|clean_class ~ '__link',
           'menu__link',
-          'font-body text-primary-100 text-sm font-normal',
+          'font-body text-primary-100 text-sm font-normal hover:!text-brown-100 transition duration-200',
         ]
       %}
       {% if menu_level == 0 and item.is_expanded %}
