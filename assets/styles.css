@@ -831,7 +831,9 @@
 		@apply !flex
 	}
 
-	.path-checkout .panel-body{
+	.path-checkout .panel-body,
+	.password-confirm-message,
+	.auth-user-form--footer h3{
 		@apply text-[15px] font-light font-body text-primary-100
 	}
 
@@ -840,6 +842,10 @@
 	.path-user .user-login-form label,
 	.path-user .user-register-form label{
 		@apply text-[15px] md:text-lg font-medium font-body text-primary-100
+	}
+
+	.auth-user-form>form .form-control{
+		@apply !h-10
 	}
 
 	.path-user .pass-link{
