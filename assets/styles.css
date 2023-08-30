@@ -429,6 +429,10 @@
 		@apply text-primary-100 text-2xl font-semibold;
 	}
 
+	.cart-form .order-total-line-value{
+		@apply !w-auto
+	}
+
 	.cart-form .order-total-line__adjustment--shipping .order-total-line-label{
 		@apply text-base text-primary-100 font-semibold;
 	}
