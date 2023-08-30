@@ -423,6 +423,10 @@
 		@apply flex justify-between;
 	}
 
+	.path-cart h1.page-header{
+		@apply after:!hidden text-primary-100 text-4xl md:text-5xl font-normal font-header mt-[60px] md:mt-20 mb-10 md:mb-11
+	}
+
 	.coupon-redemption-form__coupons table {
 		@apply w-full;
 	}

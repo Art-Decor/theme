@@ -40,16 +40,17 @@
 #}
 {%
   set classes = [
-    'mb-2 md:mb-5 text-primary-100 text-[15px] md:text-xl font-medium',
     'field',
     'field--name-' ~ field_name|clean_class,
     'field--type-' ~ field_type|clean_class,
     'field--label-' ~ label_display,
+    'text-sm text-primary-100 md:text-xs font-light'
   ]
 %}
 {%
   set title_classes = [
     'field--label',
+    'font-semibold',
     label_display == 'visually_hidden' ? 'sr-only',
   ]
 %}
