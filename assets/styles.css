@@ -900,7 +900,7 @@
 	}
 
 	.page-banner .wp-block-cover__inner-container{
-		@apply container px-5 md:px-10 lg:px-20 pt-12 pb-5 lg:pt-16 text-white min-h-[250px] lg:min-h-[300px] lg:[&_>_*]:max-w-[50%] lg:[&_>_*]:pr-10
+		@apply container px-5 md:px-10 lg:px-20 pt-12 pb-5 lg:pt-16 text-white min-h-[250px] lg:min-h-[300px] lg:[&_>_*]:max-w-[50%] lg:[&_>_h2]:pr-10 lg:[&_>_p]:pr-10
 	}
 
 	.page-banner h2{

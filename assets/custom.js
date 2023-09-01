@@ -101,10 +101,9 @@ Drupal.behaviors.overrideSwiper = {
 
 window.addEventListener('DOMContentLoaded',() => {
     const scrollDownBtn = document.querySelector('[data-scroll-down]');
-    const breadcrumbEl = document.querySelector('.breadcrumb');
-    if (scrollDownBtn && breadcrumbEl) {
+    if (scrollDownBtn) {
         scrollDownBtn.addEventListener('click',()=>{
-            let yOffset = breadcrumbEl.getBoundingClientRect().top + window.scrollY
+            let yOffset = scrollDownBtn.getBoundingClientRect().top + 30 + window.scrollY
             window.scrollTo({
                 behavior: 'smooth',
                 top: yOffset
