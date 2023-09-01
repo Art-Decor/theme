@@ -895,6 +895,22 @@
 		@apply !p-0 !text-xs !font-medium underline hover:!underline !text-primary-60 hover:!text-brown-100 transition duration-200
 	}
 
+	.page-banner{
+		@apply relative mx-[calc(50%_-_50vw)] w-screen
+	}
+
+	.page-banner .wp-block-cover__inner-container{
+		@apply container px-5 md:px-10 lg:px-20 pt-12 pb-5 lg:pt-16 text-white min-h-[250px] lg:min-h-[300px] lg:[&_>_*]:max-w-[50%] lg:[&_>_*]:pr-10
+	}
+
+	.page-banner h2{
+		@apply font-header italic text-4xl text-[35px] md:text-5xl md:text-[50px] mb-6
+	}
+
+	.page-banner p{
+		@apply font-normal font-body text-base !text-[15px] md:!text-lg
+	}
+
 }
 
 @tailwind utilities;
