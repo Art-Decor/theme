@@ -261,6 +261,10 @@
 		@apply md:w-3/4 lg:w-2/3;
 	}
 
+	.page-node-type-page:not(.path-frontpage) .page{
+		@apply text-primary-100
+	}
+
 	.page-node-type-page:not(.path-frontpage) .page h1,
 	.page-node-type-page:not(.path-frontpage) .page h2,
 	.page-node-type-page:not(.path-frontpage) .page h3,
