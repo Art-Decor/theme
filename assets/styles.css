@@ -908,7 +908,7 @@
 	}
 
 	.page-banner p{
-		@apply font-normal font-body text-base !text-[15px] md:!text-lg
+		@apply font-light font-body text-base !text-[15px] md:!text-lg
 	}
 
 	.container-staticpage p{
