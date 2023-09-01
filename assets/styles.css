@@ -915,6 +915,7 @@
 		@apply container px-5 md:px-10 lg:px-20 pt-12 pb-5 lg:pt-16 text-white min-h-[250px] lg:min-h-[300px] lg:[&_>_h2]:max-w-[50%] lg:[&_>_p]:max-w-[50%] lg:[&_>_h2]:pr-10 lg:[&_>_p]:pr-10
 	}
 
+	.page-banner h1,
 	.page-banner h2{
 		@apply !font-medium font-header italic text-4xl text-[35px] md:text-5xl md:text-[50px] mb-6
 	}
