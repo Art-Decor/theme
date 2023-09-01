@@ -911,6 +911,46 @@
 		@apply font-normal font-body text-base !text-[15px] md:!text-lg
 	}
 
+	.container-staticpage p{
+		@apply font-body text-[15px] font-light 
+	}
+
+	.container-staticpage h1{
+		@apply font-body font-light text-[40px] md:text-6xl
+	}
+
+	.container-staticpage h2{
+		@apply font-body font-light text-2xl md:text-[40px]
+	}
+	.container-staticpage h2 em{
+		@apply font-header italic font-medium text-4xl md:text-5xl
+	}
+
+	.container-staticpage h3{
+		@apply font-body font-light text-3xl
+	}
+
+	.container-staticpage h4{
+		@apply font-body font-light text-2xl md:text-3xl
+	}
+
+	.container-staticpage h5{
+		@apply font-body font-light text-lg md:text-2xl
+	}
+
+	.container-staticpage h6{
+		@apply font-body font-light text-lg
+	}
+
+	.container-staticpage h1 em,
+	.container-staticpage h3 em,
+	.container-staticpage h4 em,
+	.container-staticpage h5 em,
+	.container-staticpage h6 em,
+	.container-staticpage h7 em{
+		@apply font-header italic font-medium
+	}
+
 }
 
 @tailwind utilities;
