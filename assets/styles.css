@@ -917,7 +917,7 @@
 
 	.page-banner h1,
 	.page-banner h2{
-		@apply !font-medium font-header italic text-4xl text-[35px] md:text-5xl md:text-[50px] mb-6
+		@apply !font-medium !font-header !italic !text-4xl md:!text-5xl !mb-6
 	}
 
 	.page-banner p{
