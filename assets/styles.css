@@ -896,7 +896,7 @@
 	}
 
 	.page-banner{
-		@apply relative mx-[calc(50%_-_50vw)] w-screen
+		@apply relative mx-[calc(50%_-_50vw)] w-screen !min-h-0 !p-0
 	}
 
 	.page-banner .wp-block-cover__inner-container{
@@ -904,7 +904,7 @@
 	}
 
 	.page-banner h2{
-		@apply font-header italic text-4xl text-[35px] md:text-5xl md:text-[50px] mb-6
+		@apply !font-medium font-header italic text-4xl text-[35px] md:text-5xl md:text-[50px] mb-6
 	}
 
 	.page-banner p{
