@@ -312,7 +312,7 @@
 	}
 	.page-node-type-page:not(.path-frontpage) .page ol li,
 	.page-node-type-page:not(.path-frontpage) .page ul li {
-		@apply mb-3;
+		@apply font-body text-[15px] font-light mb-3;
 	}
 	.page-node-type-page:not(.path-frontpage) .page table {
 		@apply bg-gray-10 rounded-md overflow-hidden;
