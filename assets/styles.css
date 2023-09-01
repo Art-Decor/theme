@@ -911,11 +911,6 @@
 		@apply font-normal font-body text-base !text-[15px] md:!text-lg
 	}
 
-	.highlighted,
-	.page-header{
-		@apply hidden
-	}
-
 }
 
 @tailwind utilities;
