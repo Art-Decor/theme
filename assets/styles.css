@@ -307,6 +307,9 @@
 	.page-node-type-page:not(.path-frontpage) .page p {
 		@apply font-body text-[15px] font-light  mb-6 md:mb-[50px];
 	}
+	.page-node-type-page:not(.path-frontpage) strong {
+		@apply font-medium;
+	}
 
 	.page-node-type-page:not(.path-frontpage) .page ul {
 		@apply list-disc ml-4 mb-5;
@@ -382,6 +385,48 @@
 	}
 	.page-node-type-page:not(.path-frontpage) input[type='checkbox'] {
 		@apply !m-0 !mr-5 !opacity-100 !outline-none !visible after:rotate-45 after:absolute after:border-b-2 after:border-r-2 after:border-transparent checked:after:border-white after:content-[''] after:h-[8px] after:left-1 after:w-2.5 after:bottom-[7px] appearance-none bg-transparent border border-primary-100 checked:!bg-brown-100 duration-200 h-5 hover:bg-brown-20 inline-block left-0 outline relative rounded-sm transition w-5;
+	}
+
+	.page-node-type-page:not(.path-frontpage) .header-main{
+		@apply !text-2xl md:!text-3xl
+	}
+
+	.page-node-type-page:not(.path-frontpage) .header-main em{
+		@apply !text-4xl md:!text-5xl
+	}
+
+	.page-node-type-page:not(.path-frontpage) .wp-block-column p{
+		@apply !mb-4
+	}
+
+	.page-node-type-page:not(.path-frontpage) .about-us-cols{
+		@apply !flex-col md:!flex-row
+	}
+
+	.page-node-type-page:not(.path-frontpage) .about-us-cols.reverse-mobile{
+		@apply !flex-col-reverse md:!flex-row
+	}
+
+	.page-node-type-page:not(.path-frontpage) .about-us-cols .wp-block-column{
+		@apply mb-10 md:!m-0
+	}
+
+	.page-node-type-page:not(.path-frontpage) .about-us-cols .wp-block-column.is-vertically-aligned-center{
+		@apply px-5 md:px-10 lg:px-16 xl:px-[100px]
+	}
+
+	.page-node-type-page:not(.path-frontpage) .about-us-cols.decor-right{
+		@apply mt-20 md:mt-[130px] md:pt-28
+	}
+	.page-node-type-page:not(.path-frontpage) .about-us-cols.decor-right .wp-block-column:last-child{
+		@apply relative after:-top-28 after:block after:w-full after:h-full after:left-1/2 md:after:left-2/3 after:bg-gray-10
+	}
+
+	.page-node-type-page:not(.path-frontpage) .about-us-cols.decor-left{
+		@apply mt-[60px] md:mt-40 md:pt-32
+	}
+	.page-node-type-page:not(.path-frontpage) .about-us-cols.decor-left .wp-block-column:first-child{
+		@apply relative after:-top-32 after:block after:w-full after:h-full after:right-1/2 md:after:right-2/3 after:bg-gray-10
 	}
 
 	li.facet-item .facet-item__value{
