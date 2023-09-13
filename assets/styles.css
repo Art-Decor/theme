@@ -408,7 +408,7 @@
 	}
 
 	.page-node-type-page:not(.path-frontpage) .about-us-cols .wp-block-column{
-		@apply mb-10 !mx-0 !mt-0
+		@apply mb-10 !mx-0 !mt-0 md:!mb-0
 	}
 
 	.page-node-type-page:not(.path-frontpage) .about-us-cols .wp-block-column.is-vertically-aligned-center{
@@ -416,17 +416,17 @@
 	}
 
 	.page-node-type-page:not(.path-frontpage) .about-us-cols.decor-right{
-		@apply mt-20 md:mt-[130px] !mb-0
+		@apply mt-20 md:mt-[130px]
 	}
 	.page-node-type-page:not(.path-frontpage) .about-us-cols.decor-right .wp-block-column:last-child{
-		@apply relative after:-top-28 after:block after:w-full after:h-full after:left-1/2 md:after:left-2/3 after:bg-gray-10 after:absolute after:-z-20
+		@apply relative after:-10 md:after:-top-28 after:block after:w-full after:h-full after:left-1/2 md:after:left-2/3 after:bg-gray-10 after:absolute after:-z-20
 	}
 
 	.page-node-type-page:not(.path-frontpage) .about-us-cols.decor-left{
 		@apply mt-[60px] md:mt-40
 	}
 	.page-node-type-page:not(.path-frontpage) .about-us-cols.decor-left .wp-block-column:first-child{
-		@apply relative after:-top-32 after:block after:w-full after:h-full after:right-1/2 md:after:right-2/3 after:bg-gray-10 after:absolute after:-z-20 !mb-0
+		@apply relative after:-10 md:after:-top-32 after:block after:w-full after:h-full after:right-1/2 md:after:right-2/3 after:bg-gray-10 after:absolute after:-z-20 !mb-0
 	}
 
 	.page-node-type-page:not(.path-frontpage) .decor-svg-left,
@@ -435,11 +435,11 @@
 	}
 
 	.page-node-type-page:not(.path-frontpage) .decor-svg-left svg{
-		@apply absolute bottom-5 left-0 -translate-x-1/2
+		@apply absolute bottom-5 left-0 translate-x-[-68%]
 	}
 
 	.page-node-type-page:not(.path-frontpage) .decor-svg-right svg{
-		@apply absolute bottom-5 right-0 translate-x-1/2
+		@apply absolute bottom-5 right-0 translate-x-[75%]
 	}
 
 	li.facet-item .facet-item__value{
