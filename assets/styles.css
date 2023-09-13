@@ -423,14 +423,14 @@
 		@apply mt-20 md:mt-[130px]
 	}
 	.page-node-type-page:not(.path-frontpage) .about-us-cols.decor-right .wp-block-column:last-child{
-		@apply relative after:-10 md:after:-top-28 after:block after:w-full after:h-full after:left-1/2 md:after:left-2/3 after:bg-gray-10 after:absolute after:-z-20
+		@apply relative md:after:-top-28 after:block after:w-full after:h-full after:left-1/2 md:after:left-2/3 after:bg-gray-10 after:absolute after:-z-20
 	}
 
 	.page-node-type-page:not(.path-frontpage) .about-us-cols.decor-left{
 		@apply mt-[60px] md:mt-40
 	}
 	.page-node-type-page:not(.path-frontpage) .about-us-cols.decor-left .wp-block-column:first-child{
-		@apply relative after:-10 md:after:-top-32 after:block after:w-full after:h-full after:right-1/2 md:after:right-2/3 after:bg-gray-10 after:absolute after:-z-20 !mb-0
+		@apply relative md:after:-top-32 after:block after:w-full after:h-full after:right-1/2 md:after:right-2/3 after:bg-gray-10 after:absolute after:-z-20 !mb-0
 	}
 
 	.page-node-type-page:not(.path-frontpage) .decor-svg-left,
