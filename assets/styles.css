@@ -432,7 +432,7 @@
 		@apply mt-20 md:mt-[130px]
 	}
 	.page-node-type-page:not(.path-frontpage) .about-us-cols.decor-right .wp-block-column:last-child{
-		@apply relativea after:-top-10 md:after:-top-28 after:block after:w-full after:h-full after:left-1/2 md:after:left-2/3 after:bg-gray-10 after:absolute after:-z-20
+		@apply relative after:-top-10 md:after:-top-28 after:block after:w-full after:h-full after:left-1/2 md:after:left-2/3 after:bg-gray-10 after:absolute after:-z-20
 	}
 
 	.page-node-type-page:not(.path-frontpage) .about-us-cols.decor-left{
