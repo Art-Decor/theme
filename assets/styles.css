@@ -400,7 +400,11 @@
 	}
 
 	.page-node-type-page:not(.path-frontpage) .about-us-cols{
-		@apply !flex-col md:!flex-row
+		@apply !flex-col md:!flex-row !mb-0
+	}
+
+	.page-node-type-page:not(.path-frontpage) .about-us-cols img{
+		@apply !m-0
 	}
 
 	.page-node-type-page:not(.path-frontpage) .about-us-cols.reverse-mobile{
@@ -408,7 +412,7 @@
 	}
 
 	.page-node-type-page:not(.path-frontpage) .about-us-cols .wp-block-column{
-		@apply mb-10 !mx-0 !mt-0 md:!mb-0
+		@apply mb-10 !mx-0 !mt-0 md:!mb-0 md:basis-1/2 grow-0 shrink-0
 	}
 
 	.page-node-type-page:not(.path-frontpage) .about-us-cols .wp-block-column.is-vertically-aligned-center{
@@ -435,11 +439,11 @@
 	}
 
 	.page-node-type-page:not(.path-frontpage) .decor-svg-left svg{
-		@apply absolute bottom-5 left-0 translate-x-[-68%]
+		@apply absolute h-[400px] bottom-5 left-0 translate-x-[-63%]
 	}
 
 	.page-node-type-page:not(.path-frontpage) .decor-svg-right svg{
-		@apply absolute bottom-5 right-0 translate-x-[75%]
+		@apply absolute h-[400px] bottom-5 right-0 translate-x-[66%]
 	}
 
 	li.facet-item .facet-item__value{
