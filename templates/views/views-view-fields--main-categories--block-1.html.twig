@@ -42,14 +42,14 @@
     </div>
 {%- endif %}
 <div class="absolute inset-x-0 bottom-0 h-3/4 z-10 bg-gradient-to-t from-black/50 to-transparent"></div>
-<div class='relative z-20 '>
+<div class='relative z-20 max-w-[345px]'>
     {%- if fields.name_1 -%}
     <h3 class="!font-header !italic !text-white !text-4xl md:!text-5xl !font-normal !mb-7">
         {{ fields.name_1.content }}
     </h3>
     {%- endif %}
     {%- if fields.field_baner_tekst -%}
-    <div class="[&_p]:!text-white [&_p]:!text-[13px] [&_p]:!font-normal [&_p]:!mb-0 mb-4 md:mb-7 ">
+    <div class="[&_p]:!text-white leading-normal [&_p]:!text-[13px] [&_p]:!font-normal [&_p]:!mb-0 mb-4 md:mb-7 ">
         {{ fields.field_baner_tekst.content }}
     </div>
     {%- endif %}
