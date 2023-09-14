@@ -37,20 +37,20 @@
     </div>
 {%- endif %}
 {%- if fields.field_tile_image -%}
-    <div class="[&_img]:!m-0 md:[&_img]:!h-full [&_img]:object-cover absolute inset-0 z-0">
+    <div class="[&_img]:!m-0 [&_img]:!h-full [&_img]:object-cover absolute inset-0 z-0">
         {{ fields.field_tile_image.content }}
     </div>
 {%- endif %}
 <div class="absolute inset-x-0 bottom-0 h-3/4 z-10 bg-gradient-to-t from-black/50 to-transparent"></div>
 <div class='relative z-20 '>
     {%- if fields.name_1 -%}
-    <h3 class="font-header italic text-white text-4xl md:text-5xl !font-normal mb-7">
+    <h3 class="!font-header !italic !text-white !text-4xl md:!text-5xl !font-normal !mb-7">
         {{ fields.name_1.content }}
     </h3>
     {%- endif %}
-    {%- if fields.baner_tekst -%}
-    <div class="text-white [&_p]:!text-[13px] [&_p]:!font-normal [&_p]:!mb-0 mb-4 md:mb-7 ">
-        {{ fields.baner_tekst.content }}
+    {%- if fields.field_baner_tekst -%}
+    <div class="[&_p]:!text-white [&_p]:!text-[13px] [&_p]:!font-normal [&_p]:!mb-0 mb-4 md:mb-7 ">
+        {{ fields.field_baner_tekst.content }}
     </div>
     {%- endif %}
     <div class="shrink-0 relative z-10 pointer-events-none flex items-center justify-center w-[50px] h-[50px] rounded-full group-hover:bg-white border border-white bg-transparent transition duration-200" >
