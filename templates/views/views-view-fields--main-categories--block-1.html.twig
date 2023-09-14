@@ -31,19 +31,31 @@
  * @ingroup themeable
  */
 #}
-{{dump()}}
-<div class="absolute inset-0 z-20 opacity-0 [&_a]:block [&_a]:w-full [&_a]:h-full">
-    {# {{ fields.name.content }}
-</div>
-<div class="[&_img]:!m-0 md:[&_img]:!h-full [&_img]:object-cover absolute inset-0 z-0">
-    {{ fields.field_tile_image.content }}
-</div>
+{%- if fields.name -%}
+    <div class="absolute inset-0 z-30 opacity-0 [&_a]:block [&_a]:w-full [&_a]:h-full">
+        {{ fields.name.content }}
+    </div>
+{%- endif %}
+{%- if fields.field_tile_image -%}
+    <div class="[&_img]:!m-0 md:[&_img]:!h-full [&_img]:object-cover absolute inset-0 z-0">
+        {{ fields.field_tile_image.content }}
+    </div>
+{%- endif %}
 <div class="absolute inset-x-0 bottom-0 h-3/4 z-10 bg-gradient-to-t from-black/50 to-transparent"></div>
-<div class='relative z-30 '>
-    <h4 class="font-body text-primary-100 !text-sm md:!text-lg !font-medium mb-4">
-    {{ fields.name_1.content }}
-    </h4>
-    <div class="[&_p]:!text-[13px] [&_p]:!font-light [&_p]:!mb-0">
-    {{ fields.baner_tekst.content }}
-    </div> #}
+<div class='relative z-20 '>
+    {%- if fields.name_1 -%}
+    <h3 class="font-header italic text-white text-4xl md:text-5xl !font-normal mb-7">
+        {{ fields.name_1.content }}
+    </h3>
+    {%- endif %}
+    {%- if fields.baner_tekst -%}
+    <div class="text-white [&_p]:!text-[13px] [&_p]:!font-normal [&_p]:!mb-0 mb-4 md:mb-7 ">
+        {{ fields.baner_tekst.content }}
+    </div>
+    {%- endif %}
+    <div class="shrink-0 relative z-10 pointer-events-none flex items-center justify-center w-[50px] h-[50px] rounded-full group-hover:bg-white border border-white bg-transparent transition duration-200" >
+      <svg class="group-hover:stroke-brown-100 stroke-white transition duration-200" width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.75 4.5H8.5625M8.5625 4.5L4.8125 0.75M8.5625 4.5L4.8125 8.25" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </div>
 </div>
