@@ -94,6 +94,23 @@ Drupal.behaviors.overrideSwiper = {
                         },
                     };
                 }
+                if (key == 'swiper-processes-swiper-block-1') {
+                    swiper.slidesPerView = 'auto',
+                    swiper.spaceBetween = 5
+                    swiper.navigation = {
+                        enabled: true,
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },                    
+                    swiper.pagination = {
+                        enabled: false,
+                    },
+                    swiper.breakpoints = {
+                        768: {
+                            spaceBetween: 8,
+                        },
+                    };
+                }
             }
         }
     }
