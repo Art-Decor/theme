@@ -32,15 +32,15 @@
  */
 #}
 
-<div>
+<div class="[&_img]:!m-0 [&_img]:object-cover md:absolute md:inset-0 md:z-0">
     {{ fields.field_process_image.content }}
 </div>
-<div class='p-5 bg-white flex'>
+<div class='p-5 md:ml-5 md:mb-5 md:max-w-[367px] bg-white flex shadow-primary-100/25 shadow-2xl z-10'>
     <span class="text-base text-brown-100 font-medium mr-2.5 shrink-0">
         0{{row.index + 1 }}
     </span>
     <div>
-        <h4 class="font-body text-primary-100 text-sm md:text-lg font-medium mb-5">
+        <h4 class="font-body text-primary-100 !text-sm md:!text-lg !font-medium mb-5">
         {{ fields.field_title.content }}
         </h4>
         <div class="text-[13px] font-light">

@@ -404,7 +404,7 @@
 	}
 
 	.page-node-type-page:not(.path-frontpage) .about-us-cols{
-		@apply !flex-col md:!flex-row !mb-0 gap-10 md:gap-0
+		@apply !flex-col md:!flex-row !mb-0 gap-10 md:gap-0 !flex-nowrap
 	}
 
 	.page-node-type-page:not(.path-frontpage) .about-us-cols h3{
