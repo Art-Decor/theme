@@ -16,8 +16,8 @@
  */
 #}
 {% apply spaceless %}
-  <div{{ attributes.addClass(' w-[300px] md:w-[720px] shrink-0') }}>
-      <div class="flex min-h-[500px]">
+  <div{{ attributes.addClass(' w-[300px] md:w-[720px] shrink-0 opacity-50 [&.swiper-slide-active]:opacity-100 transition duration-300') }}>
+      <div class="md:min-h-[500px] opacity-">
         {{ slide }}
       </div>
   </div>
