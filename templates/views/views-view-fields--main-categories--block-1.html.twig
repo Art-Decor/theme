@@ -32,7 +32,7 @@
  */
 #}
 {%- if fields.name -%}
-    <div class="absolute inset-0 z-30 opacity-0 [&_a]:block [&_a]:w-full [&_a]:h-full">
+    <div class="absolute inset-0 z-30 opacity-0 [&_a]:block [&_a]:w-full [&_a]:h-full transition duration-300 group-hover:scale-105">
         {{ fields.name.content }}
     </div>
 {%- endif %}
@@ -44,7 +44,7 @@
 <div class="absolute inset-x-0 bottom-0 h-full z-10 bg-gradient-to-t from-black/90 to-transparent"></div>
 <div class='relative z-20 max-w-[345px]'>
     {%- if fields.name_1 -%}
-    <h3 class="!font-header !italic !text-white !text-4xl md:!text-5xl !font-normal !mb-7">
+    <h3 class="!font-header !italic !text-white !text-4xl md:!text-5xl !font-normal !mb-7 group-hover:underline">
         {{ fields.name_1.content }}
     </h3>
     {%- endif %}
