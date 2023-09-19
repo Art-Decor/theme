@@ -15,7 +15,6 @@
  * @see template_preprocess_select()
  */
 #}
-{{dump()}}
 {% apply spaceless %}
   {% if input_group %}
     <div class="input-group">
@@ -37,20 +36,26 @@
       'mb-[15px] cursor-pointer peer w-full !h-auto block relative px-5 py-4 rounded-full border !border-gray-40 focus:outline-0 hover:!border-primary-100 focus-within:!border-primary-100 focus-visible:!border-primary-100 focus:!border-primary-100 text-primary-100 font-normal text-[15px] md:text-[13px] appearance-none transition duration-200'
 
     ] %}
-    <div{{ attributes.addClass(classes) }}>
+    <select{{ attributes.addClass(classes) }}>
       {% for option in options %}
-        {% if option.type == 'option' %}
-          <label>
-            <input type="radio" name="food" value="{{ option.value }}" {{ option.selected ? ' checked' }}> {{ option.label }}
-          </label>
+        {% if option.type == 'optgroup' %}
+          <optgroup label="{{ option.label }}">
+            {% for sub_option in option.options %}
+              <option
+                value="{{ sub_option.value }}"{{ sub_option.selected ? ' selected="selected"' }}>{{ sub_option.label }}</option>
+            {% endfor %}
+          </optgroup>
+        {% elseif option.type == 'option' %}
+          <option
+            value="{{ option.value }}"{{ option.selected ? ' selected="selected"' }}>{{ option.label }}</option>
         {% endif %}
       {% endfor %}
-    </div>
-    {# <span class="absolute right-5 top-[15px] peer-focus-within:rotate-180 transform inline-block transition duration-300">
+    </select>
+    <span class="absolute right-5 top-[15px] peer-focus-within:rotate-180 transform inline-block transition duration-300">
       <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M9 1L5 5L1 1" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
-    </span> #}
+    </span>
   {% if not attributes.offsetExists('multiple') %}
     </div>
   {% endif %}
