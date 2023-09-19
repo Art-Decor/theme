@@ -32,12 +32,12 @@
  */
 #}
 {%- if fields.name -%}
-    <div class="absolute inset-0 z-30 opacity-0 [&_a]:block [&_a]:w-full [&_a]:h-full transition duration-300 group-hover:scale-105">
+    <div class="absolute inset-0 z-30 opacity-0 [&_a]:block [&_a]:w-full [&_a]:h-full">
         {{ fields.name.content }}
     </div>
 {%- endif %}
 {%- if fields.field_tile_image -%}
-    <div class="[&_img]:!m-0 [&_img]:!h-full [&_img]:object-cover absolute inset-0 z-0">
+    <div class="[&_img]:!m-0 [&_img]:!h-full [&_img]:object-cover absolute inset-0 z-0 transition duration-300 group-hover:scale-105">
         {{ fields.field_tile_image.content }}
     </div>
 {%- endif %}
