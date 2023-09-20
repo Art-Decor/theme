@@ -31,14 +31,14 @@
 {%
   set classes = [
     'group relative w-full !my-0 ',
+    'collapsed [&:not(.collapsed)]:z-40 [&:not(.collapsed)_.fieldset-wrapper]:!border-brown-100 [&:not(.collapsed)_.fieldset-wrapper]:shadow-2xl',
     'js-form-item',
     'form-item',
     'js-form-wrapper',
     'form-wrapper',
   ]
 %}
-<div class="collapsed [&:not(.collapsed)_.fieldset-wrapper]:!border-brown-100 [&:not(.collapsed)_.fieldset-wrapper]:shadow-2xl" data-target="#{{ element['#id'] }}" data-toggle="collapse" aria-expanded="false">
-    <div{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass(classes) }} data-target="#{{ element['#id'] }}" data-toggle="collapse" aria-expanded="false">
     {%
         set legend_span_classes = [
         'text-sm font-normal font-body text-primary-100 after:!hidden',
@@ -48,14 +48,14 @@
         ]
     %}
     {#  Always wrap fieldset legends in a <span> for CSS positioning. #}
-    <div class="relative flex gap-2.5 cursor-pointer py-4 bg-white z-20">
+    <div class="relative flex gap-2.5 cursor-pointer py-3 bg-white z-20">
         <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
         <span class="text-[13px] font-light text-primary-60">
             {{element['#options'][element['#default_value']]}}
         </span>
     </div>
-    <div class="fieldset-wrapper absolute z-10 bg-white inset-x-0 top-full border-0 border-b-2 border-solid border-neutral-90 group-hover:border-brown-100 shadow-primary-100/25 transition-all duration-300">
-        <div class="w-full collapse" id="{{ element['#id'] }}" data-parent=".attribute-widgets" aria-expanded="false">
+    <div class="fieldset-wrapper absolute z-10 bg-white inset-x-0 top-0 pt-[44px] border-0 border-b-2 border-solid border-neutral-90 group-hover:border-brown-100 shadow-primary-100/25 transition-all duration-300">
+        <div class="w-full collapse" id="{{ element['#id'] }}" data-parent="#edit-purchased-entity-0-attributes" aria-expanded="false">
         {% if errors %}
         <div>
             {{ errors }}
@@ -64,6 +64,5 @@
         {{ children }}
         </div>
 
-    </div>
     </div>
 </div>
