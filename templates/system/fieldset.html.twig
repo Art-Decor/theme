@@ -47,13 +47,13 @@
         required ? 'form-required',
         ]
     %}
-    <div class="relative bg-white flex gap-2.5 cursor-pointer py-3 z-20 collapsed [&:not(.collapsed)]:z-40  [&:not(.collapsed)_~_div]:!border-brown-100 [&:not(.collapsed)_~_div_.shadow-box]:shadow-2xl" data-target="#{{ element['#id'] }}" data-toggle="collapse" data-parent="#edit-purchased-entity-0-attributes" aria-expanded="false">
+    <div class="relative bg-white flex gap-2.5 cursor-pointer py-3 z-20 collapsed [&:not(.collapsed)]:z-40  [&:not(.collapsed)_~_div]:!border-brown-100" data-target="#{{ element['#id'] }}" data-toggle="collapse" data-parent="#edit-purchased-entity-0-attributes" aria-expanded="false">
         <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
         <span class="text-[13px] font-light text-primary-60">
             {{element['#options'][element['#default_value']]}}
         </span>
     </div>
-    <div class="fieldset-wrapper absolute bg-white z-30 inset-x-0 top-0 mt-[42px] border-0 border-b-2 border-solid border-neutral-90 group-hover:border-brown-100 shadow-primary-100/25 transition-all duration-300 [&.collapsing]:z-[35] [&.collapse.in]:z-[35] [&:not(.in)]:pointer-events-none !block overflow-hidden collapse" id="{{ element['#id'] }}" aria-expanded="false">
+    <div class="fieldset-wrapper absolute bg-white z-30 inset-x-0 top-0 mt-[42px] border-0 border-b-2 border-solid border-neutral-90 group-hover:border-brown-100 shadow-primary-100/25 transition-all duration-300 [&.collapsing]:z-[35] [&.collapse.in]:z-[35] [&:not(.in)]:pointer-events-none !block overflow-hidden collapse [&.collapse.in_.shadow-box]:overflow-visible [&.collapse.in_.shadow-box]:shadow-2xl" id="{{ element['#id'] }}" aria-expanded="false">
         <div class="bg-white">
             {% if errors %}
             <div>
