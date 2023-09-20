@@ -30,7 +30,7 @@
 #}
 {%
   set classes = [
-    'group w-full !my-0 border border-0 border-b-2 border-solid border-neutral-90 hover:border-brown-100 transition-all duration-300',
+    'group relative w-full !my-0 ',
     'js-form-item',
     'form-item',
     'js-form-wrapper',
@@ -40,26 +40,28 @@
 <div{{ attributes.addClass(classes) }}>
   {%
     set legend_span_classes = [
-      'text-sm font-normal font-body text-primary-100',
+      'text-sm font-normal font-body text-primary-100 after:!hidden',
       'fieldset-legend',
       required ? 'js-form-required',
       required ? 'form-required',
     ]
   %}
   {#  Always wrap fieldset legends in a <span> for CSS positioning. #}
-  <div class="flex gap-2.5 cursor-pointer collapsed py-4" data-target="#{{ element['#id'] }}" data-toggle="collapse" aria-expanded="false">
+  <div class="flex gap-2.5 cursor-pointer collapsed py-4 [&:not(.collapsed)_~_div]:!border-brown-100 shadow-none aria-expanded:shadow-2xl shadow-primary-100/25 transition-shadow duration-300" data-target="#{{ element['#id'] }}" data-toggle="collapse" aria-expanded="false">
     <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
     <span class="text-[13px] font-light text-primary-60">
         {{element['#options'][element['#default_value']]}}
     </span>
   </div>
-  <div class="fieldset-wrapper w-full collapse" id="{{ element['#id'] }}" aria-expanded="false">
+  <div class="fieldset-wrapper inset-x-0 bottom-0 border-0 border-b-2 border-solid border-neutral-90 group-hover:border-brown-100 transition-all duration-300">
+    <div class="w-full collapse" id="{{ element['#id'] }}" aria-expanded="false">
     {% if errors %}
       <div>
         {{ errors }}
       </div>
     {% endif %}
     {{ children }}
+    </div>
 
   </div>
 </div>
