@@ -41,20 +41,26 @@
 <div{{ attributes.addClass(classes) }}>
     {%
         set legend_span_classes = [
-        'text-sm font-normal font-body text-primary-100 after:!hidden',
+        'text-sm font-normal font-body text-primary-100 after:!hidden py-3',
         'fieldset-legend',
         required ? 'js-form-required',
         required ? 'form-required',
         ]
     %}
-    <div class="relative bg-white flex gap-2.5 cursor-pointer py-3 z-20 collapsed [&:not(.collapsed)]:z-40  [&:not(.collapsed)_~_div]:!border-brown-100" data-target="#{{ element['#id'] }}" data-toggle="collapse" data-parent="#edit-purchased-entity-0-attributes" aria-expanded="false">
+    <div class="relative bg-white flex gap-2.5 items-center cursor-pointer z-20 collapsed [&:not(.collapsed)_svg]:rotate-180 [&:not(.collapsed)]:z-40  [&:not(.collapsed)_~_div]:!border-brown-100" data-target="#{{ element['#id'] }}" data-toggle="collapse" data-parent="#edit-purchased-entity-0-attributes" aria-expanded="false">
+        <div class="ml-2.5 w-[30px]"></div>
         <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
-        <span class="text-[13px] font-light text-primary-60">
+        <span class="text-[13px] font-light text-primary-60 py-3">
             {{element['#options'][element['#default_value']]}}
         </span>
+        <div class="absolute right-5 top-[5px]">
+            <svg class="rotate transform transition duration-300" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M14 8L10 12L6 8" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
     </div>
     <div class="fieldset-wrapper absolute bg-white z-30 inset-x-0 top-0 mt-[42px] border-0 border-b-2 border-solid border-neutral-90 group-hover:border-brown-100 shadow-primary-100/25 transition-all duration-300 [&.collapsing]:z-[35] [&.collapse.in]:z-[35] [&:not(.in)]:pointer-events-none [&:not(.in)]:h-[1.6px] !block overflow-hidden collapse [&.collapse.in]:overflow-visible [&.collapse.in_.shadow-box]:shadow-2xl" id="{{ element['#id'] }}" aria-expanded="false">
-        <div class="bg-white">
+        <div class="bg-white pl-[47px] pr-2.5">
             {% if errors %}
             <div>
                 {{ errors }}
@@ -62,6 +68,6 @@
             {% endif %}
             {{ children }}
         </div>
-        <div class="absolute bottom-0 inset-x-0 top-[-42px] shadow-box z-20 shadow-primary-100/25 transition-all duration-300"></div>
+        <div class="pointer-events-none absolute bottom-0 inset-x-0 top-[-42px] shadow-box z-20 shadow-primary-100/25 transition-all duration-300"></div>
     </div>
 </div>
