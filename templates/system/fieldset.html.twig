@@ -48,10 +48,13 @@
     ]
   %}
   {#  Always wrap fieldset legends in a <span> for CSS positioning. #}
-  <div class="flex gap-2.5 cursor-pointer" data-target="#{{ legend.title }}" data-toggle="collapse" aria-expanded="false">
+  <div class="flex gap-2.5 cursor-pointer collapsed" data-target="#{{ element['#name'] }}" data-toggle="collapse" aria-expanded="false">
     <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
+    <span class="text-[13px] font-light text-primary-60">
+        {{element['#options'][element['#default_value']]}}
+    </span>
   </div>
-  <div class="fieldset-wrapper w-full" id="{{ legend.title }}" aria-expanded="false">
+  <div class="fieldset-wrapper w-full collapse" id="{{ element['#name'] }}" aria-expanded="false">
     {% if errors %}
       <div>
         {{ errors }}
