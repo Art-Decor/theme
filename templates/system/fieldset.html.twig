@@ -47,7 +47,7 @@
         required ? 'form-required',
         ]
     %}
-    <div class="relative bg-white flex gap-2.5 items-center cursor-pointer z-20 collapsed [&:not(.collapsed)_svg]:rotate-180 [&:not(.collapsed)]:z-40  [&:not(.collapsed)_~_div]:!border-brown-100" data-target="#{{ element['#id'] }}" data-toggle="collapse" data-parent="#edit-purchased-entity-0-attributes" aria-expanded="false">
+    <div class="relative bg-white flex gap-2.5 items-center cursor-pointer z-20 collapsed [&:not(.collapsed)_svg]:rotate-180 [&:not(.collapsed)]:z-40  [&:not(.collapsed)_~_div]:!border-brown-100" data-target="#{{ element['#id'] }}" data-toggle="collapse" data-parent=".attribute-widgets" aria-expanded="false">
         <div class="ml-2.5 w-[30px]"></div>
         <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
         <span class="text-[13px] font-light text-primary-60 py-3">
