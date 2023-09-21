@@ -78,8 +78,8 @@
 %}
 <article{{ attributes.addClass(classes) }}>
 
-  <div{{ content_attributes.addClass('content flex flex-col md:flex-row') }}>
-    <div class="w-44 shrink-0 md:mr-8">
+  <div{{ content_attributes.addClass('content flex') }}>
+    <div class="w-[100px] md:w-[150px] shrink-0 mr-5 md:mr-[50px]">
     {% if content.field_artist_zdjecie %}
         {{content.field_artist_zdjecie}}
     {% endif %}
