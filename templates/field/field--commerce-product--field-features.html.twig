@@ -53,7 +53,6 @@
     label_display == 'visually_hidden' ? 'sr-only',
   ]
 %}
-  {{dump()}}
   <div{{ attributes.addClass(classes) }}>
     {% if not label_hidden %}
         <h3{{ title_attributes.addClass(title_classes,'mb-5 !normal-case text-lg font-medium') }}>{{ label }}</h3>
@@ -62,7 +61,15 @@
       <div class="field__items grid md:grid-cols-3 gap-5">
     {% endif %}
     {% for item in items %}
-      <div{{ item.attributes.addClass('field--item') }}>{{ item.content }}</div>
+      <div{{ item.attributes.addClass('field--item flex md:flex-col') }}>
+        <div class="shrink-0">
+          {{ item.content['field_zdjecie'] }}
+        </div>
+        <div>
+          {{ item.content['field_tytul'] }}
+          {{ item.content['body'] }}
+        </div>
+      </div>
     {% endfor %}
     {% if multiple %}
       </div>
