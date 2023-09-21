@@ -63,8 +63,8 @@
             </svg>
         </div>
     </div>
-    <div class="fieldset-wrapper absolute bg-white z-30 inset-x-0 top-0 mt-[68.5px] border-0 border-b-2 border-solid border-neutral-90 group-hover:border-brown-100 shadow-primary-100/25 transition-all duration-300 [&.collapsing]:z-[35] [&.collapse.in]:z-[35] [&:not(.in)]:pointer-events-none [&:not(.in)]:h-[1.6px] !block overflow-hidden collapse [&.collapse.in]:overflow-visible [&.collapse.in_.shadow-box]:shadow-2xl" id="{{ element['#id'] }}" aria-expanded="false">
-        <div class="bg-white pl-[47px] pr-2.5 [&_>_div]:flex [&_>_div]:flex-wrap [&_>_div]:gap-5">
+    <div class="fieldset-wrapper absolute bg-white z-30 inset-x-0 top-0 mt-[78.5px] border-0 border-b-2 border-solid border-neutral-90 group-hover:border-brown-100 shadow-primary-100/25 transition-all duration-300 [&.collapsing]:z-[35] [&.collapse.in]:z-[35] [&:not(.in)]:pointer-events-none [&:not(.in)]:h-[1.6px] !block overflow-hidden collapse [&.collapse.in]:overflow-visible [&.collapse.in_.shadow-box]:shadow-2xl" id="{{ element['#id'] }}" aria-expanded="false">
+        <div class="bg-white pl-[47px] pr-2.5 pb-4 [&_>_div]:flex [&_>_div]:flex-wrap [&_>_div]:gap-5 [&_input:checked_~_label_.field--name-field-product-option-image_.field--item]:!border-brown-100">
             {% if errors %}
             <div>
                 {{ errors }}
@@ -72,6 +72,6 @@
             {% endif %}
             {{ body }}
         </div>
-        <div class="pointer-events-none absolute bottom-0 inset-x-0 top-[-42px] shadow-box z-20 shadow-primary-100/25 transition-all duration-300"></div>
+        <div class="pointer-events-none absolute bottom-0 inset-x-0 top-[-74px] shadow-box z-20 shadow-primary-100/25 transition-all duration-300"></div>
     </div>
 </div>

@@ -56,6 +56,6 @@
 
 <div{{ attributes.addClass(classes, 'field--items') }}>
     {% for item in items %}
-    <div{{ item.attributes.addClass('field--item h-20 w-[92px] [&_*]:w-full [&_*]:h-full [&_*]:object-cover') }}>{{ item.content }}</div>
+    <div{{ item.attributes.addClass('field--item h-20 w-[92px] [&_img]:w-full [&_img]:h-full [&_img]:object-cover border-2 border-solid border-transparent') }}>{{ item.content }}</div>
     {% endfor %}
 </div>
