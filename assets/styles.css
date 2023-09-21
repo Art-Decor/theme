@@ -45,7 +45,10 @@
 		@apply flex w-full py-3.5 px-2.5;
 	}
 	.layout-content--list .layout-content-region > * {
-		@apply border-0 border-b first:border-b-0 last:border-b-0 last:!mb-[60px] md:last:!mb-20 border-gray-300 mx-2.5 md:mx-5 first:mx-0;
+		@apply border-0 border-b border-x first:border-x-0 first:border-b-0 last:border-b-0 last:!mb-[60px] md:last:!mb-20 border-gray-300 mx-2.5 md:mx-5 first:mx-0;
+	}
+	.layout-content--list .layout-content-region > *:nth-child(2) {
+		@apply !border-t border-gray-300;
 	}
 	.layout-content--list .field--label-inline .field--label {
 		@apply basis-36 md:basis-44 md:mr-8 shrink-0 grow-0 !normal-case text-primary-100;
