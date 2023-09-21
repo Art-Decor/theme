@@ -49,7 +49,7 @@
         required ? 'form-required',
         ]
     %}
-    <div class="relative bg-white flex gap-2.5 items-center cursor-pointer z-20 collapsed [&:not(.collapsed)_svg]:rotate-180 [&:not(.collapsed)]:z-40  [&:not(.collapsed)_~_div]:!border-brown-100" data-target="#{{ element['#id'] }}" data-toggle="collapse" data-parent=".attribute-widgets" aria-expanded="false">
+    <div class="relative bg-white flex gap-2.5 items-center cursor-pointer z-20 collapsed [&:not(.collapsed)_.arrow]:rotate-180 [&:not(.collapsed)]:z-40  [&:not(.collapsed)_~_div]:!border-brown-100" data-target="#{{ element['#id'] }}" data-toggle="collapse" data-parent=".attribute-widgets" aria-expanded="false">
         <div class="ml-2.5 w-[30px]">
         {% if element['#title'] == 'Size' %} 
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
@@ -79,7 +79,7 @@
             </span>
         </div>
         <div class="absolute right-5 {% if element['#title'] != 'Product option' %} md:top-2.5 {% endif %} top-6">
-            <svg class="rotate transform transition duration-300" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <svg class="arrow rotate transform transition duration-300" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M14 8L10 12L6 8" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </div>
