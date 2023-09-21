@@ -54,6 +54,14 @@
 %}
 <div{{ attributes.addClass(classes) }}>
     {% for item in items %}
-        <div{{ item.attributes.addClass('field--item font-body text-primary-100 font-light text-[15px] md:[&_p]:!text-[13px] leading-normal') }}>{{ item.content }}</div>
+        <div{{ item.attributes.addClass('field--item font-body text-primary-100 font-light text-[15px] md:[&_p]:!text-[13px] leading-normal [&_p]:inline') }}>
+          {{ item.content }}
+          <a href="#product-description" class="font-medium inline text-primary-100 text-sm underline">
+            Read more
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="inline ml-2.5">
+              <path d="M14 8L10 12L6 8" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </div>
     {% endfor %}
 </div>
