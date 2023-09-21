@@ -40,7 +40,7 @@
 #}
 {%
   set classes = [
-    'swiper-wrapper h-[250px] md:h-auto flex md:grid grid-cols-2 gap-5',
+    'swiper-wrapper h-[250px] md:h-[350px] md:h-auto flex md:grid grid-cols-2 gap-[5px] md:gap-5',
     'field',
     'field--name-' ~ field_name|clean_class,
     'field--type-' ~ field_type|clean_class,
@@ -113,7 +113,8 @@
 
       swiperMain = new Swiper(swiperMainContainer,{
         slidesPerView: 'auto',
-        spaceBetween: 5,
+        spaceBetween: 0,
+        enabled: true
         breakpoints:{
           768:{
             enabled: false
@@ -123,7 +124,7 @@
     }
   }
 
-  window.addEventListener('DOMContentLoaded',initializeModalSwipers)
+  window.addEventListener('DOMContentLoaded',initializeSwipers)
 
   galleryImages.forEach((image,index)=>{
     image.addEventListener('click', ()=>{
