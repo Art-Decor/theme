@@ -16,6 +16,6 @@
   theme.settings.image_shape ? theme.settings.image_shape,
   theme.settings.image_responsive ? 'img-responsive',
 ] %}
-<div class="overflow-hidden">
-    <img{{ attributes.addClass(classes,'hover:scale-105 transition duration-300') }} />
+<div class="w-[300px] sm:w-[500px] md:w-auto overflow-hidden">
+    <img{{ attributes.addClass(classes,'w-full h-full object-cover hover:scale-105 transition duration-300') }} />
 </div>
