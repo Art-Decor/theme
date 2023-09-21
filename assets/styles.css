@@ -49,9 +49,14 @@
 		@apply border-0 border-x first:border-x-0 last:!mb-[60px] md:last:!mb-20 border-gray-300 px-2.5 md:px-5 first:px-0;
 	}
 	.layout-content--list .layout-content-region .field--label-inline {
-		@apply border-0 border-b first:border-b-0 last:border-b-0  border-gray-300;
+		@apply border-0 border-b border-gray-300;
 	}
-	.layout-content--list .layout-content-region > *:nth-child(2),
+	.layout-content--list .layout-content-region >*:last-child .field--label-inline {
+		@apply border-b-0;
+	}
+	.layout-content--list .layout-content-region > *:nth-child(2){
+		@apply !border-t border-gray-300;
+	}
 	.layout-content--list .layout-content-region > *:last-child {
 		@apply !border-b border-gray-300;
 	}
