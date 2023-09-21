@@ -53,7 +53,7 @@
     label_display == 'visually_hidden' ? 'sr-only',
   ]
 %}
-
+  {{dump()}}
   <div{{ attributes.addClass(classes) }}>
     {% if not label_hidden %}
         <h3{{ title_attributes.addClass(title_classes,'mb-5 !normal-case text-lg font-medium') }}>{{ label }}</h3>
