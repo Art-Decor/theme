@@ -126,12 +126,19 @@ function attachSwiperLinksToHtmlHead(&$variables) {
     'wallsociety_swiper_script',
   ];
 }
-
  /**
  * Implements hook__theme_suggestions_HOOK_alter().
  */
-function wallsociety_theme_suggestions_item_list_alter(&$suggestions, $variables, $hook) {
-  if (isset($variables['attributes']['class']) && isset($variables['attributes']['class'][0])) {
-	$suggestions[] = $variables['theme_hook_original'] . '__' . str_replace('-','_',$variables['attributes']['class'][0]);
+/*function wallsociety_theme_suggestions_item_list_alter(&$suggestions, $variables, $hook) {
+*  if (isset($variables['attributes']['class']) && isset($variables['attributes']['class'][0])) {*
+*	$suggestions[] = $variables['theme_hook_original'] . '__' . str_replace('-','_',$variables['attributes']['class'][0]);
+*  }
+*}
+*/
+
+function wallsociety_theme_suggestions_fieldset_alter(array &$suggestions, array $variables, $hook)
+{
+  if (isset($variables['element']) && isset($variables['element']['#type'])) {
+     $suggestions[] = $variables['element']['#type'];
   }
 }
