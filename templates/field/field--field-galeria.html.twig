@@ -40,7 +40,7 @@
 #}
 {%
   set classes = [
-    'swiper-wrapper h-[250px] md:h-[350px] md:h-auto flex md:grid grid-cols-2 gap-[5px] md:gap-5',
+    'swiper-wrapper h-[250px] md:h-[350px] md:h-auto flex md:grid grid-cols-2 gap-[5px] md:gap-2',
     'field',
     'field--name-' ~ field_name|clean_class,
     'field--type-' ~ field_type|clean_class,
@@ -62,7 +62,7 @@
 <div class="swiper w-full" data-swiper-product-gallery-main>
   <div{{ attributes.addClass(classes, 'field--items') }}>
     {% for item in items %}
-      <div class="cursor-pointer" data-gallery-image >{{ item.content }}</div>
+      <div class="swiper-slide cursor-pointer" data-gallery-image >{{ item.content }}</div>
     {% endfor %}
   </div>
 </div>

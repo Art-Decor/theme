@@ -42,13 +42,13 @@
 	}
 
 	.layout-content--list .field--label-inline {
-		@apply flex w-full py-3.5;
+		@apply flex w-full py-3.5 px-2.5;
 	}
 	.layout-content--list .layout-content-region > * {
-		@apply border-0 border-b first:border-b-0 last:border-b-0 last:!mb-[60px] md:last:!mb-20 border-gray-300;
+		@apply border-0 border-b first:border-b-0 last:border-b-0 last:!mb-[60px] md:last:!mb-20 border-gray-300 mx-2.5 md:mx-5 first:mx-0;
 	}
 	.layout-content--list .field--label-inline .field--label {
-		@apply md:basis-44 md:mr-8 shrink-0 grow-0 !normal-case text-primary-100;
+		@apply basis-36 md:basis-44 md:mr-8 shrink-0 grow-0 !normal-case text-primary-100;
 	}
 	.layout-content--list
 		.field.field--name-sku.field--type-string.field--label-inline {
