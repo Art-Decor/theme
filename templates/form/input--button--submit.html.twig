@@ -25,10 +25,11 @@
   {% block input %}{% apply spaceless %}
     {%
       set classes = [
-      'w-full max-w-md group !text-white text-sm font-body font-medium transition duration-200',
+      'w-full group !text-white text-sm font-body font-medium transition duration-200',
       type == 'submit' ? 'js-form-submit',
       icon and icon_position and not icon_only ? 'icon-' ~ icon_position,
-      attributes.value == 'Search' ? ' h-10 py-2 pl-2 pr-5 !border-0 relative z-10' : 'mb-[15px] rounded-full !normal-case px-5 py-[11px] !bg-primary-100 hover:!bg-[#271525] !border-primary-100 hover:!border-[#271525]' 
+      attributes.value == 'Search' ? ' h-10 py-2 pl-2 pr-5 !border-0 relative z-10' : 'mb-[15px] rounded-full !normal-case px-5 py-[14px] !bg-primary-100 hover:!bg-[#271525] !border-primary-100 hover:!border-[#271525]',
+      '/product/' in path('<current>') ? '!max-w-none' : 'max-w-md'
     ]
     %}
     {% if icon and icon_only %}

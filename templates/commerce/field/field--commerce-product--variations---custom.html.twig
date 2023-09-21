@@ -57,7 +57,7 @@
 {% if multiple %}
 <div{{ attributes.addClass(classes, 'field--items') }}>
     {% for item in items %}
-    <div{{ item.attributes.addClass('field--item w-full [&_>_div]:w-full') }}>{{ item.content }}</div>
+    <div{{ item.attributes.addClass('field--item w-full [&_>_div]:w-full [&_.attribute-widgets]:!mb-20') }}>{{ item.content }}</div>
     {% endfor %}
 </div>
 {% endif %}

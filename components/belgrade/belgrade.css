@@ -7372,10 +7372,6 @@ body.navbar-is-fixed-top.toolbar-tray-open .cart-offcanvas{
 .commerce-product--full .form-control{
     border-color:#41449f
 }
-.commerce-product--full .form-submit{
-    max-width:370px;
-    width:100%
-}
 .commerce-product--full .field--name-body,.commerce-product--full .field--name-variations,.commerce-product--full .field--name-sku{
     margin:30px 0
 }

@@ -70,6 +70,17 @@
                 {{ errors }}
             </div>
             {% endif %}
+            {% if element['#title'] == 'Size' %} 
+            <div class="flex justify-between gap-2.5 flex-wrap text-[10px] font-body font-medium text-primary-100">
+                <span class="shrink-0" >{{ 'Heigh x Width in cm'|t }}</span>
+                <div class="shrink-0 flex items-center gap-[5px]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M9.60526 13.5526L8.02632 11.9737M9.60526 13.5526L11.5789 11.5789M9.60526 13.5526L7.63158 15.5263M11.5789 11.5789L9.60526 9.60526M11.5789 11.5789L13.5526 9.60526M13.5526 9.60526L11.9737 8.02632M13.5526 9.60526L15.5263 7.63158M15.5263 7.63158L13.5526 5.65789M15.5263 7.63158L17.5 5.65789L14.3421 2.5L2.5 14.3421L5.65789 17.5L7.63158 15.5263M7.63158 15.5263L5.65789 13.5526" stroke="#D7D3D7" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <a class="hover:!text-primary-100">{{ 'View size guide'|t }}</a>
+                </div>
+            </div>
+            {% endif %}
             {{ children }}
         </div>
         <div class="pointer-events-none absolute bottom-0 inset-x-0 top-[-42px] shadow-box z-20 shadow-primary-100/25 transition-all duration-300"></div>
