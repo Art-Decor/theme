@@ -64,7 +64,7 @@
         </div>
     </div>
     <div class="fieldset-wrapper absolute bg-white z-30 inset-x-0 top-0 mt-[68.5px] {% if element['#title'] != 'Product option' %} md:mt-[44px] {% endif %} border-0 border-b-2 border-solid border-neutral-90 group-hover:border-brown-100 shadow-primary-100/25 transition-all duration-300 [&.collapsing]:z-[35] [&.collapse.in]:z-[35] [&:not(.in)]:pointer-events-none [&:not(.in)]:h-[1.6px] !block overflow-hidden collapse [&.collapse.in]:overflow-visible [&.collapse.in_.shadow-box]:shadow-2xl" id="{{ element['#id'] }}" aria-expanded="false">
-        <div class="bg-white pl-[47px] pr-2.5">
+        <div class="bg-white [&_label]:pl-[47px] [&_label]:pr-2.5 [&_label]:py-2  [&_label]:!text-[13px] [&_label]:!font-light [&_label::before]:!hidden [&_label::after]:!hidden [&_label]:!border-b [&_label]:!border-b-neutral-90 [&_label]:w-full">
             {% if errors %}
             <div>
                 {{ errors }}

@@ -23,7 +23,7 @@
   <div{{ attributes }}>
 
     {% if content.first %}
-      <div {% if '/product/' in path('<current>') %} id="product-description" {% endif %} {{ region_attributes.first.addClass(first_region_classes) }}>
+      <div {{ region_attributes.first.addClass(first_region_classes) }}>
         {{ content.first }}
       </div>
     {% endif %}
