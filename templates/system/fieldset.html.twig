@@ -28,6 +28,7 @@
  * @ingroup themeable
  */
 #}
+
 {%
   set classes = [
     'group relative w-full !my-0 ',
@@ -36,6 +37,7 @@
     'form-item',
     'js-form-wrapper',
     'form-wrapper',
+    element['#options']|length == 1 ? 'opacity-50 pointer-events-none':'' 
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
