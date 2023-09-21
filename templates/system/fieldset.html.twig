@@ -50,7 +50,28 @@
         ]
     %}
     <div class="relative bg-white flex gap-2.5 items-center cursor-pointer z-20 collapsed [&:not(.collapsed)_svg]:rotate-180 [&:not(.collapsed)]:z-40  [&:not(.collapsed)_~_div]:!border-brown-100" data-target="#{{ element['#id'] }}" data-toggle="collapse" data-parent=".attribute-widgets" aria-expanded="false">
-        <div class="ml-2.5 w-[30px]"></div>
+        <div class="ml-2.5 w-[30px]">
+        {% if element['#title'] == 'Size' %} 
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <path d="M11.25 5H5.00004L5 11.25M25 11.25V5.00004L18.75 5M18.75 25.0001H25L25 18.7501M5 18.7501L5 25L11.25 25.0001" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11 19L19 11" stroke="#382335" stroke-linecap="round"/>
+            <path d="M11 11L19 19" stroke="#382335" stroke-linecap="round"/>
+        </svg>        
+        {% elseif element['#title'] == 'Frame' %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <path d="M11.4732 21.25C10.3637 21.25 9.46427 20.3173 9.46427 19.1667M6.25 19.1667C6.25 16.3181 8.32459 12.5 11.875 10C15.4254 12.5 17.5 16.3181 17.5 19.1667C17.5 22.8486 14.6218 25 11.875 25C9.12816 25 6.25 22.8486 6.25 19.1667Z" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20.4018 11.5625C19.7854 11.5625 19.2857 11.0184 19.2857 10.3472M17.5 10.3472C17.5 8.68556 18.6526 6.45833 20.625 5C22.5974 6.45833 23.75 8.68556 23.75 10.3472C23.75 12.495 22.151 13.75 20.625 13.75C19.099 13.75 17.5 12.495 17.5 10.3472Z" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        {% else %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <path d="M11.25 8.75C11.25 12.2018 14.0482 15 17.5 15C14.0482 15 11.25 17.7982 11.25 21.25C11.25 17.7982 8.45177 15 5 15C8.45177 15 11.25 12.2018 11.25 8.75Z" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20.625 5C20.625 6.72589 22.0241 8.125 23.75 8.125C22.0241 8.125 20.625 9.52411 20.625 11.25C20.625 9.52411 19.2259 8.125 17.5 8.125C19.2259 8.125 20.625 6.72589 20.625 5Z" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18.75 18.75C18.75 20.1307 19.8693 21.25 21.25 21.25C19.8693 21.25 18.75 22.3693 18.75 23.75C18.75 22.3693 17.6307 21.25 16.25 21.25C17.6307 21.25 18.75 20.1307 18.75 18.75Z" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+        {% endif %}
+        
+        </div>
         <div class="flex gap-2.5 gap-y-px flex-col {% if element['#title'] != 'Product option' %} md:flex-row md:py-3 {% endif %} py-[15px]">
             <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legend.title }}</span>
             <span class="text-[13px] font-light text-primary-60 w-full md:w-auto block">
