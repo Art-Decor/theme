@@ -37,18 +37,19 @@
     'form-item',
     'js-form-wrapper',
     'form-wrapper',
-    element['#options']|length == 1 ? 'opacity-50 pointer-events-none':'' 
+    element['#options']|length == 1 ? 'opacity-50 pointer-events-none':''
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
     <div class="relative bg-white flex gap-2.5 items-center cursor-pointer z-20 collapsed [&:not(.collapsed)_.arrow]:rotate-180 [&:not(.collapsed)]:z-40  [&:not(.collapsed)_~_div]:!border-brown-100" data-target="#{{ element['#id'] }}" data-toggle="collapse" data-parent=".attribute-widgets" aria-expanded="false">
         <div class="ml-2.5 w-[30px]">
-        {% if element['#title'] == 'Size' %} 
+            {{ dump(element) }}
+        {% if element['#title'] == 'Size' %}
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
             <path d="M11.25 5H5.00004L5 11.25M25 11.25V5.00004L18.75 5M18.75 25.0001H25L25 18.7501M5 18.7501L5 25L11.25 25.0001" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M11 19L19 11" stroke="#382335" stroke-linecap="round"/>
             <path d="M11 11L19 19" stroke="#382335" stroke-linecap="round"/>
-        </svg>        
+        </svg>
         {% elseif element['#title'] == 'Frame' %}
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
             <path d="M11.4732 21.25C10.3637 21.25 9.46427 20.3173 9.46427 19.1667M6.25 19.1667C6.25 16.3181 8.32459 12.5 11.875 10C15.4254 12.5 17.5 16.3181 17.5 19.1667C17.5 22.8486 14.6218 25 11.875 25C9.12816 25 6.25 22.8486 6.25 19.1667Z" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
@@ -62,7 +63,7 @@
         </svg>
 
         {% endif %}
-        
+
         </div>
         <div class="flex gap-2.5 gap-y-px flex-col {% if element['#title'] != 'Product option' %} md:flex-row md:py-3 {% endif %} py-[15px]">
             <span class="text-sm font-medium font-body text-primary-100 after:!hidden w-full md:w-auto block" >{{ element['#title'] }}</span>
@@ -83,7 +84,7 @@
                 {{ errors }}
             </div>
             {% endif %}
-            {% if element['#title'] == 'Size' %} 
+            {% if element['#title'] == 'Size' %}
             <div class="flex items-center mt-2.5 justify-between gap-2.5 flex-wrap text-[10px] font-body font-medium text-primary-100 pl-[47px] pr-[30px]">
                 <span class="shrink-0" >{{ 'Heigh x Width in cm'|t }}</span>
                 <a href='' class="shrink-0 flex items-center gap-[5px] hover:!text-primary-100">
