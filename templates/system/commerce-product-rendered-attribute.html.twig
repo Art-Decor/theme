@@ -28,7 +28,6 @@
  * @ingroup themeable
  */
 #}
-{{dump()}}
 {%
   set classes = [
     'group relative w-full !my-0 ',
@@ -70,7 +69,7 @@
                 {{ errors }}
             </div>
             {% endif %}
-            {{ children }}
+            {{ element['#children'] }}
         </div>
         <div class="pointer-events-none absolute bottom-0 inset-x-0 top-[-69px] shadow-box z-20 shadow-primary-100/25 transition-all duration-300"></div>
     </div>
