@@ -31,7 +31,7 @@
  * @ingroup themeable
  */
 #}
-<div class="group relative flex flex-col justify-end h-[324px] xl:h-[400px] p-2 md:p-4 mr-[5px] md:mr-2">
+<div class="group relative flex flex-col justify-end h-[324px] xl:h-[400px] p-3 md:p-4 mr-[5px] md:mr-2">
 
 {% for field in fields -%}
     {%
@@ -43,7 +43,7 @@
     %}
     {%
     set field_classes = [
-        field.handler.field == 'field_zdjecie' ? 'img-fit-contain w-full h-full bg-gray-10 after:absolute after:bg-gradient-to-t after:content-[""] after:from-black/50 after:inset-x-0 after:bottom-0 after:top-1/3 md:after:top-1/2 xl:after:top-2/3 after:to-transparent after:pointer-events-none',
+        field.handler.field == 'field_zdjecie' ? 'img-fit-contain w-full h-full bg-gray-10 after:absolute after:bg-gradient-to-t after:content-[""] after:from-black/50 after:inset-x-0 after:bottom-0 after:top-1/3 md:after:top-1/2 xl:after:top-2/3 after:to-transparent after:pointer-events-none group-hover:[&_img]:scale-105 [&_img]:transform [&_img]:duration-300 ',
         field.handler.field == 'view_commerce_product' ? 'block w-full h-full',
         field.handler.field == 'title' ? 'inline-block mb-1 text-white text-lg font-semibold z-10',
         field.handler.field == 'variations_target_id' ? 'inline-block text-white text-lg',
