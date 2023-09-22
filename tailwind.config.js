@@ -8,6 +8,10 @@ module.exports = {
 		'./wallsociety.theme',
 	],
 	theme: {
+		container:{
+			center: true,
+			padding: '1.25rem'
+		},
 		extend: {
 			fontSize:{
 				'2xl': ['25px','2rem'],
@@ -91,6 +95,7 @@ module.exports = {
 			},
 			screens: {
 				'md-wide': '992px',
+				'xl': '1240px'
 			},
 			fontFamily: {
 				'header':['Playfair Display', 'serif'],

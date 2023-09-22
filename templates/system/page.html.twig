@@ -64,7 +64,7 @@
 #}
 <div class="w-full sticky inset-x-0 top-0 z-[1000] bg-white transition duration-300" data-header-container>
   <div class="w-full bg-neutral-90 text-[10px] py-[5px] font-body text-primary-100 font-medium [&_a:hover]:!text-brown-100 [&_a:hover]:transition [&_a:hover]:duration-200">
-    <div class="container-fluid flex flex-row flex-wrap">
+    <div class="container flex flex-row flex-wrap">
       <div class="hidden md-wide:!block w-full md-wide:w-1/3 flex-auto">
         {% if page.top_bar_left %}
           {{ page.top_bar_left }}
@@ -82,8 +82,8 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid border-0 border-b border-neutral-90 md-wide:border-b-0" data-header-main>
-    <div class="row flex flex-row flex-wrap py-2.5 md-wide:pb-0">
+  <div class="container border-0 border-b border-neutral-90 md-wide:border-b-0" data-header-main>
+    <div class=" flex flex-row flex-wrap py-2.5 md-wide:pb-0">
       <div class="w-full md-wide:w-1/3 hidden md-wide:!flex items-center justify-start flex-auto">
 
       {% block navbar %}
@@ -167,7 +167,7 @@
 
 
 
-    <div class="container-fluid">
+    <div class="container">
       {# Highlighted #}
       {% if page.highlighted %}
         {% block highlighted %}
@@ -182,7 +182,7 @@
         {% endblock %}
       {% endif %}
 
-      <div class="row">
+      <div class="">
 
         {# Sidebar First #}
         {% if page.sidebar_first %}
@@ -238,7 +238,7 @@
       </div>
 
       {% if page.bottom_content %}
-        <div class="row">
+        <div class="">
           {% block bottom_content %}
             {{ page.bottom_content }}
           {% endblock %}
@@ -251,14 +251,14 @@
 {% if page.footer %}
   {% block footer %}
     <footer class="footer bg-gray-10" role="contentinfo">
-      <div class="container-fluid">
+      <div class="container">
         {{ page.footer }}
       </div>
     </footer>
   {% endblock %}
 {% endif %}
 
-<div class="container-fluid">
+<div class="container">
   <div class="flex flex-row flex-wrap border-t border-solid border-[#F5F4F5] pt-[10px] gap-3 md:gap-0 text-center md:text-left pb-3">
     <div class="w-full md:w-1/3 flex items-center justify-center md:justify-start flex-auto [&_p]:text-[10px] [&_p]:font-body [&_p]:font-medium [&_p]:text-primary-100">
       {% if page.bottom_bar_left %}

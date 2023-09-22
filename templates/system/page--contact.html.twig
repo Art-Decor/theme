@@ -63,7 +63,7 @@
  */
 #}
 <div class="w-full bg-neutral-90 text-[10px] py-[5px] font-body text-primary-100 font-medium [&_a:hover]:!text-brown-100 [&_a:hover]:transition [&_a:hover]:duration-200">
-  <div class="container-fluid flex flex-row flex-wrap ">
+  <div class="container flex flex-row flex-wrap ">
     <div class="w-full md:w-1/3 justify-start flex-auto">
       {% if page.top_bar_left %}
         {{ page.top_bar_left }}
@@ -81,7 +81,7 @@
     </div>
   </div>
 </div>
-<div class="container-fluid flex flex-row flex-wrap">
+<div class="container flex flex-row flex-wrap">
   <div class="w-full md:w-1/3 flex items-center justify-start flex-auto">
 
    {% block navbar %}
@@ -135,8 +135,8 @@
     {% endif %}
   </div>
 </div>
-<div class="container-fluid">
-  {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
+<div class="container">
+  {% set container = theme.settings.fluid_container ? 'container' : 'container' %}
   {# Navbar #}
   {% if page.navigation or page.top_navigation %}
 
@@ -168,7 +168,7 @@
 
 
 
-    <div class="container-fluid">
+    <div class="container">
       {# Highlighted #}
       {% if page.highlighted %}
         {% block highlighted %}
@@ -241,7 +241,7 @@
       </div>
 
       {% if page.bottom_content %}
-        <div class="row">
+        <div class="">
           {% block bottom_content %}
             {{ page.bottom_content }}
           {% endblock %}
@@ -254,14 +254,14 @@
 {% if page.footer %}
   {% block footer %}
     <footer class="footer bg-gray-10" role="contentinfo">
-      <div class="container-fluid">
+      <div class="container">
         {{ page.footer }}
       </div>
     </footer>
   {% endblock %}
 {% endif %}
 
-<div class="container-fluid">
+<div class="container">
   <div class="flex flex-row flex-wrap border-t border-solid border-[#F5F4F5] pt-[10px]">
     <div class="w-full md:w-1/3 flex items-center justify-start flex-auto">
       {% if page.bottom_bar_left %}
