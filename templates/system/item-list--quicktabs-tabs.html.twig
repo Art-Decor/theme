@@ -32,7 +32,7 @@
   {%- if items -%}
     <{{ list_type }}{{ attributes.addClass('space-x-4 md:space-x-7 mb-6 md:mb-5 md:absolute md:bottom-full md:right-0 border-t border-[#EDF2F4] md:w-1/2 md:flex justify-end') }}>
       {%- for item in items -%}
-        <li{{ item.attributes.addClass('relative font-body font-semibold -top-px [&_a]:!text-primary-100 [&_a]:py-2.5 [&_a]:text-sm !inline-block [&_a]:inline-block') }}>{{ item.value }}</li>
+        <li{{ item.attributes.addClass('relative font-body -top-px [&_a]:!text-primary-100 [&_a]:py-2.5 [&_a]:text-sm !inline-block [&_a]:inline-block') }}>{{ item.value }}</li>
       {%- endfor -%}
     </{{ list_type }}>
   {%- else -%}
