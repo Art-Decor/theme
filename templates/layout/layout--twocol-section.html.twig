@@ -16,7 +16,7 @@
 {% set second_region_classes = ['layout__region', 'layout__region--second'] %}
 
 {% if attributes.hasClass('layout--twocol-section--67-33') %}
-  {% set first_region_classes = first_region_classes|merge(['max-w-full !basis-full md:!basis-[62%] md:pr-10 lg:pr-[50px]']) %}
+  {% set first_region_classes = first_region_classes|merge(['max-w-full !basis-full md:!basis-[62%] md:pr-10 lg:pr-[50px] md:max-w-[770px]']) %}
   {% set second_region_classes = second_region_classes|merge(['max-w-full !basis-full md:!basis-[38%]']) %}
 {% endif %}
 

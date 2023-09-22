@@ -95,7 +95,6 @@ module.exports = {
 			},
 			screens: {
 				'md-wide': '992px',
-				'xl': '1240px'
 			},
 			fontFamily: {
 				'header':['Playfair Display', 'serif'],
