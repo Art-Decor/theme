@@ -40,7 +40,7 @@
 #}
 {%
   set classes = [
-    '!border-0 !mb-0 text-primary-100',
+    '!border-0 !mb-0',
     'w-full',
     'field',
     'field--name-' ~ field_name|clean_class,
@@ -50,7 +50,7 @@
 %}
 {%
   set title_classes = [
-    '!text-base md:!text-lg !font-light inline pr-2 font-body ',
+    '!text-base md:!text-lg !font-medium inline pr-2 font-body text-white',
     'field--label',
     label_display == 'visually_hidden' ? 'sr-only',
   ]
@@ -59,6 +59,6 @@
   <div{{ attributes.addClass(classes) }}>
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
     {% for item in items %}
-      <div{{ item.attributes.addClass('!text-base md:!text-lg field--item inline font-body text-primary-100') }}>{{ item.content }}</div>
+      <div{{ item.attributes.addClass('!text-base md:!text-lg !font-medium field--item inline font-body text-white') }}>{{ item.content }}</div>
     {% endfor %}
   </div>
