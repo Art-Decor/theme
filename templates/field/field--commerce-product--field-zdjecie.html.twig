@@ -50,7 +50,7 @@
 {% if multiple %}
 <div{{ attributes.addClass(classes, 'field--items') }}>
     {% for item in items %}
-    <div{{ item.attributes.addClass('field--item aspect-[4/3] border border-gray-300 field--item flex h-auto items-center justify-center w-full mb-5') }}>{{ item.content }}</div>
+    <div{{ item.attributes.addClass('field--item aspect-[375/309] md:aspect-[720/559] max-w-[720px] mx-auto [&_img]:w-full [&_img]:h-full [&_img]:object-contain border border-gray-300 field--item flex h-auto items-center justify-center w-full mb-5') }}>{{ item.content }}</div>
     {% endfor %}
 </div>
 {% else %}
