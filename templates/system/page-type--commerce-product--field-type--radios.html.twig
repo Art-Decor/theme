@@ -43,7 +43,6 @@
 <div{{ attributes.addClass(classes) }}>
     <div class="relative bg-white flex gap-2.5 items-center cursor-pointer z-20 collapsed [&:not(.collapsed)_.arrow]:rotate-180 [&:not(.collapsed)]:z-40  [&:not(.collapsed)_~_div]:!border-brown-100" data-target="#{{ element['#id'] }}" data-toggle="collapse" data-parent=".attribute-widgets" aria-expanded="false">
         <div class="ml-2.5 w-[30px]">
-            {{ dump() }}
         {% if element['#title'] == 'Size' %}
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
             <path d="M11.25 5H5.00004L5 11.25M25 11.25V5.00004L18.75 5M18.75 25.0001H25L25 18.7501M5 18.7501L5 25L11.25 25.0001" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
