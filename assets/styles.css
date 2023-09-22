@@ -37,6 +37,10 @@
 		@apply text-[15px] font-medium leading-5 text-primary-100
 	}
 
+	.layout-content--list .field--label a:hover{
+		@apply !text-primary-100
+	}
+
 	.layout-content--list .field--item{
 		@apply text-[13px] font-light leading-5 text-primary-100
 	}
