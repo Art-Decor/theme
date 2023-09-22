@@ -131,7 +131,7 @@ function attachSwiperLinksToHtmlHead(&$variables) {
  */
 function wallsociety_theme_suggestions_item_list_alter(&$suggestions, $variables, $hook) {
   if (isset($variables['attributes']['class']) && isset($variables['attributes']['class'][0])) {*
-	$suggestions[] = $variables['theme_hook_original'] . '__' . str_replace('-','_',$variables['attributes']['class'][0]);
+	  $suggestions[] = $variables['theme_hook_original'] . '__' . str_replace('-','_',$variables['attributes']['class'][0]);
   }
 }
 
