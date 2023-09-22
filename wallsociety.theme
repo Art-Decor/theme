@@ -141,13 +141,16 @@ function wallsociety_theme_suggestions_fieldset_alter(array &$suggestions, array
   if (isset($variables['element']) && isset($variables['element']['#type'])) {
      $suggestions[] = $variables['element']['#type'];
   }
+
   if($rawParameters = \Drupal::routeMatch()->getRawParameters('commerce_product')){
     foreach($rawParameters as $paramName=>$paramVal) {
       if($paramName === 'commerce_product'){
-        $suggestions[] = 'page_type__commerce_product';
-        break;
+        $suggestions[] = 'page_type__' . $paramName;
+
+        if (isset($variables['element']) && isset($variables['element']['#type'])) {
+          $suggestions[] = 'page_type__' . $paramName . '__field_type__' . $variables['element']['#type'];
+        }
       }
     }
-
   }
 }
