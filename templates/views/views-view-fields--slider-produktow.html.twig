@@ -32,9 +32,10 @@
  */
 #}
 
-{% set is_sale = row['product_id'] == 106 %}
+{{dump(row['product_id'])}}
+{% set is_sale = row['product_id'] == 106 ? %}
 
-{% set is_new = row['product_id'] == 107 %}
+{% set is_new = row['product_id'] == 107 ? %}
 
 <div class="group relative flex flex-col justify-end h-[324px] xl:h-[400px] p-3 md:p-4 mr-[5px] md:mr-2 overflow-hidden">
 <div class="flex gap-1 z-10 absolute top-2.5 md:top-5 left-2.5 md:left-6 ">
