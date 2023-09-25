@@ -46,17 +46,11 @@
 	}
 
 	.layout-content--list .field--label-inline {
-		@apply flex w-full py-3.5;
+		@apply flex w-full;
 	}
 
 	.layout-content--list .layout-content-region > * {
 		@apply border-0 border-x first:border-x-0 last:!mb-[60px] md:last:!mb-20 border-[#EDF2F4] px-2.5 md:px-5 first:px-0;
-	}
-	.layout-content--list .layout-content-region .field--label-inline {
-		@apply border-0 border-b border-[#EDF2F4];
-	}
-	.layout-content--list .layout-content-region >*:last-child .field--label-inline {
-		@apply border-b-0;
 	}
 	.layout-content--list .layout-content-region > *:nth-child(2){
 		@apply !border-t border-[#EDF2F4];
@@ -67,6 +61,18 @@
 	.layout-content--list .field--label-inline .field--label {
 		@apply basis-36 md:basis-44 md:mr-8 shrink-0 grow-0 !normal-case text-primary-100;
 	}
+	.layout-content--list .field--label-inline .field--item {
+		@apply w-full;
+	}
+	.layout-content--list .field--label-inline .field--label,
+	.layout-content--list .field--label-inline .field--item {
+		@apply py-3.5 border-0 border-b border-[#EDF2F4];
+	}
+	.layout-content--list .layout-content-region >*:last-child .field--label,
+	.layout-content--list .layout-content-region >*:last-child .field--item {
+		@apply border-b-0;
+	}
+
 	.layout-content--list
 		.field.field--name-sku.field--type-string.field--label-inline {
 		@apply m-0;
