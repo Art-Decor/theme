@@ -64,8 +64,8 @@
 	.layout-content--list .field--label-inline .field--item {
 		@apply w-full;
 	}
-	.layout-content--list .field--label-inline .field--label,
-	.layout-content--list .field--label-inline .field--item {
+	.layout-content--list .field--label-inline > .field--label,
+	.layout-content--list .field--label-inline > .field--item {
 		@apply py-3.5 border-0 border-b border-[#EDF2F4];
 	}
 	.layout-content--list .layout-content-region >*:last-child .field--label,
