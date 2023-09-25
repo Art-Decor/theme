@@ -31,11 +31,19 @@
  * @ingroup themeable
  */
 #}
-{{dump()}}
+
+{% set is_sale = row['product_id'] == 106 %}
+
+{% set is_new = row['product_id'] == 107 %}
+
 <div class="group relative flex flex-col justify-end h-[324px] xl:h-[400px] p-3 md:p-4 mr-[5px] md:mr-2 overflow-hidden">
-<div class="flex gap-1">
-  <span class="rounded-full px-2.5 py-1 bg-brown-100 text-white font-body text-sm font-medium">Sale</span>
-  <span class="rounded-full px-2.5 py-1 bg-white text-primary-100 font-body text-sm font-medium">New</span>
+<div class="flex gap-1 z-10 absolute top-2.5 md:top-5 left-2.5 md:left-6 ">
+  {%- if is_sale -%}
+    <span class="rounded-full px-2.5 py-[3px] bg-brown-100 text-white font-body text-xs font-medium">Sale</span>
+  {%- endif %}
+  {%- if is_new -%}
+    <span class="rounded-full px-2.5 py-[3px] bg-white text-primary-100 font-body text-xs font-medium">New</span>
+  {%- endif %}
 </div>
 {% for field in fields -%}
     {%
