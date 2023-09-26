@@ -38,17 +38,18 @@
  * @see template_preprocess_field()
  */
 #}
-{%
-  set classes = [
-    'field--item',
-    'field--name-' ~ field_name|clean_class,
-    'field--type-' ~ field_type|clean_class,
-    field_name == 'field_zdjecie' ? 'h-[60px] w-[60px] md:h-[50px] md:w-[50px] mb-3 [&_*]:h-full [&_*]:w-full [&_img]:object-contain',
-    field_name == 'field_tytul' ? 'mb-1 font-semibold text-sm',
-    field_name == 'body' ? '!m-0 text-[15px] font-light'
-  ]
-%}
+{% set classes = [
+	'field--item',
+	'field--name-' ~ (field_name|clean_class),
+	'field--type-' ~ (field_type|clean_class),
+	field_name == 'field_images'
+		? 'h-[60px] w-[60px] md:h-[50px] md:w-[50px] mb-3 [&_*]:h-full [&_*]:w-full [&_img]:object-contain',
+	field_name == 'field_tytul' ? 'mb-1 font-semibold text-sm',
+	field_name == 'body' ? '!m-0 text-[15px] font-light'
+] %}
 
 {% for item in items %}
-    <div{{ item.attributes.addClass(classes) }}>{{ item.content }}</div>
+	<div {{ item.attributes.addClass(classes) }}>
+		{{ item.content }}
+	</div>
 {% endfor %}
