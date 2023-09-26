@@ -90,7 +90,7 @@ function wallsociety_form_views_form_commerce_cart_form_default_alter(&$form, &$
  function wallsociety_preprocess_field(&$variables) {
   $field_name = $variables['element']['#field_name'];
 
-  if ($field_name == 'field_galeria') {
+  if ($field_name == 'field_gallery') {
     $itemsFullsize = $variables['items'];
     foreach ($itemsFullsize as $delta => $item) {
       if (isset($item['content']['#image_style'])) {
