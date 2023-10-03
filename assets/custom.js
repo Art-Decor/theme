@@ -111,6 +111,23 @@ Drupal.behaviors.overrideSwiper = {
                         },
                     };
                 }
+                if (key == 'swiper-wall-art-seo-tiles-block-1' || key == 'swiper-wall-art-seo-tiles-block-2') {
+                    swiper.slidesPerView = 1.35
+                    swiper.spaceBetween = 20
+                    swiper.navigation = {
+                        enabled: false,
+                    },                    
+                    swiper.pagination = {
+                        enabled: false,
+                    },
+                    swiper.enabled = true
+                    swiper.breakpoints = {
+                        768: {
+                            enabled: false,
+                            spaceBetween: 0
+                        },
+                    };
+                }
             }
         }
     }
