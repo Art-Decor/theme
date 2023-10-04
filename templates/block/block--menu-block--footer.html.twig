@@ -36,7 +36,7 @@
 #}
 {% set title_attributes = title_attributes.addClass('font-body !text-xl mb-5 md:mb-[30px] !font-medium text-primary-100') %}
 {% set heading_id = attributes.id ~ ('-menu'|clean_id) %}
-{% set attributes = attributes.addClass('w-full md:w-3/12 flex-auto mb-10 md:mb-[80px] [&_a]:!p-0 [&_a]:!text-primary-100 [&_a]:hover:!text-primary-100') %}
+{% set attributes = attributes.addClass('w-full flex-auto mb-10 md:mb-[80px] [&_a]:!p-0 [&_a]:!text-primary-100 [&_a]:hover:!text-primary-100') %}
 <nav role="navigation" aria-labelledby="{{ heading_id }}" {{ attributes|without('role', 'aria-labelledby') }}>
 	{# Label. If not displayed, we still provide it for screen readers. #}
 	{% if not configuration.label_display %}
