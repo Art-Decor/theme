@@ -34,7 +34,7 @@
 
 <div class='relative group bg-neutral-90 flex flex-col'>
     {%- if fields.field_seo_tile_link -%}
-        <div class="absolute z-30 inset-0 [&_a]:w-full [&_a]:h-full [&_a]:block">
+        <div class="absolute z-30 inset-0 [&_a]:w-full [&_a]:h-full [&_a]:block [&_a]:text-transparent [&_a]:text-[0px]">
             {{ fields.field_seo_tile_link.content }}
         </div>
     {%- endif %}
@@ -44,16 +44,16 @@
         </div>
     {%- endif %}
     
-    <div class="p-5 relative">
+    <div class="px-5 py-7 relative">
     {%- if fields.title -%}
-        <h4 class="relative z-20 text-xl font-medium text-primary-100 group-hover:text-brown-100 group-hover:underline mb-2 transition duration-200">
+        <h4 class="relative z-20 text-xl font-medium text-primary-100 group-hover:text-brown-100 group-hover:underline !m-0 transition duration-200">
             {{ fields.title.content }}
         </h4>
     {%- endif %}
     {%- if fields.body -%}
-        <p class="relative z-20 text-[13px] font-light text-primary-100">
+        <div class="relative z-20 [&_p]:!text-[13px] font-light text-primary-100 [&_p]:!m-0">
             {{ fields.body.content }}
-        </p>
+        </div>
     {%- endif %}
         <svg class="absolute top-0 right-0 z-10" width="122" height="85" viewBox="0 0 122 85" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_2342_93)">
