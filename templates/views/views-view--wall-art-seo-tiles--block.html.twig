@@ -35,11 +35,12 @@
 {%
   set classes = [
     dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'mb-10'
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
   {% if header %}
-    <div class="view-header [&_h2]:!mb-1 [&_h2]:!font-medium">
+    <div class="view-header text-primary-100 [&_h2]:!mb-1 [&_h2]:!font-medium [&_p]:text-[13px] [&_p]:font-light ">
       {{ header }}
     </div>
   {% endif %}

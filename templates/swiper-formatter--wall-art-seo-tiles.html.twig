@@ -18,7 +18,7 @@
 {% apply spaceless %}
   {% if content is not empty %}
 
-    <div{{ attributes.addClass('slides-multiple') }}>
+    <div{{ attributes.addClass('slides-multiple md:mb-10') }}>
 
       {# Slides #}
       <div{{ content_attributes.addClass('md:grid grid-cols-3 xl:grid-cols-4 md:gap-5 md:[&_.swiper-slide]:!w-auto md:!translate-x-0 ') }}>
