@@ -53,11 +53,11 @@
       'block-' ~ plugin_id|clean_class,
       'clearfix',
       'text-[15px] text-primary-100 leading-normal font-body font-light',
-      'md:row-span-2 min-[500px]:col-span-2 md:row-start-1 md:col-start-3',
+      '-order-1 md:order-none md:row-span-2 min-[500px]:col-span-2 md:row-start-1 md:col-start-3',
     ]
   %}
   <section{{ attributes.addClass(classes) }}>
-    <div class="p-5 bg-white">
+    <div class="p-5 bg-white ">
       {{ title_prefix }}
       {% if label %}
         <h2{{ title_attributes.addClass('block-title mb-5 md:mb-[30px] !font-medium text-primary-100 font-body !text-xl') }}>{{ label }}</h2>
