@@ -35,7 +35,7 @@
  */
 #}
 {% set heading_id = attributes.id ~ ('-menu'|clean_id) %}
-{% set attributes = attributes.addClass('w-full mb-[50px] flex flex-row flex-wrap justify-start items-center') %}
+{% set attributes = attributes.addClass('w-full mb-[50px] flex flex-row flex-wrap justify-start items-center col-span-3') %}
 {% set title_attributes = title_attributes.addClass('font-body !text-sm mr-[30px] !font-medium text-primary-100') %}
 <nav role="navigation" aria-labelledby="{{ heading_id }}" {{ attributes|without('role', 'aria-labelledby') }}>
 	{# Label. If not displayed, we still provide it for screen readers. #}
