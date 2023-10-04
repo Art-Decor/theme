@@ -1025,6 +1025,14 @@
 		@apply w-full
 	}
 
+	button[disabled].button--primary{
+		@apply opacity-50 cursor-not-allowed
+	}
+
+	button[disabled].button--primary:hover svg{
+		@apply !translate-x-0
+	}
+
 }
 
 @tailwind utilities;
