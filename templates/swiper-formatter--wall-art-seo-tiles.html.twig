@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Default output for a Swiper object.
+ *
+ * Available variables:
+ * - object: \Drupal\views\ViewExecutable or \Drupal\node\Entity\Node object.
+ * - attributes: An array of attributes to apply to wrapper element.
+ * - content: A renderable array of the swiper list
+ * - settings: An array with various settings, properties of a chosen swiper configuration entity,
+ *   combined with either Field formatter settings values or with Views style options values.
+ * - swiper_title: Currently not rendered from anywhere.
+ *
+ * @see template_preprocess_swiper_formatter().
+ */
+#}
+
+{% apply spaceless %}
+  {% if content is not empty %}
+
+    <div{{ attributes.addClass('slides-multiple') }}>
+
+      {# Slides #}
+      <div{{ content_attributes.addClass('md:grid grid-cols-3 xl:grid-cols-4 overflow-hidden md:[&_.swiper-slide]:!w-auto ') }}>
+        {{ content }}
+      </div> 
+
+    </div>
+    
+  {% endif %}
+{% endapply %}
