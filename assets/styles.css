@@ -707,11 +707,11 @@
 	}
 
 	.we-mega-menu-li.active .we-mega-menu-item {
-		@apply relative before:hidden md-wide:before:block before:content-[''] before:absolute before:-top-px before:inset-x-0 before:h-0.5 before:!bg-primary-100;
+		@apply relative before:hidden md-wide:before:block before:content-[''] before:absolute before:-top-px before:inset-x-0 before:h-0.5 before:!opacity-100 before:!bg-primary-100;
 	}
 
 	.we-mega-menu-li .we-mega-menu-item {
-		@apply relative before:hidden md-wide:before:block before:content-[''] before:absolute before:-top-px before:inset-x-0 before:h-0 before:opacity-0 before:transition-all before:duration-300 before:bg-brown-100;
+		@apply relative before:hidden md-wide:before:block before:content-[''] before:absolute before:-top-px before:inset-x-0 before:h-0 before:opacity-0 before:transition-all before:duration-150 before:bg-brown-100;
 	}
 
 	.we-mega-menu-li:hover .we-mega-menu-item {
