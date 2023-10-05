@@ -154,3 +154,10 @@ function wallsociety_theme_suggestions_fieldset_alter(array &$suggestions, array
     }
   }
 }
+
+function wallsociety_form_alter(&$form, &$form_state, $form_id) {
+  dpm($form);
+  if($form_id == 'simplenews-subscriptions-block-footer') {
+    $form['mail']['#attributes']['placeholder'] = t('Email address');
+  }
+}
