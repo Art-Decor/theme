@@ -155,8 +155,8 @@ function wallsociety_theme_suggestions_fieldset_alter(array &$suggestions, array
   }
 }
 
-function  wallsociety_form_alter(&$form,&$form_state,$form_id){
+function hook_form_alter(&$form,&$form_state,$form_id){
   dpm($form_id);
-  var_dump($form_id);
+  var_dump($form);
   $form['mail']['#attributes']['placeholder'] = t('Email address');
 }
