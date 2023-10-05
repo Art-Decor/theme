@@ -707,8 +707,17 @@
 	}
 
 	.we-mega-menu-li.active .we-mega-menu-item {
-		@apply relative before:hidden md-wide:before:block before:content-[''] before:absolute before:-top-px before:inset-x-0 before:h-0.5 before:bg-brown-100;
+		@apply relative before:hidden md-wide:before:block before:content-[''] before:absolute before:-top-px before:inset-x-0 before:h-0.5 before:!bg-primary-100;
 	}
+
+	.we-mega-menu-li .we-mega-menu-item {
+		@apply relative before:hidden md-wide:before:block before:content-[''] before:absolute before:-top-px before:inset-x-0 before:h-0 before:opacity-0 before:transition-all before:duration-300 before:bg-brown-100;
+	}
+
+	.we-mega-menu-li:hover .we-mega-menu-item {
+		@apply before:!h-0.5 before:opacity-100 before:bg-brown-100;
+	}
+
 
   .we-mega-menu-li:not(.no-link) .we-mega-menu-submenu{
     @apply !block absolute inset-0 md-wide:!top-full z-10 overflow-auto md-wide:overflow-hidden h-full
