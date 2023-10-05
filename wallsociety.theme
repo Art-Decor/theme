@@ -157,7 +157,7 @@ function wallsociety_theme_suggestions_fieldset_alter(array &$suggestions, array
 
 function  wallsociety_theme_form_alter(&$form,&$form_state,$form_id){
   dpm($form_id);
-  var_dump($form_id)
+  var_dump($form_id);
   if($form_id=="simplenews-subscriptions-block-footer"){
     $form['mail']['#placeholder'] = t('Email address');
   }
