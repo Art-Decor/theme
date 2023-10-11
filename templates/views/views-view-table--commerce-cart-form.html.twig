@@ -72,7 +72,7 @@
       {% for key, column in row.columns %}
         {%
           set column_classes = [
-          fields[key] == 'field-zdjecie' ? 'mb-5 md:mb-0 basis-[35%] md:basis-[15%] pr-5 md:pr-10' : '',
+          fields[key] == 'field-images' ? 'mb-5 md:mb-0 basis-[35%] md:basis-[15%] pr-5 md:pr-10' : '',
           fields[key] == 'purchased-entity' ? 'mb-5 md:mb-0 basis-[65%] md:basis-[25%]' : '',
           fields[key] == 'unit-price__number' ? 'mb-5 md:mb-0 basis-full md:basis-[15%] text-2xl text-primary-100 font-medium' : '',
           fields[key] == 'total-price__number' ? 'mb-5 md:mb-0 basis-full md:basis-[15%] text-3xl text-primary-100 font-medium':'',
