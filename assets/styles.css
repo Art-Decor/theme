@@ -1064,6 +1064,9 @@
 	.layout-region-checkout-main .select-wrapper .input-group-addon .glyphicon-refresh{
 		@apply h-full w-full !top-[15px]
 	}
+	.layout-region-checkout-main p.address{
+		@apply border border-primary-20 !my-[10px] p-2.5 rounded-lg
+	}
 
 }
 
