@@ -49,7 +49,7 @@
 %}
 {%
   set title_classes = [
-    '!text-base md:!text-lg !font-medium inline pr-2 font-body text-white',
+    '!text-base md:!text-lg !font-medium inline pr-2 font-body',
     'field--label',
     label_display == 'visually_hidden' ? 'sr-only',
   ]
@@ -58,6 +58,6 @@
   <div{{ attributes.addClass(classes) }}>
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
     {% for item in items %}
-      <div{{ item.attributes.addClass('!text-base md:!text-lg !font-medium field--item inline font-body text-white') }}>{{ item.content }}</div>
+      <div{{ item.attributes.addClass('!text-base md:!text-lg !font-medium field--item inline font-body') }}>{{ item.content }}</div>
     {% endfor %}
   </div>

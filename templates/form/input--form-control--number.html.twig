@@ -25,12 +25,15 @@
     set classes = [
       'form-control',
       'form-number',
+      'text-primary-100',
     ]
   %}
   {% block input %}
       {{ attach_library('belgrade/custom-form-elements') }}
-      <button class="number-btn increment" type="button">+</button>
-      <input{{ attributes.addClass(classes) }} />
-      <button class="number-btn decrement" type="button">-</button>
+      <div class="border border-[#EDF2F4] flex rounded-full">
+        <button class="number-btn decrement text-primary-100 pr-0" type="button">-</button>
+        <input{{ attributes.addClass(classes) }} />
+        <button class="number-btn increment text-primary-100 pl-0" type="button">+</button>
+      </div>
   {% endblock %}
 {% endspaceless %}
