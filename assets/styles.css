@@ -1058,6 +1058,13 @@
 		@apply text-lg md:text-xl
 	}
 
+	.layout-region-checkout-main .select-wrapper .input-group-addon{
+		@apply pr-10 relative
+	} 
+	.layout-region-checkout-main .select-wrapper .input-group-addon .glyphicon-refresh{
+		@apply h-full w-full !top-[15px]
+	}
+
 }
 
 @tailwind utilities;
