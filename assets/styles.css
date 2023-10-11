@@ -1042,6 +1042,22 @@
 		@apply !translate-x-0
 	}
 
+	.checkout-pane-order-summary{
+		@apply !bg-gray-10 !p-5
+	}
+
+	.checkout-pane-order-summary .field--name-total-price{
+		@apply !w-full !mb-5
+	}
+
+	.checkout-pane-order-summary .field--name-total-price .order-total-line{
+		@apply flex justify-between !px-0 gap-2.5
+	}
+
+	.checkout-pane-order-summary .field--name-total-price .order-total-line.order-total-line__total{
+		@apply text-lg md:text-xl
+	}
+
 }
 
 @tailwind utilities;
