@@ -1089,8 +1089,11 @@
 		@apply !border-primary-100
 	}
 	
+	.layout-region-checkout-footer{
+		@apply md-wide:max-w-[66.66667%]
+	}
 	.layout-region-checkout-footer [data-drupal-selector="edit-actions-next"]{
-		@apply ml-auto inline-block max-w-[66.66667%]
+		@apply ml-auto inline-block
 	}
 
 }
