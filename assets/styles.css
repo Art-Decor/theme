@@ -1080,7 +1080,7 @@
 		@apply !text-sm md:!text-base
 	}
 	.layout-region-checkout-main p.address{
-		@apply border border-primary-20 !my-[10px] p-2.5 rounded-lg
+		@apply border border-gray-40 !my-[10px] p-2.5 rounded-lg
 	}
 	.layout-region-checkout-main [type="radio"]:checked+label:after{
 		@apply !bg-primary-100 !border-primary-100
