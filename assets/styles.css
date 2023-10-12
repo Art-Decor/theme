@@ -1058,14 +1058,26 @@
 		@apply text-lg md:text-xl
 	}
 
-	.layout-region-checkout-main .select-wrapper .input-group-addon{
+	.layout-region-checkout-main .input-group .input-group-addon{
 		@apply pr-10 relative
 	} 
-	.layout-region-checkout-main .select-wrapper .input-group-addon .glyphicon-refresh{
+	.layout-region-checkout-main .input-group .input-group-addon .glyphicon-refresh{
 		@apply h-full w-full !top-[15px]
+	}
+	.layout-region-checkout-main [type="checkbox"]:checked+label:after{
+		@apply !bg-primary-100 !border-primary-100
+	}
+	.layout-region-checkout-main [type="checkbox"]+label{
+		@apply !text-sm md:!text-base
 	}
 	.layout-region-checkout-main p.address{
 		@apply border border-primary-20 !my-[10px] p-2.5 rounded-lg
+	}
+	.layout-region-checkout-main [type="radio"]:checked+label:after{
+		@apply !bg-primary-100 !border-primary-100
+	}
+	.layout-region-checkout-main [type="radio"]:checked+label:before{
+		@apply !border-primary-100
 	}
 
 }
