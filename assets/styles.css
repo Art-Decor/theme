@@ -1071,7 +1071,7 @@
 		@apply block mt-[2px]
 	}
 	.layout-region-checkout-main .input-group .input-group-addon .glyphicon-refresh{
-		@apply h-full w-full !top-[15px]
+		@apply h-full w-full
 	}
 	.layout-region-checkout-main [type="checkbox"]:checked+label:after{
 		@apply !bg-primary-100 !border-primary-100
