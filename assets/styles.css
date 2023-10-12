@@ -1090,7 +1090,11 @@
 	}
 	
 	.layout-region-checkout-footer{
-		@apply md-wide:max-w-[66.66667%] flex-wrap gap-5 flex justify-between mb-[15px]
+		@apply md-wide:max-w-[66.66667%] mb-[15px]
+	}
+	
+	.layout-region-checkout-footer [data-drupal-selector="edit-actions"]{
+		@apply flex flex-wrap gap-5 justify-between
 	}
 	.layout-region-checkout-footer [data-drupal-selector="edit-actions-next"]{
 		@apply ml-auto block order-1 !mb-0
