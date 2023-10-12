@@ -1058,9 +1058,18 @@
 		@apply text-lg md:text-xl
 	}
 
-	.layout-region-checkout-main .input-group .input-group-addon{
-		@apply pr-10 relative
+	.layout-region-checkout-main .input-group{
+		@apply w-full
 	} 
+	.layout-region-checkout-main .input-group .input-group-addon{
+		@apply !p-0 border-0 w-5 h-5 block absolute right-10 bottom-[13px] bg-transparent
+	} 
+	.layout-region-checkout-main .input-group .input-group-addon .glyphicon-spin{
+		@apply z-20
+	}
+	.layout-region-checkout-main .input-group .input-group-addon .glyphicon-refresh:before{
+		@apply block mt-[2px]
+	}
 	.layout-region-checkout-main .input-group .input-group-addon .glyphicon-refresh{
 		@apply h-full w-full !top-[15px]
 	}
