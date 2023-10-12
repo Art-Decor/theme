@@ -583,7 +583,7 @@
 		@apply block max-w-xs mx-auto;
 	}
 	.form-group {
-		@apply !mb-0;
+		@apply !my-0;
 	}
 	form.contact-form {
 		@apply flex flex-wrap justify-center;
@@ -1087,6 +1087,10 @@
 	}
 	.layout-region-checkout-main [type="radio"]:checked+label:before{
 		@apply !border-primary-100
+	}
+	
+	.layout-region-checkout-footer [data-drupal-selector="edit-actions-next"]{
+		@apply ml-auto inline-block max-w-[66.66667%]
 	}
 
 }
