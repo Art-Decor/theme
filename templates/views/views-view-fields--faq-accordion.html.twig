@@ -32,9 +32,9 @@
  */
 #}
 
-<div class="md:px-5 border-b-2 border-b-[#EDF2F4]">
+<div class="md:px-5 border-b-2 border-b-[#EDF2F4] panel !m-0">
 {%- if fields.title -%}
-    <div class="group w-full flex justify-between py-[30px] collapsed cursor-pointer [&:not(.collapsed)_svg]:rotate-180" data-toggle="collapse" aria-expanded="false" data-target="#faq-content-{{ row.index }}" data-parent=".view-faq-accordion">
+    <div class="group w-full flex justify-between py-[30px] collapsed cursor-pointer [&:not(.collapsed)_svg]:rotate-180" data-toggle="collapse" aria-expanded="false" data-target="#faq-content-{{ row.index }}" data-parent=".faq-accordion">
         <h3 class="!text-base md:!text-lg text-primary-100 !mb-0 !font-medium">
             {{ fields.title.content }}
         </h3>
