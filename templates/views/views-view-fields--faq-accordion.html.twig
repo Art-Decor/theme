@@ -32,21 +32,21 @@
  */
 #}
 
-<div class="px-5 border-b-2 border-b-[#EDF2F4]">
+<div class="md:px-5 border-b-2 border-b-[#EDF2F4]">
 {%- if fields.title -%}
     <div class="group w-full flex justify-between py-[30px] collapsed cursor-pointer [&:not(.collapsed)_svg]:rotate-180" data-toggle="collapse" aria-expanded="false" data-target="#faq-content-{{ row.index }}" data-parent=".view-faq-accordion">
-        <h3 class="!text-base md:!text-lg text-primary-100 !mb-0">
+        <h3 class="!text-base md:!text-lg text-primary-100 !mb-0 font-medium shrink-0">
             {{ fields.title.content }}
         </h3>
-        <div class="w-[30px] h-[30px] rounded-full border border-primary-100 flex items-center justify-center group-hover:bg-primary-100 transition duration-200">
-            <svg class="fill-primary-100 group-hover:fill-white transition duration-200" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+        <div class="w-[30px] h-[30px] ml-[60px] shrink-0 rounded-full border border-primary-100 flex items-center justify-center group-hover:bg-primary-100 transition duration-200">
+            <svg class="stroke-primary-100 group-hover:stroke-white transition duration-200" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                 <path d="M5 2.5L5 7.70833M5 7.70833L7.5 5.20833M5 7.70833L2.5 5.20833" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </div>
     </div>
 {%- endif %}
 {%- if fields.field_body -%}
-    <div id="faq-content-{{ row.index }}" class="collapse" aria-expanded="false">
+    <div id="faq-content-{{ row.index }}" class="collapse [&_p]:!mb-10" aria-expanded="false">
         <p class="pb-10 text-primary-100 !text-[13px]">
             {{ fields.field_body.content }}
         </p>
