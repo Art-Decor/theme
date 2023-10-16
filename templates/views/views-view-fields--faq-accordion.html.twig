@@ -34,8 +34,8 @@
 
 <div class="md:px-5 border-b-2 border-b-[#EDF2F4] panel bg-transparent !m-0">
 {%- if fields.title -%}
-    <div class="group w-full flex justify-between py-[30px] collapsed cursor-pointer [&:not(.collapsed)_svg]:rotate-180" data-toggle="collapse" aria-expanded="false" data-target="#faq-content-{{ row.index }}" data-parent=".faq-accordion">
-        <h3 class="!text-base md:!text-lg text-primary-100 !mb-0 !font-medium">
+    <div class="group w-full flex justify-between !py-7 collapsed cursor-pointer [&:not(.collapsed)_svg]:rotate-180" data-toggle="collapse" aria-expanded="false" data-target="#faq-content-{{ row.index }}" data-parent=".faq-accordion">
+        <h3 class="!text-lg text-primary-100 !mb-0 !font-medium">
             {{ fields.title.content }}
         </h3>
         <div class="w-[30px] h-[30px] ml-[60px] shrink-0 rounded-full border border-primary-100 flex items-center justify-center group-hover:bg-primary-100 transition duration-200">
