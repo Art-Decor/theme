@@ -355,6 +355,9 @@
 	.page-node-type-page:not(.path-frontpage) .page img {
 		@apply !w-full mb-5;
 	}
+	.page-node-type-page:not(.path-frontpage) .page .cta-upload img {
+		@apply !w-auto !m-0;
+	}
 	.page-node-type-page:not(.path-frontpage) .page kbd {
 		@apply px-2 rounded-md bg-gray-100;
 	}
@@ -879,7 +882,8 @@
 		@apply relative z-10 mb-[60px] md:mb-16
 	}
 
-	.path-frontpage .wp-block-column p{
+	.path-frontpage .wp-block-column p,
+	.page-node-type-page:not(.path-frontpage) .page .cta-upload .wp-block-column p{
 		@apply text-base text-[15px] text-primary-100 font-body font-light mb-4 lg:max-w-[80%]
 	}
 
