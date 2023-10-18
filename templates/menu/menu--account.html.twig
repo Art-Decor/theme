@@ -32,6 +32,7 @@
       <ul class="dropdown-menu">
     {% endif %}
     {% for item in items %}
+    {dump(item)}
       {%
         set item_classes = [
           item.is_expanded? 'expanded',
