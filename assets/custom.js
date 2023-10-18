@@ -126,7 +126,14 @@ Drupal.behaviors.overrideSwiper = {
                             enabled: false,
                             spaceBetween: 0
                         },
-                    };
+                    },
+                    swiper.on ={
+                        navigationPrev: function () {
+                          console.log('swiper prev btn click');
+                          this.slideTo(0)
+                          return
+                        },
+                      };
                 }
             }
         }
