@@ -112,7 +112,6 @@ Drupal.behaviors.overrideSwiper = {
                     },
                     swiper.on ={
                         navigationPrev: function () {
-                          console.log('swiper prev btn click');
                           this.slideTo(0)
                           return
                         },
