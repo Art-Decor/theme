@@ -678,11 +678,11 @@
 	}
 
 	.we-mega-menu-li .menu-account {
-		@apply !py-[11px] !px-5 !mx-auto w-fit rounded-full bg-neutral-90 gap-[15px];
+		@apply !py-[11px] !px-5 !mx-auto w-fit rounded-full bg-neutral-90;
 	}
 
-	.we-mega-menu-li .menu-account li {
-		@apply !flex after:content-['|'] after:ml-[15px] text-sm after:mt-[1px] last:after:hidden last:after:ml-0 after:text-primary-20;
+	.we-mega-menu-li .menu-account li:first-child{
+		@apply !flex after:content-['|'] after:my-[15px] text-sm after:mt-[1px] last:after:hidden last:after:ml-0 after:text-primary-20;
 	}
 
 	.we-mega-menu-li .menu-account li a {
