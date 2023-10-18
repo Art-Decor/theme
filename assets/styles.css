@@ -682,11 +682,11 @@
 	}
 
 	.we-mega-menu-li .menu-account li:first-child{
-		@apply !flex after:content-['|'] after:my-[15px] text-sm after:mt-[1px] last:after:hidden last:after:ml-0 after:text-primary-20;
+		@apply !flex after:content-['|'] after:mx-[15px] text-sm after:mt-[3px] last:after:hidden last:after:ml-0 after:text-primary-20;
 	}
 
 	.we-mega-menu-li .menu-account li a {
-		@apply !border-0 font-medium text-primary-100;
+		@apply !border-0 font-medium text-primary-100 text-sm;
 	}
 
 	body:not(.user-logged-in) .we-mega-menu-li .menu-account li a {
