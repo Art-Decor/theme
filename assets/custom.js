@@ -109,6 +109,13 @@ Drupal.behaviors.overrideSwiper = {
                         768: {
                             spaceBetween: 8,
                         },
+                    },
+                    swiper.on ={
+                        navigationPrev: function () {
+                          console.log('swiper prev btn click');
+                          this.slideTo(0)
+                          return
+                        },
                     };
                 }
                 if (key == 'swiper-wall-art-seo-tiles-block-1' || key == 'swiper-wall-art-seo-tiles-block-2') {
@@ -126,14 +133,7 @@ Drupal.behaviors.overrideSwiper = {
                             enabled: false,
                             spaceBetween: 0
                         },
-                    },
-                    swiper.on ={
-                        navigationPrev: function () {
-                          console.log('swiper prev btn click');
-                          this.slideTo(0)
-                          return
-                        },
-                      };
+                    };
                 }
             }
         }
