@@ -693,7 +693,7 @@
 		@apply flex-row-reverse;
 	}
 
-	.user-logged-in .menu-account li:nth-child(2) {
+	.user-logged-in .menu-account [data-drupal-link-system-path="user/register"] {
 		@apply !hidden;
 	}
 
