@@ -949,7 +949,8 @@
 	.view-display-id-block_4 .swiper-navigation-disabled .swiper-button-next,
 	.view-display-id-block_3 .swiper-navigation-disabled .swiper-button-prev,
 	.view-display-id-block_3 .swiper-navigation-disabled .swiper-button-next,
-	.view-id-processes_swiper .swiper-navigation-disabled .swiper-button-next{
+	.view-id-processes_swiper .swiper-navigation-disabled .swiper-button-next,
+	.view-id-processes_swiper .swiper-button-next.swiper-button-disabled ~ .swiper-button-prev{
 		@apply !flex
 	}
 
