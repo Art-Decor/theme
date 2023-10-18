@@ -32,7 +32,6 @@
       <ul class="dropdown-menu">
     {% endif %}
     {% for item in items %}
-    {{ dump(item) }}
       {%
         set item_classes = [
           item.is_expanded? 'expanded',
@@ -63,7 +62,7 @@
           </svg>
         </span>
       {% else %}
-        <li{{ item.attributes.addClass(item_classes) }}>
+        <li{{ item.attributes.addClass(item_classes) }}{{ item.link_attributes }}>
         {{
           link(
             item.title,
