@@ -15,7 +15,8 @@
  * @see template_preprocess_select()
  */
 #}
-{{ dump() }}
+{{ dump(element["#field_name"]) }}
+{{ dump(element["#field_name"] == "field_testowo") }}
 {% apply spaceless %}
   {% if input_group %}
     <div class="input-group">
