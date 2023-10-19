@@ -3,6 +3,8 @@ base:
    js:
       assets/custom.js:
          weight: -10
+      assets/product_options.js:
+         weight: -10
    css:
       theme:
          assets/styles.min.css:
