@@ -40,7 +40,6 @@
     element['#options']|length == 1 ? 'opacity-50 pointer-events-none':''
   ]
 %}
-{{dump()}}
 <div{{ attributes.addClass(classes) }}>
     <div class="relative bg-white flex gap-2.5 items-center cursor-pointer z-20 collapsed [&:not(.collapsed)_.arrow]:rotate-180 [&:not(.collapsed)]:z-40  [&:not(.collapsed)_~_div]:!border-brown-100" data-target="#{{ element['#id'] }}" data-toggle="collapse" data-parent=".attribute-widgets" aria-expanded="false">
         <div class="ml-2.5 w-[30px]">
