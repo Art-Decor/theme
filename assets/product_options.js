@@ -12,7 +12,7 @@ function syncOptionsHandler() {
     const optionsInputs = document.querySelectorAll('[data-drupal-selector="edit-field-options-wrapper"] input')    
 
     if (optionsWrapper) {
-        optionsWrapper.classList.add('!hidden');
+        console.log(optionsWrapper);
     }
 
     if (optionsInputs) {
