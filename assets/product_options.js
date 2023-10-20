@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded',() => {
     syncOptionsHandler()
-    if ($) {
-        $(document).on('ajaxComplete',syncOptionsHandler)
+    if (jQuery) {
+        jQuery(document).on('ajaxComplete',syncOptionsHandler)
     }
 });
 
