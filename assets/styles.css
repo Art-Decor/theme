@@ -284,6 +284,10 @@
 	.page-node-type-page:not(.path-frontpage) .page .container-staticpage {
 		@apply md:w-3/4 lg:w-2/3;
 	}
+	
+	.page-node-type-page:not(.path-frontpage) .page .container-staticpage a {
+		@apply hover:!text-brown-100 transition duration-200 hover:!underline !decoration-brown-100 hover:!decoration-brown-100;
+	}
 
 	.page-node-type-page:not(.path-frontpage) .page{
 		@apply text-primary-100
