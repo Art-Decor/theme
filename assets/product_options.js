@@ -21,10 +21,10 @@ function syncOptionsHandler() {
 
     if (displayedInputs && optionsInputs) {
         displayedInputs.forEach(displayedInput=>{
-            displayedInput.addEventListener('input',()=>{
+            if (displayedInput.checked) {
                 clearCheckboxes(optionsInputs)
                 setCheckByValue(displayedInput.value,optionsInputs)
-            })
+            }
         })
     }
 }
