@@ -113,10 +113,12 @@
 	.path-frontpage .text-default h4 {
 		@apply mb-5 md:mb-7;
 	}
-	.path-frontpage .text-default h1 {
+	.path-frontpage .text-default h1,
+	.text-default h1 {
 		@apply text-2xl md:text-3xl font-semibold;
 	}
-	.path-frontpage .text-default h2 {
+	.path-frontpage .text-default h2,
+	.text-default h2 {
 		@apply text-xl md:text-2xl font-semibold;
 	}
 	.path-frontpage .text-default h3 {
