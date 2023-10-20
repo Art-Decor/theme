@@ -24,7 +24,7 @@ function syncOptionsHandler() {
             displayedInput.addEventListener('change',()=>{
                 clearCheckboxes(optionsInputs)
                 setCheckByValue(displayedInput.value,optionsInputs)
-            })
+            },{capture: true})
         })
     }
 }
