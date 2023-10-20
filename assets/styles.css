@@ -852,6 +852,8 @@
 	.text-default {
 		@apply font-body font-light text-primary-100
 	},
+	.text-default h1,
+	.text-default h2,
 	.text-default h3,
 	.text-default h4 {
 		@apply !mb-5 md:!mb-6;
