@@ -35,7 +35,7 @@
       {%
         set item_classes = [
           'menu-' ~ menu_name|clean_class ~ '__item',
-          'mr-2.5 group bg-primary-100 text-white group-hover:bg-brown-100 transition duration-200 rounded-full [&_svg]:w-[30px] [&_svg]:h-[30px]',
+          'mr-2.5 group bg-primary-100 text-white group-hover:bg-brown-100 transition duration-200 rounded-full [&_svg]:w-[30px] [&_svg]:h-[30px] ',
           item.is_expanded? 'expanded',
           item.is_expanded and menu_level == 0 ? 'dropdown',
           item.in_active_trail ? 'active'
@@ -60,15 +60,15 @@
 
         {% set title %}
           
-          {% if item.title == 'facebook' %}
+          {% if item.title|clean_class == 'facebook' %}
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="30px" height="30px"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8.53333,8.53333)"><path d="M12,27v-12h-4v-4h4v-2.148c0,-4.067 1.981,-5.852 5.361,-5.852c1.619,0 2.475,0.12 2.88,0.175v3.825h-2.305c-1.435,0 -1.936,0.757 -1.936,2.291v1.709h4.205l-0.571,4h-3.634v12z"></path></g></g></svg>
-          {% elseif item.title == 'youtube' %}
+          {% elseif item.title|clean_class == 'youtube' %}
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="50px" height="50px"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M44.89844,14.5c-0.39844,-2.19922 -2.29687,-3.80078 -4.5,-4.30078c-3.29687,-0.69922 -9.39844,-1.19922 -16,-1.19922c-6.59766,0 -12.79687,0.5 -16.09766,1.19922c-2.19922,0.5 -4.10156,2 -4.5,4.30078c-0.40234,2.5 -0.80078,6 -0.80078,10.5c0,4.5 0.39844,8 0.89844,10.5c0.40234,2.19922 2.30078,3.80078 4.5,4.30078c3.5,0.69922 9.5,1.19922 16.10156,1.19922c6.60156,0 12.60156,-0.5 16.10156,-1.19922c2.19922,-0.5 4.09766,-2 4.5,-4.30078c0.39844,-2.5 0.89844,-6.10156 1,-10.5c-0.20312,-4.5 -0.70312,-8 -1.20312,-10.5zM19,32v-14l12.19922,7z"></path></g></g></svg>
-          {% elseif item.title == 'tiktok' %}
+          {% elseif item.title|clean_class == 'tiktok' %}
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="32px" height="32px"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M9.61133,5c-2.53462,0 -4.61133,2.07671 -4.61133,4.61133v12.77734c0,2.53462 2.07671,4.61133 4.61133,4.61133h12.77734c2.53462,0 4.61133,-2.07671 4.61133,-4.61133v-12.77734c0,-2.53462 -2.07671,-4.61133 -4.61133,-4.61133zM9.61133,7h12.77734c1.45338,0 2.61133,1.15795 2.61133,2.61133v12.77734c0,1.45338 -1.15795,2.61133 -2.61133,2.61133h-12.77734c-1.45338,0 -2.61133,-1.15795 -2.61133,-2.61133v-12.77734c0,-1.45338 1.15795,-2.61133 2.61133,-2.61133zM17,9v10c0,1.11667 -0.88333,2 -2,2c-1.11667,0 -2,-0.88333 -2,-2c0,-1.11667 0.88333,-2 2,-2v-2c-2.19733,0 -4,1.80267 -4,4c0,2.19733 1.80267,4 4,4c2.19733,0 4,-1.80267 4,-4v-6.11133c0.82783,0.64109 1.80928,1.09544 2.92773,1.11133l0.0293,-2c-1.64627,-0.02339 -2.95703,-1.34577 -2.95703,-3z"></path></g></g></svg>
-          {% elseif item.title == 'instagram' %}
+          {% elseif item.title|clean_class == 'instagram' %}
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="50px" height="50px"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M16,3c-7.16752,0 -13,5.83248 -13,13v18c0,7.16752 5.83248,13 13,13h18c7.16752,0 13,-5.83248 13,-13v-18c0,-7.16752 -5.83248,-13 -13,-13zM16,5h18c6.08648,0 11,4.91352 11,11v18c0,6.08648 -4.91352,11 -11,11h-18c-6.08648,0 -11,-4.91352 -11,-11v-18c0,-6.08648 4.91352,-11 11,-11zM37,11c-1.10457,0 -2,0.89543 -2,2c0,1.10457 0.89543,2 2,2c1.10457,0 2,-0.89543 2,-2c0,-1.10457 -0.89543,-2 -2,-2zM25,14c-6.06329,0 -11,4.93671 -11,11c0,6.06329 4.93671,11 11,11c6.06329,0 11,-4.93671 11,-11c0,-6.06329 -4.93671,-11 -11,-11zM25,16c4.98241,0 9,4.01759 9,9c0,4.98241 -4.01759,9 -9,9c-4.98241,0 -9,-4.01759 -9,-9c0,-4.98241 4.01759,-9 9,-9z"></path></g></g></svg>
-          {% elseif item.title == 'linkedin' %}
+          {% elseif item.title|clean_class == 'linkedin' %}
             <?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px">    <path d="M9,25H4V10h5V25z M6.501,8C5.118,8,4,6.879,4,5.499S5.12,3,6.501,3C7.879,3,9,4.121,9,5.499C9,6.879,7.879,8,6.501,8z M27,25h-4.807v-7.3c0-1.741-0.033-3.98-2.499-3.98c-2.503,0-2.888,1.896-2.888,3.854V25H12V9.989h4.614v2.051h0.065 c0.642-1.18,2.211-2.424,4.551-2.424c4.87,0,5.77,3.109,5.77,7.151C27,16.767,27,25,27,25z"/></svg>
           {% endif %}
           
