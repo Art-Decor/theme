@@ -35,7 +35,7 @@
 
 {%
   set classes = [
-    path('<current>') == '/cart' ? 'order-6 w-full md:w-[500px] md:ml-[calc(100%_-_500px)] ':'',
+    '[body.path-cart_&]:order-6 [body.path-cart_&]:w-full [body.path-cart_&]:md:w-[500px] [body.path-cart_&]:md:ml-[calc(100%_-_500px)] ',
     'view',
     'view-' ~ id|clean_class,
     'view-id-' ~ id,
@@ -46,7 +46,7 @@
 <div{{ attributes.addClass(classes) }}>
   
   {% if rows %}
-    <div class="view-content">
+    <div class="view-content ">
       {{ rows }}
     </div>
   {% elseif empty %}
