@@ -221,7 +221,7 @@
 
 	.cta-upload .wp-block-columns{
 		@apply flex-col-reverse md:flex-row
-	} 
+	}
 
 	.cta-upload .wp-block-image.size-large img{
 		@apply mx-auto my-10 md:my-0 w-52 md:w-auto
@@ -286,7 +286,7 @@
 	.page-node-type-page:not(.path-frontpage) .page .container-staticpage {
 		@apply md:w-3/4 lg:w-2/3;
 	}
-	
+
 	.page-node-type-page:not(.path-frontpage) .page .container-staticpage a {
 		@apply hover:!text-brown-100 transition duration-200 hover:!underline !decoration-brown-100 hover:!decoration-brown-100;
 	}
@@ -498,12 +498,12 @@
 
 	li.facet-item [type="checkbox"]:checked+label:after,
 	li.facet-item [type="checkbox"]:not(:checked)+label:after{
-		@apply !w-4 !h-4 !top-[6px] left-2 border-primary-40 rounded-sm		
+		@apply !w-4 !h-4 !top-[6px] left-2 border-primary-40 rounded-sm
 	}
 
 	li.facet-item [type="checkbox"]:checked+label:after{
 		@apply !border-primary-100 !bg-primary-100
-		
+
 	}
 
 	.views-field-purchased-entity .field--label,
@@ -919,7 +919,7 @@
 
 	}
 
-	
+
 	.path-frontpage
 		.page
 		> .content
@@ -930,7 +930,7 @@
 	}
 	.path-frontpage .page > .content > .field--name-body > h2 {
 		@apply max-w-md mx-auto mb-[30px] md:mb-4 text-2xl md:text-3xl text-primary-100 font-body font-light;
-	}	
+	}
 	.path-frontpage .page > .content > .field--name-body > h2 em {
 		@apply font-header;
 	}
@@ -1008,10 +1008,10 @@
 	}
 
 	.checkout-pane .panel-heading{
-		@apply !border-0 !p-0  
+		@apply !border-0 !p-0
 	}
 	.checkout-pane .panel-heading .panel-title{
-		@apply !font-medium !text-lg text-primary-100 
+		@apply !font-medium !text-lg text-primary-100
 	}
 
 	.checkout-pane .checkout-complete p{
@@ -1077,10 +1077,10 @@
 
 	.layout-region-checkout-main .input-group{
 		@apply w-full
-	} 
+	}
 	.layout-region-checkout-main .input-group .input-group-addon{
 		@apply !p-0 border-0 w-5 h-5 block absolute right-10 bottom-[13px] bg-transparent
-	} 
+	}
 	.layout-region-checkout-main .input-group .input-group-addon .glyphicon-spin{
 		@apply z-20
 	}
@@ -1105,11 +1105,11 @@
 	.layout-region-checkout-main [type="radio"]:checked+label:before{
 		@apply !border-primary-100
 	}
-	
+
 	.layout-region-checkout-footer{
 		@apply md-wide:max-w-[66.66667%] mb-[15px]
 	}
-	
+
 	.layout-region-checkout-footer [data-drupal-selector="edit-actions"]{
 		@apply flex flex-wrap gap-5 justify-between
 	}
@@ -1120,11 +1120,6 @@
 		background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 6L4 10L8 14" stroke="%23382335" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 		@apply bg-transparent rounded-none bg-no-repeat bg-left font-body font-medium text-sm text-primary-100 py-[14px] pl-10 pr-0 border-b-2 border-b-primary-20 hover:border-b-brown-100 transition duration-200
 	}
-
-	[data-drupal-selector="edit-field-options-wrapper"]{
-		@apply hidden
-	}
-
 }
 
 @tailwind utilities;
