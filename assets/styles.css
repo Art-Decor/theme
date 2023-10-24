@@ -531,7 +531,11 @@
 	}
 
 	.cart-form [data-drupal-selector='edit-coupon-redemption-apply'] {
-		@apply absolute right-5 bottom-2.5 w-auto h-12 rounded-l-none !mb-0;
+		@apply absolute right-0 bottom-0 w-auto h-12 rounded-l-none !mb-0;
+	}
+
+	.cart-form [data-drupal-selector='edit-coupon-redemption-apply'] label{
+		@apply hidden;
 	}
 
 	.cart-form .order-total-line__total {
