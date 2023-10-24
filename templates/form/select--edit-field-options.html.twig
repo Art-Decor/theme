@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Theme override for a select element.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the select tag.
+ * - input_group: Flag to display as an input group.
+ * - options: The option element children.
+ * - prefix: Markup to display before the input element.
+ * - suffix: Markup to display after the input element.
+ *
+ * @ingroup templates
+ *
+ * @see template_preprocess_select()
+ */
+#}
+{% apply spaceless %}
+  {% if input_group %}
+    <div class="input-group">
+  {% endif %}
+
+  {% if prefix %}
+    {{ prefix }}
+  {% endif %}
+
+  {# Browsers do not recognize pseudo :after selectors, we must create a wrapper
+   # around the select element to style it properly.
+   # @see http://stackoverflow.com/q/21103542
+   #}
+  {% if not attributes.offsetExists('multiple') %}
+    <div class="select-wrapper relative !w-full after:text-primary-100 after:!hidden">
+  {% endif %}
+    {% set classes = [
+      'form-control',
+      'mb-[15px] cursor-pointer peer w-full !h-auto block relative px-5 py-4 !rounded-full border !border-gray-40 focus:outline-0 hover:!border-primary-100 focus-within:!border-primary-100 focus-visible:!border-primary-100 focus:!border-primary-100 text-primary-100 font-normal text-[15px] md:text-[13px] appearance-none transition duration-200'
+
+    ] %}
+
+      {% for option in options %}
+        {% if option.type == 'optgroup' %}
+            <span>{{ option.label }}</span>
+            {% for sub_option in option.options %}
+                <label><input type="radio" name="{{ option.label }}" value="{{ sub_option.value }}" {{ sub_option.selected ? ' selected="selected"' }}></input>{{ sub_option.label }}</label>
+            {% endfor %}
+        {% endif %}
+      {% endfor %}
+
+  {% if not attributes.offsetExists('multiple') %}
+    </div>
+  {% endif %}
+
+  {% if suffix %}
+    {{ suffix }}
+  {% endif %}
+
+  {% if input_group %}
+    </div>
+  {% endif %}
+{% endapply %}
