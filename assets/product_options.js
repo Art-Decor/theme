@@ -55,7 +55,7 @@ function optionsListenerInit(){
 
         const inputContainer = document.querySelector(`.js-form-item-field-options #${inputGroup}`) 
         if (jQuery && inputContainer) {
-            inputContainer.collapse('hide')
+            jQuery(inputContainer).collapse('hide')
         }
         
         const displayField = document.querySelector(`[data-group-selected=${inputGroup}]`)
