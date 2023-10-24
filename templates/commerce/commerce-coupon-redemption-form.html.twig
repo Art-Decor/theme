@@ -32,10 +32,13 @@
       </table>
     </div>
   {% endif %}
-{% endif %}
+{% else %}
 <span class="p-1 text-primary-40 hover:text-primary-100 transition duration-200 cursor-pointer collapsed [&.collapsed]:before:content-['+'] [&:not(.collapsed)]:before:content-['-'] before:mr-1" data-toggle="collapse" data-target="#coupon-input" aria-expanded="false">
     {{ 'Add coupon'|t }}
 </span>
 <div id="coupon-input" class="collapse">
-    {{ form|without('coupons') }}
+    <div class="relative w-full">
+        {{ form|without('coupons') }}
+    </div>
 </div>
+{% endif %}
