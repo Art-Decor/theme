@@ -169,5 +169,6 @@ function wallsociety_form_alter(&$form, &$form_state, $form_id) {
  */
 function wallsociety_theme_suggestions_select_alter(&$suggestions, array $variables) {
   $element = $variables['element'];
-  $suggestions[] = 'select__' . $element['#id'];
+  $id_item = str_replace('-', '_', $element['#id']);
+  $suggestions[] = 'select__' . $id_item;
 }
