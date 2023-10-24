@@ -46,9 +46,9 @@
 optionsListenerInit()
 
 function optionsListenerInit(){
-    document.addEventListener('change',()=>{
-        let inputGroup = input.dataset.inputGroup
-        if (!inputGroup || !input.labels) {
+    document.addEventListener('change',(input)=>{
+        let inputGroup = input.target.dataset.inputGroup
+        if (!inputGroup || !input.target.labels) {
             return
         }
         
@@ -58,7 +58,7 @@ function optionsListenerInit(){
             return
         }
         
-        let valueLabel = input.labels[0].innerText 
+        let valueLabel = input.target.labels[0].innerText 
 
         if (valueLabel) {
             displayField.textContent = valueLabel
