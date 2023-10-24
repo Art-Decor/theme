@@ -161,3 +161,13 @@ function wallsociety_form_alter(&$form, &$form_state, $form_id) {
     $form['mail']['widget'][0]['value']['#title'] = null;
   }
 }
+
+
+/**
+ * @param $suggestions
+ * @param array $variables
+ */
+function wallsociety_theme_suggestions_select_alter(&$suggestions, array $variables) {
+  $element = $variables['element'];
+  $suggestions[] = 'select__' . $element['#id'];
+}
