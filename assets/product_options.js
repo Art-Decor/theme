@@ -43,40 +43,25 @@
 //     });
 // }
 
-window.addEventListener('DOMContentLoaded',() => {
-    let initLoad = false
-    if (jQuery) {
-        jQuery(document).on('ajaxComplete',() => {
-            if (!initLoad) {
-                optionsListenerInit()
-                initLoad = true
-            }
-        })
-    }
-})
+optionsListenerInit()
 
 function optionsListenerInit(){
-    const inputs = document.querySelectorAll('.js-form-type-select input[type="radio"]')
+    document.addEventListener('change',()=>{
+        let inputGroup = input.dataset.inputGroup
+        if (!inputGroup || !input.labels) {
+            return
+        }
+        
+        let displayField = document.querySelector(`[data-group-selected=${inputGroup}]`)
+        
+        if (!displayField) {
+            return
+        }
+        
+        let valueLabel = input.labels[0].innerText 
 
-    inputs.forEach(input=>{
-        input.addEventListener('change',()=>{
-            let inputGroup = input.dataset.inputGroup
-            if (!inputGroup) {
-                return
-            }
-            
-            let displayField = document.querySelector(`[data-group-selected=${inputGroup}]`)
-            
-            if (!displayField || !displayField.labels.length) {
-                return
-            }
-            
-            let valueLabel = displayField.labels[0].innerText 
-
-            if (valueLabel) {
-                displayField.textContent = valueLabel
-            }
-        })
+        if (valueLabel) {
+            displayField.textContent = valueLabel
+        }
     })
-
 }
