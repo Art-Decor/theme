@@ -36,16 +36,16 @@
       {% for option in options %}
         {% if option.type == 'optgroup' %}
         <div class="panel mb-0 group relative w-full border-0 border-b-2 border-solid border-neutral-90 hover:border-brown-100 transition duration-200">
-            <div class="w-full relative z-30 [&:not(.collapsed)]:z-40 flex gap-2.5 items-center cursor-pointer py-4 bg-white collapsed [&:not(.collapsed)_.arrow]:rotate-180" data-target="#option{{ loop.index }}" data-toggle="collapse" data-parent=".js-form-item-field-options" aria-expanded="false">
+            <div class="w-full relative z-30 [&:not(.collapsed)]:z-40 flex gap-2.5 items-center cursor-pointer bg-white collapsed [&:not(.collapsed)_.arrow]:rotate-180" data-target="#option{{ loop.index }}" data-toggle="collapse" data-parent=".js-form-item-field-options" aria-expanded="false">
                 <div class="ml-2.5 w-[30px] h-[30px]">
                 
-                {% if element['#title'] == 'Size' %}
+                {% if option.label == 'Size' %}
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
                     <path d="M11.25 5H5.00004L5 11.25M25 11.25V5.00004L18.75 5M18.75 25.0001H25L25 18.7501M5 18.7501L5 25L11.25 25.0001" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M11 19L19 11" stroke="#382335" stroke-linecap="round"/>
                     <path d="M11 11L19 19" stroke="#382335" stroke-linecap="round"/>
                 </svg>
-                {% elseif element['#title'] == 'Frame' %}
+                {% elseif option.label == 'Frame' %}
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
                     <path d="M11.4732 21.25C10.3637 21.25 9.46427 20.3173 9.46427 19.1667M6.25 19.1667C6.25 16.3181 8.32459 12.5 11.875 10C15.4254 12.5 17.5 16.3181 17.5 19.1667C17.5 22.8486 14.6218 25 11.875 25C9.12816 25 6.25 22.8486 6.25 19.1667Z" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M20.4018 11.5625C19.7854 11.5625 19.2857 11.0184 19.2857 10.3472M17.5 10.3472C17.5 8.68556 18.6526 6.45833 20.625 5C22.5974 6.45833 23.75 8.68556 23.75 10.3472C23.75 12.495 22.151 13.75 20.625 13.75C19.099 13.75 17.5 12.495 17.5 10.3472Z" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
@@ -61,9 +61,9 @@
                 </div>
                 <div class="flex gap-2.5 gap-y-px flex-col {% if option.label != 'Typ produktu' %} md:flex-row md:py-3 {% endif %} py-[15px]">
                     <span class="text-sm font-medium font-body text-primary-100 w-full md:w-auto">{{ option.label }}</span>
-                    <span class="text-[13px] font-light text-primary-60 w-full md:w-auto block" data-option-selected></span>
+                    <span class="text-[13px] h-5 font-light text-primary-60 w-full md:w-auto block" data-option-selected></span>
                 </div>
-                <div class="absolute right-5 top-5">
+                <div class="absolute right-5 {% if option.label != 'Typ produktu' %} md:top-2.5 {% endif %} top-6">
                     <svg class="arrow rotate transform transition duration-300" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path d="M14 8L10 12L6 8" stroke="#382335" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -72,7 +72,7 @@
             <div id="option{{ loop.index }}" class="absolute top-[calc(100%_-_1.6px)] z-30 [&.collapsing]:z-[35] [&.collapse.in]:z-[35] bg-white w-full border-0 border-b-2 border-solid border-neutral-90 group-hover:border-brown-100 [&.collapse.in_.shadow-box]:shadow-2xl duration-300 collapse" aria-expanded="false">
                 <ul class="relative z-20 bg-white">
                 {% for sub_option in option.options %}
-                    <li class="border-0 border-b border-b-neutral-90">
+                    <li class="border-0 border-b border-b-neutral-90 w-full">
                         <input type="radio" id="{{ sub_option.value }}" name="{{ option.label }}" value="{{ sub_option.value }}" {{ sub_option.selected ? ' checked' }}></input>
                         <label class="!normal-case py-2.5 text-primary-100 !text-[13px] !font-light" for="{{ sub_option.value }}">{{ sub_option.label }}</label>
                     </li>
@@ -84,12 +84,22 @@
         </div>
         {% endif %}
       {% endfor %}
-      <div class="!hidden" data-options-checkboxes>
-        {% for option in options %}
+      <div class="!hidden" data-options-select>
+    <select{{ attributes.addClass(classes) }}>
+      {% for option in options %}
+        {% if option.type == 'optgroup' %}
+          <optgroup label="{{ option.label }}">
             {% for sub_option in option.options %}
-            <input type="checkbox" name="field_options[]" value="{{ sub_option.value }}"></input>
+              <option
+                value="{{ sub_option.value }}"{{ sub_option.selected ? ' selected="selected"' }}>{{ sub_option.label }}</option>
             {% endfor %}
-        {% endfor %}
+          </optgroup>
+        {% elseif option.type == 'option' %}
+          <option
+            value="{{ option.value }}"{{ option.selected ? ' selected="selected"' }}>{{ option.label }}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
       </div>
 
   {% if not attributes.offsetExists('multiple') %}
