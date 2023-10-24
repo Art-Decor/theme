@@ -46,19 +46,25 @@
 optionsListenerInit()
 
 function optionsListenerInit(){
-    document.addEventListener('change',(input)=>{
-        let inputGroup = input.target.dataset.inputGroup
-        if (!inputGroup || !input.target.labels) {
+    document.addEventListener('change',(event)=>{
+        const input = event.target
+        const inputGroup = input.dataset.inputGroup
+        if (!inputGroup || !input.labels) {
             return
         }
+
+        const inputContainer = document.querySelector(`.js-form-item-field-options #${inputGroup}`) 
+        if (jQuery && inputContainer) {
+            inputContainer.collapse('hide')
+        }
         
-        let displayField = document.querySelector(`[data-group-selected=${inputGroup}]`)
+        const displayField = document.querySelector(`[data-group-selected=${inputGroup}]`)
         
         if (!displayField) {
             return
         }
         
-        let valueLabel = input.target.labels[0].innerText 
+        const valueLabel = input.labels[0].innerText 
 
         if (valueLabel) {
             displayField.textContent = valueLabel

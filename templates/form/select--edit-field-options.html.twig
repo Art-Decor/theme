@@ -105,7 +105,7 @@
         {% endif %}
       {% endfor %}
       <div class="" data-options-select>
-    <select{{ attributes.addClass(classes) }}>
+    <select{{ attributes.addClass(classes,'!hidden') }}>
       {% for option in options %}
         {% if option.type == 'optgroup' %}
           <optgroup label="{{ option.label }}">
