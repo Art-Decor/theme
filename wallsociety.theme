@@ -171,4 +171,10 @@ function wallsociety_theme_suggestions_select_alter(&$suggestions, array $variab
   $element = $variables['element'];
   $id_item = str_replace('-', '_', $element['#id']);
   $suggestions[] = 'select__' . $id_item;
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $suggestions[] = 'select__' . $id_item . '__page__' . $node->bundle();
+  }
+
 }
