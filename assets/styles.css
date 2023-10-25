@@ -1089,7 +1089,7 @@
 		@apply z-20
 	}
 	.layout-region-checkout-main .input-group .input-group-addon .glyphicon-refresh:before{
-		@apply block mt-[2px]
+		@apply block mt-[3px]
 	}
 	.layout-region-checkout-main .input-group .input-group-addon .glyphicon-refresh{
 		@apply h-full w-full top-0
