@@ -48,26 +48,47 @@ optionsListenerInit()
 function optionsListenerInit(){
     document.addEventListener('change',(event)=>{
         const input = event.target
-        const inputGroup = input.dataset.inputGroup
-        if (!inputGroup || !input.labels) {
-            return
-        }
+        
+        if (!input.value) return
 
-        const inputContainer = document.querySelector(`.js-form-item-field-options #${inputGroup}`) 
-        if (jQuery && inputContainer) {
-            jQuery(inputContainer).collapse('hide')
-        }
-        
-        const displayField = document.querySelector(`[data-group-selected=${inputGroup}]`)
-        
-        if (!displayField) {
-            return
-        }
-        
-        const valueLabel = input.labels[0].innerText 
+        setCheckByValue(input.value)
+        setDisplayedVal(input)
 
-        if (valueLabel) {
-            displayField.textContent = valueLabel
-        }
     })
+}
+
+function setDisplayedVal(input) {
+    const inputGroup = input.dataset.inputGroup
+    if (!inputGroup || !input.labels) {
+        return
+    }
+
+    const inputContainer = document.querySelector(`.js-form-item-field-options #${inputGroup}`) 
+    if (jQuery && inputContainer) {
+        jQuery(inputContainer).collapse('hide')
+    }
+    
+    const displayField = document.querySelector(`[data-group-selected=${inputGroup}]`)
+    
+    if (!displayField) {
+        return
+    }
+    
+    const valueLabel = input.labels[0].innerText 
+
+    if (valueLabel) {
+        displayField.textContent = valueLabel
+    }    
+}
+
+function setCheckByValue(externalValue){
+    const checkboxInputs = document.querySelectorAll('[data-options-checkboxes] input')
+
+    if (!checkboxInputs) return
+
+    const foundInput = Array.from(checkboxInputs).find(el => el.value == externalValue)
+
+    if (!foundInput) return
+
+    foundInput.checked = true
 }

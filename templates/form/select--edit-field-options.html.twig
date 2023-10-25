@@ -104,22 +104,12 @@
         </div>
         {% endif %}
       {% endfor %}
-      <div class="" data-options-select>
-    <select{{ attributes.addClass(classes,'!hidden') }}>
-      {% for option in options %}
-        {% if option.type == 'optgroup' %}
-          <optgroup label="{{ option.label }}">
+      <div class="!hidden" data-options-checkboxes>
+        {% for option in options %}
             {% for sub_option in option.options %}
-              <option
-                value="{{ sub_option.value }}"{{ sub_option.selected ? ' selected="selected"' }}>{{ sub_option.label }}</option>
+            <input type="checkbox" name="field_options[]" value="{{ sub_option.value }}"></input>
             {% endfor %}
-          </optgroup>
-        {% elseif option.type == 'option' %}
-          <option
-            value="{{ option.value }}"{{ option.selected ? ' selected="selected"' }}>{{ option.label }}</option>
-        {% endif %}
-      {% endfor %}
-    </select>
+        {% endfor %}
       </div>
 
   {% if not attributes.offsetExists('multiple') %}
