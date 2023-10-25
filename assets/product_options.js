@@ -51,6 +51,9 @@ function optionsListenerInit(){
         
         if (!input.value) return
 
+        if (input.dataset.inputGroup) {
+            clearCheckGroup(input.dataset.inputGroup)
+        }
         setCheckByValue(input.value)
         setDisplayedVal(input)
 
@@ -81,7 +84,12 @@ function setDisplayedVal(input) {
     }    
 }
 
-function setCheckByValue(externalValue){
+function clearCheckGroup(inputGroup) {
+    const radioInputs = document.querySelectorAll(`input[data-input-group="${inputGroup}"]`)
+    radioInputs.forEach(input => setCheckByValue(input.value,false))
+}
+
+function setCheckByValue(externalValue, value = true){
     const checkboxInputs = document.querySelectorAll('[data-options-checkboxes] input')
 
     if (!checkboxInputs) return
@@ -90,5 +98,5 @@ function setCheckByValue(externalValue){
 
     if (!foundInput) return
 
-    foundInput.checked = true
+    foundInput.checked = value
 }
