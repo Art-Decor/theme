@@ -32,7 +32,7 @@
       'mb-[15px] cursor-pointer peer w-full !h-auto block relative px-5 py-4 !rounded-full border !border-gray-40 focus:outline-0 hover:!border-primary-100 focus-within:!border-primary-100 focus-visible:!border-primary-100 focus:!border-primary-100 text-primary-100 font-normal text-[15px] md:text-[13px] appearance-none transition duration-200'
 
     ] %}
-
+      {{ dump() }}
       {% for option in options %}
         {% if option.type == 'optgroup' %}
         <div class="panel mb-0 group relative w-full border-0 border-b-2 border-solid border-neutral-90 hover:border-brown-100 transition duration-200">
