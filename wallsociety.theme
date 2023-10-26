@@ -160,6 +160,9 @@ function wallsociety_form_alter(&$form, &$form_state, $form_id) {
     $form['mail']['widget'][0]['value']['#placeholder'] = t('Email address');
     $form['mail']['widget'][0]['value']['#title'] = null;
   }
+  if($form_id == 'commerce-product-add-to-cart-form') {
+    dpm($form)
+  }
 }
 
 
