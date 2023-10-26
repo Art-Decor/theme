@@ -49,12 +49,10 @@ function optionsListenerInit(){
     document.addEventListener('change',(event)=>{
         const input = event.target
         
-        // if (!input.value) return
-
-        // if (input.dataset.inputGroup) {
-        //     clearCheckGroup(input.dataset.inputGroup)
-        // }
-        // setCheckByValue(input.value)
+        if (Object.keys(typeAttrsMap).includes(input.value) ) {
+            const attributeElements = document.querySelectorAll('[data-option-label]')
+            if (input.value && attributeElements) toggleVisibleAttributes(input.value,attributeElements)
+        }
         setDisplayedVal(input)
 
     })
@@ -101,19 +99,16 @@ function setDisplayedVal(input) {
 //     foundInput.checked = value
 // }
 
-let initFormLoaded = false;
 
-(function($) {
-    Drupal.behaviors.formUpdated = {
-      attach: function(context, settings) {
-          if (!initFormLoaded) {
-            console.log('form Updated');
-            initTypeListener()
+window.addEventListener('DOMContentLoaded',()=>{
+    (function($) {
+        Drupal.behaviors.addToCart = {
+          attach: function(context, settings) {
+            console.log('adding to cart');
+          }
         }
-        initFormLoaded = true
-      }
-    }
-  })(jQuery);
+      })(jQuery);
+})
 
 const typeAttrsMap = {
     117: ['Size','Canvas Wrap','Canvas Type','Floating Frame'],
@@ -122,17 +117,6 @@ const typeAttrsMap = {
     120: ['Size','Thickness','Hanging System'],
     121: ['Metal Print Options','Size','Corner Options','Hanging System'],
     122: ['Wood Printing Options','Size','Hanging System']
-}
-
-function initTypeListener() {
-	const typeInputs = document.querySelectorAll('[data-option-label="Type"] input')
-    const attributeElements = document.querySelectorAll('[data-option-label]')
-    
-    if (!attributeElements) return
-	
-    typeInputs.forEach((input) => input.addEventListener('change', () => {
-        if (input.value) toggleVisibleAttributes(input.value,attributeElements)
-    }))
 }
 
 function toggleVisibleAttributes(typeId,atttrElements){
