@@ -78,7 +78,7 @@
                 <ul class="relative z-20 bg-white !pl-[47px] {% if option.label != 'Size' %} !pt-2.5 {% endif %}{% if option.label == 'Type' %} flex flex-wrap gap-5 !pb-5 {% endif %}">
                 {% for sub_option in option.options %}
                     <li class="!m-0 {% if option.label != 'Type' %} border-0 border-b last:border-b-0 border-b-neutral-90 w-full {% endif %}">
-                        <input class="peer" type="radio" id="{{ sub_option.value }}" name="{{ option.label }}" value="{{ sub_option.value }}" {{ sub_option.selected ? ' checked' }} data-input-group="option{{ loop.parent.loop.index }}"></input>
+                        <input class="peer" type="radio" id="{{ sub_option.value }}" name="{{ option.label }}" value="{{ sub_option.value }}" {{ sub_option.selected ? ' checked' }} data-input-group="option{{ loop.parent.loop.index }}" {% if option.label == 'Type' %} required {% endif %}></input>
                         {% if option.label == 'Type' %}
                         <label class="!p-0 !m-0 !font-light after:!hidden before:!hidden !flex flex-col cursor-pointer transition duration-200 [&_.option-image]:hover:border-brown-40 [&_.option-image]:peer-checked:!border-brown-100" for="{{ sub_option.value }}">
                             <div class="option-image w-20 h-20 bg-neutral-90 border border-neutral-90 transition duration-200"></div>

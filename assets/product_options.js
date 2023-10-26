@@ -47,6 +47,8 @@ function toggleVisibleAttributes(typeId,attrElements){
     attrElementsFiltered.forEach(el => {
         el.classList.add('!hidden');
         el.dataset.optionHidden = true;
+        el.required = false
+        setChildInputsRequire(el,false)
     })
 
     const labelsArray = typeAttrsMap[typeId]
@@ -55,6 +57,7 @@ function toggleVisibleAttributes(typeId,attrElements){
         if (attrContainer) {
             attrContainer.classList.remove('!hidden')
             attrContainer.dataset.optionHidden = false
+            setChildInputsRequire(attrContainer,true)
             attrContainer.style.order = index + 2
         } 
     })
@@ -90,4 +93,11 @@ function setCheckByValue(externalVal,checkboxInputs){
         return
     }
     foundCheckbox.checked = true
+}
+
+function setChildInputsRequire(el,value){
+    const childInputs = el.querySelectorAll('input')
+    if (childInputs) {
+        childInputs.forEach(input => input.required = value)
+    }
 }
