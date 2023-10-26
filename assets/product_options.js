@@ -58,6 +58,28 @@ function optionsListenerInit(){
     })
 }
 
+const typeAttrsMap = {
+    117: ['Size','Canvas Wrap','Canvas Type','Floating Frame'],
+    118: ['Size','Frame','Fine Art Print Types','Mat','Mat Width'],
+    119: ['Fine Art Print Types','Size','Mat','Mat Width','Frame'],
+    120: ['Size','Thickness','Hanging System'],
+    121: ['Metal Print Options','Size','Corner Options','Hanging System'],
+    122: ['Wood Printing Options','Size','Hanging System']
+}
+
+function toggleVisibleAttributes(typeId,attrElements){
+    const attrElementsFiltered = Array.from(attrElements).filter(el => el.dataset.optionLabel !== 'Type')
+    attrElementsFiltered.forEach(el => el.classList.add('!hidden'))
+
+    const labelsArray = typeAttrsMap[typeId]
+    labelsArray.forEach((label) => {
+        const attrContainer = Array.from(attrElementsFiltered).find(el => el.dataset.optionLabel == label)
+        if (attrContainer) {
+            attrContainer.classList.remove('!hidden')
+        } 
+    })
+}
+
 function setDisplayedVal(input) {
     const inputGroup = input.dataset.inputGroup
     if (!inputGroup || !input.labels) {
@@ -111,29 +133,3 @@ window.addEventListener('DOMContentLoaded',()=>{
         }
       })(jQuery);
 })
-
-const typeAttrsMap = {
-    117: ['Size','Canvas Wrap','Canvas Type','Floating Frame'],
-    118: ['Size','Frame','Fine Art Print Types','Mat','Mat Width'],
-    119: ['Fine Art Print Types','Size','Mat','Mat Width','Frame'],
-    120: ['Size','Thickness','Hanging System'],
-    121: ['Metal Print Options','Size','Corner Options','Hanging System'],
-    122: ['Wood Printing Options','Size','Hanging System']
-}
-
-function toggleVisibleAttributes(typeId,atttrElements){
-    const attrElementsFiltered = Array.from(atttrElements).filter(el => {
-        el.dataset.optionLabel !== 'Type'
-    })
-    attrElementsFiltered.forEach(el => el.classList.add('!hidden'))
-
-    const labelsArray = typeAttrsMap[typeId]
-    labelsArray.forEach((label) => {
-        const attrContainer = Array.from(attrElementsFiltered).find(el => el.dataset.optionLabel == label)
-        if (attrContainer) {
-            attrContainer.classList.remove('!hidden')
-        } 
-    })
-}
-
-
