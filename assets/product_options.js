@@ -29,14 +29,6 @@
 //     }
 // }
 
-// function setCheckByValue(externalValue,checkboxInputs){
-//     const foundCheckbox = Array.from(checkboxInputs).find(checkboxInput => checkboxInput.value == externalValue )
-//     if (!foundCheckbox) {
-//         return
-//     }
-//     foundCheckbox.checked = true
-// }
-
 // function clearCheckboxes(inputs){
 //     inputs.forEach(element => {
 //         element.checked = false
@@ -72,10 +64,11 @@ function toggleVisibleAttributes(typeId,attrElements){
     attrElementsFiltered.forEach(el => el.classList.add('!hidden'))
 
     const labelsArray = typeAttrsMap[typeId]
-    labelsArray.forEach((label) => {
+    labelsArray.forEach((label,index) => {
         const attrContainer = Array.from(attrElementsFiltered).find(el => el.dataset.optionLabel == label)
         if (attrContainer) {
             attrContainer.classList.remove('!hidden')
+            attrContainer.style.order = index + 2
         } 
     })
 }
@@ -127,9 +120,26 @@ window.addEventListener('DOMContentLoaded',()=>{
         Drupal.behaviors.addToCart = {
           attach: function(context, settings) {
             $('.commerce-order-item-add-to-cart-form', context).on('submit', function () {
+                const checkboxInputs = document.querySelectorAll('[data-options-checkboxes] input')
+                const radioInputs = document.querySelectorAll('input[data-input-group]')
+                if (checkboxInputs && radioInputs) {
+                    radioInputs.forEach(el => {
+                        if (el.checked) {
+                            setCheckByValue(el.value,checkboxInputs)
+                        }
+                    })
+                }
                 debugger;
             });
           }
         }
       })(jQuery);
 })
+
+function setCheckByValue(externalVal,checkboxInputs){
+    const foundCheckbox = Array.from(checkboxInputs).find(checkboxInput => checkboxInput.value == externalVal )
+    if (!foundCheckbox) {
+        return
+    }
+    foundCheckbox.checked = true
+}
