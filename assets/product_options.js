@@ -38,6 +38,7 @@ function optionsListenerInit(){
             if (input.value && attributeElements) toggleVisibleAttributes(input.value,attributeElements)
         }
         setDisplayedVal(input)
+        setButtonState()
 
     })
 }
@@ -61,6 +62,7 @@ function toggleVisibleAttributes(typeId,attrElements){
             attrContainer.style.order = index + 2
         } 
     })
+    setButtonState()
 }
 
 function setDisplayedVal(input) {
@@ -99,5 +101,15 @@ function setChildInputsRequire(el,value){
     const childInputs = el.querySelectorAll('input')
     if (childInputs) {
         childInputs.forEach(input => input.required = value)
+    }
+}
+
+function setButtonState(){
+    const formEl = document.querySelector('.commerce-order-item-add-to-cart-form')
+    const buttonEl = document.querySelector('.button--add-to-cart')
+
+    if (formEl && buttonEl) {
+        const isValid = formEl.checkValidity()
+        buttonEl.disabled = !isValid
     }
 }
