@@ -104,7 +104,9 @@ window.addEventListener('DOMContentLoaded',()=>{
     (function($) {
         Drupal.behaviors.addToCart = {
           attach: function(context, settings) {
-            console.log('adding to cart');
+            $('.commerce-order-item-add-to-cart-form', context).on('submit', function () {
+                debugger;
+            });
           }
         }
       })(jQuery);
@@ -120,7 +122,7 @@ const typeAttrsMap = {
 }
 
 function toggleVisibleAttributes(typeId,atttrElements){
-    const attrElementsFiltered = atttrElements.filter(el => {
+    const attrElementsFiltered = Array.from(atttrElements).filter(el => {
         el.dataset.optionLabel !== 'Type'
     })
     attrElementsFiltered.forEach(el => el.classList.add('!hidden'))
