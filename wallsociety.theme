@@ -161,7 +161,7 @@ function wallsociety_form_alter(&$form, &$form_state, $form_id) {
     $form['mail']['widget'][0]['value']['#title'] = null;
   }
   if(str_contains($form_id,'commerce_order_item_add_to_cart_form_commerce_product')) {
-    dpm($form);
+    $form['actions']['submit']['#attributes']['disabled']  = 'disabled';
   }
 }
 
