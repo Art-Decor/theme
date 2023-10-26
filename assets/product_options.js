@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded',()=>{
           attach: function(context, settings) {
             $('.commerce-order-item-add-to-cart-form', context).on('submit', function () {
                 const checkboxInputs = document.querySelectorAll('[data-options-checkboxes] input')
-                const radioInputs = document.querySelectorAll('input[data-input-group]')
+                const radioInputs = document.querySelectorAll('[data-option-hidden="false"] input[data-input-group]')
                 if (checkboxInputs && radioInputs) {
                     radioInputs.forEach(el => {
                         if (el.checked) {
@@ -23,7 +23,6 @@ window.addEventListener('DOMContentLoaded',()=>{
                         }
                     })
                 }
-                debugger;
             });
           }
         }
@@ -45,13 +44,17 @@ function optionsListenerInit(){
 
 function toggleVisibleAttributes(typeId,attrElements){
     const attrElementsFiltered = Array.from(attrElements).filter(el => el.dataset.optionLabel !== 'Type')
-    attrElementsFiltered.forEach(el => el.classList.add('!hidden'))
+    attrElementsFiltered.forEach(el => {
+        el.classList.add('!hidden');
+        el.dataset.optionHidden = true;
+    })
 
     const labelsArray = typeAttrsMap[typeId]
     labelsArray.forEach((label,index) => {
         const attrContainer = Array.from(attrElementsFiltered).find(el => el.dataset.optionLabel == label)
         if (attrContainer) {
             attrContainer.classList.remove('!hidden')
+            attrContainer.dataset.optionHidden = false
             attrContainer.style.order = index + 2
         } 
     })
