@@ -101,7 +101,7 @@ function setDisplayedVal(input) {
 //     foundInput.checked = value
 // }
 
-let initFormLoaded = false
+let initFormLoaded = false;
 
 (function($) {
     Drupal.behaviors.formUpdated = {
