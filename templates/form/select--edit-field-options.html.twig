@@ -81,15 +81,19 @@
                         <input class="peer" type="radio" id="{{ sub_option.value }}" name="{{ option.label }}" value="{{ sub_option.value }}" {{ sub_option.selected ? ' checked' }} data-input-group="option{{ loop.parent.loop.index }}" {% if option.label == 'Type' %} required {% endif %}></input>
                         {% if option.label == 'Type' %}
                         <label class="!p-0 !m-0 !font-light after:!hidden before:!hidden !flex flex-col cursor-pointer transition duration-200 [&_.option-image]:hover:border-brown-40 [&_.option-image]:peer-checked:!border-brown-100" for="{{ sub_option.value }}">
-                            <div class="option-image w-20 h-20 bg-neutral-90 border border-neutral-90 transition duration-200"></div>
+                            <div class="option-image w-20 h-20 bg-neutral-90 border border-neutral-90 transition duration-200">
+                              {{ drupal_view('product_options', 'block_2', sub_option.value) }}
+                            </div>
                             <span class="!normal-case w-20 text-sm font-medium text-primary-100 text-center pt-2 transition duration-200">
                             {{ sub_option.label }}
                             </span>
                         </label>
-                        {{ drupal_view('product_options', 'block_1', sub_option.value) }}
                         {% else %}
                         <label class="!normal-case py-2 !pl-0 !my-0 text-primary-100 hover:text-brown-100 peer-checked:text-brown-100 !text-[13px] !font-light after:!hidden before:!hidden w-full transition duration-200 cursor-pointer" for="{{ sub_option.value }}">{{ sub_option.label }}</label>
                         {% endif %}
+                        <div class="!hidden">
+                          {{ drupal_view('product_options', 'block_2', sub_option.value) }}
+                        </div>
                     </li>
                 {% endfor %}
                 </ul>
