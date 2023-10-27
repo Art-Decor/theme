@@ -92,7 +92,7 @@
                         <label class="!normal-case py-2 !pl-0 !my-0 text-primary-100 hover:text-brown-100 peer-checked:text-brown-100 !text-[13px] !font-light after:!hidden before:!hidden w-full transition duration-200 cursor-pointer" for="{{ sub_option.value }}">{{ sub_option.label }}</label>
                         {% endif %}
                         <div class="!hidden">
-                          {{ drupal_view('product_options', 'block_2', sub_option.value) }}
+                          {{ drupal_view('product_options', 'block_1', sub_option.value) }}
                         </div>
                     </li>
                 {% endfor %}
