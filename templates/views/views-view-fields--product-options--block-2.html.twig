@@ -31,13 +31,14 @@
  * @ingroup themeable
  */
 #}
-{# {{ dump(fields) }} #}
+{{dump(fields)}}
 {% for field in fields -%}
     {%
     set field_classes = [
         'miniature' in field.handler.field ? 'w-full h-full [&_img]:w-full [&_img]:h-full [&_img]:object-contain':'hidden',
     ]
     %}
-
-    {{ field.content }}
+    <div class="{{field_classes}}">
+        {{ field.content }}
+    </div>
 {%- endfor %}
