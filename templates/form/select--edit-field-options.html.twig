@@ -98,6 +98,9 @@
         </div>
         {% endif %}
       {% endfor %}
+      <div>
+        {{ drupal_view('product_options', 'block_1') }}
+      </div>
       <div class="!hidden" data-options-checkboxes>
         {% for option in options %}
             {% for sub_option in option.options %}
