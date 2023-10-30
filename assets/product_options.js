@@ -47,18 +47,18 @@ function optionsListenerInit(){
 function setDisplayedPrice(){
     const basePriceContainer = document.querySelector('[data-price-base]')
     const displayPriceContainer = document.querySelector('[data-price-displayed]')
-    const selectedRadios = document.querySelectorAll('input[data-input-group]:checked')
+    const selectedRadios = document.querySelectorAll('[data-option-hidden="false"] input[data-input-group]:checked')
     if (!basePriceContainer || !displayPriceContainer || !selectedRadios) {
         return
     }
     const basePrice = basePriceContainer.dataset.priceBase
 
-    let optionsPriceSum = basePrice
+    let optionsPriceSum = parseFloat(basePrice)
     selectedRadios.forEach(input => {
         let parent = input.parentElement
         let optionPriceContainer = parent.querySelector('[data-option-price]')
         if (!optionPriceContainer) return
-        let optionPrice = optionPriceContainer.dataset.optionPrice
+        let optionPrice = optionPriceContainer.dataset.optionPrice ?? 0
         optionsPriceSum += parseFloat(optionPrice.replace(',','.'))
     })
 
