@@ -13,8 +13,4 @@
 <div data-price-displayed>
 {{- calculated_price -}}
 </div>
-{{dump()}}
-{{dump(result.calculatedPrice)}}
-{{dump(result.calculatedPrice.number)}}
-
-<div class="!hidden" data-price-base="{{ result['#calculatedPrice']['#number'] }}"></div>
+<div class="!hidden" data-price-base="{{ result.calculatedPrice.number }}"></div>
