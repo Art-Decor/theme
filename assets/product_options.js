@@ -38,9 +38,32 @@ function optionsListenerInit(){
             if (input.value && attributeElements) toggleVisibleAttributes(input.value,attributeElements)
         }
         setDisplayedVal(input)
+        setDisplayedPrice()
         setButtonState()
 
     })
+}
+
+function setDisplayedPrice(){
+    const basePriceContainer = document.querySelector('[data-price-base]')
+    const displayPriceContainer = document.querySelector('[data-price-displayed]')
+    const selectedRadios = document.querySelectorAll('input[data-input-group]:checked')
+    if (!basePriceContainer || !displayPriceContainer || !selectedRadios) {
+        return
+    }
+    const basePrice = basePriceContainer.dataset.priceBase
+
+    let optionsPriceSum = basePrice
+    selectedRadios.forEach(input => {
+        let parent = input.parentElement
+        let optionPriceContainer = parent.querySelector('[data-option-price]')
+        if (!optionPriceContainer) return
+        let optionPrice = optionPriceContainer.dataset.optionPrice
+        optionsPriceSum += parseFloat(optionPrice.replace(',','.'))
+    })
+
+    console.log(optionsPriceSum);
+    // const [] = displayPriceContainer.innerText.split(/\s/)
 }
 
 function toggleVisibleAttributes(typeId,attrElements){
