@@ -10,5 +10,8 @@
  * @ingroup themeable
  */
 #}
+{% set split_price = calculated_price|split(' ') %}
+{# {{- calculated_price -}} #}
+<span>{{ split_price[0] }}</span>
+<span>{{ split_price[1] }}</span>
 {{ dump() }}
-{{- calculated_price -}}
