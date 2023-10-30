@@ -58,12 +58,17 @@ function setDisplayedPrice(){
         let parent = input.parentElement
         let optionPriceContainer = parent.querySelector('[data-option-price]')
         if (!optionPriceContainer) return
-        let optionPrice = optionPriceContainer.dataset.optionPrice ?? 0
-        optionsPriceSum += parseFloat(optionPrice.replace(',','.'))
-    })
 
-    console.log(optionsPriceSum);
-    // const [] = displayPriceContainer.innerText.split(/\s/)
+        let optionPrice = optionPriceContainer.dataset.optionPrice
+        
+        if (optionPrice) {
+            optionsPriceSum += parseFloat(optionPrice.replace(',','.'))
+        }
+    })
+    optionsPriceSum = optionsPriceSum.toFixed(2)
+
+    displayPriceContainer.innerText = displayPriceContainer.innerText.replace(displayPriceContainer.dataset.priceDisplayed.replace('.',','),optionsPriceSum.replace('.',','))
+    displayPriceContainer.dataset.priceDisplayed = optionsPriceSum
 }
 
 function toggleVisibleAttributes(typeId,attrElements){

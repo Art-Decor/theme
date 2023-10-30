@@ -10,7 +10,7 @@
  * @ingroup themeable
  */
 #}
-<div data-price-displayed>
+<div data-price-displayed="{{ result.calculatedPrice.number }}">
 {{- calculated_price -}}
 </div>
 <div class="!hidden" data-price-base="{{ result.calculatedPrice.number }}"></div>
