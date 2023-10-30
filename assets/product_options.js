@@ -110,7 +110,7 @@ function setDisplayedVal(input) {
 
     const miniatureField = document.querySelector(`[data-group-miniature=${inputGroup}]`)
     if (miniatureField) {
-        let inputMiniatureSrc = input.labels[0].querySelector('[data-option-miniature] img').src
+        let inputMiniatureSrc = input.labels[0].querySelector('[data-option-miniature] img')?.src
 
         if (inputMiniatureSrc) {
             miniatureField.classList.remove('!hidden')
