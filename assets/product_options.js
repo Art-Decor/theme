@@ -66,8 +66,9 @@ function setDisplayedPrice(){
         }
     })
     optionsPriceSum = optionsPriceSum.toFixed(2)
-
-    displayPriceContainer.innerText = displayPriceContainer.innerText.replace(displayPriceContainer.dataset.priceDisplayed.replace('.',','),optionsPriceSum.replace('.',','))
+    let currPriceFormatted = displayPriceContainer.dataset.priceDisplayed.replace('.',',')
+    
+    displayPriceContainer.innerText = displayPriceContainer.innerText.replace(currPriceFormatted,optionsPriceSum.replace('.',','))
     displayPriceContainer.dataset.priceDisplayed = optionsPriceSum
 }
 
@@ -105,9 +106,18 @@ function setDisplayedVal(input) {
     }
     
     const displayField = document.querySelector(`[data-group-selected=${inputGroup}]`)
-    
-    if (!displayField) {
-        return
+    if (!displayField) return
+
+    const miniatureField = document.querySelector(`[data-group-miniature=${inputGroup}]`)
+    if (miniatureField) {
+        let inputMiniatureSrc = input.labels[0].querySelector('[data-option-miniature] img').src
+
+        if (inputMiniatureSrc) {
+            miniatureField.classList.remove('!hidden')
+            miniatureField.src = inputMiniatureSrc 
+        }else{
+            miniatureField.classList.add('!hidden')
+        }
     }
     
     const valueLabel = input.labels[0].innerText 
