@@ -1124,6 +1124,25 @@
 		background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 6L4 10L8 14" stroke="%23382335" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 		@apply bg-transparent rounded-none bg-no-repeat bg-left font-body font-medium text-sm text-primary-100 py-[14px] pl-10 pr-0 border-b-2 border-b-primary-20 hover:border-b-brown-100 transition duration-200
 	}
+
+	.scrollbar-custom {
+    	scrollbar-width: auto;
+		scrollbar-color: #382335 #d7d3d7;
+	}
+
+	.scrollbar-custom::-webkit-scrollbar {
+		width: 5px;
+	}
+
+	.scrollbar-custom::-webkit-scrollbar-track {
+		background: #d7d3d7;
+	}
+
+	.scrollbar-custom::-webkit-scrollbar-thumb {
+		background-color: #382335;
+		border-radius: 5px;
+		border: 0px solid #ffffff;
+	}
 }
 
 @tailwind utilities;

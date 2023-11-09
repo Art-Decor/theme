@@ -66,7 +66,7 @@
                     </svg>
                 </div>
             </div>
-            <div id="option{{ loop.index }}" class="absolute top-[calc(100%_-_1.6px)] z-30 [&.collapsing]:z-[35] [&.collapse.in]:z-[35] bg-white w-full border-0 border-b-2 border-solid border-neutral-90 group-hover:border-brown-100 [&.collapse.in_.shadow-box]:shadow-2xl duration-300 collapse" aria-expanded="false">
+            <div id="option{{ loop.index }}" class="absolute top-[calc(100%_-_1.6px)] z-30 [&.collapsing]:z-[35] [&.collapse.in]:z-[35] bg-white w-full border-0 border-b-2 !pr-[5px] border-solid border-neutral-90 group-hover:border-brown-100 [&.collapse.in_.shadow-box]:shadow-2xl duration-300 collapse" aria-expanded="false">
                 {% if option.label == 'Size' %}
                 <div class="flex items-center mt-2.5 justify-between gap-2.5 flex-wrap text-[10px] font-body font-medium text-primary-100 pl-[47px] pr-[30px]">
                     <span class="shrink-0" >{{ 'Heigh x Width in cm'|t }}</span>
@@ -78,9 +78,9 @@
                     </a>
                 </div>
                 {% endif %}
-                <ul class="relative z-20 bg-white !pl-[47px] {% if option.label != 'Size' %} !pt-2.5 {% endif %}{% if option.label == 'Type' %} flex flex-wrap gap-5 !pb-5 {% endif %}">
+                <ul class="relative z-20 bg-white max-h-[209px] overflow-y-auto scrollbar-custom {% if option.label != 'Size' %} !pt-2.5 {% endif %}{% if option.label == 'Type' %} !pl-[47px] flex flex-wrap gap-5 !pb-5 {% endif %}">
                 {% for sub_option in option.options %}
-                    <li class="!m-0 {% if option.label != 'Type' %} border-0 border-b last:border-b-0 border-b-neutral-90 w-full {% endif %}">
+                    <li class="!m-0 {% if option.label != 'Type' %} border-0 border-b last:border-b-0 border-b-neutral-90 w-full !pl-[47px] {% endif %}">
                         <input class="peer" type="radio" id="{{ sub_option.value }}" name="{{ option.label }}" value="{{ sub_option.value }}" {{ sub_option.selected ? ' checked' }} data-input-group="option{{ loop.parent.loop.index }}" {% if option.label == 'Type' %} required {% endif %}></input>
                         {% if option.label == 'Type' %}
                         <label class="!p-0 !m-0 !font-light after:!hidden before:!hidden !flex flex-col cursor-pointer transition duration-200 [&_.option-image]:hover:border-brown-40 [&_.option-image]:peer-checked:!border-brown-100" for="{{ sub_option.value }}">
@@ -92,7 +92,7 @@
                             </span>
                         </label>
                         {% else %}
-                        <label class="!normal-case py-2 !pl-0 !my-0 text-primary-100 hover:text-brown-100 peer-checked:text-brown-100 !text-[13px] !font-light after:!hidden before:!hidden w-full transition duration-200 cursor-pointer" for="{{ sub_option.value }}">{{ sub_option.label }}</label>
+                        <label class="!normal-case py-2 !pl-0 !m-0 text-primary-100 hover:text-brown-100 peer-checked:text-brown-100 !text-[13px] !font-light after:!hidden before:!hidden w-full transition duration-200 cursor-pointer" for="{{ sub_option.value }}">{{ sub_option.label }}</label>
                         {% endif %}
                         <div class="!hidden">
                           {{ drupal_view('product_options', 'block_1', sub_option.value) }}
