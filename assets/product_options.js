@@ -52,6 +52,7 @@ function setDisplayedPrice(){
         return
     }
     const basePrice = basePriceContainer.dataset.priceBase
+    const hasComma = basePrice.includes(',') 
 
     let optionsPriceSum = parseFloat(basePrice)
     selectedRadios.forEach(input => {
@@ -65,10 +66,13 @@ function setDisplayedPrice(){
             optionsPriceSum += parseFloat(optionPrice.replace(',','.'))
         }
     })
+    let currPrice = displayPriceContainer.dataset.priceDisplayed
     optionsPriceSum = optionsPriceSum.toFixed(2)
-    let currPriceFormatted = displayPriceContainer.dataset.priceDisplayed.replace('.',',')
+    if (hasComma) {
+        optionsPriceSum = optionsPriceSum.replace('.',',')
+    }
     
-    displayPriceContainer.innerText = displayPriceContainer.innerText.replace(currPriceFormatted,optionsPriceSum.replace('.',','))
+    displayPriceContainer.innerText = displayPriceContainer.innerText.replace(currPrice,optionsPriceSum)
     displayPriceContainer.dataset.priceDisplayed = optionsPriceSum
 }
 
