@@ -26,6 +26,12 @@ window.addEventListener('DOMContentLoaded',()=>{
             });
           }
         }
+
+
+        $(document).on('click', function () {
+            $('[data-parent=".js-form-item-field-options"] + div.collapse.in').collapse('hide')            
+        });
+
       })(jQuery);
 })
 
@@ -102,11 +108,6 @@ function setDisplayedVal(input) {
     const inputGroup = input.dataset.inputGroup
     if (!inputGroup || !input.labels) {
         return
-    }
-
-    const inputContainer = document.querySelector(`.js-form-item-field-options #${inputGroup}`) 
-    if (jQuery && inputContainer) {
-        jQuery(inputContainer).collapse('hide')
     }
     
     const displayField = document.querySelector(`[data-group-selected=${inputGroup}]`)
