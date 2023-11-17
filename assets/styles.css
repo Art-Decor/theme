@@ -1157,7 +1157,7 @@
 	}
 
 	.step-index:after{
-		@apply block absolute content-[''] w-[100px] h-2 bg-neutral-90 ml-[100%]
+		@apply block absolute content-[''] w-[100px] h-0.5 bg-neutral-90 ml-[220px]
 	}
 
 	.checkout-progress--step__next .step-index{
