@@ -1143,6 +1143,14 @@
 		border-radius: 5px;
 		border: 0px solid #ffffff;
 	}
+
+	#edit-login-guest p{
+		@apply mb-5
+	}
+
+	.checkout-progress--step__next .step-index{
+		@apply bg-neutral-90 text-primary-100
+	}
 }
 
 @tailwind utilities;
