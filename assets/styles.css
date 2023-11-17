@@ -1148,6 +1148,10 @@
 		@apply mb-5
 	}
 
+	.checkout-progress--step__next{
+		@apply !opacity-100
+	}
+
 	.checkout-progress--step__next .step-index{
 		@apply bg-neutral-90 text-primary-100
 	}

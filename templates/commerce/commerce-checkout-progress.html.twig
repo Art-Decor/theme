@@ -14,7 +14,7 @@
 #}
 <ol class="checkout-progress clearfix flex justify-center">
   {% for step in steps %}
-    <li class="checkout-progress--step checkout-progress--step__{{ step.position }} flex flex-col justify-center !pt-9 ">
+    <li class="checkout-progress--step checkout-progress--step__{{ step.position }} flex flex-col items-center !pt-9 ">
     <span class="step-index flex items-center justify-center w-10 h-10 !text-xl !font-semibold mb-1 text-white bg-brown-100 rounded-full">{{ loop.index }}</span>
     <span class="!text-xs md:!text-sm !font-semibold  !text-primary-100 [&_a]:hover:!text-brown-100">
     {{ step.label }}
