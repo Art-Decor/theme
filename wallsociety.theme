@@ -192,7 +192,7 @@ function wallsociety_theme_suggestions_select_alter(&$suggestions, array $variab
 
 function wallsociety_preprocess_item_list(&$variables)
 {
-  if (is_array($variables['attributes']) && is_array($variables['attributes']['class']) && is_array($variables['attributes']['class'][0])) {
+  if (is_array($variables['attributes']) && is_array($variables['attributes']['class'])) {
     if ($variables['attributes']['class'][0] == "quicktabs-tabs") {
       foreach ($variables['items'] as &$item) {
         if (is_array($item)) {
