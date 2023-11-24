@@ -8,7 +8,8 @@
 /**
  * Implements hook_preprocess_image_widget().
  */
-function wallsociety_preprocess_image_widget(array &$variables) {
+function wallsociety_preprocess_image_widget(array &$variables)
+{
   $data = &$variables['data'];
 
   // This prevents image widget templates from rendering preview container HTML
@@ -20,7 +21,8 @@ function wallsociety_preprocess_image_widget(array &$variables) {
   }
 }
 
-function wallsociety_theme_suggestions_image_alter(array &$suggestions, array $variables) {
+function wallsociety_theme_suggestions_image_alter(array &$suggestions, array $variables)
+{
   if (isset($variables['style_name']) && !is_null($variables['style_name'])) {
     $suggestion = 'image__' . $variables['style_name'];
     $suggestion = str_replace('-', '_', $suggestion);
@@ -33,7 +35,8 @@ function wallsociety_theme_suggestions_image_alter(array &$suggestions, array $v
  *
  * Moves the commerce_cart_form footer output above the submit buttons.
  */
-function wallsociety_preprocess_views_view(&$variables) {
+function wallsociety_preprocess_views_view(&$variables)
+{
   $view = $variables['view'];
   if (strpos($view->storage->get('tag'), 'commerce_cart_form') !== FALSE) {
 
@@ -46,13 +49,13 @@ function wallsociety_preprocess_views_view(&$variables) {
     $variables['rows']['footer']['commerce_order_total']['#prefix'] = '<div class="order-4 !text-lg !font-light inline-block w-full md:w-[500px] !px-5 md:ml-[calc(100%_-_500px)] !mb-0 bg-[#F5F4F5]">';
     $variables['rows']['footer']['commerce_order_total']['#suffix'] = '</div>';
   }
-
 }
 
-function wallsociety_preprocess_views_view_grid(&$variables) {
+function wallsociety_preprocess_views_view_grid(&$variables)
+{
   $view = $variables['view'];
 
-  if(strpos($view->storage->get('id'), 'inspirations_gallery') !== FALSE){
+  if (strpos($view->storage->get('id'), 'inspirations_gallery') !== FALSE) {
 
     $index = 0;
     $itemsFullsize = [];
@@ -77,8 +80,8 @@ function wallsociety_preprocess_views_view_grid(&$variables) {
 function wallsociety_form_views_form_commerce_cart_form_default_alter(&$form, &$form_state, $form_id)
 {
   $attached_library = $form['#attached']['library'] ?? NULL;
-  if($attached_library && reset($attached_library) == 'commerce_cart/cart_form'){
-	 $form['#attributes']['class'] = ['flex','flex-wrap','justify-end'];
+  if ($attached_library && reset($attached_library) == 'commerce_cart/cart_form') {
+    $form['#attributes']['class'] = ['flex', 'flex-wrap', 'justify-end'];
   }
 }
 
@@ -87,7 +90,8 @@ function wallsociety_form_views_form_commerce_cart_form_default_alter(&$form, &$
  * Adds the swiper links to the HTML head section
  */
 
- function wallsociety_preprocess_field(&$variables) {
+function wallsociety_preprocess_field(&$variables)
+{
   $field_name = $variables['element']['#field_name'];
 
   if ($field_name == 'field_gallery') {
@@ -103,7 +107,8 @@ function wallsociety_form_views_form_commerce_cart_form_default_alter(&$form, &$
   }
 }
 
-function attachSwiperLinksToHtmlHead(&$variables) {
+function attachSwiperLinksToHtmlHead(&$variables)
+{
   $styles_url = '//unpkg.com/swiper@8/swiper-bundle.min.css';
   $script_url = '//unpkg.com/swiper@8/swiper-bundle.min.js';
   $variables['#attached']['html_head'][] = [
@@ -126,12 +131,13 @@ function attachSwiperLinksToHtmlHead(&$variables) {
     'wallsociety_swiper_script',
   ];
 }
- /**
+/**
  * Implements wallsociety__theme_suggestions_HOOK_alter().
  */
-function wallsociety_theme_suggestions_item_list_alter(&$suggestions, $variables, $hook) {
+function wallsociety_theme_suggestions_item_list_alter(&$suggestions, $variables, $hook)
+{
   if (isset($variables['attributes']['class']) && isset($variables['attributes']['class'][0])) {
-	  $suggestions[] = $variables['theme_hook_original'] . '__' . str_replace('-','_',$variables['attributes']['class'][0]);
+    $suggestions[] = $variables['theme_hook_original'] . '__' . str_replace('-', '_', $variables['attributes']['class'][0]);
   }
 }
 
@@ -139,12 +145,12 @@ function wallsociety_theme_suggestions_item_list_alter(&$suggestions, $variables
 function wallsociety_theme_suggestions_fieldset_alter(array &$suggestions, array $variables, $hook)
 {
   if (isset($variables['element']) && isset($variables['element']['#type'])) {
-     $suggestions[] = $variables['element']['#type'];
+    $suggestions[] = $variables['element']['#type'];
   }
 
-  if($rawParameters = \Drupal::routeMatch()->getRawParameters('commerce_product')){
-    foreach($rawParameters as $paramName=>$paramVal) {
-      if($paramName === 'commerce_product'){
+  if ($rawParameters = \Drupal::routeMatch()->getRawParameters('commerce_product')) {
+    foreach ($rawParameters as $paramName => $paramVal) {
+      if ($paramName === 'commerce_product') {
         $suggestions[] = 'page_type__' . $paramName;
 
         if (isset($variables['element']) && isset($variables['element']['#type'])) {
@@ -155,12 +161,13 @@ function wallsociety_theme_suggestions_fieldset_alter(array &$suggestions, array
   }
 }
 
-function wallsociety_form_alter(&$form, &$form_state, $form_id) {
-  if($form_id == 'simplenews_subscriptions_block_footer') {
+function wallsociety_form_alter(&$form, &$form_state, $form_id)
+{
+  if ($form_id == 'simplenews_subscriptions_block_footer') {
     $form['mail']['widget'][0]['value']['#placeholder'] = t('Email address');
     $form['mail']['widget'][0]['value']['#title'] = null;
   }
-  if(str_contains($form_id,'commerce_order_item_add_to_cart_form_commerce_product')) {
+  if (str_contains($form_id, 'commerce_order_item_add_to_cart_form_commerce_product')) {
     $form['actions']['submit']['#attributes']['disabled']  = 'disabled';
   }
 }
@@ -170,7 +177,8 @@ function wallsociety_form_alter(&$form, &$form_state, $form_id) {
  * @param $suggestions
  * @param array $variables
  */
-function wallsociety_theme_suggestions_select_alter(&$suggestions, array $variables) {
+function wallsociety_theme_suggestions_select_alter(&$suggestions, array $variables)
+{
   $element = $variables['element'];
   $id_item = str_replace('-', '_', $element['#id']);
   $suggestions[] = 'select__' . $id_item;
@@ -180,5 +188,17 @@ function wallsociety_theme_suggestions_select_alter(&$suggestions, array $variab
     $node = str_replace('-', '_', $node->bundle());
     $suggestions[] = 'select__' . $id_item . '__page__' . $node;
   }
+}
 
+function wallsociety_preprocess_item_list(&$variables)
+{
+  if (is_array($variables['attributes']) && is_array($variables['attributes']['class'])) {
+    if ($variables['attributes']['class'][0] == "quicktabs-tabs") {
+      foreach ($variables['items'] as &$item) {
+        if (is_array($item)) {
+          $item['value'][0]['#url'] = \Drupal\Core\Url::fromUri('internal:/', ['attributes' => ['rel' => "nofollow"]]);
+        }
+      }
+    }
+  }
 }
