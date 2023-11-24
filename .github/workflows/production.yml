@@ -37,11 +37,10 @@ jobs:
          #       script: |
          #          /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush sql:dump --result-file=../../${{ env.RANDOM_STRING_NAME }}.sql --root=${{ secrets.REMOTE_ROOT_PATH }}
 
-
          #curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64
          #chmod +x tailwindcss-linux-x64
          #mv tailwindcss-linux-x64 tailwindcss
-         
+
          - name: Generate website
            run: npm run deploy --if-present
 
@@ -67,5 +66,5 @@ jobs:
               passphrase: ${{ secrets.SSH_PRIVATE_KEY_PASSPHRASE }}
               script: |
                  /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush cache:rebuild --root=${{ secrets.REMOTE_ROOT_PATH }}
-                 /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush core:cron --root=${{ secrets.REMOTE_ROOT_PATH }}
+              #   /usr/bin/php81 ${{ secrets.REMOTE_ROOT_PATH }}/vendor/bin/drush core:cron --root=${{ secrets.REMOTE_ROOT_PATH }}
               #  rm ${{ secrets.REMOTE_ROOT_PATH }}/../${{ env.RANDOM_STRING_NAME }}.sql
