@@ -156,7 +156,7 @@ function setDisplayedVal(input) {
 		}
 	}
 
-	const valueLabel = input.labels[0].innerText
+	const valueLabel = input.dataset.inputLabel
 
 	if (valueLabel) {
 		displayField.textContent = valueLabel
