@@ -30,6 +30,9 @@ optionsListenerInit()
 					}
 				}
 			)
+
+			$('[data-input-group="option13"]')[0].click() // Default Type select
+
 		},
 	}
 })(jQuery)
