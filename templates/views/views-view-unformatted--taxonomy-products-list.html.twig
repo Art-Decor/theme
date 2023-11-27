@@ -20,7 +20,7 @@
 {% for row in rows %}
   {%
     set row_classes = [
-      'relative flex flex-col justify-end h-[200px] md:h-[300px] xl:h-[400px] p-2 md:p-4',
+      'group relative flex flex-col justify-end h-[200px] md:h-[300px] xl:h-[400px] p-2 md:p-4',
       loop.index == 4 ? 'col-span-2',
       default_row_class ? 'views-row',
     ]
