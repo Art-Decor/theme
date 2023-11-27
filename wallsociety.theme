@@ -206,7 +206,7 @@ function wallsociety_preprocess_item_list(&$variables)
 
 function wallsociety_theme_suggestions_input_alter(&$suggestions, array $variables)
 {
-  if (isset($variables['element']['#id']) && $variables['element']['#id'] == 'edit-remove-button-0') {
+  if (isset($variables['element']['#parents']) && isset($variables['element']['#parents'][0]) && $variables['element']['#parents'][0] == 'remove_button') {
     $suggestions[] = 'cart__item__trash';
   }
   if (isset($variables['element']['#submit']) && isset($variables['element']['#submit'][0]) && $variables['element']['#submit'][0] == '::removeItem') {
