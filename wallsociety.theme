@@ -210,6 +210,6 @@ function wallsociety_theme_suggestions_input_alter(&$suggestions, array $variabl
     $suggestions[] = 'cart__item__trash';
   }
   if (isset($variables['element']['#submit']) && isset($variables['element']['#submit'][0]) && $variables['element']['#submit'][0] == '::removeItem') {
-    $suggestions[] = 'cart__item__trash';
+    $suggestions[] = 'wishlist__item__trash';
   }
 }
