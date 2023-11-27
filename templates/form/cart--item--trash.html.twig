@@ -25,16 +25,17 @@
   {% block input %}{% apply spaceless %}
     {%
       set classes = [
-      'appearance-none group !text-white cursor-pointer border-0 p-0',
+      'group',
       type == 'submit' ? 'js-form-submit',
+      icon and icon_position and not icon_only ? 'icon-' ~ icon_position,
     ]
     %}
-      <button{{ attributes.addClass(classes) }}>
-            <svg class="stroke-primary-40 group-hover:stroke-primary-100 transition duration-200" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                <path d="M16.667 16.6667V26.6667M23.3337 16.6667V26.6667M30.0003 10V30C30.0003 31.8409 28.5079 33.3333 26.667 33.3333H13.3337C11.4927 33.3333 10.0003 31.8409 10.0003 30V10M6.66699 10H33.3337M25.0003 10V8.33333C25.0003 6.49238 23.5079 5 21.667 5H18.3337C16.4927 5 15.0003 6.49238 15.0003 8.33333V10" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          <span class="sr-only ">{{ label }}</span>
-        {% endif %}
+      <button{{ attributes.addClass(classes, 'icon-only') }} data-drupal-selector="edit-remove-button-0" type="submit" id="edit-remove-button-0" name="delete-order-item-0" value="Remove">
+        <svg class="stroke-primary-40 group-hover:stroke-primary-100 transition duration-200" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <path d="M16.667 16.6667V26.6667M23.3337 16.6667V26.6667M30.0003 10V30C30.0003 31.8409 28.5079 33.3333 26.667 33.3333H13.3337C11.4927 33.3333 10.0003 31.8409 10.0003 30V10M6.66699 10H33.3337M25.0003 10V8.33333C25.0003 6.49238 23.5079 5 21.667 5H18.3337C16.4927 5 15.0003 6.49238 15.0003 8.33333V10" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="sr-only ">{{ label }}</span>
       </button>
+    {{ children }}
   {% endapply %}{% endblock %}
 
