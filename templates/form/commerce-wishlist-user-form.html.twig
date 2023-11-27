@@ -23,7 +23,7 @@
 				</div>
 				<div class="wishlist-item__actions">
 					{{ dump(item.actions) }}
-					{{ item.actions }}
+					{{ item.actions|without('add_to_cart') }}
 				</div>
 			</div>
 		{% endfor %}
