@@ -25,8 +25,8 @@
 {% block input %}
 	{% apply spaceless %}
 	{% set classes = [
-		'group absolute top-0 right-0',
-    'btn-link button js-form-submit form-submit icon-only',
+		'group absolute top-0 right-0 !p-0',
+    	'btn-link button js-form-submit form-submit icon-only',
 		type == 'submit' ? 'js-form-submit',
 		icon and icon_position and not icon_only ? 'icon-' ~ icon_position
 	] %}
