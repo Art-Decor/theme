@@ -5,6 +5,8 @@ base:
          weight: -10
       assets/product_options.js:
          weight: -10
+      assets/cart_quantity_update.js:
+         weight: -10
    css:
       theme:
          assets/styles.min.css:
