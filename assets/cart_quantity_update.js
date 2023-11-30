@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
         checkoutButton.disabled = true
         quantityInputs.forEach((quantityInput)=>{
             quantityInput.blur()
-            quantityInput.parentElement.classList.add('pointer-events-none opacity-50')
+            quantityInput.parentElement.classList.add('pointer-events-none','opacity-50')
         })
 
     }
