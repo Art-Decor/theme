@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     setDisabledStyles()
                     updateCartButton.click();
                 }
-            }, 1500);
+            }, 800);
         });
     
     });
