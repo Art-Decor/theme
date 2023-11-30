@@ -5,7 +5,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const quantityInputs = document.querySelectorAll('.quantity-edit-input');
     const quantityButtons = document.querySelectorAll('.number-btn');
     const updateCartButton = document.getElementById('edit-submit');
-    const checkoutButton = document.getElementById('edit-checkout');
     
     quantityButtons.forEach((button)=>{
         button.addEventListener('click',()=>{
@@ -31,7 +30,11 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     function setDisabledStyles(){
+        const checkoutButton = document.getElementById('edit-checkout');
+        const couponButton = document.querySelector('[data-drupal-selector="edit-coupon-redemption-apply"]')
+
         checkoutButton.disabled = true
+        couponButton.disabled = true
         quantityInputs.forEach((quantityInput)=>{
             quantityInput.blur()
             quantityInput.parentElement.classList.add('pointer-events-none','opacity-50')
