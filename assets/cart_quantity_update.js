@@ -17,6 +17,10 @@ window.addEventListener('DOMContentLoaded', () => {
         quantityInput.addEventListener('input', function() {
     
             clearTimeout(timeout);
+
+            if (quantityInput.value == '') {
+                quantityInput.value = 1
+            }
     
             timeout = setTimeout(function() {
                 const currentQuantity = parseInt(quantityInput.value, 10);
