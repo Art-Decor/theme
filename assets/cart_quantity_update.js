@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
             clearTimeout(timeout);
 
             if (quantityInput.value == '') {
-                quantityInput.value = 1
+                quantityInput.value = 0
             }
     
             timeout = setTimeout(function() {
