@@ -61,8 +61,8 @@
       <div class="field__items grid md:grid-cols-3 gap-5">
     {% endif %}
     {% for item in items %}
-      <div{{ item.attributes.addClass('field--item flex md:flex-col gap-2.5 md:gap-0 max-w-[180px]') }}>
-        <div class="shrink-0 [&_img]:w-[60px] [&_img]:h-[60px] md:[&_img]:w-[50px] md:[&_img]:h-[50px] [&_img]:object-contain">
+      <div{{ item.attributes.addClass('field--item flex md:flex-col gap-2.5 md:gap-0 md:max-w-[180px]') }}>
+        <div class="shrink-0 [&_img]:w-16 [&_img]:h-16 [&_img]:object-contain">
           {{ item.content['field_zdjecie'] }}
         </div>
         <div>
