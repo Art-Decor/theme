@@ -32,17 +32,18 @@
  */
 #}
 
-{{ dump() }}
 
-<div class="flexpy-3.5 border-0 border-b border-[#EDF2F4]" data-info-id>
-    <div class="basis-36 md:basis-[180px] md:pr-2 shrink-0 grow-0 !normal-case text-primary-100">
-        {%- if fields.name -%}
-            {{ fields.name.content }}
-        {%- endif %}
+{{- if row.tid -}}
+    <div class="flex py-3.5 border-0 border-b border-[#EDF2F4]" data-description-id="{{ row.tid }}">
+        <div class="basis-36 md:basis-[180px] md:pr-2 shrink-0 grow-0 !normal-case text-primary-100 text-[15px] font-medium leading-5">
+            {%- if fields.name -%}
+                {{ fields.name.content }}
+            {%- endif %}
+        </div>
+        <div class="w-full text-[13px] font-light leading-5 text-primary-100 hover:[&_a]:!text-primary-100">
+            {%- if fields.description__value -%}
+                {{ fields.description__value.content }}
+            {%- endif %}
+        </div>
     </div>
-    <div class="w-full">
-        {%- if fields.description__value -%}
-            {{ fields.description__value.content }}
-        {%- endif %}
-    </div>
-</div>
+{%- endif %}
