@@ -189,8 +189,8 @@ function setDisplayedInfo(){
 
 	const descriptionIdsArray = Array.from(selectedRadios).reduce((acc, input) => {
 		let parent = input.parentElement;
-		let optionDescriptionId = parent.querySelector('[data-attr-description-id]');
-		let descriptionIdValue = optionDescriptionId ? optionDescriptionId.dataset.descriptionId : null;
+		let optionDescriptionIdEl = parent.querySelector('[data-attr-description-id]');
+		let descriptionIdValue = optionDescriptionIdEl ? optionDescriptionIdEl.dataset.attrDescriptionId : null;
 	  
 		if (descriptionIdValue !== null) {
 		  acc.push(descriptionIdValue);
