@@ -159,11 +159,11 @@
 	}
 
 	.view-slider-produktow .swiper-container .swiper-slide{
-		@apply transition duration-200
+		@apply opacity-0 pointer-events-none transition duration-200
 	}
 
-	.view-slider-produktow .swiper-container .swiper-slide-prev{
-		@apply opacity-0 pointer-events-none
+	.view-slider-produktow .swiper-container .swiper-slide-prev ~ *{
+		@apply !opacity-100 !pointer-events-auto
 	}
 
 	.text-default a.wp-block-button__link{
