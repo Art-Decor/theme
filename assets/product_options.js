@@ -60,6 +60,7 @@ function optionsListenerInit() {
 		}
 		setDisplayedVal(input)
 		setDisplayedPrice()
+		setDisplayedInfo()
 		setButtonState()
 	})
 }
@@ -178,6 +179,35 @@ function setChildInputsRequire(el, value) {
 	if (childInputs) {
 		childInputs.forEach((input) => (input.required = value))
 	}
+}
+
+function setDisplayedInfo(){
+	
+	const selectedRadios = document.querySelectorAll(
+		'[data-option-hidden="false"] input[data-input-group]:checked'
+	)
+
+	const descriptionIdsArray = Array.from(selectedRadios).reduce((acc, input) => {
+		let parent = input.parentElement;
+		let optionDescriptionId = parent.querySelector('[data-attr-description-id]');
+		let descriptionIdValue = optionDescriptionId ? optionDescriptionId.dataset.descriptionId : null;
+	  
+		if (descriptionIdValue !== null) {
+		  acc.push(descriptionIdValue);
+		}
+	  
+		return acc;
+	  }, []);
+
+	  const descriptionElements = document.querySelectorAll('[data-description-id]')
+	  descriptionElements.forEach(element =>{
+		if (descriptionIdsArray.includes(element.dataset.descriptionId)) {
+			element.classList.remove('!hidden')
+		}else{
+			element.classList.add('!hidden')
+		}
+	  })
+  
 }
 
 function setButtonState() {
