@@ -22,7 +22,6 @@
  * @see template_preprocess_input()
  */
 #}
-{{ dump() }}
 {% block input %}
 	{% apply spaceless %}
 	{% set classes = [
@@ -31,6 +30,7 @@
 		type == 'submit' ? 'js-form-submit',
 		icon and icon_position and not icon_only ? 'icon-' ~ icon_position
 	] %}
+	{{ dump() }}
 	<button {{ attributes.addClass(classes) }}
 		data-drupal-selector="edit-wishlist"
 		formnovalidate="formnovalidate"
